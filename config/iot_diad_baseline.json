@@ -1,0 +1,34 @@
+{
+  "dataset": "CIC IoT-DIAD 2024, flow-based features",
+  "classification": "eight broad classes",
+  "classes": [
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web-Based"
+  ],
+  "seed": 42,
+  "split": {
+    "train": 0.70,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "major_class_cap": 50000,
+  "model": {
+    "name": "TabularMLP",
+    "hidden_dims": [256, 128, 64],
+    "dropout": 0.2
+  },
+  "training": {
+    "batch_size": 1024,
+    "epochs": 30,
+    "patience": 6,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "loss": "class-weighted cross entropy"
+  }
+}
