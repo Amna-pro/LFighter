@@ -84,6 +84,62 @@ def load_arrays(path: Path) -> Dict[str, np.ndarray]:
         return {key: data[key] for key in data.files}
 
 
+
+
+def sanitize_probabilities(probabilities: np.ndarray, num_classes: int) -> Tuple[np.ndarray, Dict[str, int]]:
+    """Return finite, normalized probabilities and diagnostics for numerical repairs."""
+    probs = np.asarray(probabilities, dtype=np.float64)
+    if probs.ndim != 2:
+        raise ValueError(f"Probability matrix must be 2D, received shape {probs.shape}")
+
+    nonfinite_values = int((~np.isfinite(probs)).sum())
+    probs = np.nan_to_num(probs, nan=0.0, posinf=1.0, neginf=0.0)
+    negative_values = int((probs < 0.0).sum())
+    probs = np.clip(probs, 0.0, None)
+
+    row_sums = probs.sum(axis=1, keepdims=True)
+    zero_sum_mask = row_sums[:, 0] <= 0.0
+    zero_sum_rows = int(zero_sum_mask.sum())
+    if zero_sum_rows:
+        probs[zero_sum_mask] = 1.0 / num_classes
+        row_sums = probs.sum(axis=1, keepdims=True)
+
+    probs = probs / row_sums
+    original = np.asarray(probabilities, dtype=np.float64)
+    nonfinite_row_mask = np.any(~np.isfinite(original), axis=1)
+    negative_row_mask = np.any(original < 0.0, axis=1)
+    repaired_rows = int((nonfinite_row_mask | negative_row_mask | zero_sum_mask).sum())
+    diagnostics = {
+        "nonfinite_values": nonfinite_values,
+        "negative_values": negative_values,
+        "zero_sum_rows": zero_sum_rows,
+        "repaired_rows": repaired_rows,
+    }
+    return probs, diagnostics
+
+
+def predict_sklearn(model, X: np.ndarray) -> Tuple[np.ndarray, np.ndarray | None, Dict[str, int]]:
+    """Predict labels and stable probabilities without sklearn's unstable SGD normalization path."""
+    prediction = model.predict(X)
+    empty = {"nonfinite_values": 0, "negative_values": 0, "zero_sum_rows": 0, "repaired_rows": 0}
+
+    if isinstance(model, SGDClassifier):
+        scores = np.asarray(model.decision_function(X), dtype=np.float64)
+        if scores.ndim == 1:
+            scores = np.column_stack([-scores, scores])
+        scores = np.nan_to_num(scores, nan=0.0, posinf=1e6, neginf=-1e6)
+        scores = scores - np.max(scores, axis=1, keepdims=True)
+        probabilities = np.exp(np.clip(scores, -700.0, 0.0))
+        probabilities, diagnostics = sanitize_probabilities(probabilities, probabilities.shape[1])
+        return prediction, probabilities, diagnostics
+
+    if hasattr(model, "predict_proba"):
+        probabilities = model.predict_proba(X)
+        probabilities, diagnostics = sanitize_probabilities(probabilities, len(CLASS_NAMES))
+        return prediction, probabilities, diagnostics
+
+    return prediction, None, empty
+
 def metric_dict(y_true: np.ndarray, y_pred: np.ndarray, probabilities: np.ndarray | None = None) -> Dict[str, float]:
     result = {
         "accuracy": accuracy_score(y_true, y_pred),
@@ -93,13 +149,7 @@ def metric_dict(y_true: np.ndarray, y_pred: np.ndarray, probabilities: np.ndarra
         "mcc": matthews_corrcoef(y_true, y_pred),
     }
     if probabilities is not None:
-        probabilities = np.asarray(probabilities, dtype=np.float64)
-        probabilities = np.nan_to_num(
-            probabilities,
-            nan=1.0 / len(CLASS_NAMES),
-            posinf=1.0,
-            neginf=0.0,
-        )
+        probabilities, _ = sanitize_probabilities(probabilities, len(CLASS_NAMES))
         probabilities = np.clip(probabilities, 1e-12, None)
         probabilities = probabilities / probabilities.sum(axis=1, keepdims=True)
         result["log_loss"] = log_loss(y_true, probabilities, labels=np.arange(len(CLASS_NAMES)))
@@ -362,6 +412,7 @@ def main() -> int:
     per_class_rows: List[pd.DataFrame] = []
     confusions: Dict[Tuple[str, int, str], pd.DataFrame] = {}
     mlp_histories: List[pd.DataFrame] = []
+    probability_diagnostic_rows: List[Dict[str, object]] = []
 
     for model_name in models:
         for seed in seeds:
@@ -398,12 +449,25 @@ def main() -> int:
                 model_size = saved.stat().st_size / (1024 * 1024)
                 predictors = {}
                 for split in ("val", "test_natural", "test_diagnostic"):
-                    prediction = model.predict(arrays[f"X_{split}"])
-                    probability = model.predict_proba(arrays[f"X_{split}"]) if hasattr(model, "predict_proba") else None
-                    predictors[split] = (prediction, probability)
+                    prediction, probability, diagnostics = predict_sklearn(model, arrays[f"X_{split}"])
+                    predictors[split] = (prediction, probability, diagnostics)
 
-            for split, (prediction, probability) in predictors.items():
+            if model_name == "mlp":
+                predictors = {
+                    split: (prediction, probability, {"nonfinite_values": 0, "negative_values": 0, "zero_sum_rows": 0, "repaired_rows": 0})
+                    for split, (prediction, probability) in predictors.items()
+                }
+
+            for split, (prediction, probability, probability_diagnostics) in predictors.items():
                 metrics = metric_dict(arrays[f"y_{split}"], prediction, probability)
+                probability_diagnostic_rows.append(
+                    {
+                        "model": model_name,
+                        "seed": seed,
+                        "split": split,
+                        **probability_diagnostics,
+                    }
+                )
                 run_rows.append(
                     {
                         "model": model_name,
@@ -427,6 +491,9 @@ def main() -> int:
 
     runs = pd.DataFrame(run_rows)
     runs.to_csv(output_dir / "tables" / "all_runs.csv", index=False)
+    pd.DataFrame(probability_diagnostic_rows).to_csv(
+        output_dir / "tables" / "probability_diagnostics.csv", index=False
+    )
     per_class_all = pd.concat(per_class_rows, ignore_index=True)
     per_class_all.to_csv(output_dir / "tables" / "per_class_metrics.csv", index=False)
     if mlp_histories:
@@ -488,6 +555,7 @@ def main() -> int:
     )
 
     metadata = {
+        "benchmark_version": "2.2",
         "data_file": str(args.data_file.expanduser().resolve()),
         "models": models,
         "seeds": seeds,
