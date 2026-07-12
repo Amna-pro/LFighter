@@ -1,0 +1,51 @@
+{
+  "dataset": "CIC IoT-DIAD 2024, flow-based features",
+  "protocol_version": "2.0",
+  "classes": [
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web-Based"
+  ],
+  "split": {
+    "train": 0.70,
+    "validation": 0.15,
+    "test": 0.15,
+    "primary_strategy": "capture-held-out",
+    "fallback_strategy": "chronological blocks within a capture"
+  },
+  "sampling": {
+    "train_cap_per_class": 80000,
+    "validation_cap_per_class": 20000,
+    "diagnostic_test_cap_per_class": 20000,
+    "natural_test_total": 200000
+  },
+  "feature_configurations": [
+    "full_flow",
+    "behavioral_only",
+    "compact_k32"
+  ],
+  "benchmark": {
+    "models": ["sgd", "randomforest", "extratrees", "mlp"],
+    "seeds": [42, 52, 62, 72, 82],
+    "primary_metric": "macro_f1",
+    "secondary_metrics": [
+      "balanced_accuracy",
+      "accuracy",
+      "weighted_f1",
+      "mcc",
+      "log_loss",
+      "ece_15bin"
+    ]
+  },
+  "artifact_policy": {
+    "tables": "CSV",
+    "figures": ["PNG", "PDF"],
+    "configuration": "JSON",
+    "models": ["joblib", "pt"]
+  }
+}
