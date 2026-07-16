@@ -1,0 +1,37 @@
+{
+  "experiment_version": "3.4",
+  "experiment_type": "original_lfighter_five_seed_clean_and_strong_attack_baseline",
+  "seeds": [
+    42,
+    123,
+    2026,
+    7,
+    99
+  ],
+  "source_class": "DDoS",
+  "target_class": "Benign",
+  "malicious_clients": [
+    1,
+    7,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18
+  ],
+  "poison_fraction": 1.0,
+  "attack_seed": 42,
+  "partition_file": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_federated_tuning_v27_alpha05_seed42\\partitions\\client_partitions.npz",
+  "clean_fedavg_reference": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_federated_multiseed_v28_fixed_partition",
+  "attacked_fedavg_reference": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_ddos_benign_multiseed_v33",
+  "aggregation_fidelity": "Original LFighter multiclass class-pair selection, KMeans clustering, cluster dissimilarity, good-cluster selection, and equal averaging among admitted local models.",
+  "test_sets_used_for_checkpoint_selection": false,
+  "primary_checkpoint": "best validation macro F1 independently within each run",
+  "notes": [
+    "Five paired model seeds are exploratory and descriptive.",
+    "Exact two-sided Wilcoxon tests with five nonzero paired differences cannot attain p below 0.0625.",
+    "Clean LFighter runs quantify benign false rejection and clean utility cost.",
+    "Strong attacked runs use the frozen V3.3 malicious clients and poisoned row selection."
+  ]
+}
