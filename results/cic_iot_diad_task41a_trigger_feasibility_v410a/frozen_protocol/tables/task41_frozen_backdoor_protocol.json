@@ -1,0 +1,135 @@
+{
+  "experiment_version": "4.10F",
+  "stage": "task41_frozen_backdoor_protocol",
+  "branch": "feature/cic-iot-diad-task41-backdoor-v1",
+  "commit": "fd8410656e7810330cb3e3befa0bb4a8409efff8",
+  "method_reopened": false,
+  "attack_specific_defense_retuning_permitted": false,
+  "natural_test_access_permitted": false,
+  "diagnostic_test_access_permitted": false,
+  "target_class": {
+    "id": 0,
+    "name": "Benign"
+  },
+  "source_classes": [
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web-Based"
+  ],
+  "malicious_clients": [
+    1,
+    7,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18
+  ],
+  "warmup_rounds": 4,
+  "post_warmup_rounds": 4,
+  "trigger_panel_size": 6,
+  "trigger_candidate_ids": [
+    "multi_flow_iat_bundle__exact_template__donor_00",
+    "multi_flow_iat_bundle__low_intensity_template__donor_00",
+    "multi_fwd_packet_length_bundle__low_intensity_template__donor_09",
+    "multi_bwd_packet_length_bundle__low_intensity_template__donor_12",
+    "multi_init_windows__exact_template__donor_01",
+    "multi_active_idle_bundle__exact_template__donor_18"
+  ],
+  "primary_qualification": {
+    "seed": 7,
+    "poison_fractions": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "label_policy": "dirty_label_all_nonbenign_to_benign",
+    "deployment_policy": "centralized_full_trigger",
+    "configuration_count": 24,
+    "required_outputs": [
+      "per_round_and_per_source_triggered_ASR",
+      "clean_validation_macro_F1",
+      "clean_target_class_recall",
+      "clean_benign_FPR",
+      "poisoned_sample_counts_by_client_and_source",
+      "CSV_tables",
+      "PNG_figures",
+      "PDF_figures"
+    ],
+    "qualification_gates_frozen_before_training": {
+      "minimum_mean_triggered_ASR": 0.5,
+      "minimum_final_round_triggered_ASR": 0.5,
+      "minimum_source_classes_with_mean_ASR_at_least_0_40": 5,
+      "maximum_clean_macro_F1_drop_from_matched_clean": 0.1,
+      "minimum_improved_attack_round_count_over_clean_trigger_baseline": 3
+    }
+  },
+  "confirmatory_multiseed": {
+    "seeds": [
+      7,
+      99,
+      123,
+      2026
+    ],
+    "poison_fractions": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "retain_complete_poison_fraction_curves": true,
+    "plain_and_frozen_defense_paired": true,
+    "attack_configuration_count_before_pairing": 96,
+    "paired_branch_count": 192,
+    "selection_from_qualification": "No trigger family may be removed solely for weak performance. Qualification labels attacks as successful or weak, and both statuses remain reportable. Confirmatory execution may be sequenced by qualification strength, but the frozen grid remains unchanged."
+  },
+  "secondary_breadth_extensions_after_primary_grid": {
+    "required": true,
+    "policies": [
+      "clean_label_target_only",
+      "distributed_subtrigger_dirty_label"
+    ],
+    "representative_slots": [
+      "flow_iat_low",
+      "init_windows_exact",
+      "active_idle_exact"
+    ],
+    "poison_fractions": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "seeds": [
+      7,
+      99,
+      123,
+      2026
+    ],
+    "defense_retuning_permitted": false
+  },
+  "primary_metrics": [
+    "triggered_attack_success_rate_all_nonbenign_sources",
+    "macro_average_per_source_triggered_ASR",
+    "worst_source_triggered_ASR",
+    "clean_validation_macro_F1"
+  ],
+  "detector_metrics": [
+    "malicious_client_recall",
+    "benign_client_false_positive_rate",
+    "replaced_client_count"
+  ],
+  "reporting_requirements": [
+    "mean_standard_deviation_and_95_percent_CI_across_seeds",
+    "per_trigger_per_fraction_curves",
+    "per_source_class_triggered_ASR",
+    "matched_clean_and_plain_FedAvg_references",
+    "CSV_tables",
+    "publication_quality_PNG_and_PDF_figures"
+  ]
+}

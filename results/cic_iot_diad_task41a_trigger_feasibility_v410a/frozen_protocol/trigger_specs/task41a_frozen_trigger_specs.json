@@ -1,0 +1,284 @@
+{
+  "experiment_version": "4.10F",
+  "stage": "task41a_frozen_trigger_panel",
+  "branch": "feature/cic-iot-diad-task41-backdoor-v1",
+  "commit": "fd8410656e7810330cb3e3befa0bb4a8409efff8",
+  "selection_time_information_used": [
+    "development_train_geometry",
+    "development_validation_rarity",
+    "development_source_class_geometry"
+  ],
+  "attack_training_outcomes_used": false,
+  "test_arrays_loaded": false,
+  "selection_policy": {
+    "type": "fixed_family_mode_stratification",
+    "rules": [
+      {
+        "panel_slot": "flow_iat_exact",
+        "family": "multi_flow_iat_bundle",
+        "mode": "exact_template",
+        "role": "high_rarity_temporal_exact"
+      },
+      {
+        "panel_slot": "flow_iat_low",
+        "family": "multi_flow_iat_bundle",
+        "mode": "low_intensity_template",
+        "role": "paired_intensity_temporal"
+      },
+      {
+        "panel_slot": "fwd_packet_low",
+        "family": "multi_fwd_packet_length_bundle",
+        "mode": "low_intensity_template",
+        "role": "forward_direction_low_intensity"
+      },
+      {
+        "panel_slot": "bwd_packet_low",
+        "family": "multi_bwd_packet_length_bundle",
+        "mode": "low_intensity_template",
+        "role": "reverse_direction_low_intensity"
+      },
+      {
+        "panel_slot": "init_windows_exact",
+        "family": "multi_init_windows",
+        "mode": "exact_template",
+        "role": "transport_state_exact"
+      },
+      {
+        "panel_slot": "active_idle_exact",
+        "family": "multi_active_idle_bundle",
+        "mode": "exact_template",
+        "role": "high_dimensional_temporal_exact"
+      }
+    ],
+    "within_stratum_ranking": [
+      "maximum geometry_score",
+      "minimum accidental_prevalence_validation",
+      "lexicographic candidate_id"
+    ]
+  },
+  "target_class_id": 0,
+  "target_class_name": "Benign",
+  "source_classes": [
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web-Based"
+  ],
+  "selected_specs": {
+    "multi_flow_iat_bundle__exact_template__donor_00": {
+      "family": "multi_flow_iat_bundle",
+      "mode": "exact_template",
+      "semantic_type": "iat_bundle",
+      "feature_names": [
+        "Flow IAT Mean",
+        "Flow IAT Std",
+        "Flow IAT Max",
+        "Flow IAT Min"
+      ],
+      "feature_indices": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "template_standardized": [
+        -0.03019091486930847,
+        1.7386808395385742,
+        1.6416289806365967,
+        -0.30402612686157227
+      ],
+      "template_raw": [
+        6823322.168574063,
+        16136774.791391488,
+        49954582.443237126,
+        2.0973374135792255
+      ],
+      "donor_train_global_index": 13414,
+      "target_class_id": 0,
+      "target_class_name": "Benign",
+      "distributed_deployment_compatible": true,
+      "clean_label_policy_compatible": true
+    },
+    "multi_flow_iat_bundle__low_intensity_template__donor_00": {
+      "family": "multi_flow_iat_bundle",
+      "mode": "low_intensity_template",
+      "semantic_type": "iat_bundle",
+      "feature_names": [
+        "Flow IAT Mean",
+        "Flow IAT Std",
+        "Flow IAT Max",
+        "Flow IAT Min"
+      ],
+      "feature_indices": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "template_standardized": [
+        -0.267187038064003,
+        0.3689146384596824,
+        0.2304986208677291,
+        -0.3024628072977066
+      ],
+      "template_raw": [
+        2464528.0502800876,
+        5657519.238905532,
+        17584968.111834474,
+        28317.241913423873
+      ],
+      "donor_train_global_index": 13414,
+      "target_class_id": 0,
+      "target_class_name": "Benign",
+      "distributed_deployment_compatible": true,
+      "clean_label_policy_compatible": true
+    },
+    "multi_fwd_packet_length_bundle__low_intensity_template__donor_09": {
+      "family": "multi_fwd_packet_length_bundle",
+      "mode": "low_intensity_template",
+      "semantic_type": "packet_length_bundle",
+      "feature_names": [
+        "Fwd Packet Length Max",
+        "Fwd Packet Length Min",
+        "Fwd Packet Length Mean",
+        "Fwd Packet Length Std"
+      ],
+      "feature_indices": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "template_standardized": [
+        -0.18525655306875705,
+        -0.32240443527698515,
+        -0.26860465556383134,
+        -0.18601539954543114
+      ],
+      "template_raw": [
+        107.50000086513725,
+        18.19999689195683,
+        57.58070981333813,
+        8.845511689685608
+      ],
+      "donor_train_global_index": 151177,
+      "target_class_id": 0,
+      "target_class_name": "Benign",
+      "distributed_deployment_compatible": true,
+      "clean_label_policy_compatible": true
+    },
+    "multi_bwd_packet_length_bundle__low_intensity_template__donor_12": {
+      "family": "multi_bwd_packet_length_bundle",
+      "mode": "low_intensity_template",
+      "semantic_type": "packet_length_bundle",
+      "feature_names": [
+        "Bwd Packet Length Max",
+        "Bwd Packet Length Min",
+        "Bwd Packet Length Mean",
+        "Bwd Packet Length Std"
+      ],
+      "feature_indices": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "template_standardized": [
+        -0.0031272053718566784,
+        -0.24065675362944602,
+        -0.16133178360760211,
+        0.09521198421716687
+      ],
+      "template_raw": [
+        170.3500042598804,
+        12.999997898426727,
+        53.800001607661116,
+        47.72625652161085
+      ],
+      "donor_train_global_index": 278568,
+      "target_class_id": 0,
+      "target_class_name": "Benign",
+      "distributed_deployment_compatible": true,
+      "clean_label_policy_compatible": true
+    },
+    "multi_init_windows__exact_template__donor_01": {
+      "family": "multi_init_windows",
+      "mode": "exact_template",
+      "semantic_type": "initial_window",
+      "feature_names": [
+        "FWD Init Win Bytes",
+        "Bwd Init Win Bytes"
+      ],
+      "feature_indices": [
+        57,
+        58
+      ],
+      "template_standardized": [
+        0.5114765763282776,
+        0.334562212228775
+      ],
+      "template_raw": [
+        14599.99962877982,
+        3650.0001033426297
+      ],
+      "donor_train_global_index": 19615,
+      "target_class_id": 0,
+      "target_class_name": "Benign",
+      "distributed_deployment_compatible": true,
+      "clean_label_policy_compatible": true
+    },
+    "multi_active_idle_bundle__exact_template__donor_18": {
+      "family": "multi_active_idle_bundle",
+      "mode": "exact_template",
+      "semantic_type": "active_idle_bundle",
+      "feature_names": [
+        "Active Mean",
+        "Active Std",
+        "Active Max",
+        "Active Min",
+        "Idle Mean",
+        "Idle Std",
+        "Idle Max",
+        "Idle Min"
+      ],
+      "feature_indices": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "template_standardized": [
+        -0.20588932931423187,
+        -0.20048388838768005,
+        -0.23103386163711548,
+        -0.1473464071750641,
+        0.8540135025978088,
+        -0.08778423815965652,
+        0.7897818684577942,
+        0.8692270517349243
+      ],
+      "template_raw": [
+        307038.6723371106,
+        573.0676611192757,
+        307700.0188289678,
+        306687.9885541046,
+        29736703.987564776,
+        602360.2164090552,
+        30243077.717368856,
+        29070568.122263305
+      ],
+      "donor_train_global_index": 278562,
+      "target_class_id": 0,
+      "target_class_name": "Benign",
+      "distributed_deployment_compatible": true,
+      "clean_label_policy_compatible": true
+    }
+  }
+}
