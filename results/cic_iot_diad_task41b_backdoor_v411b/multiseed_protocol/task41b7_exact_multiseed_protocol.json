@@ -1,0 +1,52 @@
+{
+  "experiment_version": "4.11B.7",
+  "stage": "task41b_exact_matched_multiseed_backdoor_grid",
+  "status": "confirmatory_development_multiseed_not_final_test_result",
+  "selection_frozen_before_multiseed_runs": true,
+  "selection_source": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_task41b_backdoor_v411b\\exact_paired_defense_audit\\seed_7\\task41b6_paired_defense_decision.json",
+  "selection_source_sha256": "164a953a863626d116e1468f8372eaedd3c9e4a1c88bacfab02f2356237d76a8",
+  "qualification_source": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_task41b_backdoor_v411b\\plain_breadth_qualification\\seed_7\\tables\\task41b3_plain_breadth_qualification.csv",
+  "qualification_source_sha256": "f9268c521a741d3f64cfe2dae2671f6a06064b78c0e84c62ad978647344e9948",
+  "paired_summary_source": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_task41b_backdoor_v411b\\exact_paired_defense_audit\\seed_7\\tables\\task41b6_exact_pair_summary.csv",
+  "paired_summary_source_sha256": "d894a73a96b49d091404081509c3c524e39871e3aeca4abc72d371033d0d4de4",
+  "selected_slots": [
+    "flow_iat_exact",
+    "active_idle_exact"
+  ],
+  "selected_candidates": [
+    "multi_flow_iat_bundle__exact_template__donor_00",
+    "multi_active_idle_bundle__exact_template__donor_18"
+  ],
+  "seeds": [
+    7,
+    99,
+    123,
+    2026
+  ],
+  "poison_fraction": 0.01,
+  "label_policy": "dirty_label_all_nonbenign_to_benign",
+  "deployment_policy": "centralized_full_trigger",
+  "source_class": "DDoS",
+  "target_class": "Benign",
+  "malicious_clients": [
+    1,
+    7,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18
+  ],
+  "continuation_rounds": 4,
+  "plain_policy": "plain_fedavg",
+  "defended_policy": "trusted_reconstruction",
+  "reconstruction_policy": "center_plus_residual",
+  "frozen_task40_detector_reused": true,
+  "attack_specific_retuning": false,
+  "threshold_retuning": false,
+  "negative_control_promoted": false,
+  "reserved_test_access_allowed": false,
+  "test_sets_accessed": false,
+  "next_stage_after_completion": "Summarize exact paired multiseed efficacy, detector recall, clean utility, seed consistency, and per-source triggered ASR. Do not access reserved test arrays before the multiseed development decision is frozen."
+}

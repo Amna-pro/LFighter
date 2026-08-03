@@ -1,0 +1,3 @@
+slot,plain_mean_macro_triggered_asr,defended_mean_macro_triggered_asr,mean_macro_triggered_asr_reduction,relative_reduction_from_group_means,paired_bootstrap_95ci_low,paired_bootstrap_95ci_high,exact_sign_flip_two_sided_p,improved_seed_count,worsened_seed_count,mean_defended_malicious_recall,maximum_defended_benign_fpr
+flow_iat_exact,0.1490092928564304,0.136705030645945,0.0123042622104854,0.0825737910342311,-0.0049673138698693,0.0410919713953006,0.75,2,2,0.078125,0.0
+active_idle_exact,0.1925499543570708,0.1943363376720117,-0.0017863833149408,-0.0092775057823598,-0.0135460551927848,0.0148824365303293,0.875,1,3,0.0859375,0.0

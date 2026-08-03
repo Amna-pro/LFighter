@@ -1,0 +1,12 @@
+{
+  "experiment_version": "4.11B.7",
+  "completed_exact_pair_count": 8,
+  "expected_exact_pair_count": 8,
+  "executed_branch_count": 12,
+  "skipped_valid_branch_count": 4,
+  "all_exact_pairs_complete": true,
+  "attack_specific_retuning": false,
+  "reserved_test_accessed": false,
+  "final_paper_claim_allowed": false,
+  "next_stage": "Task 41B.8 exact paired multiseed summary and decision."
+}
