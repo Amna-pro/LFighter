@@ -1,0 +1,15 @@
+check_name,passed,detail
+branch,True,feature/cic-iot-diad-task41c-backdoor-extension-v1
+c0_tag_commit,True,a60554177a6823c16a503e8b9316aed8c2d961a4
+protocol_version,True,4.12C.0
+c0_frozen,True,True
+c1a_allowed,True,True
+attack_execution_blocked,True,False
+c1a_ready_seeds,True,4
+task41b_not_reopened,True,False
+reserved_test_not_accessed,True,False
+frozen_seeds,True,"[7, 99, 123, 2026]"
+source_files_audited,True,9
+clean_schema_inventory_nonempty,True,124
+npz_headers_inspected,True,112
+reserved_paths_never_opened,True,8

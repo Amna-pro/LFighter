@@ -1,0 +1,18 @@
+{
+  "experiment_version": "4.12C.1b",
+  "stage": "task41c_clean_calibration_interface_audit",
+  "git_branch": "feature/cic-iot-diad-task41c-backdoor-extension-v1",
+  "git_head": "39a8169e2934f768a05a86d5299e7c081916066b",
+  "source_file_count": 9,
+  "schema_file_count": 124,
+  "npz_header_count": 112,
+  "excluded_reserved_name_reference_count": 8,
+  "reserved_name_references_opened": false,
+  "reserved_name_references_hashed": false,
+  "dataset_arrays_loaded": false,
+  "attack_execution_performed": false,
+  "task41b_reopened": false,
+  "reserved_test_accessed": false,
+  "c1_implementation_allowed": true,
+  "next_stage": "Use the audited schemas to implement D1 trigger-response shift, D2 trigger-gradient alignment, and D3 equal-rank fusion. Calibration must use clean warmup and independent-anchor evidence only."
+}

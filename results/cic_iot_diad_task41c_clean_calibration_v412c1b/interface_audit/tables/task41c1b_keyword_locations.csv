@@ -1,0 +1,1420 @@
+relative_path,keyword,line,text
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,47,from transition_signature_features_v38 import (
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,48,"balanced_probe_indices,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,anchor,53,from independent_anchor_v310 import (
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,55,"SCORE_COLUMN,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,65,from trusted_update_reconstruction_v312 import (
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,68,"floating_update,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,69,"reconstruct_update,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,70,"state_from_update,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,71,"update_norm,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,74,"DEFAULT_MALICIOUS_CLIENTS = ""1,7,8,10,14,15,17,18"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,77,"BACKDOOR_ATTACK_TYPE = ""dirty_label_trigger_to_benign"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,114,"choices=[""dirty_label_all_nonbenign_to_benign""],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,115,"default=""dirty_label_all_nonbenign_to_benign"","
+scripts/run_task41b_backdoor_smoke_v411b1.py,gradient,131,"parser.add_argument(""--gradient-clip-norm"", type=float, default=5.0)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,133,"parser.add_argument(""--probe-per-class"", type=int, default=48)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,134,"parser.add_argument(""--probe-seed"", type=int, default=3701)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,141,"parser.add_argument(""--target-class"", default=""Benign"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,143,"parser.add_argument(""--malicious-clients"", default=DEFAULT_MALICIOUS_CLIENTS)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,152,def parse_client_ids(text: str) -> List[int]:
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,189,"if int(spec.get(""target_class_id"", -1)) != CLASS_NAMES.index(""Benign""):"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,190,"raise RuntimeError(""Task 41B trigger target must be Benign"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,191,"if str(spec.get(""target_class_name"")) != ""Benign"":"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,192,"raise RuntimeError(""Task 41B trigger target name must be Benign"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,200,"client_id: int,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,205,"f""{base_seed}|{client_id}|{candidate_id}|{label_policy}"".encode(""utf-8"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,214,"malicious_clients: List[int],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,231,malicious_set = set(int(value) for value in malicious_clients)
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,237,"digest.update(candidate_id.encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,238,"digest.update(label_policy.encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,239,"digest.update(deployment_policy.encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,240,"digest.update(trigger_spec_sha256.encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,241,"digest.update(np.asarray([float(poison_fraction)], dtype=np.float64).tobytes())"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,243,"for client_id, global_indices in enumerate(client_indices):"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,247,"stable_backdoor_seed(attack_seed, client_id, candidate_id, label_policy)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,249,if client_id in malicious_set and len(eligible):
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,249,if client_id in malicious_set and len(eligible):
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,260,positions_by_client[client_id] = selected
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,261,labels_by_client[client_id] = replacements
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,263,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,263,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,264,digest.update(selected_global.tobytes())
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,265,digest.update(replacements.tobytes())
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,269,"""client_id"": int(client_id),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,270,"""is_malicious"": bool(client_id in malicious_set),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,270,"""is_malicious"": bool(client_id in malicious_set),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,291,"""client_id"": int(client_id),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,292,"""is_malicious"": bool(client_id in malicious_set),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,292,"""is_malicious"": bool(client_id in malicious_set),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,303,"malicious_manifest = client_manifest[client_manifest[""is_malicious""].astype(bool)]"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,304,"if int(malicious_manifest[""poisoned_rows""].sum()) <= 0:"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,305,"raise RuntimeError(""Backdoor attack selected no malicious-client rows"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,307,"malicious_manifest[""poisoned_rows""].astype(int)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,308,"== malicious_manifest[""changed_rows_verified""].astype(int)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,329,"for client_id, positions in poisoned_positions.items():"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,331,verified[client_id] = 0
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,333,global_rows = client_indices[client_id][positions]
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,338,verified[client_id] = int(np.sum(matches))
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,363,"monitoring_round: int,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,381,"""monitoring_round"": int(monitoring_round),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,396,"""triggered_asr_all_nonbenign"": float(np.mean(predicted == target_id)),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,411,"f""client_{client_id:03d}"":"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,413,"for client_id, labels"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,422,"client_id: int,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,429,"f""client_{client_id:03d}_{suffix}"","
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,430,"f""client_{client_id}_{suffix}"","
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,435,"f""client_{client_id:03d}"","
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,436,"f""client_{client_id}"","
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,437,"str(client_id),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,444,"f""No NPZ array for client {client_id}"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,457,"expected_malicious_clients: List[int],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,470,"manifest_path = manifest_dir / ""malicious_client_poison_manifest.csv"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,501,"malicious_clients = [int(value) for value in metadata.get(""malicious_clients"", [])]"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,502,if malicious_clients != expected_malicious_clients:
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,503,"raise RuntimeError(""Task 41B malicious coalition mismatch"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,510,"for client_id, partition in enumerate(client_indices):"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,512,"index_npz, client_id, ""global_indices"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,515,"label_npz, client_id"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,518,"raise RuntimeError(f""Task 41B poison length mismatch for client {client_id}"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,529,"f""Task 41B poisoned row is outside client {client_id}"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,535,positions[client_id] = local_positions
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,536,labels[client_id] = replacements.copy()
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,541,"malicious_clients,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,568,"score_rows: List[Dict[str, object]],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,569,"signature_rows: List[Dict[str, object]],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,anchor,573,"pd.DataFrame(score_rows).to_csv(tables_dir / ""continuation_client_anchor_scores_partial.csv"", index=False)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,573,"pd.DataFrame(score_rows).to_csv(tables_dir / ""continuation_client_anchor_scores_partial.csv"", index=False)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,574,"pd.DataFrame(signature_rows).to_csv(tables_dir / ""continuation_transition_signature_long_partial.csv"", index=False)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,587,"if args.target_class != ""Benign"":"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,588,"raise ValueError(""Task 41B target class is frozen to Benign"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,667,"probe_indices = balanced_probe_indices(y_val, args.probe_per_class, args.probe_seed)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,668,probe_hash = hashlib.sha256(np.ascontiguousarray(probe_indices).tobytes()).hexdigest()
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,669,"if probe_hash != warmup_metadata[""probe_hash_sha256""]:"
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,670,"raise RuntimeError(""Probe hash does not match warmup branch point"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,671,X_probe = X_val[probe_indices]
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,672,y_probe = y_val[probe_indices]
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,680,"threshold = float(calibration_summary[""clean_ema_threshold""])"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,701,requested_clients = parse_client_ids(args.malicious_clients)
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,701,requested_clients = parse_client_ids(args.malicious_clients)
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,703,"raise ValueError(""Task 41B is frozen to eight malicious clients"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,705,malicious_clients = requested_clients
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,715,"malicious_clients=malicious_clients,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,726,"malicious_clients,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,738,"expected_malicious_clients=requested_clients,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,742,malicious_clients = []
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,744,"client_id: np.empty(0, dtype=np.int64)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,745,for client_id in range(args.num_clients)
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,748,"client_id: np.empty(0, dtype=np.int64)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,749,for client_id in range(args.num_clients)
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,753,"""client_id"": client_id,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,754,"""is_malicious"": False,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,768,"for client_id, indices in enumerate(client_indices)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,772,"""client_id"": int(client_id),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,773,"""is_malicious"": False,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,781,for client_id in range(args.num_clients)
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,786,"digest.update(args.trigger_candidate_id.encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,787,for client_id in range(args.num_clients):
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,788,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,788,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,798,"poison_manifest[""triggered_rows_verified""] = poison_manifest[""client_id""].map("
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,808,"attack_dir / ""malicious_client_poison_manifest.csv"", index=False"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,852,"""malicious_clients"": ""|"".join(map(str, malicious_clients)),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,866,ema_threshold_q99 = float(threshold)
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,867,"instant_threshold_q95 = float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,residual,869,"residual_profiles: Dict[int, Dict[str, torch.Tensor]] = {}"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,870,"warmup_update_scale = float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,877,warmup_scores_path = (
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,879,"/ ""clean_leave_one_round_out_scores.csv"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,881,if not warmup_scores_path.exists():
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,882,raise FileNotFoundError(warmup_scores_path)
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,883,warmup_scores = pd.read_csv(warmup_scores_path)
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,884,ema_threshold_q99 = quantile_higher(
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,885,"warmup_scores[SCORE_COLUMN].to_numpy(dtype=np.float64),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,888,instant_threshold_q95 = quantile_higher(
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,889,"warmup_scores[CANDIDATE].to_numpy(dtype=np.float64),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,898,"/ ""trusted_update_reconstruction_profiles.pt"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,residual,936,residual_profiles = {
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,937,int(client_id): {
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,941,"for client_id, profile in reconstruction_bundle["
+scripts/run_task41b_backdoor_smoke_v411b1.py,residual,942,"""client_residual_profiles"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,center,948,"if selected_reconstruction_policy != ""center_plus_residual"":"
+scripts/run_task41b_backdoor_smoke_v411b1.py,residual,948,"if selected_reconstruction_policy != ""center_plus_residual"":"
+scripts/run_task41b_backdoor_smoke_v411b1.py,center,950,"""V3.20B.1 requires center_plus_residual"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,residual,950,"""V3.20B.1 requires center_plus_residual"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,952,warmup_update_scale = float(
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,953,"reconstruction_bundle[""warmup_update_scale""]"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,964,"score_rows: List[Dict[str, object]] = []"
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,966,"signature_rows: List[Dict[str, object]] = []"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1005,"start_round = int(saved[""monitoring_round""]) + 1"
+scripts/run_task41b_backdoor_smoke_v411b1.py,anchor,1008,"score_rows = load_rows(tables_dir / ""continuation_client_anchor_scores_partial.csv"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1008,"score_rows = load_rows(tables_dir / ""continuation_client_anchor_scores_partial.csv"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,1009,"signature_rows = load_rows(tables_dir / ""continuation_transition_signature_long_partial.csv"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1021,"print(""Frozen EMA threshold:"", f""{ema_threshold_q99:.6f}"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1024,"""Frozen instant threshold:"","
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1025,"f""{instant_threshold_q95:.6f}"","
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1032,"print(""Malicious clients:"", malicious_clients)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1034,"for monitoring_round in range(start_round, args.continuation_rounds + 1):"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1035,global_round = 4 + monitoring_round
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1043,for client_id in range(args.num_clients):
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1044,indices = client_indices[client_id]
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1047,positions = poisoned_positions[client_id]
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1049,replacements = poisoned_labels[client_id]
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1052,"f""Poison plan mismatch for client {client_id}"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,gradient,1069,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1070,"seed=args.model_seed + global_round * 1000 + client_id,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,1072,"probabilities = predict_probabilities(local_model, X_probe, args.evaluation_batch_size)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,probe,1073,"local_means = class_conditional_probability_means(probabilities, y_probe)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1078,"""monitoring_round"": int(monitoring_round),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1080,"""client_id"": int(client_id),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1081,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1081,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1098,"for client_id, local_matrix in enumerate(local_matrices):"
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,1102,signature_rows.append({
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1103,"""monitoring_round"": int(monitoring_round),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1105,"""client_id"": int(client_id),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1106,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1106,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1113,"""frozen_profile_probability"": float(profiles[client_id][source_index, target_index]),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1117,"""monitoring_round"": int(monitoring_round),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1119,"""client_id"": int(client_id),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1120,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1120,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1121,"""client_samples"": int(sample_counts[client_id]),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1122,"""aggregation_weight"": float(raw_weights[client_id]),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1123,"""poisoned_rows"": int(len(poisoned_positions[client_id])),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1126,"profiles[client_id],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1134,"current_scored = apply_feature_calibration(pd.DataFrame(current_raw), feature_calibration)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1135,"current_scored, ema_memory = add_candidate_and_ema("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1136,"current_scored, args.ema_decay, initial_ema=ema_memory"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1144,"current_scored[""clean_ema_threshold""] = threshold"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1144,"current_scored[""clean_ema_threshold""] = threshold"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1145,"current_scored[""instant_threshold""] = float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1145,"current_scored[""instant_threshold""] = float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1146,"current_scored[""ema_ratio""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1147,current_scored[SCORE_COLUMN].to_numpy(dtype=np.float64)
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1148,"/ max(float(threshold), 1e-12)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1150,"current_scored[""instant_ratio""] = float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1151,"current_scored[""policy_ratio""] = current_scored["
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1154,"current_scored[""flagged""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1155,current_scored[SCORE_COLUMN] > threshold
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1155,current_scored[SCORE_COLUMN] > threshold
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1158,"current_scored[""clean_ema_threshold""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1158,"current_scored[""clean_ema_threshold""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1159,ema_threshold_q99
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1161,"current_scored[""instant_threshold""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1161,"current_scored[""instant_threshold""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1162,instant_threshold_q95
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1164,"current_scored[""ema_ratio""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1165,current_scored[SCORE_COLUMN].to_numpy(dtype=np.float64)
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1166,"/ max(ema_threshold_q99, 1e-12)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1168,"current_scored[""instant_ratio""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1169,current_scored[CANDIDATE].to_numpy(dtype=np.float64)
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1170,"/ max(instant_threshold_q95, 1e-12)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1172,"current_scored[""policy_ratio""] = np.maximum("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1173,"current_scored[""ema_ratio""].to_numpy("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1176,"current_scored[""instant_ratio""].to_numpy("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1180,"current_scored[""flagged""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1181,"current_scored[""policy_ratio""] > 1.0"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1184,flags_for_reconstruction = current_scored[
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1187,updates = [
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1188,"floating_update(state, reference_state)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1192,client_id
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1193,for client_id in range(args.num_clients)
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1194,if not flags_for_reconstruction[client_id]
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1200,trusted_updates = [
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1201,updates[client_id] for client_id in trusted_ids
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1201,updates[client_id] for client_id in trusted_ids
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1204,update_norm(update) for update in trusted_updates
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1206,current_center = coordinate_median(trusted_updates)
+scripts/run_task41b_backdoor_smoke_v411b1.py,center,1206,current_center = coordinate_median(trusted_updates)
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1207,current_update_scale = float(np.median(trusted_norms))
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1209,for client_id in range(args.num_clients):
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1211,flags_for_reconstruction[client_id]
+scripts/run_task41b_backdoor_smoke_v411b1.py,residual,1214,"""residual_scale"": float(""nan""),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1217,"""reconstructed_update_norm"": float(""nan""),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1220,"reconstructed_update, reconstruction_meta = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1221,reconstruct_update(
+scripts/run_task41b_backdoor_smoke_v411b1.py,center,1222,"current_center=current_center,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,residual,1223,historical_residual=residual_profiles[
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1224,client_id
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1229,current_update_scale=(
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1230,current_update_scale
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1232,warmup_update_scale=(
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1233,warmup_update_scale
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1243,replacement_states[client_id] = (
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1244,state_from_update(
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1246,"reconstructed_update,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1252,"""monitoring_round"": int(monitoring_round),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1254,"""client_id"": int(client_id),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1255,"""actual_malicious"": bool("
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1256,client_id in malicious_clients
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1256,client_id in malicious_clients
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1259,flags_for_reconstruction[client_id]
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1261,"""update_replaced"": replaced,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1265,"""actual_update_norm"": update_norm("
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1266,updates[client_id]
+scripts/run_task41b_backdoor_smoke_v411b1.py,update,1266,updates[client_id]
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1271,"current_scored[""harm_weight""] = ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1272,"current_scored[""aggregation_weight""]"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1273,* current_scored[
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1277,score_rows.extend(
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1278,"current_scored.to_dict(orient=""records"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1331,"""monitoring_round"": monitoring_round,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1346,"""monitoring_round"": monitoring_round,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1365,"monitoring_round=monitoring_round,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1373,"labels = current_scored[""actual_malicious""].astype(bool).to_numpy()"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1373,"labels = current_scored[""actual_malicious""].astype(bool).to_numpy()"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1374,"flags = current_scored[""flagged""].astype(bool).to_numpy()"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1375,benign = ~labels
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1377,malicious_recall = float(np.mean(flags[labels]))
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1379,"mean_malicious_score = float(current_scored.loc[labels, SCORE_COLUMN].mean())"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1379,"mean_malicious_score = float(current_scored.loc[labels, SCORE_COLUMN].mean())"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1380,"malicious_harm = float(current_scored.loc[labels, ""harm_weight""].sum())"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1380,"malicious_harm = float(current_scored.loc[labels, ""harm_weight""].sum())"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1382,"malicious_recall = float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1384,"mean_malicious_score = float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1384,"mean_malicious_score = float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1385,malicious_harm = 0.0
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1386,"benign_fpr = float(np.mean(flags[benign])) if benign.any() else float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1387,"mean_benign_score = float(current_scored.loc[benign, SCORE_COLUMN].mean()) if benign.any() else float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1387,"mean_benign_score = float(current_scored.loc[benign, SCORE_COLUMN].mean()) if benign.any() else float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1388,"total_harm = float(current_scored[""harm_weight""].sum())"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1389,"malicious_harm_share = malicious_harm / max(total_harm, 1e-12) if labels.any() else float(""nan"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1392,"""monitoring_round"": int(monitoring_round),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1401,"""malicious_recall"": malicious_recall,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1402,"""benign_false_positive_rate"": benign_fpr,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,anchor,1404,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1404,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1404,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,anchor,1405,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1405,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1405,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1407,"""malicious_harm_share"": malicious_harm_share,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1427,"""monitoring_round"": int(monitoring_round),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1450,"save_partial(tables_dir, round_rows, local_rows, score_rows, signature_rows)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,1450,"save_partial(tables_dir, round_rows, local_rows, score_rows, signature_rows)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1454,"recall_text = ""NA"" if not labels.any() else f""{malicious_recall:.3f}"""
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1456,"f""monitoring round {monitoring_round:02d}, global round {global_round:02d}, """
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1459,"f""recall={recall_text}, benign FPR={benign_fpr:.3f}, """
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1466,score_table = pd.DataFrame(score_rows)
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,1467,signature_table = pd.DataFrame(signature_rows)
+scripts/run_task41b_backdoor_smoke_v411b1.py,anchor,1470,"score_table.to_csv(tables_dir / ""continuation_client_anchor_scores.csv"", index=False)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1470,"score_table.to_csv(tables_dir / ""continuation_client_anchor_scores.csv"", index=False)"
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,1471,signature_table.to_csv(
+scripts/run_task41b_backdoor_smoke_v411b1.py,signature,1472,"tables_dir / ""continuation_transition_signature_long.csv"","
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1494,"round_table[""monitoring_round""],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1500,"round_table[""monitoring_round""],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1506,"round_table[""monitoring_round""],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1521,"group = group.sort_values(""monitoring_round"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1523,"group[""monitoring_round""],"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1537,"ax.plot(round_table[""monitoring_round""], round_table[""benign_false_positive_rate""], marker=""o"", label=""Benign FPR"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1537,"ax.plot(round_table[""monitoring_round""], round_table[""benign_false_positive_rate""], marker=""o"", label=""Benign FPR"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1539,"ax.plot(round_table[""monitoring_round""], round_table[""malicious_recall""], marker=""s"", label=""Malicious recall"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1539,"ax.plot(round_table[""monitoring_round""], round_table[""malicious_recall""], marker=""s"", label=""Malicious recall"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,anchor,1543,"ax.set_title(""Frozen independent-anchor detection"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,anchor,1546,"save_figure(fig, figures_dir / ""anchor_detection_dynamics"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1585,"""frozen_ema_threshold"": float(ema_threshold_q99),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1586,"""frozen_instant_threshold"": ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1588,if not np.isfinite(instant_threshold_q95)
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1589,else float(instant_threshold_q95)
+scripts/run_task41b_backdoor_smoke_v411b1.py,score,1592,"""score_column"": SCORE_COLUMN,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,threshold,1595,"""clean_ema_threshold"": float(threshold),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,client_id,1597,"""stable_client_identity_required"": True,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1598,"""malicious_clients"": malicious_clients,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1619,"""malicious_labels_used_for_aggregation"": False,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1620,"""malicious_labels_used_for_reporting_only"": True,"
+scripts/run_task41b_backdoor_smoke_v411b1.py,monitoring_round,1621,"""rounds_completed"": int(round_table[""monitoring_round""].max()),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1624,"""mean_triggered_asr_all_nonbenign"": float(round_table[""triggered_asr_all_nonbenign""].mean()),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1627,"""mean_benign_false_positive_rate"": float(round_table[""benign_false_positive_rate""].mean()),"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1628,"""mean_malicious_recall"": ("
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1629,"None if args.mode == ""clean"" else float(round_table[""malicious_recall""].mean())"
+scripts/run_task41b_backdoor_smoke_v411b1.py,benign,1643,"print(""Mean benign FPR:"", f""{round_table['benign_false_positive_rate'].mean():.6f}"")"
+scripts/run_task41b_backdoor_smoke_v411b1.py,malicious,1645,"print(""Mean malicious recall:"", f""{round_table['malicious_recall'].mean():.6f}"")"
+scripts/build_frozen_reconstruction_calibration_v3123.py,signature,36,from transition_signature_features_v38 import (
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,37,"balanced_probe_indices,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,anchor,46,from independent_anchor_v310 import file_sha256
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,47,from trusted_update_reconstruction_v312 import (
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,48,"add_updates,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,51,"floating_update,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,52,"reconstruct_update,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,55,"subtract_updates,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,56,"update_cosine,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,57,"update_norm,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,63,"""center_only"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,64,"""center_plus_residual"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,64,"""center_plus_residual"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,65,"""center_plus_scaled_residual"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,65,"""center_plus_scaled_residual"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,66,"""center_plus_scaled_residual_normclip"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,66,"""center_plus_scaled_residual_normclip"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,82,"parser.add_argument(""--probe-per-class"", type=int, default=48)"
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,83,"parser.add_argument(""--probe-seed"", type=int, default=3701)"
+scripts/build_frozen_reconstruction_calibration_v3123.py,benign,85,"parser.add_argument(""--target-class"", default=""Benign"")"
+scripts/build_frozen_reconstruction_calibration_v3123.py,gradient,89,"parser.add_argument(""--gradient-clip-norm"", type=float, default=5.0)"
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,210,probe_indices = balanced_probe_indices(
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,212,"args.probe_per_class,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,213,"args.probe_seed,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,215,X_probe = X_val[probe_indices]
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,216,y_probe = y_val[probe_indices]
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,217,probe_hash = hashlib.sha256(
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,218,np.ascontiguousarray(probe_indices).tobytes()
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,220,"if probe_hash != warmup_metadata[""probe_hash_sha256""]:"
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,221,"raise RuntimeError(""Replay probe hash does not match V3.10"")"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,226,"updates_by_round: Dict[int, List[Mapping[str, torch.Tensor]]] = {}"
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,227,"centers_by_round: Dict[int, Mapping[str, torch.Tensor]] = {}"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,228,"update_norms_by_round: Dict[int, List[float]] = {}"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,233,"print(""Trusted Update Reconstruction Calibration V3.12"")"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,242,local_updates = []
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,244,for client_id in range(args.num_clients):
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,245,indices = client_indices[client_id]
+scripts/build_frozen_reconstruction_calibration_v3123.py,gradient,257,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,258,"seed=args.model_seed + round_id * 1000 + client_id,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,262,"X_probe,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,probe,267,"y_probe,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,269,"update = floating_update(state, reference_state)"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,272,local_updates.append(update)
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,276,"""client_id"": client_id,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,278,"""update_norm"": update_norm(update),"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,284,center = coordinate_median(local_updates)
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,284,center = coordinate_median(local_updates)
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,285,updates_by_round[round_id] = local_updates
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,286,centers_by_round[round_id] = center
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,287,update_norms_by_round[round_id] = [
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,288,update_norm(update) for update in local_updates
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,341,"f""median update norm="""
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,342,"f""{np.median(update_norms_by_round[round_id]):.6f}, """
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,503,"residuals_by_round: Dict[int, List[Mapping[str, torch.Tensor]]] = {}"
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,505,residuals_by_round[round_id] = [
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,506,"subtract_updates(update, centers_by_round[round_id])"
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,506,"subtract_updates(update, centers_by_round[round_id])"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,507,for update in updates_by_round[round_id]
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,510,warmup_update_scale = float(
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,513,np.median(update_norms_by_round[round_id])
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,528,residual_profiles = {
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,529,client_id: coordinate_median(
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,531,residuals_by_round[round_id][client_id]
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,531,residuals_by_round[round_id][client_id]
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,535,for client_id in range(args.num_clients)
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,538,for client_id in range(args.num_clients):
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,539,trusted_updates = [
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,540,updates_by_round[heldout_round][other_client]
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,542,if other_client != client_id
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,545,update_norm(update) for update in trusted_updates
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,547,current_center = coordinate_median(trusted_updates)
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,547,current_center = coordinate_median(trusted_updates)
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,549,"reconstructed, reconstruction_meta = reconstruct_update("
+scripts/build_frozen_reconstruction_calibration_v3123.py,center,550,"current_center=current_center,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,551,"historical_residual=residual_profiles[client_id],"
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,551,"historical_residual=residual_profiles[client_id],"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,553,"current_update_scale=current_scale,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,554,"warmup_update_scale=warmup_update_scale,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,560,actual = updates_by_round[heldout_round][client_id]
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,560,actual = updates_by_round[heldout_round][client_id]
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,565,"""client_id"": client_id,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,570,"""cosine_similarity"": update_cosine("
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,574,"""actual_update_norm"": update_norm(actual),"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,601,"group[""reconstructed_update_norm""]"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,602,"/ group[""actual_update_norm""].clip(lower=1e-12)"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,607,"group[""reconstructed_update_norm""]"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,608,"/ group[""actual_update_norm""].clip(lower=1e-12)"
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,672,final_residual_profiles = {
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,673,client_id: coordinate_median(
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,675,residuals_by_round[round_id][client_id]
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,675,residuals_by_round[round_id][client_id]
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,679,for client_id in range(args.num_clients)
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,683,"calibration_dir / ""trusted_update_reconstruction_profiles.pt"""
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,688,"""phase"": ""trusted_clean_update_reconstruction_calibration_with_functional_replay_equivalence"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,residual,692,"""client_residual_profiles"": final_residual_profiles,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,693,"""warmup_update_scale"": warmup_update_scale,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,718,"tables_dir / ""trusted_warmup_replay_local_updates.csv"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,727,"""warmup_update_scale"": warmup_update_scale,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,malicious,749,"""malicious_labels_used"": False,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,778,"""phase"": ""trusted_clean_update_reconstruction_calibration_with_functional_replay_equivalence"","
+scripts/build_frozen_reconstruction_calibration_v3123.py,client_id,787,"""stable_client_identity_required"": True,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,malicious,790,"""malicious_labels_used"": False,"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,794,"with (output_dir / ""trusted_update_reconstruction_v312_metadata.json"").open("
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,801,"print(""Trusted Update Reconstruction Calibration V3.12.1 complete"")"
+scripts/build_frozen_reconstruction_calibration_v3123.py,update,813,"print(""Warmup update scale:"", f""{warmup_update_scale:.8f}"")"
+scripts/run_frozen_reconstruction_v3123.py,update,2,"""""""Run RNG-isolated V3.12.2 trusted update reconstruction from the common checkpoint."""""""
+scripts/run_frozen_reconstruction_v3123.py,signature,42,from transition_signature_features_v38 import (
+scripts/run_frozen_reconstruction_v3123.py,probe,43,"balanced_probe_indices,"
+scripts/run_frozen_reconstruction_v3123.py,anchor,48,from independent_anchor_v310 import (
+scripts/run_frozen_reconstruction_v3123.py,score,50,"SCORE_COLUMN,"
+scripts/run_frozen_reconstruction_v3123.py,update,59,from trusted_update_reconstruction_v312 import (
+scripts/run_frozen_reconstruction_v3123.py,update,62,"floating_update,"
+scripts/run_frozen_reconstruction_v3123.py,update,63,"reconstruct_update,"
+scripts/run_frozen_reconstruction_v3123.py,update,65,"state_from_update,"
+scripts/run_frozen_reconstruction_v3123.py,update,66,"update_cosine,"
+scripts/run_frozen_reconstruction_v3123.py,update,67,"update_norm,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,71,"DEFAULT_MALICIOUS_CLIENTS = ""1,7,8,10,14,15,17,18"""
+scripts/run_frozen_reconstruction_v3123.py,gradient,102,"parser.add_argument(""--gradient-clip-norm"", type=float, default=5.0)"
+scripts/run_frozen_reconstruction_v3123.py,probe,104,"parser.add_argument(""--probe-per-class"", type=int, default=48)"
+scripts/run_frozen_reconstruction_v3123.py,probe,105,"parser.add_argument(""--probe-seed"", type=int, default=3701)"
+scripts/run_frozen_reconstruction_v3123.py,benign,107,"parser.add_argument(""--target-class"", default=""Benign"")"
+scripts/run_frozen_reconstruction_v3123.py,malicious,109,"parser.add_argument(""--malicious-clients"", default=DEFAULT_MALICIOUS_CLIENTS)"
+scripts/run_frozen_reconstruction_v3123.py,client_id,118,def parse_client_ids(text: str) -> List[int]:
+scripts/run_frozen_reconstruction_v3123.py,signature,142,"signature_rows: List[Dict[str, object]],"
+scripts/run_frozen_reconstruction_v3123.py,signature,156,pd.DataFrame(signature_rows).to_csv(
+scripts/run_frozen_reconstruction_v3123.py,signature,157,"tables_dir / ""reconstruction_transition_signature_long_partial.csv"","
+scripts/run_frozen_reconstruction_v3123.py,score,206,warmup_scores_path = (
+scripts/run_frozen_reconstruction_v3123.py,score,207,"warmup_dir / ""calibration"" / ""clean_leave_one_round_out_scores.csv"""
+scripts/run_frozen_reconstruction_v3123.py,update,216,"/ ""trusted_update_reconstruction_profiles.pt"""
+scripts/run_frozen_reconstruction_v3123.py,score,229,"warmup_scores_path,"
+scripts/run_frozen_reconstruction_v3123.py,probe,273,probe_indices = balanced_probe_indices(
+scripts/run_frozen_reconstruction_v3123.py,probe,275,"args.probe_per_class,"
+scripts/run_frozen_reconstruction_v3123.py,probe,276,"args.probe_seed,"
+scripts/run_frozen_reconstruction_v3123.py,probe,278,probe_hash = hashlib.sha256(
+scripts/run_frozen_reconstruction_v3123.py,probe,279,np.ascontiguousarray(probe_indices).tobytes()
+scripts/run_frozen_reconstruction_v3123.py,probe,281,"if probe_hash != warmup_metadata[""probe_hash_sha256""]:"
+scripts/run_frozen_reconstruction_v3123.py,probe,282,"raise RuntimeError(""Probe hash mismatch"")"
+scripts/run_frozen_reconstruction_v3123.py,probe,283,X_probe = X_val[probe_indices]
+scripts/run_frozen_reconstruction_v3123.py,probe,284,y_probe = y_val[probe_indices]
+scripts/run_frozen_reconstruction_v3123.py,score,288,warmup_scores = pd.read_csv(warmup_scores_path)
+scripts/run_frozen_reconstruction_v3123.py,threshold,289,ema_threshold = quantile_higher(
+scripts/run_frozen_reconstruction_v3123.py,score,290,"warmup_scores[SCORE_COLUMN].to_numpy(dtype=np.float64),"
+scripts/run_frozen_reconstruction_v3123.py,threshold,293,instant_threshold = quantile_higher(
+scripts/run_frozen_reconstruction_v3123.py,score,294,"warmup_scores[CANDIDATE].to_numpy(dtype=np.float64),"
+scripts/run_frozen_reconstruction_v3123.py,residual,298,residual_profiles = {
+scripts/run_frozen_reconstruction_v3123.py,client_id,299,int(client_id): {
+scripts/run_frozen_reconstruction_v3123.py,client_id,303,"for client_id, profile in reconstruction_bundle["
+scripts/run_frozen_reconstruction_v3123.py,residual,304,"""client_residual_profiles"""
+scripts/run_frozen_reconstruction_v3123.py,update,308,"warmup_update_scale = float(reconstruction_bundle[""warmup_update_scale""])"
+scripts/run_frozen_reconstruction_v3123.py,client_id,324,requested = parse_client_ids(args.malicious_clients)
+scripts/run_frozen_reconstruction_v3123.py,malicious,324,requested = parse_client_ids(args.malicious_clients)
+scripts/run_frozen_reconstruction_v3123.py,malicious,326,"malicious_clients,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,335,"malicious_client_fraction=len(requested) / args.num_clients,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,339,"explicit_malicious_clients=requested,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,342,malicious_clients = []
+scripts/run_frozen_reconstruction_v3123.py,client_id,344,"client_id: np.empty(0, dtype=np.int64)"
+scripts/run_frozen_reconstruction_v3123.py,client_id,345,for client_id in range(args.num_clients)
+scripts/run_frozen_reconstruction_v3123.py,client_id,350,"""client_id"": client_id,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,351,"""is_malicious"": False,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,363,"for client_id, indices in enumerate(client_indices)"
+scripts/run_frozen_reconstruction_v3123.py,client_id,367,for client_id in range(args.num_clients):
+scripts/run_frozen_reconstruction_v3123.py,client_id,368,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_frozen_reconstruction_v3123.py,update,368,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_frozen_reconstruction_v3123.py,malicious,372,"attack_dir / ""malicious_client_poison_manifest.csv"","
+scripts/run_frozen_reconstruction_v3123.py,signature,385,"signature_rows: List[Dict[str, object]] = []"
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,420,"start_round = int(saved[""monitoring_round""]) + 1"
+scripts/run_frozen_reconstruction_v3123.py,signature,430,signature_rows = load_rows(
+scripts/run_frozen_reconstruction_v3123.py,signature,432,"/ ""reconstruction_transition_signature_long_partial.csv"""
+scripts/run_frozen_reconstruction_v3123.py,update,439,"print(""RNG-Isolated Trusted Update Reconstruction V3.12.2"")"
+scripts/run_frozen_reconstruction_v3123.py,threshold,443,"print(""Frozen EMA q99 threshold:"", f""{ema_threshold:.6f}"")"
+scripts/run_frozen_reconstruction_v3123.py,threshold,444,"print(""Frozen instant q95 threshold:"", f""{instant_threshold:.6f}"")"
+scripts/run_frozen_reconstruction_v3123.py,malicious,445,"print(""Malicious clients:"", malicious_clients)"
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,448,"for monitoring_round in range(start_round, args.continuation_rounds + 1):"
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,450,global_round = 4 + monitoring_round
+scripts/run_frozen_reconstruction_v3123.py,client_id,458,for client_id in range(args.num_clients):
+scripts/run_frozen_reconstruction_v3123.py,client_id,459,indices = client_indices[client_id]
+scripts/run_frozen_reconstruction_v3123.py,client_id,462,positions = poisoned_positions[client_id]
+scripts/run_frozen_reconstruction_v3123.py,client_id,466,local_seed = args.model_seed + global_round * 1000 + client_id
+scripts/run_frozen_reconstruction_v3123.py,client_id,467,is_malicious = bool(client_id in malicious_clients)
+scripts/run_frozen_reconstruction_v3123.py,malicious,467,is_malicious = bool(client_id in malicious_clients)
+scripts/run_frozen_reconstruction_v3123.py,malicious,471,and is_malicious
+scripts/run_frozen_reconstruction_v3123.py,gradient,496,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/run_frozen_reconstruction_v3123.py,probe,501,"X_probe,"
+scripts/run_frozen_reconstruction_v3123.py,probe,507,"y_probe,"
+scripts/run_frozen_reconstruction_v3123.py,gradient,527,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,530,oracle_clean_states[client_id] = clean_state
+scripts/run_frozen_reconstruction_v3123.py,malicious,535,and is_malicious
+scripts/run_frozen_reconstruction_v3123.py,gradient,558,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,561,oracle_clean_states[client_id] = clean_state
+scripts/run_frozen_reconstruction_v3123.py,gradient,579,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/run_frozen_reconstruction_v3123.py,probe,584,"X_probe,"
+scripts/run_frozen_reconstruction_v3123.py,probe,589,"y_probe,"
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,597,"""monitoring_round"": monitoring_round,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,599,"""client_id"": client_id,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,600,"""actual_malicious"": is_malicious,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,617,"for client_id, local_matrix in enumerate(local_matrices):"
+scripts/run_frozen_reconstruction_v3123.py,signature,621,signature_rows.append(
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,623,"""monitoring_round"": monitoring_round,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,625,"""client_id"": client_id,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,626,"""actual_malicious"": bool("
+scripts/run_frozen_reconstruction_v3123.py,client_id,627,client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,malicious,627,client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,client_id,643,profiles[client_id][
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,652,"""monitoring_round"": monitoring_round,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,654,"""client_id"": client_id,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,655,"""actual_malicious"": bool("
+scripts/run_frozen_reconstruction_v3123.py,client_id,656,client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,malicious,656,client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,client_id,658,"""client_samples"": int(sample_counts[client_id]),"
+scripts/run_frozen_reconstruction_v3123.py,client_id,659,"""aggregation_weight"": float(raw_weights[client_id]),"
+scripts/run_frozen_reconstruction_v3123.py,client_id,661,len(poisoned_positions[client_id])
+scripts/run_frozen_reconstruction_v3123.py,client_id,665,"profiles[client_id],"
+scripts/run_frozen_reconstruction_v3123.py,score,673,current_scored = apply_feature_calibration(
+scripts/run_frozen_reconstruction_v3123.py,score,677,"current_scored, ema_memory = add_candidate_and_ema("
+scripts/run_frozen_reconstruction_v3123.py,score,678,"current_scored,"
+scripts/run_frozen_reconstruction_v3123.py,score,682,"current_scored[""ema_ratio""] = ("
+scripts/run_frozen_reconstruction_v3123.py,score,683,current_scored[SCORE_COLUMN].to_numpy(dtype=np.float64)
+scripts/run_frozen_reconstruction_v3123.py,threshold,684,"/ max(ema_threshold, 1e-12)"
+scripts/run_frozen_reconstruction_v3123.py,score,686,"current_scored[""instant_ratio""] = ("
+scripts/run_frozen_reconstruction_v3123.py,score,687,current_scored[CANDIDATE].to_numpy(dtype=np.float64)
+scripts/run_frozen_reconstruction_v3123.py,threshold,688,"/ max(instant_threshold, 1e-12)"
+scripts/run_frozen_reconstruction_v3123.py,score,690,"current_scored[""policy_ratio""] = np.maximum("
+scripts/run_frozen_reconstruction_v3123.py,score,691,"current_scored[""ema_ratio""].to_numpy(dtype=np.float64),"
+scripts/run_frozen_reconstruction_v3123.py,score,692,"current_scored[""instant_ratio""].to_numpy(dtype=np.float64),"
+scripts/run_frozen_reconstruction_v3123.py,score,694,"current_scored[""flagged""] = ("
+scripts/run_frozen_reconstruction_v3123.py,score,695,"current_scored[""policy_ratio""] > 1.0"
+scripts/run_frozen_reconstruction_v3123.py,score,698,"flags = current_scored[""flagged""].astype(bool).to_numpy()"
+scripts/run_frozen_reconstruction_v3123.py,score,699,"labels = current_scored[""actual_malicious""].astype(bool).to_numpy()"
+scripts/run_frozen_reconstruction_v3123.py,malicious,699,"labels = current_scored[""actual_malicious""].astype(bool).to_numpy()"
+scripts/run_frozen_reconstruction_v3123.py,benign,700,benign = ~labels
+scripts/run_frozen_reconstruction_v3123.py,update,701,updates = [
+scripts/run_frozen_reconstruction_v3123.py,update,702,"floating_update(state, reference_state)"
+scripts/run_frozen_reconstruction_v3123.py,client_id,713,client_id
+scripts/run_frozen_reconstruction_v3123.py,client_id,714,for client_id in range(args.num_clients)
+scripts/run_frozen_reconstruction_v3123.py,client_id,715,if not flags[client_id]
+scripts/run_frozen_reconstruction_v3123.py,client_id,721,trusted_updates = [updates[client_id] for client_id in trusted_ids]
+scripts/run_frozen_reconstruction_v3123.py,update,721,trusted_updates = [updates[client_id] for client_id in trusted_ids]
+scripts/run_frozen_reconstruction_v3123.py,update,723,update_norm(update) for update in trusted_updates
+scripts/run_frozen_reconstruction_v3123.py,update,725,current_center = coordinate_median(trusted_updates)
+scripts/run_frozen_reconstruction_v3123.py,center,725,current_center = coordinate_median(trusted_updates)
+scripts/run_frozen_reconstruction_v3123.py,update,726,current_update_scale = float(np.median(trusted_norms))
+scripts/run_frozen_reconstruction_v3123.py,client_id,728,for client_id in range(args.num_clients):
+scripts/run_frozen_reconstruction_v3123.py,client_id,729,replaced = bool(flags[client_id])
+scripts/run_frozen_reconstruction_v3123.py,residual,731,"""residual_scale"": float(""nan""),"
+scripts/run_frozen_reconstruction_v3123.py,update,734,"""reconstructed_update_norm"": float(""nan""),"
+scripts/run_frozen_reconstruction_v3123.py,update,740,"reconstructed_update, reconstruction_meta = ("
+scripts/run_frozen_reconstruction_v3123.py,update,741,reconstruct_update(
+scripts/run_frozen_reconstruction_v3123.py,center,742,"current_center=current_center,"
+scripts/run_frozen_reconstruction_v3123.py,residual,743,historical_residual=residual_profiles[
+scripts/run_frozen_reconstruction_v3123.py,client_id,744,client_id
+scripts/run_frozen_reconstruction_v3123.py,update,747,"current_update_scale=current_update_scale,"
+scripts/run_frozen_reconstruction_v3123.py,update,748,"warmup_update_scale=warmup_update_scale,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,755,replacement_states[client_id] = state_from_update(
+scripts/run_frozen_reconstruction_v3123.py,update,755,replacement_states[client_id] = state_from_update(
+scripts/run_frozen_reconstruction_v3123.py,update,757,"reconstructed_update,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,760,if client_id in oracle_clean_states:
+scripts/run_frozen_reconstruction_v3123.py,update,761,clean_update = floating_update(
+scripts/run_frozen_reconstruction_v3123.py,client_id,762,"oracle_clean_states[client_id],"
+scripts/run_frozen_reconstruction_v3123.py,update,766,"reconstructed_update,"
+scripts/run_frozen_reconstruction_v3123.py,update,767,"clean_update,"
+scripts/run_frozen_reconstruction_v3123.py,update,769,reconstruction_cosine = update_cosine(
+scripts/run_frozen_reconstruction_v3123.py,update,770,"reconstructed_update,"
+scripts/run_frozen_reconstruction_v3123.py,update,771,"clean_update,"
+scripts/run_frozen_reconstruction_v3123.py,update,775,"reconstructed_update,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,776,"updates[client_id],"
+scripts/run_frozen_reconstruction_v3123.py,update,776,"updates[client_id],"
+scripts/run_frozen_reconstruction_v3123.py,update,778,reconstruction_cosine = update_cosine(
+scripts/run_frozen_reconstruction_v3123.py,update,779,"reconstructed_update,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,780,"updates[client_id],"
+scripts/run_frozen_reconstruction_v3123.py,update,780,"updates[client_id],"
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,785,"""monitoring_round"": monitoring_round,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,787,"""client_id"": client_id,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,788,"""actual_malicious"": bool(labels[client_id]),"
+scripts/run_frozen_reconstruction_v3123.py,malicious,788,"""actual_malicious"": bool(labels[client_id]),"
+scripts/run_frozen_reconstruction_v3123.py,client_id,789,"""flagged"": bool(flags[client_id]),"
+scripts/run_frozen_reconstruction_v3123.py,update,790,"""update_replaced"": replaced,"
+scripts/run_frozen_reconstruction_v3123.py,update,792,"""actual_update_norm"": update_norm("
+scripts/run_frozen_reconstruction_v3123.py,client_id,793,updates[client_id]
+scripts/run_frozen_reconstruction_v3123.py,update,793,updates[client_id]
+scripts/run_frozen_reconstruction_v3123.py,malicious,805,if set(oracle_clean_states) != set(malicious_clients):
+scripts/run_frozen_reconstruction_v3123.py,client_id,809,for client_id in malicious_clients:
+scripts/run_frozen_reconstruction_v3123.py,malicious,809,for client_id in malicious_clients:
+scripts/run_frozen_reconstruction_v3123.py,client_id,810,replacement_states[client_id] = oracle_clean_states[
+scripts/run_frozen_reconstruction_v3123.py,client_id,811,client_id
+scripts/run_frozen_reconstruction_v3123.py,client_id,813,for client_id in range(args.num_clients):
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,816,"""monitoring_round"": monitoring_round,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,818,"""client_id"": client_id,"
+scripts/run_frozen_reconstruction_v3123.py,client_id,819,"""actual_malicious"": bool(labels[client_id]),"
+scripts/run_frozen_reconstruction_v3123.py,malicious,819,"""actual_malicious"": bool(labels[client_id]),"
+scripts/run_frozen_reconstruction_v3123.py,client_id,820,"""flagged"": bool(flags[client_id]),"
+scripts/run_frozen_reconstruction_v3123.py,update,821,"""update_replaced"": bool("
+scripts/run_frozen_reconstruction_v3123.py,client_id,822,client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,malicious,822,client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,update,827,"""actual_update_norm"": update_norm("
+scripts/run_frozen_reconstruction_v3123.py,client_id,828,updates[client_id]
+scripts/run_frozen_reconstruction_v3123.py,update,828,updates[client_id]
+scripts/run_frozen_reconstruction_v3123.py,client_id,832,if client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,malicious,832,if client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,client_id,837,if client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,malicious,837,if client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,residual,840,"""residual_scale"": float(""nan""),"
+scripts/run_frozen_reconstruction_v3123.py,update,843,"""reconstructed_update_norm"": ("
+scripts/run_frozen_reconstruction_v3123.py,update,844,update_norm(
+scripts/run_frozen_reconstruction_v3123.py,update,845,floating_update(
+scripts/run_frozen_reconstruction_v3123.py,client_id,846,"oracle_clean_states[client_id],"
+scripts/run_frozen_reconstruction_v3123.py,client_id,850,if client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,malicious,850,if client_id in malicious_clients
+scripts/run_frozen_reconstruction_v3123.py,malicious,872,malicious_recall = (
+scripts/run_frozen_reconstruction_v3123.py,benign,875,benign_fpr = (
+scripts/run_frozen_reconstruction_v3123.py,benign,876,"float(np.mean(flags[benign])) if benign.any() else float(""nan"")"
+scripts/run_frozen_reconstruction_v3123.py,malicious,883,malicious_replacement_recall = (
+scripts/run_frozen_reconstruction_v3123.py,update,887,"row[""update_replaced""]"
+scripts/run_frozen_reconstruction_v3123.py,malicious,889,"if row[""actual_malicious""]"
+scripts/run_frozen_reconstruction_v3123.py,benign,896,benign_replacement_rate = (
+scripts/run_frozen_reconstruction_v3123.py,update,900,"row[""update_replaced""]"
+scripts/run_frozen_reconstruction_v3123.py,malicious,902,"if not row[""actual_malicious""]"
+scripts/run_frozen_reconstruction_v3123.py,benign,906,if benign.any()
+scripts/run_frozen_reconstruction_v3123.py,update,913,"if row[""update_replaced""]"
+scripts/run_frozen_reconstruction_v3123.py,update,921,"if row[""update_replaced""]"
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,928,"""monitoring_round"": monitoring_round,"
+scripts/run_frozen_reconstruction_v3123.py,update,935,"sum(row[""update_replaced""] for row in round_reconstruction_rows)"
+scripts/run_frozen_reconstruction_v3123.py,malicious,937,"""malicious_recall"": malicious_recall,"
+scripts/run_frozen_reconstruction_v3123.py,benign,938,"""benign_false_positive_rate"": benign_fpr,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,940,"""malicious_replacement_recall"": malicious_replacement_recall,"
+scripts/run_frozen_reconstruction_v3123.py,benign,941,"""benign_replacement_rate"": benign_replacement_rate,"
+scripts/run_frozen_reconstruction_v3123.py,update,958,"""update_replaced"","
+scripts/run_frozen_reconstruction_v3123.py,update,960,"""actual_update_norm"","
+scripts/run_frozen_reconstruction_v3123.py,residual,963,"""residual_scale"","
+scripts/run_frozen_reconstruction_v3123.py,update,966,"""reconstructed_update_norm"","
+scripts/run_frozen_reconstruction_v3123.py,score,969,current_scored[field] = [
+scripts/run_frozen_reconstruction_v3123.py,score,972,"current_scored[""replacement_policy""] = args.replacement_policy"
+scripts/run_frozen_reconstruction_v3123.py,score,973,"current_scored[""rng_isolation_patch""] = ""3.12.2"""
+scripts/run_frozen_reconstruction_v3123.py,score,974,"client_rows.extend(current_scored.to_dict(orient=""records""))"
+scripts/run_frozen_reconstruction_v3123.py,update,979,"""phase"": ""trusted_update_reconstruction_closed_loop"","
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,982,"""monitoring_round"": monitoring_round,"
+scripts/run_frozen_reconstruction_v3123.py,signature,1001,"signature_rows,"
+scripts/run_frozen_reconstruction_v3123.py,malicious,1005,"""NA"" if not labels.any() else f""{malicious_recall:.3f}"""
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,1008,"f""monitoring round {monitoring_round:02d}, """
+scripts/run_frozen_reconstruction_v3123.py,benign,1013,"f""recall={recall_text}, benign FPR={benign_fpr:.3f}, """
+scripts/run_frozen_reconstruction_v3123.py,client_id,1034,"subset=[""monitoring_round"", ""client_id""]"
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,1034,"subset=[""monitoring_round"", ""client_id""]"
+scripts/run_frozen_reconstruction_v3123.py,signature,1049,pd.DataFrame(signature_rows).to_csv(
+scripts/run_frozen_reconstruction_v3123.py,signature,1050,"tables_dir / ""reconstruction_transition_signature_long.csv"","
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,1060,"round_table[""monitoring_round""],"
+scripts/run_frozen_reconstruction_v3123.py,monitoring_round,1066,"round_table[""monitoring_round""],"
+scripts/run_frozen_reconstruction_v3123.py,update,1083,"""phase"": ""trusted_update_reconstruction_closed_loop"","
+scripts/run_frozen_reconstruction_v3123.py,malicious,1120,"""mean_malicious_recall"": ("
+scripts/run_frozen_reconstruction_v3123.py,malicious,1123,"else float(round_table[""malicious_recall""].mean())"
+scripts/run_frozen_reconstruction_v3123.py,benign,1125,"""mean_benign_false_positive_rate"": float("
+scripts/run_frozen_reconstruction_v3123.py,benign,1126,"round_table[""benign_false_positive_rate""].mean()"
+scripts/run_frozen_reconstruction_v3123.py,update,1130,"with (output_dir / ""trusted_update_reconstruction_v312_metadata.json"").open("
+scripts/run_frozen_reconstruction_v3123.py,update,1137,"print(""RNG-Isolated Trusted Update Reconstruction V3.12.2 complete"")"
+scripts/run_frozen_reconstruction_v3123.py,benign,1149,"""Mean benign FPR:"","
+scripts/run_frozen_reconstruction_v3123.py,benign,1150,"f""{round_table['benign_false_positive_rate'].mean():.6f}"","
+scripts/run_frozen_reconstruction_v3123.py,malicious,1154,"""Mean malicious recall:"","
+scripts/run_frozen_reconstruction_v3123.py,malicious,1155,"f""{round_table['malicious_recall'].mean():.6f}"","
+scripts/run_true_warmup_v310.py,signature,39,from transition_signature_features_v38 import (
+scripts/run_true_warmup_v310.py,probe,40,"balanced_probe_indices,"
+scripts/run_true_warmup_v310.py,anchor,45,from independent_anchor_v310 import (
+scripts/run_true_warmup_v310.py,score,47,"SCORE_COLUMN,"
+scripts/run_true_warmup_v310.py,gradient,73,"parser.add_argument(""--gradient-clip-norm"", type=float, default=5.0)"
+scripts/run_true_warmup_v310.py,probe,75,"parser.add_argument(""--probe-per-class"", type=int, default=48)"
+scripts/run_true_warmup_v310.py,probe,76,"parser.add_argument(""--probe-seed"", type=int, default=3701)"
+scripts/run_true_warmup_v310.py,benign,78,"parser.add_argument(""--target-class"", default=""Benign"")"
+scripts/run_true_warmup_v310.py,threshold,80,"parser.add_argument(""--clean-threshold-quantile"", type=float, default=0.95)"
+scripts/run_true_warmup_v310.py,signature,103,"tables_dir / ""warmup_local_signatures_partial.npz"","
+scripts/run_true_warmup_v310.py,threshold,125,if args.ema_decay != 0.65 or args.clean_threshold_quantile != 0.95:
+scripts/run_true_warmup_v310.py,probe,172,"probe_indices = balanced_probe_indices(y_val, args.probe_per_class, args.probe_seed)"
+scripts/run_true_warmup_v310.py,probe,173,X_probe = X_val[probe_indices]
+scripts/run_true_warmup_v310.py,probe,174,y_probe = y_val[probe_indices]
+scripts/run_true_warmup_v310.py,probe,177,"""validation_row_index"": probe_indices,"
+scripts/run_true_warmup_v310.py,probe,178,"""class_id"": y_probe,"
+scripts/run_true_warmup_v310.py,probe,179,"""class_name"": [CLASS_NAMES[int(value)] for value in y_probe],"
+scripts/run_true_warmup_v310.py,probe,181,").to_csv(tables_dir / ""prediction_probe_manifest.csv"", index=False)"
+scripts/run_true_warmup_v310.py,probe,182,probe_hash = hashlib.sha256(np.ascontiguousarray(probe_indices).tobytes()).hexdigest()
+scripts/run_true_warmup_v310.py,probe,199,"""probe_hash"": probe_hash,"
+scripts/run_true_warmup_v310.py,signature,207,"matrices_by_round = load_matrix_rounds(tables_dir / ""warmup_local_signatures_partial.npz"")"
+scripts/run_true_warmup_v310.py,anchor,211,"print(""True Warmup Anchor V3.10"")"
+scripts/run_true_warmup_v310.py,probe,215,"print(""Probe hash:"", probe_hash)"
+scripts/run_true_warmup_v310.py,client_id,225,for client_id in range(args.num_clients):
+scripts/run_true_warmup_v310.py,client_id,226,indices = client_indices[client_id]
+scripts/run_true_warmup_v310.py,gradient,238,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/run_true_warmup_v310.py,client_id,239,"seed=args.model_seed + round_id * 1000 + client_id,"
+scripts/run_true_warmup_v310.py,probe,241,"probabilities = predict_probabilities(local_model, X_probe, args.evaluation_batch_size)"
+scripts/run_true_warmup_v310.py,probe,242,"local_means = class_conditional_probability_means(probabilities, y_probe)"
+scripts/run_true_warmup_v310.py,client_id,248,"""client_id"": int(client_id),"
+scripts/run_true_warmup_v310.py,probe,281,"""probe_hash"": probe_hash,"
+scripts/run_true_warmup_v310.py,signature,293,"raise RuntimeError(""Warmup signature capture is incomplete"")"
+scripts/run_true_warmup_v310.py,client_id,296,client_id: normalize_rows(
+scripts/run_true_warmup_v310.py,client_id,298,"np.stack([matrices_by_round[r][client_id] for r in range(1, args.warmup_rounds + 1)]),"
+scripts/run_true_warmup_v310.py,client_id,302,for client_id in range(args.num_clients)
+scripts/run_true_warmup_v310.py,client_id,311,client_id: normalize_rows(
+scripts/run_true_warmup_v310.py,client_id,312,"np.median(np.stack([matrices_by_round[r][client_id] for r in other_rounds]), axis=0)"
+scripts/run_true_warmup_v310.py,client_id,314,for client_id in range(args.num_clients)
+scripts/run_true_warmup_v310.py,client_id,316,for client_id in range(args.num_clients):
+scripts/run_true_warmup_v310.py,monitoring_round,319,"""monitoring_round"": int(round_id),"
+scripts/run_true_warmup_v310.py,client_id,321,"""client_id"": int(client_id),"
+scripts/run_true_warmup_v310.py,malicious,322,"""actual_malicious"": False,"
+scripts/run_true_warmup_v310.py,client_id,324,"round_stack[client_id],"
+scripts/run_true_warmup_v310.py,client_id,325,"loo_profiles[client_id],"
+scripts/run_true_warmup_v310.py,score,334,"clean_scored, feature_calibration = fit_feature_calibration(clean_raw)"
+scripts/run_true_warmup_v310.py,score,335,"clean_scored, _ = add_candidate_and_ema(clean_scored, args.ema_decay, initial_ema={})"
+scripts/run_true_warmup_v310.py,threshold,336,"threshold = quantile_higher(clean_scored[SCORE_COLUMN], args.clean_threshold_quantile)"
+scripts/run_true_warmup_v310.py,score,336,"threshold = quantile_higher(clean_scored[SCORE_COLUMN], args.clean_threshold_quantile)"
+scripts/run_true_warmup_v310.py,threshold,337,"clean_scored[""flagged""] = clean_scored[SCORE_COLUMN] > threshold"
+scripts/run_true_warmup_v310.py,score,337,"clean_scored[""flagged""] = clean_scored[SCORE_COLUMN] > threshold"
+scripts/run_true_warmup_v310.py,client_id,340,"for client_id, matrix in sorted(full_profiles.items()):"
+scripts/run_true_warmup_v310.py,client_id,344,"""client_id"": int(client_id),"
+scripts/run_true_warmup_v310.py,signature,355,warmup_signature_rows = []
+scripts/run_true_warmup_v310.py,client_id,358,for client_id in range(args.num_clients):
+scripts/run_true_warmup_v310.py,client_id,359,local_matrix = normalize_rows(round_stack[client_id])
+scripts/run_true_warmup_v310.py,client_id,360,profile_matrix = full_profiles[client_id]
+scripts/run_true_warmup_v310.py,signature,363,warmup_signature_rows.append({
+scripts/run_true_warmup_v310.py,client_id,365,"""client_id"": int(client_id),"
+scripts/run_true_warmup_v310.py,signature,374,pd.DataFrame(warmup_signature_rows).to_csv(
+scripts/run_true_warmup_v310.py,signature,375,"tables_dir / ""warmup_transition_signature_long.csv"", index=False"
+scripts/run_true_warmup_v310.py,score,381,"score_path = calibration_dir / ""clean_leave_one_round_out_scores.csv"""
+scripts/run_true_warmup_v310.py,score,383,"clean_scored.to_csv(score_path, index=False)"
+scripts/run_true_warmup_v310.py,score,385,score_hash = file_sha256(score_path)
+scripts/run_true_warmup_v310.py,score,391,"""score_column"": SCORE_COLUMN,"
+scripts/run_true_warmup_v310.py,threshold,394,"""clean_threshold_quantile"": float(args.clean_threshold_quantile),"
+scripts/run_true_warmup_v310.py,threshold,395,"""clean_ema_threshold"": float(threshold),"
+scripts/run_true_warmup_v310.py,score,396,"""clean_false_positive_rate"": float(clean_scored[""flagged""].mean()),"
+scripts/run_true_warmup_v310.py,score,403,"""clean_scores_sha256"": score_hash,"
+scripts/run_true_warmup_v310.py,update,410,final_checkpoint.update(
+scripts/run_true_warmup_v310.py,score,416,"""clean_scores_sha256"": score_hash,"
+scripts/run_true_warmup_v310.py,threshold,417,"""clean_ema_threshold"": float(threshold),"
+scripts/run_true_warmup_v310.py,threshold,419,"""clean_threshold_quantile"": float(args.clean_threshold_quantile),"
+scripts/run_true_warmup_v310.py,signature,428,"tables_dir / ""warmup_local_signatures.npz"","
+scripts/run_true_warmup_v310.py,score,442,"ax.hist(clean_scored[SCORE_COLUMN], bins=30)"
+scripts/run_true_warmup_v310.py,threshold,443,"ax.axvline(threshold, linestyle=""--"", label=""95th-percentile threshold"")"
+scripts/run_true_warmup_v310.py,score,444,"ax.set_xlabel(""Clean leave-one-round-out EMA score"")"
+scripts/run_true_warmup_v310.py,score,448,"save_figure(fig, figures_dir / ""clean_calibration_score_distribution"")"
+scripts/run_true_warmup_v310.py,probe,457,"""probe_hash_sha256"": probe_hash,"
+scripts/run_true_warmup_v310.py,probe,458,"""probe_rows_per_class"": int(args.probe_per_class),"
+scripts/run_true_warmup_v310.py,probe,459,"""probe_seed"": int(args.probe_seed),"
+scripts/run_true_warmup_v310.py,score,461,"""score_column"": SCORE_COLUMN,"
+scripts/run_true_warmup_v310.py,threshold,463,"""clean_threshold_quantile"": float(args.clean_threshold_quantile),"
+scripts/run_true_warmup_v310.py,threshold,464,"""clean_ema_threshold"": float(threshold),"
+scripts/run_true_warmup_v310.py,client_id,468,"""stable_client_identity_required"": True,"
+scripts/run_true_warmup_v310.py,score,472,"""clean_scores_sha256"": score_hash,"
+scripts/run_true_warmup_v310.py,anchor,480,"print(""True Warmup Anchor V3.10 complete"")"
+scripts/run_true_warmup_v310.py,threshold,482,"print(""Frozen EMA threshold:"", f""{threshold:.6f}"")"
+scripts/run_true_warmup_v310.py,score,483,"print(""Clean calibration FPR:"", f""{float(clean_scored['flagged'].mean()):.4%}"")"
+scripts/run_post_warmup_capture_v310.py,signature,43,from transition_signature_features_v38 import (
+scripts/run_post_warmup_capture_v310.py,probe,44,"balanced_probe_indices,"
+scripts/run_post_warmup_capture_v310.py,anchor,49,from independent_anchor_v310 import (
+scripts/run_post_warmup_capture_v310.py,score,51,"SCORE_COLUMN,"
+scripts/run_post_warmup_capture_v310.py,malicious,61,"DEFAULT_MALICIOUS_CLIENTS = ""1,7,8,10,14,15,17,18"""
+scripts/run_post_warmup_capture_v310.py,gradient,80,"parser.add_argument(""--gradient-clip-norm"", type=float, default=5.0)"
+scripts/run_post_warmup_capture_v310.py,probe,82,"parser.add_argument(""--probe-per-class"", type=int, default=48)"
+scripts/run_post_warmup_capture_v310.py,probe,83,"parser.add_argument(""--probe-seed"", type=int, default=3701)"
+scripts/run_post_warmup_capture_v310.py,benign,85,"parser.add_argument(""--target-class"", default=""Benign"")"
+scripts/run_post_warmup_capture_v310.py,malicious,87,"parser.add_argument(""--malicious-clients"", default=DEFAULT_MALICIOUS_CLIENTS)"
+scripts/run_post_warmup_capture_v310.py,client_id,96,def parse_client_ids(text: str) -> List[int]:
+scripts/run_post_warmup_capture_v310.py,score,118,"score_rows: List[Dict[str, object]],"
+scripts/run_post_warmup_capture_v310.py,signature,119,"signature_rows: List[Dict[str, object]],"
+scripts/run_post_warmup_capture_v310.py,anchor,123,"pd.DataFrame(score_rows).to_csv(tables_dir / ""continuation_client_anchor_scores_partial.csv"", index=False)"
+scripts/run_post_warmup_capture_v310.py,score,123,"pd.DataFrame(score_rows).to_csv(tables_dir / ""continuation_client_anchor_scores_partial.csv"", index=False)"
+scripts/run_post_warmup_capture_v310.py,signature,124,"pd.DataFrame(signature_rows).to_csv(tables_dir / ""continuation_transition_signature_long_partial.csv"", index=False)"
+scripts/run_post_warmup_capture_v310.py,probe,194,"probe_indices = balanced_probe_indices(y_val, args.probe_per_class, args.probe_seed)"
+scripts/run_post_warmup_capture_v310.py,probe,195,probe_hash = hashlib.sha256(np.ascontiguousarray(probe_indices).tobytes()).hexdigest()
+scripts/run_post_warmup_capture_v310.py,probe,196,"if probe_hash != warmup_metadata[""probe_hash_sha256""]:"
+scripts/run_post_warmup_capture_v310.py,probe,197,"raise RuntimeError(""Probe hash does not match warmup branch point"")"
+scripts/run_post_warmup_capture_v310.py,probe,198,X_probe = X_val[probe_indices]
+scripts/run_post_warmup_capture_v310.py,probe,199,y_probe = y_val[probe_indices]
+scripts/run_post_warmup_capture_v310.py,threshold,207,"threshold = float(calibration_summary[""clean_ema_threshold""])"
+scripts/run_post_warmup_capture_v310.py,client_id,216,requested = parse_client_ids(args.malicious_clients)
+scripts/run_post_warmup_capture_v310.py,malicious,216,requested = parse_client_ids(args.malicious_clients)
+scripts/run_post_warmup_capture_v310.py,malicious,217,"malicious_clients, poisoned_positions, poison_manifest, poison_hash = prepare_static_attack("
+scripts/run_post_warmup_capture_v310.py,malicious,222,"malicious_client_fraction=len(requested) / args.num_clients,"
+scripts/run_post_warmup_capture_v310.py,malicious,226,"explicit_malicious_clients=requested,"
+scripts/run_post_warmup_capture_v310.py,malicious,229,malicious_clients = []
+scripts/run_post_warmup_capture_v310.py,client_id,230,"poisoned_positions = {client_id: np.empty(0, dtype=np.int64) for client_id in range(args.num_clients)}"
+scripts/run_post_warmup_capture_v310.py,client_id,234,"""client_id"": client_id,"
+scripts/run_post_warmup_capture_v310.py,malicious,235,"""is_malicious"": False,"
+scripts/run_post_warmup_capture_v310.py,client_id,243,"for client_id, indices in enumerate(client_indices)"
+scripts/run_post_warmup_capture_v310.py,client_id,247,for client_id in range(args.num_clients):
+scripts/run_post_warmup_capture_v310.py,client_id,248,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_post_warmup_capture_v310.py,update,248,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_post_warmup_capture_v310.py,malicious,251,"poison_manifest.to_csv(attack_dir / ""malicious_client_poison_manifest.csv"", index=False)"
+scripts/run_post_warmup_capture_v310.py,malicious,259,"""malicious_clients"": ""|"".join(map(str, malicious_clients)),"
+scripts/run_post_warmup_capture_v310.py,score,269,"score_rows: List[Dict[str, object]] = []"
+scripts/run_post_warmup_capture_v310.py,signature,270,"signature_rows: List[Dict[str, object]] = []"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,290,"start_round = int(saved[""monitoring_round""]) + 1"
+scripts/run_post_warmup_capture_v310.py,anchor,293,"score_rows = load_rows(tables_dir / ""continuation_client_anchor_scores_partial.csv"")"
+scripts/run_post_warmup_capture_v310.py,score,293,"score_rows = load_rows(tables_dir / ""continuation_client_anchor_scores_partial.csv"")"
+scripts/run_post_warmup_capture_v310.py,signature,294,"signature_rows = load_rows(tables_dir / ""continuation_transition_signature_long_partial.csv"")"
+scripts/run_post_warmup_capture_v310.py,anchor,298,"print(""Post-Warmup Anchor Capture V3.10"")"
+scripts/run_post_warmup_capture_v310.py,threshold,301,"print(""Frozen EMA threshold:"", f""{threshold:.6f}"")"
+scripts/run_post_warmup_capture_v310.py,malicious,303,"print(""Malicious clients:"", malicious_clients)"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,305,"for monitoring_round in range(start_round, args.continuation_rounds + 1):"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,306,global_round = 4 + monitoring_round
+scripts/run_post_warmup_capture_v310.py,client_id,314,for client_id in range(args.num_clients):
+scripts/run_post_warmup_capture_v310.py,client_id,315,indices = client_indices[client_id]
+scripts/run_post_warmup_capture_v310.py,client_id,317,positions = poisoned_positions[client_id]
+scripts/run_post_warmup_capture_v310.py,gradient,331,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/run_post_warmup_capture_v310.py,client_id,332,"seed=args.model_seed + global_round * 1000 + client_id,"
+scripts/run_post_warmup_capture_v310.py,probe,334,"probabilities = predict_probabilities(local_model, X_probe, args.evaluation_batch_size)"
+scripts/run_post_warmup_capture_v310.py,probe,335,"local_means = class_conditional_probability_means(probabilities, y_probe)"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,340,"""monitoring_round"": int(monitoring_round),"
+scripts/run_post_warmup_capture_v310.py,client_id,342,"""client_id"": int(client_id),"
+scripts/run_post_warmup_capture_v310.py,client_id,343,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_post_warmup_capture_v310.py,malicious,343,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_post_warmup_capture_v310.py,client_id,356,"for client_id, local_matrix in enumerate(local_matrices):"
+scripts/run_post_warmup_capture_v310.py,signature,360,signature_rows.append({
+scripts/run_post_warmup_capture_v310.py,monitoring_round,361,"""monitoring_round"": int(monitoring_round),"
+scripts/run_post_warmup_capture_v310.py,client_id,363,"""client_id"": int(client_id),"
+scripts/run_post_warmup_capture_v310.py,client_id,364,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_post_warmup_capture_v310.py,malicious,364,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_post_warmup_capture_v310.py,client_id,371,"""frozen_profile_probability"": float(profiles[client_id][source_index, target_index]),"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,375,"""monitoring_round"": int(monitoring_round),"
+scripts/run_post_warmup_capture_v310.py,client_id,377,"""client_id"": int(client_id),"
+scripts/run_post_warmup_capture_v310.py,client_id,378,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_post_warmup_capture_v310.py,malicious,378,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_post_warmup_capture_v310.py,client_id,379,"""client_samples"": int(sample_counts[client_id]),"
+scripts/run_post_warmup_capture_v310.py,client_id,380,"""aggregation_weight"": float(raw_weights[client_id]),"
+scripts/run_post_warmup_capture_v310.py,client_id,381,"""poisoned_rows"": int(len(poisoned_positions[client_id])),"
+scripts/run_post_warmup_capture_v310.py,client_id,384,"profiles[client_id],"
+scripts/run_post_warmup_capture_v310.py,score,392,"current_scored = apply_feature_calibration(pd.DataFrame(current_raw), feature_calibration)"
+scripts/run_post_warmup_capture_v310.py,score,393,"current_scored, ema_memory = add_candidate_and_ema("
+scripts/run_post_warmup_capture_v310.py,score,394,"current_scored, args.ema_decay, initial_ema=ema_memory"
+scripts/run_post_warmup_capture_v310.py,threshold,396,"current_scored[""clean_ema_threshold""] = threshold"
+scripts/run_post_warmup_capture_v310.py,score,396,"current_scored[""clean_ema_threshold""] = threshold"
+scripts/run_post_warmup_capture_v310.py,threshold,397,"current_scored[""flagged""] = current_scored[SCORE_COLUMN] > threshold"
+scripts/run_post_warmup_capture_v310.py,score,397,"current_scored[""flagged""] = current_scored[SCORE_COLUMN] > threshold"
+scripts/run_post_warmup_capture_v310.py,score,398,"current_scored[""harm_weight""] = ("
+scripts/run_post_warmup_capture_v310.py,score,399,"current_scored[""aggregation_weight""]"
+scripts/run_post_warmup_capture_v310.py,score,400,"* current_scored[""source_target_growth_from_profile""]"
+scripts/run_post_warmup_capture_v310.py,score,402,"score_rows.extend(current_scored.to_dict(orient=""records""))"
+scripts/run_post_warmup_capture_v310.py,score,409,"labels = current_scored[""actual_malicious""].astype(bool).to_numpy()"
+scripts/run_post_warmup_capture_v310.py,malicious,409,"labels = current_scored[""actual_malicious""].astype(bool).to_numpy()"
+scripts/run_post_warmup_capture_v310.py,score,410,"flags = current_scored[""flagged""].astype(bool).to_numpy()"
+scripts/run_post_warmup_capture_v310.py,benign,411,benign = ~labels
+scripts/run_post_warmup_capture_v310.py,malicious,413,malicious_recall = float(np.mean(flags[labels]))
+scripts/run_post_warmup_capture_v310.py,score,415,"mean_malicious_score = float(current_scored.loc[labels, SCORE_COLUMN].mean())"
+scripts/run_post_warmup_capture_v310.py,malicious,415,"mean_malicious_score = float(current_scored.loc[labels, SCORE_COLUMN].mean())"
+scripts/run_post_warmup_capture_v310.py,score,416,"malicious_harm = float(current_scored.loc[labels, ""harm_weight""].sum())"
+scripts/run_post_warmup_capture_v310.py,malicious,416,"malicious_harm = float(current_scored.loc[labels, ""harm_weight""].sum())"
+scripts/run_post_warmup_capture_v310.py,malicious,418,"malicious_recall = float(""nan"")"
+scripts/run_post_warmup_capture_v310.py,score,420,"mean_malicious_score = float(""nan"")"
+scripts/run_post_warmup_capture_v310.py,malicious,420,"mean_malicious_score = float(""nan"")"
+scripts/run_post_warmup_capture_v310.py,malicious,421,malicious_harm = 0.0
+scripts/run_post_warmup_capture_v310.py,benign,422,"benign_fpr = float(np.mean(flags[benign])) if benign.any() else float(""nan"")"
+scripts/run_post_warmup_capture_v310.py,score,423,"mean_benign_score = float(current_scored.loc[benign, SCORE_COLUMN].mean()) if benign.any() else float(""nan"")"
+scripts/run_post_warmup_capture_v310.py,benign,423,"mean_benign_score = float(current_scored.loc[benign, SCORE_COLUMN].mean()) if benign.any() else float(""nan"")"
+scripts/run_post_warmup_capture_v310.py,score,424,"total_harm = float(current_scored[""harm_weight""].sum())"
+scripts/run_post_warmup_capture_v310.py,malicious,425,"malicious_harm_share = malicious_harm / max(total_harm, 1e-12) if labels.any() else float(""nan"")"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,428,"""monitoring_round"": int(monitoring_round),"
+scripts/run_post_warmup_capture_v310.py,malicious,435,"""malicious_recall"": malicious_recall,"
+scripts/run_post_warmup_capture_v310.py,benign,436,"""benign_false_positive_rate"": benign_fpr,"
+scripts/run_post_warmup_capture_v310.py,anchor,438,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_post_warmup_capture_v310.py,score,438,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_post_warmup_capture_v310.py,benign,438,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_post_warmup_capture_v310.py,anchor,439,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_post_warmup_capture_v310.py,score,439,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_post_warmup_capture_v310.py,malicious,439,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_post_warmup_capture_v310.py,malicious,441,"""malicious_harm_share"": malicious_harm_share,"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,453,"""monitoring_round"": int(monitoring_round),"
+scripts/run_post_warmup_capture_v310.py,score,464,"save_partial(tables_dir, round_rows, local_rows, score_rows, signature_rows)"
+scripts/run_post_warmup_capture_v310.py,signature,464,"save_partial(tables_dir, round_rows, local_rows, score_rows, signature_rows)"
+scripts/run_post_warmup_capture_v310.py,malicious,465,"recall_text = ""NA"" if not labels.any() else f""{malicious_recall:.3f}"""
+scripts/run_post_warmup_capture_v310.py,monitoring_round,467,"f""monitoring round {monitoring_round:02d}, global round {global_round:02d}, """
+scripts/run_post_warmup_capture_v310.py,benign,470,"f""recall={recall_text}, benign FPR={benign_fpr:.3f}, """
+scripts/run_post_warmup_capture_v310.py,score,476,score_table = pd.DataFrame(score_rows)
+scripts/run_post_warmup_capture_v310.py,signature,477,signature_table = pd.DataFrame(signature_rows)
+scripts/run_post_warmup_capture_v310.py,anchor,480,"score_table.to_csv(tables_dir / ""continuation_client_anchor_scores.csv"", index=False)"
+scripts/run_post_warmup_capture_v310.py,score,480,"score_table.to_csv(tables_dir / ""continuation_client_anchor_scores.csv"", index=False)"
+scripts/run_post_warmup_capture_v310.py,signature,481,"signature_table.to_csv(tables_dir / ""continuation_transition_signature_long.csv"", index=False)"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,484,"ax.plot(round_table[""monitoring_round""], round_table[""val_macro_f1""], marker=""o"", label=""Macro F1"")"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,485,"ax.plot(round_table[""monitoring_round""], round_table[""val_source_to_target_rate""], marker=""s"", label=f""{args.source_class}->{args.target_class}"")"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,495,"ax.plot(round_table[""monitoring_round""], round_table[""benign_false_positive_rate""], marker=""o"", label=""Benign FPR"")"
+scripts/run_post_warmup_capture_v310.py,benign,495,"ax.plot(round_table[""monitoring_round""], round_table[""benign_false_positive_rate""], marker=""o"", label=""Benign FPR"")"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,497,"ax.plot(round_table[""monitoring_round""], round_table[""malicious_recall""], marker=""s"", label=""Malicious recall"")"
+scripts/run_post_warmup_capture_v310.py,malicious,497,"ax.plot(round_table[""monitoring_round""], round_table[""malicious_recall""], marker=""s"", label=""Malicious recall"")"
+scripts/run_post_warmup_capture_v310.py,anchor,501,"ax.set_title(""Frozen independent-anchor detection"")"
+scripts/run_post_warmup_capture_v310.py,anchor,504,"save_figure(fig, figures_dir / ""anchor_detection_dynamics"")"
+scripts/run_post_warmup_capture_v310.py,signature,508,"""phase"": ""post_warmup_plain_fedavg_signature_capture"","
+scripts/run_post_warmup_capture_v310.py,score,518,"""score_column"": SCORE_COLUMN,"
+scripts/run_post_warmup_capture_v310.py,threshold,521,"""clean_ema_threshold"": float(threshold),"
+scripts/run_post_warmup_capture_v310.py,client_id,523,"""stable_client_identity_required"": True,"
+scripts/run_post_warmup_capture_v310.py,malicious,524,"""malicious_clients"": malicious_clients,"
+scripts/run_post_warmup_capture_v310.py,malicious,530,"""malicious_labels_used_for_aggregation"": False,"
+scripts/run_post_warmup_capture_v310.py,malicious,531,"""malicious_labels_used_for_reporting_only"": True,"
+scripts/run_post_warmup_capture_v310.py,monitoring_round,532,"""rounds_completed"": int(round_table[""monitoring_round""].max()),"
+scripts/run_post_warmup_capture_v310.py,benign,535,"""mean_benign_false_positive_rate"": float(round_table[""benign_false_positive_rate""].mean()),"
+scripts/run_post_warmup_capture_v310.py,malicious,536,"""mean_malicious_recall"": ("
+scripts/run_post_warmup_capture_v310.py,malicious,537,"None if args.mode == ""clean"" else float(round_table[""malicious_recall""].mean())"
+scripts/run_post_warmup_capture_v310.py,anchor,545,"print(""Post-Warmup Anchor Capture V3.10 complete"")"
+scripts/run_post_warmup_capture_v310.py,benign,549,"print(""Mean benign FPR:"", f""{round_table['benign_false_positive_rate'].mean():.6f}"")"
+scripts/run_post_warmup_capture_v310.py,malicious,551,"print(""Mean malicious recall:"", f""{round_table['malicious_recall'].mean():.6f}"")"
+scripts/run_update_capture_v318b.py,update,2,"""""""V3.18B exact plain-FedAvg client-update capture runner."
+scripts/run_update_capture_v318b.py,signature,50,from transition_signature_features_v38 import (
+scripts/run_update_capture_v318b.py,probe,51,"balanced_probe_indices,"
+scripts/run_update_capture_v318b.py,anchor,56,from independent_anchor_v310 import (
+scripts/run_update_capture_v318b.py,score,58,"SCORE_COLUMN,"
+scripts/run_update_capture_v318b.py,malicious,68,"DEFAULT_MALICIOUS_CLIENTS = ""1,7,8,10,14,15,17,18"""
+scripts/run_update_capture_v318b.py,gradient,87,"parser.add_argument(""--gradient-clip-norm"", type=float, default=5.0)"
+scripts/run_update_capture_v318b.py,probe,89,"parser.add_argument(""--probe-per-class"", type=int, default=48)"
+scripts/run_update_capture_v318b.py,probe,90,"parser.add_argument(""--probe-seed"", type=int, default=3701)"
+scripts/run_update_capture_v318b.py,benign,92,"parser.add_argument(""--target-class"", default=""Benign"")"
+scripts/run_update_capture_v318b.py,malicious,94,"parser.add_argument(""--malicious-clients"", default=DEFAULT_MALICIOUS_CLIENTS)"
+scripts/run_update_capture_v318b.py,client_id,103,def parse_client_ids(text: str) -> List[int]:
+scripts/run_update_capture_v318b.py,update,125,digest.update(chunk)
+scripts/run_update_capture_v318b.py,update,149,"""included_in_update_vector"": included,"
+scripts/run_update_capture_v318b.py,update,157,"raise RuntimeError(""No floating model parameters were found for update capture"")"
+scripts/run_update_capture_v318b.py,update,163,"updates_dir: Path,"
+scripts/run_update_capture_v318b.py,update,166,"layout_path = updates_dir / ""parameter_layout.csv"""
+scripts/run_update_capture_v318b.py,update,180,def save_round_update_capture(
+scripts/run_update_capture_v318b.py,update,183,"updates_dir: Path,"
+scripts/run_update_capture_v318b.py,monitoring_round,184,"monitoring_round: int,"
+scripts/run_update_capture_v318b.py,malicious,189,"malicious_clients: List[int],"
+scripts/run_update_capture_v318b.py,update,199,updates = np.empty(
+scripts/run_update_capture_v318b.py,client_id,204,"for client_id, state in enumerate(local_states):"
+scripts/run_update_capture_v318b.py,update,206,"if not bool(row[""included_in_update_vector""]):"
+scripts/run_update_capture_v318b.py,update,212,"raise RuntimeError(f""Missing state tensor during update capture: {name}"")"
+scripts/run_update_capture_v318b.py,client_id,220,"updates[client_id, start:stop] = delta"
+scripts/run_update_capture_v318b.py,update,220,"updates[client_id, start:stop] = delta"
+scripts/run_update_capture_v318b.py,monitoring_round,224,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,client_id,226,"""client_id"": int(client_id),"
+scripts/run_update_capture_v318b.py,client_id,227,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_update_capture_v318b.py,malicious,227,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_update_capture_v318b.py,update,240,if not np.isfinite(updates).all():
+scripts/run_update_capture_v318b.py,update,241,"raise RuntimeError(""Non-finite values found in captured client updates"")"
+scripts/run_update_capture_v318b.py,monitoring_round,243,"matrix_path = updates_dir / f""round_{monitoring_round:02d}_client_updates_float32.npy"""
+scripts/run_update_capture_v318b.py,update,243,"matrix_path = updates_dir / f""round_{monitoring_round:02d}_client_updates_float32.npy"""
+scripts/run_update_capture_v318b.py,update,246,"np.save(handle, updates, allow_pickle=False)"
+scripts/run_update_capture_v318b.py,monitoring_round,249,"reference_path = updates_dir / f""round_{monitoring_round:02d}_reference_state.pt"""
+scripts/run_update_capture_v318b.py,update,249,"reference_path = updates_dir / f""round_{monitoring_round:02d}_reference_state.pt"""
+scripts/run_update_capture_v318b.py,update,258,"""phase"": ""pre_aggregation_update_capture"","
+scripts/run_update_capture_v318b.py,monitoring_round,259,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,monitoring_round,267,"layer_path = updates_dir / f""round_{monitoring_round:02d}_layer_summary.csv"""
+scripts/run_update_capture_v318b.py,update,267,"layer_path = updates_dir / f""round_{monitoring_round:02d}_layer_summary.csv"""
+scripts/run_update_capture_v318b.py,update,270,"client_norms = np.linalg.norm(updates.astype(np.float64), axis=1)"
+scripts/run_update_capture_v318b.py,monitoring_round,273,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,client_id,275,"""client_id"": np.arange(len(local_states), dtype=int),"
+scripts/run_update_capture_v318b.py,malicious,276,"""actual_malicious"": ["
+scripts/run_update_capture_v318b.py,malicious,277,bool(i in malicious_clients) for i in range(len(local_states))
+scripts/run_update_capture_v318b.py,update,283,"""full_update_l2_norm"": client_norms,"
+scripts/run_update_capture_v318b.py,monitoring_round,286,"per_client_path = updates_dir / f""round_{monitoring_round:02d}_client_manifest.csv"""
+scripts/run_update_capture_v318b.py,update,286,"per_client_path = updates_dir / f""round_{monitoring_round:02d}_client_manifest.csv"""
+scripts/run_update_capture_v318b.py,monitoring_round,293,"round_manifest_path = updates_dir / f""round_{monitoring_round:02d}_capture_manifest.json"""
+scripts/run_update_capture_v318b.py,update,293,"round_manifest_path = updates_dir / f""round_{monitoring_round:02d}_capture_manifest.json"""
+scripts/run_update_capture_v318b.py,update,296,"""phase"": ""pre_aggregation_client_update_capture"","
+scripts/run_update_capture_v318b.py,monitoring_round,300,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,update,304,"""update_dtype"": ""float32"","
+scripts/run_update_capture_v318b.py,update,305,"""update_shape"": [int(x) for x in updates.shape],"
+scripts/run_update_capture_v318b.py,update,306,"""update_matrix_file"": str(matrix_path.relative_to(output_dir)),"
+scripts/run_update_capture_v318b.py,update,307,"""update_matrix_sha256"": matrix_hash,"
+scripts/run_update_capture_v318b.py,malicious,314,"""actual_malicious_client_count"": int(len(malicious_clients)),"
+scripts/run_update_capture_v318b.py,monitoring_round,320,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,update,327,"""matrix_rows"": int(updates.shape[0]),"
+scripts/run_update_capture_v318b.py,update,328,"""matrix_columns"": int(updates.shape[1]),"
+scripts/run_update_capture_v318b.py,update,329,"""update_matrix_file"": str(matrix_path.relative_to(output_dir)),"
+scripts/run_update_capture_v318b.py,update,330,"""update_matrix_sha256"": matrix_hash,"
+scripts/run_update_capture_v318b.py,update,331,"""update_matrix_bytes"": int(matrix_path.stat().st_size),"
+scripts/run_update_capture_v318b.py,update,334,"""mean_update_l2_norm"": float(client_norms.mean()),"
+scripts/run_update_capture_v318b.py,update,335,"""minimum_update_l2_norm"": float(client_norms.min()),"
+scripts/run_update_capture_v318b.py,update,336,"""maximum_update_l2_norm"": float(client_norms.max()),"
+scripts/run_update_capture_v318b.py,update,353,"matrix_path = output_dir / str(row[""update_matrix_file""])"
+scripts/run_update_capture_v318b.py,update,356,"(matrix_path, str(row[""update_matrix_sha256""])),"
+scripts/run_update_capture_v318b.py,score,369,"score_rows: List[Dict[str, object]],"
+scripts/run_update_capture_v318b.py,signature,370,"signature_rows: List[Dict[str, object]],"
+scripts/run_update_capture_v318b.py,anchor,374,"pd.DataFrame(score_rows).to_csv(tables_dir / ""continuation_client_anchor_scores_partial.csv"", index=False)"
+scripts/run_update_capture_v318b.py,score,374,"pd.DataFrame(score_rows).to_csv(tables_dir / ""continuation_client_anchor_scores_partial.csv"", index=False)"
+scripts/run_update_capture_v318b.py,signature,375,"pd.DataFrame(signature_rows).to_csv(tables_dir / ""continuation_transition_signature_long_partial.csv"", index=False)"
+scripts/run_update_capture_v318b.py,update,408,"updates_dir = output_dir / ""update_artifacts"""
+scripts/run_update_capture_v318b.py,update,409,"for path in (tables_dir, figures_dir, checkpoints_dir, attack_dir, updates_dir):"
+scripts/run_update_capture_v318b.py,probe,446,"probe_indices = balanced_probe_indices(y_val, args.probe_per_class, args.probe_seed)"
+scripts/run_update_capture_v318b.py,probe,447,probe_hash = hashlib.sha256(np.ascontiguousarray(probe_indices).tobytes()).hexdigest()
+scripts/run_update_capture_v318b.py,probe,448,"if probe_hash != warmup_metadata[""probe_hash_sha256""]:"
+scripts/run_update_capture_v318b.py,probe,449,"raise RuntimeError(""Probe hash does not match warmup branch point"")"
+scripts/run_update_capture_v318b.py,probe,450,X_probe = X_val[probe_indices]
+scripts/run_update_capture_v318b.py,probe,451,y_probe = y_val[probe_indices]
+scripts/run_update_capture_v318b.py,threshold,459,"threshold = float(calibration_summary[""clean_ema_threshold""])"
+scripts/run_update_capture_v318b.py,update,467,"model.state_dict(), updates_dir"
+scripts/run_update_capture_v318b.py,client_id,471,requested = parse_client_ids(args.malicious_clients)
+scripts/run_update_capture_v318b.py,malicious,471,requested = parse_client_ids(args.malicious_clients)
+scripts/run_update_capture_v318b.py,malicious,472,"malicious_clients, poisoned_positions, poison_manifest, poison_hash = prepare_static_attack("
+scripts/run_update_capture_v318b.py,malicious,477,"malicious_client_fraction=len(requested) / args.num_clients,"
+scripts/run_update_capture_v318b.py,malicious,481,"explicit_malicious_clients=requested,"
+scripts/run_update_capture_v318b.py,malicious,484,malicious_clients = []
+scripts/run_update_capture_v318b.py,client_id,485,"poisoned_positions = {client_id: np.empty(0, dtype=np.int64) for client_id in range(args.num_clients)}"
+scripts/run_update_capture_v318b.py,client_id,489,"""client_id"": client_id,"
+scripts/run_update_capture_v318b.py,malicious,490,"""is_malicious"": False,"
+scripts/run_update_capture_v318b.py,client_id,498,"for client_id, indices in enumerate(client_indices)"
+scripts/run_update_capture_v318b.py,client_id,502,for client_id in range(args.num_clients):
+scripts/run_update_capture_v318b.py,client_id,503,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_update_capture_v318b.py,update,503,"digest.update(f""client_{client_id:03d}"".encode(""utf-8""))"
+scripts/run_update_capture_v318b.py,malicious,506,"poison_manifest.to_csv(attack_dir / ""malicious_client_poison_manifest.csv"", index=False)"
+scripts/run_update_capture_v318b.py,malicious,514,"""malicious_clients"": ""|"".join(map(str, malicious_clients)),"
+scripts/run_update_capture_v318b.py,score,524,"score_rows: List[Dict[str, object]] = []"
+scripts/run_update_capture_v318b.py,signature,525,"signature_rows: List[Dict[str, object]] = []"
+scripts/run_update_capture_v318b.py,monitoring_round,546,"start_round = int(saved[""monitoring_round""]) + 1"
+scripts/run_update_capture_v318b.py,anchor,549,"score_rows = load_rows(tables_dir / ""continuation_client_anchor_scores_partial.csv"")"
+scripts/run_update_capture_v318b.py,score,549,"score_rows = load_rows(tables_dir / ""continuation_client_anchor_scores_partial.csv"")"
+scripts/run_update_capture_v318b.py,signature,550,"signature_rows = load_rows(tables_dir / ""continuation_transition_signature_long_partial.csv"")"
+scripts/run_update_capture_v318b.py,update,551,"capture_rows = load_rows(tables_dir / ""v318b_update_capture_index_partial.csv"")"
+scripts/run_update_capture_v318b.py,anchor,558,"print(""Post-Warmup Anchor Capture V3.10"")"
+scripts/run_update_capture_v318b.py,threshold,561,"print(""Frozen EMA threshold:"", f""{threshold:.6f}"")"
+scripts/run_update_capture_v318b.py,malicious,563,"print(""Malicious clients:"", malicious_clients)"
+scripts/run_update_capture_v318b.py,monitoring_round,565,"for monitoring_round in range(start_round, args.continuation_rounds + 1):"
+scripts/run_update_capture_v318b.py,monitoring_round,566,global_round = 4 + monitoring_round
+scripts/run_update_capture_v318b.py,client_id,574,for client_id in range(args.num_clients):
+scripts/run_update_capture_v318b.py,client_id,575,indices = client_indices[client_id]
+scripts/run_update_capture_v318b.py,client_id,577,positions = poisoned_positions[client_id]
+scripts/run_update_capture_v318b.py,gradient,591,"gradient_clip_norm=args.gradient_clip_norm,"
+scripts/run_update_capture_v318b.py,client_id,592,"seed=args.model_seed + global_round * 1000 + client_id,"
+scripts/run_update_capture_v318b.py,probe,594,"probabilities = predict_probabilities(local_model, X_probe, args.evaluation_batch_size)"
+scripts/run_update_capture_v318b.py,probe,595,"local_means = class_conditional_probability_means(probabilities, y_probe)"
+scripts/run_update_capture_v318b.py,monitoring_round,600,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,client_id,602,"""client_id"": int(client_id),"
+scripts/run_update_capture_v318b.py,client_id,603,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_update_capture_v318b.py,malicious,603,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_update_capture_v318b.py,update,615,save_round_update_capture(
+scripts/run_update_capture_v318b.py,update,617,"updates_dir=updates_dir,"
+scripts/run_update_capture_v318b.py,monitoring_round,618,"monitoring_round=monitoring_round,"
+scripts/run_update_capture_v318b.py,malicious,623,"malicious_clients=malicious_clients,"
+scripts/run_update_capture_v318b.py,update,632,"tables_dir / ""v318b_update_capture_index_partial.csv"","
+scripts/run_update_capture_v318b.py,client_id,640,"for client_id, local_matrix in enumerate(local_matrices):"
+scripts/run_update_capture_v318b.py,signature,644,signature_rows.append({
+scripts/run_update_capture_v318b.py,monitoring_round,645,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,client_id,647,"""client_id"": int(client_id),"
+scripts/run_update_capture_v318b.py,client_id,648,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_update_capture_v318b.py,malicious,648,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_update_capture_v318b.py,client_id,655,"""frozen_profile_probability"": float(profiles[client_id][source_index, target_index]),"
+scripts/run_update_capture_v318b.py,monitoring_round,659,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,client_id,661,"""client_id"": int(client_id),"
+scripts/run_update_capture_v318b.py,client_id,662,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_update_capture_v318b.py,malicious,662,"""actual_malicious"": bool(client_id in malicious_clients),"
+scripts/run_update_capture_v318b.py,client_id,663,"""client_samples"": int(sample_counts[client_id]),"
+scripts/run_update_capture_v318b.py,client_id,664,"""aggregation_weight"": float(raw_weights[client_id]),"
+scripts/run_update_capture_v318b.py,client_id,665,"""poisoned_rows"": int(len(poisoned_positions[client_id])),"
+scripts/run_update_capture_v318b.py,client_id,668,"profiles[client_id],"
+scripts/run_update_capture_v318b.py,score,676,"current_scored = apply_feature_calibration(pd.DataFrame(current_raw), feature_calibration)"
+scripts/run_update_capture_v318b.py,score,677,"current_scored, ema_memory = add_candidate_and_ema("
+scripts/run_update_capture_v318b.py,score,678,"current_scored, args.ema_decay, initial_ema=ema_memory"
+scripts/run_update_capture_v318b.py,threshold,680,"current_scored[""clean_ema_threshold""] = threshold"
+scripts/run_update_capture_v318b.py,score,680,"current_scored[""clean_ema_threshold""] = threshold"
+scripts/run_update_capture_v318b.py,threshold,681,"current_scored[""flagged""] = current_scored[SCORE_COLUMN] > threshold"
+scripts/run_update_capture_v318b.py,score,681,"current_scored[""flagged""] = current_scored[SCORE_COLUMN] > threshold"
+scripts/run_update_capture_v318b.py,score,682,"current_scored[""harm_weight""] = ("
+scripts/run_update_capture_v318b.py,score,683,"current_scored[""aggregation_weight""]"
+scripts/run_update_capture_v318b.py,score,684,"* current_scored[""source_target_growth_from_profile""]"
+scripts/run_update_capture_v318b.py,score,686,"score_rows.extend(current_scored.to_dict(orient=""records""))"
+scripts/run_update_capture_v318b.py,score,693,"labels = current_scored[""actual_malicious""].astype(bool).to_numpy()"
+scripts/run_update_capture_v318b.py,malicious,693,"labels = current_scored[""actual_malicious""].astype(bool).to_numpy()"
+scripts/run_update_capture_v318b.py,score,694,"flags = current_scored[""flagged""].astype(bool).to_numpy()"
+scripts/run_update_capture_v318b.py,benign,695,benign = ~labels
+scripts/run_update_capture_v318b.py,malicious,697,malicious_recall = float(np.mean(flags[labels]))
+scripts/run_update_capture_v318b.py,score,699,"mean_malicious_score = float(current_scored.loc[labels, SCORE_COLUMN].mean())"
+scripts/run_update_capture_v318b.py,malicious,699,"mean_malicious_score = float(current_scored.loc[labels, SCORE_COLUMN].mean())"
+scripts/run_update_capture_v318b.py,score,700,"malicious_harm = float(current_scored.loc[labels, ""harm_weight""].sum())"
+scripts/run_update_capture_v318b.py,malicious,700,"malicious_harm = float(current_scored.loc[labels, ""harm_weight""].sum())"
+scripts/run_update_capture_v318b.py,malicious,702,"malicious_recall = float(""nan"")"
+scripts/run_update_capture_v318b.py,score,704,"mean_malicious_score = float(""nan"")"
+scripts/run_update_capture_v318b.py,malicious,704,"mean_malicious_score = float(""nan"")"
+scripts/run_update_capture_v318b.py,malicious,705,malicious_harm = 0.0
+scripts/run_update_capture_v318b.py,benign,706,"benign_fpr = float(np.mean(flags[benign])) if benign.any() else float(""nan"")"
+scripts/run_update_capture_v318b.py,score,707,"mean_benign_score = float(current_scored.loc[benign, SCORE_COLUMN].mean()) if benign.any() else float(""nan"")"
+scripts/run_update_capture_v318b.py,benign,707,"mean_benign_score = float(current_scored.loc[benign, SCORE_COLUMN].mean()) if benign.any() else float(""nan"")"
+scripts/run_update_capture_v318b.py,score,708,"total_harm = float(current_scored[""harm_weight""].sum())"
+scripts/run_update_capture_v318b.py,malicious,709,"malicious_harm_share = malicious_harm / max(total_harm, 1e-12) if labels.any() else float(""nan"")"
+scripts/run_update_capture_v318b.py,monitoring_round,712,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,malicious,719,"""malicious_recall"": malicious_recall,"
+scripts/run_update_capture_v318b.py,benign,720,"""benign_false_positive_rate"": benign_fpr,"
+scripts/run_update_capture_v318b.py,anchor,722,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_update_capture_v318b.py,score,722,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_update_capture_v318b.py,benign,722,"""mean_benign_anchor_ema"": mean_benign_score,"
+scripts/run_update_capture_v318b.py,anchor,723,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_update_capture_v318b.py,score,723,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_update_capture_v318b.py,malicious,723,"""mean_malicious_anchor_ema"": mean_malicious_score,"
+scripts/run_update_capture_v318b.py,malicious,725,"""malicious_harm_share"": malicious_harm_share,"
+scripts/run_update_capture_v318b.py,monitoring_round,737,"""monitoring_round"": int(monitoring_round),"
+scripts/run_update_capture_v318b.py,score,748,"save_partial(tables_dir, round_rows, local_rows, score_rows, signature_rows)"
+scripts/run_update_capture_v318b.py,signature,748,"save_partial(tables_dir, round_rows, local_rows, score_rows, signature_rows)"
+scripts/run_update_capture_v318b.py,malicious,749,"recall_text = ""NA"" if not labels.any() else f""{malicious_recall:.3f}"""
+scripts/run_update_capture_v318b.py,monitoring_round,751,"f""monitoring round {monitoring_round:02d}, global round {global_round:02d}, """
+scripts/run_update_capture_v318b.py,benign,754,"f""recall={recall_text}, benign FPR={benign_fpr:.3f}, """
+scripts/run_update_capture_v318b.py,score,760,score_table = pd.DataFrame(score_rows)
+scripts/run_update_capture_v318b.py,signature,761,signature_table = pd.DataFrame(signature_rows)
+scripts/run_update_capture_v318b.py,anchor,765,"score_table.to_csv(tables_dir / ""continuation_client_anchor_scores.csv"", index=False)"
+scripts/run_update_capture_v318b.py,score,765,"score_table.to_csv(tables_dir / ""continuation_client_anchor_scores.csv"", index=False)"
+scripts/run_update_capture_v318b.py,signature,766,"signature_table.to_csv(tables_dir / ""continuation_transition_signature_long.csv"", index=False)"
+scripts/run_update_capture_v318b.py,update,767,"capture_table.to_csv(tables_dir / ""v318b_update_capture_index.csv"", index=False)"
+scripts/run_update_capture_v318b.py,monitoring_round,770,"ax.plot(round_table[""monitoring_round""], round_table[""val_macro_f1""], marker=""o"", label=""Macro F1"")"
+scripts/run_update_capture_v318b.py,monitoring_round,771,"ax.plot(round_table[""monitoring_round""], round_table[""val_source_to_target_rate""], marker=""s"", label=f""{args.source_class}->{args.target_class}"")"
+scripts/run_update_capture_v318b.py,monitoring_round,781,"ax.plot(round_table[""monitoring_round""], round_table[""benign_false_positive_rate""], marker=""o"", label=""Benign FPR"")"
+scripts/run_update_capture_v318b.py,benign,781,"ax.plot(round_table[""monitoring_round""], round_table[""benign_false_positive_rate""], marker=""o"", label=""Benign FPR"")"
+scripts/run_update_capture_v318b.py,monitoring_round,783,"ax.plot(round_table[""monitoring_round""], round_table[""malicious_recall""], marker=""s"", label=""Malicious recall"")"
+scripts/run_update_capture_v318b.py,malicious,783,"ax.plot(round_table[""monitoring_round""], round_table[""malicious_recall""], marker=""s"", label=""Malicious recall"")"
+scripts/run_update_capture_v318b.py,anchor,787,"ax.set_title(""Frozen independent-anchor detection"")"
+scripts/run_update_capture_v318b.py,anchor,790,"save_figure(fig, figures_dir / ""anchor_detection_dynamics"")"
+scripts/run_update_capture_v318b.py,update,795,"""phase"": ""post_warmup_plain_fedavg_full_update_capture"","
+scripts/run_update_capture_v318b.py,score,805,"""score_column"": SCORE_COLUMN,"
+scripts/run_update_capture_v318b.py,threshold,808,"""clean_ema_threshold"": float(threshold),"
+scripts/run_update_capture_v318b.py,client_id,810,"""stable_client_identity_required"": True,"
+scripts/run_update_capture_v318b.py,malicious,811,"""malicious_clients"": malicious_clients,"
+scripts/run_update_capture_v318b.py,malicious,817,"""malicious_labels_used_for_aggregation"": False,"
+scripts/run_update_capture_v318b.py,malicious,818,"""malicious_labels_used_for_reporting_only"": True,"
+scripts/run_update_capture_v318b.py,update,819,"""full_client_update_capture_enabled"": True,"
+scripts/run_update_capture_v318b.py,update,820,"""update_capture_dtype"": ""float32"","
+scripts/run_update_capture_v318b.py,update,821,"""update_capture_pre_aggregation"": True,"
+scripts/run_update_capture_v318b.py,update,822,"""update_capture_used_for_training_or_aggregation"": False,"
+scripts/run_update_capture_v318b.py,update,824,"""captured_update_rounds"": int(len(capture_table)),"
+scripts/run_update_capture_v318b.py,update,825,"""captured_update_matrix_bytes"": int(capture_table[""update_matrix_bytes""].sum()),"
+scripts/run_update_capture_v318b.py,monitoring_round,826,"""rounds_completed"": int(round_table[""monitoring_round""].max()),"
+scripts/run_update_capture_v318b.py,benign,829,"""mean_benign_false_positive_rate"": float(round_table[""benign_false_positive_rate""].mean()),"
+scripts/run_update_capture_v318b.py,malicious,830,"""mean_malicious_recall"": ("
+scripts/run_update_capture_v318b.py,malicious,831,"None if args.mode == ""clean"" else float(round_table[""malicious_recall""].mean())"
+scripts/run_update_capture_v318b.py,update,839,"print(""V3.18B full client-update capture complete"")"
+scripts/run_update_capture_v318b.py,benign,843,"print(""Mean benign FPR:"", f""{round_table['benign_false_positive_rate'].mean():.6f}"")"
+scripts/run_update_capture_v318b.py,malicious,845,"print(""Mean malicious recall:"", f""{round_table['malicious_recall'].mean():.6f}"")"
+scripts/audit_robust_centers_v319a.py,center,2,"""""""V3.19A one-round robust-center and robust-aggregation audit."
+scripts/audit_robust_centers_v319a.py,update,4,Uses only the exactly equivalent V3.18B round-1 client-update captures.
+scripts/audit_robust_centers_v319a.py,benign,19,"- source-to-Benign attack rate,"
+scripts/audit_robust_centers_v319a.py,update,21,"- aggregate-update error relative to the clean FedAvg update,"
+scripts/audit_robust_centers_v319a.py,signature,53,from transition_signature_features_v38 import evaluate_validation
+scripts/audit_robust_centers_v319a.py,benign,58,"""DoS->Benign"","
+scripts/audit_robust_centers_v319a.py,benign,59,"""BruteForce->Benign"","
+scripts/audit_robust_centers_v319a.py,benign,60,"""Web-Based->Benign"","
+scripts/audit_robust_centers_v319a.py,update,92,h.update(chunk)
+scripts/audit_robust_centers_v319a.py,update,136,"capture_dir / ""tables"" / ""v318b_update_capture_index.csv"""
+scripts/audit_robust_centers_v319a.py,monitoring_round,138,"row = index[index[""monitoring_round""].astype(int) == 1]"
+scripts/audit_robust_centers_v319a.py,update,143,"matrix_path = capture_dir / str(row[""update_matrix_file""])"
+scripts/audit_robust_centers_v319a.py,update,145,"if digest(matrix_path) != str(row[""update_matrix_sha256""]):"
+scripts/audit_robust_centers_v319a.py,update,146,"raise RuntimeError(f""Update matrix hash mismatch: {matrix_path}"")"
+scripts/audit_robust_centers_v319a.py,update,150,"updates = np.load(matrix_path, mmap_mode=""r"", allow_pickle=False)"
+scripts/audit_robust_centers_v319a.py,update,151,"updates = np.asarray(updates, dtype=np.float32)"
+scripts/audit_robust_centers_v319a.py,update,154,"/ ""update_artifacts"""
+scripts/audit_robust_centers_v319a.py,client_id,156,").sort_values(""client_id"").reset_index(drop=True)"
+scripts/audit_robust_centers_v319a.py,update,158,"capture_dir / ""update_artifacts"" / ""parameter_layout.csv"""
+scripts/audit_robust_centers_v319a.py,update,163,if updates.shape[0] != 20:
+scripts/audit_robust_centers_v319a.py,update,167,"if int(layout.loc[layout[""included_in_update_vector""].astype(bool), ""numel""].sum()) != updates.shape[1]:"
+scripts/audit_robust_centers_v319a.py,update,168,"raise RuntimeError(""Parameter layout does not match update matrix"")"
+scripts/audit_robust_centers_v319a.py,update,169,if not np.isfinite(updates).all():
+scripts/audit_robust_centers_v319a.py,update,170,"raise RuntimeError(""Non-finite update values found"")"
+scripts/audit_robust_centers_v319a.py,update,171,"return updates, client_manifest, layout, reference_state"
+scripts/audit_robust_centers_v319a.py,update,175,"updates: np.ndarray,"
+scripts/audit_robust_centers_v319a.py,update,181,"weights @ updates.astype(np.float64, copy=False),"
+scripts/audit_robust_centers_v319a.py,update,186,def equal_mean(updates: np.ndarray) -> np.ndarray:
+scripts/audit_robust_centers_v319a.py,update,187,"return updates.astype(np.float64, copy=False).mean(axis=0)"
+scripts/audit_robust_centers_v319a.py,update,190,def coordinate_median(updates: np.ndarray) -> np.ndarray:
+scripts/audit_robust_centers_v319a.py,update,191,"return np.median(updates.astype(np.float64, copy=False), axis=0)"
+scripts/audit_robust_centers_v319a.py,update,194,"def trimmed_mean(updates: np.ndarray, f: int) -> np.ndarray:"
+scripts/audit_robust_centers_v319a.py,update,195,n = int(updates.shape[0])
+scripts/audit_robust_centers_v319a.py,update,198,sorted_updates = np.sort(
+scripts/audit_robust_centers_v319a.py,update,199,"updates.astype(np.float64, copy=False),"
+scripts/audit_robust_centers_v319a.py,update,202,return sorted_updates[f : n - f].mean(axis=0)
+scripts/audit_robust_centers_v319a.py,update,206,"updates: np.ndarray,"
+scripts/audit_robust_centers_v319a.py,update,210,"x = updates.astype(np.float64, copy=False)"
+scripts/audit_robust_centers_v319a.py,center,211,"center = np.median(x, axis=0)"
+scripts/audit_robust_centers_v319a.py,center,215,"distances = np.linalg.norm(x - center[None, :], axis=1)"
+scripts/audit_robust_centers_v319a.py,center,218,new_center = x[int(near[0])].copy()
+scripts/audit_robust_centers_v319a.py,center,221,new_center = np.sum(
+scripts/audit_robust_centers_v319a.py,center,225,step = float(np.linalg.norm(new_center - center))
+scripts/audit_robust_centers_v319a.py,center,226,"scale = max(float(np.linalg.norm(center)), 1.0)"
+scripts/audit_robust_centers_v319a.py,center,227,center = new_center
+scripts/audit_robust_centers_v319a.py,center,232,"return center, iterations, converged"
+scripts/audit_robust_centers_v319a.py,update,236,"updates: np.ndarray,"
+scripts/audit_robust_centers_v319a.py,update,240,"x = updates.astype(np.float64, copy=False)"
+scripts/audit_robust_centers_v319a.py,score,261,"scores = np.empty(n, dtype=np.float64)"
+scripts/audit_robust_centers_v319a.py,client_id,262,for client_id in range(n):
+scripts/audit_robust_centers_v319a.py,client_id,264,"distances[client_id],"
+scripts/audit_robust_centers_v319a.py,client_id,267,scores[client_id] = nearest.sum()
+scripts/audit_robust_centers_v319a.py,score,267,scores[client_id] = nearest.sum()
+scripts/audit_robust_centers_v319a.py,score,270,"(np.arange(n, dtype=int), scores)"
+scripts/audit_robust_centers_v319a.py,score,273,"return aggregate, selected.astype(int), scores"
+scripts/audit_robust_centers_v319a.py,update,277,"updates: np.ndarray,"
+scripts/audit_robust_centers_v319a.py,update,289,"outputs[""weighted_fedavg""] = weighted_fedavg(updates, sample_counts)"
+scripts/audit_robust_centers_v319a.py,update,294,"""selected_clients"": ""|"".join(map(str, range(len(updates)))),"
+scripts/audit_robust_centers_v319a.py,update,300,"outputs[""equal_mean""] = equal_mean(updates)"
+scripts/audit_robust_centers_v319a.py,update,305,"""selected_clients"": ""|"".join(map(str, range(len(updates)))),"
+scripts/audit_robust_centers_v319a.py,update,311,"outputs[""coordinate_median""] = coordinate_median(updates)"
+scripts/audit_robust_centers_v319a.py,update,316,"""selected_clients"": ""|"".join(map(str, range(len(updates)))),"
+scripts/audit_robust_centers_v319a.py,update,322,"outputs[f""trimmed_mean_f{trim_f}""] = trimmed_mean(updates, trim_f)"
+scripts/audit_robust_centers_v319a.py,update,327,"""selected_clients"": ""|"".join(map(str, range(len(updates)))),"
+scripts/audit_robust_centers_v319a.py,center,333,"center, iterations, converged = geometric_median("
+scripts/audit_robust_centers_v319a.py,update,334,"updates,"
+scripts/audit_robust_centers_v319a.py,center,338,"outputs[""geometric_median""] = center"
+scripts/audit_robust_centers_v319a.py,update,343,"""selected_clients"": ""|"".join(map(str, range(len(updates)))),"
+scripts/audit_robust_centers_v319a.py,score,349,"center, selected, scores = multi_krum("
+scripts/audit_robust_centers_v319a.py,center,349,"center, selected, scores = multi_krum("
+scripts/audit_robust_centers_v319a.py,update,350,"updates,"
+scripts/audit_robust_centers_v319a.py,center,354,"outputs[f""multi_krum_f{krum_f}_m{krum_m}""] = center"
+scripts/audit_robust_centers_v319a.py,update,362,"""krum_neighbour_count"": int(len(updates) - krum_f - 2),"
+scripts/audit_robust_centers_v319a.py,score,363,"""krum_minimum_score"": float(scores[selected[0]]),"
+scripts/audit_robust_centers_v319a.py,score,364,"""krum_maximum_selected_score"": float(scores[selected[-1]]),"
+scripts/audit_robust_centers_v319a.py,update,379,"if not bool(row[""included_in_update_vector""]):"
+scripts/audit_robust_centers_v319a.py,update,404,"if not bool(row[""included_in_update_vector""]):"
+scripts/audit_robust_centers_v319a.py,update,410,update = torch.from_numpy(
+scripts/audit_robust_centers_v319a.py,update,414,reference.to(torch.float32) + update
+scripts/audit_robust_centers_v319a.py,benign,476,"target_id = CLASS_NAMES.index(""Benign"")"
+scripts/audit_robust_centers_v319a.py,update,483,"updates, clients, layout, reference_state = load_round_one("
+scripts/audit_robust_centers_v319a.py,update,488,"/ ""update_artifacts"""
+scripts/audit_robust_centers_v319a.py,update,502,"""updates"": updates,"
+scripts/audit_robust_centers_v319a.py,update,520,"updates = scenario_data[scenario][""updates""]"
+scripts/audit_robust_centers_v319a.py,update,524,"updates,"
+scripts/audit_robust_centers_v319a.py,malicious,532,malicious_ids = set(
+scripts/audit_robust_centers_v319a.py,malicious,534,"clients[""actual_malicious""].astype(bool),"
+scripts/audit_robust_centers_v319a.py,client_id,535,"""client_id"","
+scripts/audit_robust_centers_v319a.py,update,544,row.update({
+scripts/audit_robust_centers_v319a.py,malicious,546,"""actual_malicious_clients"":"
+scripts/audit_robust_centers_v319a.py,malicious,547,"""|"".join(map(str, sorted(malicious_ids))),"
+scripts/audit_robust_centers_v319a.py,malicious,548,"""selected_malicious_clients"":"
+scripts/audit_robust_centers_v319a.py,malicious,549,"""|"".join(map(str, sorted(selected & malicious_ids))),"
+scripts/audit_robust_centers_v319a.py,malicious,550,"""selected_malicious_count"":"
+scripts/audit_robust_centers_v319a.py,malicious,551,"int(len(selected & malicious_ids)),"
+scripts/audit_robust_centers_v319a.py,benign,552,"""selected_benign_count"":"
+scripts/audit_robust_centers_v319a.py,malicious,553,"int(len(selected - malicious_ids)),"
+scripts/audit_robust_centers_v319a.py,malicious,582,malicious_ids = set(
+scripts/audit_robust_centers_v319a.py,malicious,584,"clients[""actual_malicious""].astype(bool),"
+scripts/audit_robust_centers_v319a.py,client_id,585,"""client_id"","
+scripts/audit_robust_centers_v319a.py,malicious,627,"""selected_malicious_count"": int("
+scripts/audit_robust_centers_v319a.py,malicious,628,"runtime_row[""selected_malicious_count""]"
+scripts/audit_robust_centers_v319a.py,benign,630,"""selected_benign_count"": int("
+scripts/audit_robust_centers_v319a.py,benign,631,"runtime_row[""selected_benign_count""]"
+scripts/audit_robust_centers_v319a.py,benign,718,"scenario = f""{source}->Benign"""
+scripts/audit_robust_centers_v319a.py,center,770,plain_center_error = float(
+scripts/audit_robust_centers_v319a.py,center,773,method_center_error = float(
+scripts/audit_robust_centers_v319a.py,center,776,center_error_reduction = (
+scripts/audit_robust_centers_v319a.py,center,778,"method_center_error,"
+scripts/audit_robust_centers_v319a.py,center,779,"plain_center_error,"
+scripts/audit_robust_centers_v319a.py,center,781,"if plain_center_error > 1e-12 else float(""nan"")"
+scripts/audit_robust_centers_v319a.py,center,798,"""plain_center_error"": plain_center_error,"
+scripts/audit_robust_centers_v319a.py,center,799,"""method_center_error"": method_center_error,"
+scripts/audit_robust_centers_v319a.py,center,800,"""center_error_reduction"": center_error_reduction,"
+scripts/audit_robust_centers_v319a.py,center,809,"""clean_relative_center_distortion"":"
+scripts/audit_robust_centers_v319a.py,center,815,"""mean_center_error_reduction"":"
+scripts/audit_robust_centers_v319a.py,center,816,"float(attack_table[""center_error_reduction""].mean()),"
+scripts/audit_robust_centers_v319a.py,center,817,"""minimum_center_error_reduction"":"
+scripts/audit_robust_centers_v319a.py,center,818,"float(attack_table[""center_error_reduction""].min()),"
+scripts/audit_robust_centers_v319a.py,center,843,"""positive_center_error_reduction_all_attacks"":"
+scripts/audit_robust_centers_v319a.py,center,846,"attack_table[""center_error_reduction""] > 0"
+scripts/audit_robust_centers_v319a.py,center,879,"""plain_center_error"","
+scripts/audit_robust_centers_v319a.py,center,880,"""method_center_error"","
+scripts/audit_robust_centers_v319a.py,center,881,"""center_error_reduction"","
+scripts/audit_robust_centers_v319a.py,center,888,"row[""passes_clean_center_distortion""] = ("
+scripts/audit_robust_centers_v319a.py,center,889,"row[""clean_relative_center_distortion""] <= 0.25"
+scripts/audit_robust_centers_v319a.py,center,891,"row[""passes_mean_center_error_reduction""] = ("
+scripts/audit_robust_centers_v319a.py,center,892,"row[""mean_center_error_reduction""] >= 0.40"
+scripts/audit_robust_centers_v319a.py,center,894,"row[""passes_min_center_error_reduction""] = ("
+scripts/audit_robust_centers_v319a.py,center,895,"row[""minimum_center_error_reduction""] > 0.0"
+scripts/audit_robust_centers_v319a.py,center,897,"row[""passes_center_reference_criteria""] = bool("
+scripts/audit_robust_centers_v319a.py,center,899,"and row[""passes_clean_center_distortion""]"
+scripts/audit_robust_centers_v319a.py,center,900,"and row[""passes_mean_center_error_reduction""]"
+scripts/audit_robust_centers_v319a.py,center,901,"and row[""passes_min_center_error_reduction""]"
+scripts/audit_robust_centers_v319a.py,center,907,"row[""passes_center_reference_criteria""]"
+scripts/audit_robust_centers_v319a.py,center,915,"row[""selected_as_robust_center_reference""] = False"
+scripts/audit_robust_centers_v319a.py,center,921,center_candidates = summary[
+scripts/audit_robust_centers_v319a.py,center,922,"summary[""passes_center_reference_criteria""]"
+scripts/audit_robust_centers_v319a.py,center,925,center_selected = None
+scripts/audit_robust_centers_v319a.py,center,926,if len(center_candidates):
+scripts/audit_robust_centers_v319a.py,center,927,center_candidates = center_candidates.sort_values(
+scripts/audit_robust_centers_v319a.py,center,929,"""mean_center_error_reduction"","
+scripts/audit_robust_centers_v319a.py,center,930,"""minimum_center_error_reduction"","
+scripts/audit_robust_centers_v319a.py,center,936,center_selected = center_candidates.iloc[0]
+scripts/audit_robust_centers_v319a.py,center,939,"str(center_selected[""method""])"
+scripts/audit_robust_centers_v319a.py,center,941,"""selected_as_robust_center_reference"","
+scripts/audit_robust_centers_v319a.py,benign,974,"scenario = f""{source}->Benign"""
+scripts/audit_robust_centers_v319a.py,monitoring_round,981,"captured_round[""monitoring_round""].astype(int) == 1"
+scripts/audit_robust_centers_v319a.py,center,1015,"""stage"": ""one_round_robust_center_and_aggregation_audit"","
+scripts/audit_robust_centers_v319a.py,center,1018,"""robust_center_reference_selected"":"
+scripts/audit_robust_centers_v319a.py,center,1019,"center_selected is not None,"
+scripts/audit_robust_centers_v319a.py,center,1020,"""selected_robust_center_method"": ("
+scripts/audit_robust_centers_v319a.py,center,1021,None if center_selected is None
+scripts/audit_robust_centers_v319a.py,center,1022,"else str(center_selected[""method""])"
+scripts/audit_robust_centers_v319a.py,center,1036,"""using the selected robust center, while retaining standard """
+scripts/audit_robust_centers_v319a.py,center,1038,if center_selected is not None
+scripts/audit_robust_centers_v319a.py,center,1040,"""No robust center passed the pre-registered one-round criteria. """
+scripts/audit_robust_centers_v319a.py,center,1041,"""Do not integrate yet; inspect center geometry and revise the """
+scripts/audit_robust_centers_v319a.py,center,1042,"""center construction once."""
+scripts/audit_robust_centers_v319a.py,benign,1079,"ax.set_ylabel(""Source-to-Benign rate"")"
+scripts/audit_robust_centers_v319a.py,center,1091,"plot[""mean_center_error_reduction""],"
+scripts/audit_robust_centers_v319a.py,center,1100,"ax.set_ylabel(""Mean aggregate-center error reduction"")"
+scripts/audit_robust_centers_v319a.py,center,1101,"ax.set_title(""V3.19A robust-center stability"")"
+scripts/audit_robust_centers_v319a.py,center,1103,"save_figure(fig, figures / ""center_error_reduction"")"
+scripts/audit_robust_centers_v319a.py,center,1125,"print(""V3.19A robust-center audit complete"")"
+scripts/audit_robust_centers_v319a.py,center,1132,"""clean_relative_center_distortion"","
+scripts/audit_robust_centers_v319a.py,center,1133,"""mean_center_error_reduction"","
+scripts/audit_robust_centers_v319a.py,center,1134,"""minimum_center_error_reduction"","
+scripts/audit_robust_centers_v319a.py,center,1139,"""passes_center_reference_criteria"","
+scripts/audit_robust_centers_v319a.py,center,1141,"""selected_as_robust_center_reference"","
+scripts/audit_robust_centers_v319a.py,center,1147,"""selected_as_robust_center_reference"","
+scripts/audit_robust_centers_v319a.py,center,1148,"""mean_center_error_reduction"","
+src/independent_anchor_v310.py,anchor,1,"""""""Independent absolute transition-signature anchor utilities for V3.10."""""""
+src/independent_anchor_v310.py,signature,1,"""""""Independent absolute transition-signature anchor utilities for V3.10."""""""
+src/independent_anchor_v310.py,anchor,24,"CANDIDATE = ""candidate_max_anchor_absolute"""
+src/independent_anchor_v310.py,score,25,"SCORE_COLUMN = f""{CANDIDATE}_ema"""
+src/independent_anchor_v310.py,update,32,digest.update(chunk)
+src/independent_anchor_v310.py,update,38,digest.update(np.ascontiguousarray(array).tobytes())
+src/independent_anchor_v310.py,center,111,"def robust_center_scale(values: Sequence[float]) -> Tuple[float, float]:"
+src/independent_anchor_v310.py,center,113,center = float(np.median(array))
+src/independent_anchor_v310.py,center,114,scale = 1.4826 * float(np.median(np.abs(array - center)))
+src/independent_anchor_v310.py,center,117,"return center, scale if scale >= 1e-9 else 1.0"
+src/independent_anchor_v310.py,center,120,"def positive_z(values: Sequence[float], center: float, scale: float) -> np.ndarray:"
+src/independent_anchor_v310.py,center,123,"(np.asarray(values, dtype=np.float64) - float(center))"
+src/independent_anchor_v310.py,score,133,scored = clean_rows.copy()
+src/independent_anchor_v310.py,score,136,"center, scale = robust_center_scale(scored[feature])"
+src/independent_anchor_v310.py,center,136,"center, scale = robust_center_scale(scored[feature])"
+src/independent_anchor_v310.py,center,138,"{""feature"": feature, ""clean_median"": center, ""clean_scale"": scale}"
+src/independent_anchor_v310.py,score,140,"scored[f""z_{feature}""] = positive_z(scored[feature], center, scale)"
+src/independent_anchor_v310.py,center,140,"scored[f""z_{feature}""] = positive_z(scored[feature], center, scale)"
+src/independent_anchor_v310.py,score,141,"return scored, pd.DataFrame(calibration_rows)"
+src/independent_anchor_v310.py,client_id,186,"result = table.sort_values([""client_id"", ""monitoring_round""]).copy()"
+src/independent_anchor_v310.py,monitoring_round,186,"result = table.sort_values([""client_id"", ""monitoring_round""]).copy()"
+src/independent_anchor_v310.py,client_id,192,"for client_id, group in result.groupby(""client_id"", sort=False):"
+src/independent_anchor_v310.py,client_id,193,"previous = float(memory.get(int(client_id), 0.0))"
+src/independent_anchor_v310.py,client_id,199,memory[int(client_id)] = previous
+src/independent_anchor_v310.py,score,200,result[SCORE_COLUMN] = ema_output
+src/independent_anchor_v310.py,client_id,201,"return result.sort_values([""monitoring_round"", ""client_id""]).reset_index(drop=True), memory"
+src/independent_anchor_v310.py,monitoring_round,201,"return result.sort_values([""monitoring_round"", ""client_id""]).reset_index(drop=True), memory"
+src/independent_anchor_v310.py,client_id,228,"arrays = {f""client_{int(client_id):03d}"": np.asarray(matrix, dtype=np.float64)"
+src/independent_anchor_v310.py,client_id,229,"for client_id, matrix in sorted(profiles.items())}"
+src/independent_anchor_v310.py,client_id,242,"client_id = int(key.split(""_"")[-1])"
+src/independent_anchor_v310.py,client_id,243,profiles[client_id] = normalize_rows(bundle[key])
+src/trusted_update_reconstruction_v312.py,update,1,"""""""Trusted update-reconstruction utilities for V3.12."""""""
+src/trusted_update_reconstruction_v312.py,update,14,def floating_update(
+src/trusted_update_reconstruction_v312.py,update,18,update: State = {}
+src/trusted_update_reconstruction_v312.py,update,21,update[key] = (
+src/trusted_update_reconstruction_v312.py,update,25,return update
+src/trusted_update_reconstruction_v312.py,update,28,"def zero_update(reference_state: Mapping[str, torch.Tensor]) -> State:"
+src/trusted_update_reconstruction_v312.py,update,36,"def clone_update(update: Mapping[str, torch.Tensor]) -> State:"
+src/trusted_update_reconstruction_v312.py,update,37,"return {key: value.detach().cpu().clone() for key, value in update.items()}"
+src/trusted_update_reconstruction_v312.py,update,40,def add_updates(
+src/trusted_update_reconstruction_v312.py,update,46,"raise ValueError(""Update keys do not match"")"
+src/trusted_update_reconstruction_v312.py,update,56,def subtract_updates(
+src/trusted_update_reconstruction_v312.py,update,60,"return add_updates(left, right, right_scale=-1.0)"
+src/trusted_update_reconstruction_v312.py,update,63,"def scale_update(update: Mapping[str, torch.Tensor], scale: float) -> State:"
+src/trusted_update_reconstruction_v312.py,update,66,"for key, value in update.items()"
+src/trusted_update_reconstruction_v312.py,update,70,"def coordinate_median(updates: Sequence[Mapping[str, torch.Tensor]]) -> State:"
+src/trusted_update_reconstruction_v312.py,update,71,if not updates:
+src/trusted_update_reconstruction_v312.py,update,72,"raise ValueError(""At least one update is required"")"
+src/trusted_update_reconstruction_v312.py,update,73,keys = set(updates[0])
+src/trusted_update_reconstruction_v312.py,update,74,if any(set(update) != keys for update in updates):
+src/trusted_update_reconstruction_v312.py,update,75,"raise ValueError(""Update keys do not match"")"
+src/trusted_update_reconstruction_v312.py,update,79,"[update[key].detach().cpu().to(torch.float32) for update in updates],"
+src/trusted_update_reconstruction_v312.py,update,86,"def update_norm(update: Mapping[str, torch.Tensor]) -> float:"
+src/trusted_update_reconstruction_v312.py,update,88,for tensor in update.values():
+src/trusted_update_reconstruction_v312.py,update,94,def update_dot(
+src/trusted_update_reconstruction_v312.py,update,99,"raise ValueError(""Update keys do not match"")"
+src/trusted_update_reconstruction_v312.py,update,111,def update_cosine(
+src/trusted_update_reconstruction_v312.py,update,115,left_norm = update_norm(left)
+src/trusted_update_reconstruction_v312.py,update,116,right_norm = update_norm(right)
+src/trusted_update_reconstruction_v312.py,update,119,"return float(update_dot(left, right) / (left_norm * right_norm))"
+src/trusted_update_reconstruction_v312.py,update,126,"difference = subtract_updates(reconstructed, actual)"
+src/trusted_update_reconstruction_v312.py,update,127,"return float(update_norm(difference) / max(update_norm(actual), 1e-12))"
+src/trusted_update_reconstruction_v312.py,update,143,def clip_update_norm(
+src/trusted_update_reconstruction_v312.py,update,144,"update: Mapping[str, torch.Tensor],"
+src/trusted_update_reconstruction_v312.py,update,147,norm = update_norm(update)
+src/trusted_update_reconstruction_v312.py,update,149,"return clone_update(update), 1.0"
+src/trusted_update_reconstruction_v312.py,update,151,"return scale_update(update, factor), factor"
+src/trusted_update_reconstruction_v312.py,update,154,def state_from_update(
+src/trusted_update_reconstruction_v312.py,update,156,"update: Mapping[str, torch.Tensor],"
+src/trusted_update_reconstruction_v312.py,update,164,+ update[key].detach().cpu().to(torch.float32)
+src/trusted_update_reconstruction_v312.py,update,219,def reconstruct_update(
+src/trusted_update_reconstruction_v312.py,center,220,"current_center: Mapping[str, torch.Tensor],"
+src/trusted_update_reconstruction_v312.py,residual,221,"historical_residual: Mapping[str, torch.Tensor],"
+src/trusted_update_reconstruction_v312.py,update,223,"current_update_scale: float,"
+src/trusted_update_reconstruction_v312.py,update,224,"warmup_update_scale: float,"
+src/trusted_update_reconstruction_v312.py,center,230,"if selected_policy == ""center_only"":"
+src/trusted_update_reconstruction_v312.py,update,231,reconstructed = clone_update(current_center)
+src/trusted_update_reconstruction_v312.py,center,231,reconstructed = clone_update(current_center)
+src/trusted_update_reconstruction_v312.py,residual,232,residual_scale = 0.0
+src/trusted_update_reconstruction_v312.py,center,233,"elif selected_policy == ""center_plus_residual"":"
+src/trusted_update_reconstruction_v312.py,residual,233,"elif selected_policy == ""center_plus_residual"":"
+src/trusted_update_reconstruction_v312.py,update,234,"reconstructed = add_updates(current_center, historical_residual)"
+src/trusted_update_reconstruction_v312.py,center,234,"reconstructed = add_updates(current_center, historical_residual)"
+src/trusted_update_reconstruction_v312.py,residual,234,"reconstructed = add_updates(current_center, historical_residual)"
+src/trusted_update_reconstruction_v312.py,residual,235,residual_scale = 1.0
+src/trusted_update_reconstruction_v312.py,center,237,"""center_plus_scaled_residual"","
+src/trusted_update_reconstruction_v312.py,residual,237,"""center_plus_scaled_residual"","
+src/trusted_update_reconstruction_v312.py,center,238,"""center_plus_scaled_residual_normclip"","
+src/trusted_update_reconstruction_v312.py,residual,238,"""center_plus_scaled_residual_normclip"","
+src/trusted_update_reconstruction_v312.py,residual,240,residual_scale = float(
+src/trusted_update_reconstruction_v312.py,update,242,float(current_update_scale)
+src/trusted_update_reconstruction_v312.py,update,243,"/ max(float(warmup_update_scale), 1e-12),"
+src/trusted_update_reconstruction_v312.py,update,248,reconstructed = add_updates(
+src/trusted_update_reconstruction_v312.py,center,249,"current_center,"
+src/trusted_update_reconstruction_v312.py,residual,250,"historical_residual,"
+src/trusted_update_reconstruction_v312.py,residual,251,"right_scale=residual_scale,"
+src/trusted_update_reconstruction_v312.py,center,258,"if selected_policy == ""center_plus_scaled_residual_normclip"":"
+src/trusted_update_reconstruction_v312.py,residual,258,"if selected_policy == ""center_plus_scaled_residual_normclip"":"
+src/trusted_update_reconstruction_v312.py,update,263,"reconstructed, norm_clip_factor = clip_update_norm("
+src/trusted_update_reconstruction_v312.py,residual,269,"""residual_scale"": float(residual_scale),"
+src/trusted_update_reconstruction_v312.py,update,272,"""reconstructed_update_norm"": update_norm(reconstructed),"
+src/trusted_update_reconstruction_v312.py,update,280,digest.update(chunk)
