@@ -1,0 +1,5 @@
+id,role,description,threshold_calibration,weights,weight_tuning_allowed
+D0_frozen_task40_lfighter,mandatory_reference,Unchanged Task 40 detector plus center_plus_residual reconstruction.,,,
+D1_trigger_response_shift,candidate,Client score from class-conditional prediction shifts on frozen triggered server probes.,clean_warmup_and_independent_anchor_only,,
+D2_trigger_gradient_alignment,candidate,Client-update alignment with target-class trigger-gradient directions.,clean_warmup_and_independent_anchor_only,,
+D3_equal_rank_fusion,candidate,"Equal-weight rank fusion of frozen Task 40 score, D1, and D2.",clean_warmup_and_independent_anchor_only,"[1.0, 1.0, 1.0]",False

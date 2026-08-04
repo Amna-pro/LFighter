@@ -1,0 +1,24 @@
+check_name,passed,detail
+version,True,4.12C.0
+status,True,preregistered_before_any_task41c_experiment
+parent_tag,True,task41b-frozen-v4.11b9
+parent_commit,True,f29b026
+task41b_not_reopened,True,False
+seeds,True,"[7, 99, 123, 2026]"
+client_count,True,20
+malicious_clients,True,"[1, 7, 8, 10, 14, 15, 17, 18]"
+reserved_test_forbidden,True,False
+final_test_gate_required,True,True
+attack_family_count,True,4
+defense_candidate_count,True,4
+comparison_arm_count,True,10
+execution_stage_count,True,6
+selection_rule,True,lexicographic
+weight_tuning_disabled,True,False
+artifact_csv,True,"['CSV', 'JSON', 'PNG', 'PDF']"
+artifact_json,True,"['CSV', 'JSON', 'PNG', 'PDF']"
+artifact_png,True,"['CSV', 'JSON', 'PNG', 'PDF']"
+artifact_pdf,True,"['CSV', 'JSON', 'PNG', 'PDF']"
+manifest_required,True,True
+final_claims_blocked,True,False
+negative_results_required,True,True

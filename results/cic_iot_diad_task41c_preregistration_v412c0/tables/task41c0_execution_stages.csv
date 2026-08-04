@@ -1,0 +1,7 @@
+stage,allowed,gate
+C0_preregistration_and_integrity,No training or attack execution,All preregistration checks pass and commit is created
+C1_clean_calibration,"Clean warmup, independent anchor, and validation only",Thresholds and transforms frozen without attack labels
+C2_seed7_development_screen,All preregistered candidates on seed 7 only,One defense selected by lexicographic rule
+C3_confirmatory_multiseed,"Selected defense, all frozen seeds, A1 and A2","H1, H2, and H3 evaluated"
+C4_adaptive_multiseed,"Selected defense, all frozen seeds, A3 and A4",H4 evaluated
+C5_final_test_gate,Reserved tests only after all choices are frozen and committed,"Single final evaluation, no subsequent retuning"

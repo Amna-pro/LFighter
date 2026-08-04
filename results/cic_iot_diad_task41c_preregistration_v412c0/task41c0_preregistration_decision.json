@@ -1,0 +1,11 @@
+{
+  "experiment_version": "4.12C.0",
+  "stage": "task41c_preregistration_integrity",
+  "integrity_check_count": 23,
+  "integrity_checks_passed": 23,
+  "preregistration_frozen": true,
+  "task41c_experiments_started": false,
+  "task41b_reopened": false,
+  "reserved_test_accessed": false,
+  "next_stage": "Commit C0 preregistration, then begin C1 clean-only calibration."
+}
