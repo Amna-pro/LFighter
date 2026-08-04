@@ -1,0 +1,40 @@
+{
+  "experiment_version": "4.12C.1d",
+  "stage": "seed7_clean_replay_reproducibility_audit",
+  "classification": "EXACT_FROZEN_REPLAY",
+  "frozen_exact_replay": true,
+  "deterministic_current_runtime": true,
+  "replicate_count": 2,
+  "seed": 7,
+  "partition_hash_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+  "probe_hash_sha256": "4f4243b5725fd80f8f17be179711241a0fd9b459acc5ea6f1725b880c54865bf",
+  "frozen_checkpoint_sha256": "6932b93e1a91dd82715595caecd99f15995b072d8c21c2e41ebaea30b06f7c63",
+  "maximum_replicate_to_frozen_state_difference": 0.0,
+  "maximum_between_replicate_state_difference": 0.0,
+  "maximum_signature_difference_to_frozen": 0.0,
+  "maximum_signature_difference_between_replicates": 0.0,
+  "development_arrays_loaded": [
+    "X_train",
+    "y_train",
+    "X_val",
+    "y_val"
+  ],
+  "reserved_arrays_loaded": [],
+  "attack_execution_performed": false,
+  "calibration_result_accepted": false,
+  "task41b_reopened": false,
+  "reserved_test_accessed": false,
+  "runtime": {
+    "python_version": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch_version": "2.13.0+cpu",
+    "numpy_version": "2.2.6",
+    "pandas_version": "2.3.3",
+    "torch_threads": 6,
+    "torch_interop_threads": 6,
+    "mkl_available": true,
+    "mkldnn_available": true,
+    "deterministic_algorithms_enabled": false
+  },
+  "next_action": "Use this classification to determine whether C1 calibration must use exact frozen replay, a deterministic current-runtime clean recalibration branch, or a single-thread deterministic replay audit. Do not relax equivalence gates without this evidence."
+}

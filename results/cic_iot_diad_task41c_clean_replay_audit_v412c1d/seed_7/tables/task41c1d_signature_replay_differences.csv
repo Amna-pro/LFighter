@@ -1,0 +1,13 @@
+comparison,warmup_round,maximum_absolute_difference,mean_absolute_difference,rmse
+replicate_1_vs_frozen,1,0.0,0.0,0.0
+replicate_1_vs_frozen,2,0.0,0.0,0.0
+replicate_1_vs_frozen,3,0.0,0.0,0.0
+replicate_1_vs_frozen,4,0.0,0.0,0.0
+replicate_2_vs_frozen,1,0.0,0.0,0.0
+replicate_2_vs_frozen,2,0.0,0.0,0.0
+replicate_2_vs_frozen,3,0.0,0.0,0.0
+replicate_2_vs_frozen,4,0.0,0.0,0.0
+replicate_1_vs_replicate_2,1,0.0,0.0,0.0
+replicate_1_vs_replicate_2,2,0.0,0.0,0.0
+replicate_1_vs_replicate_2,3,0.0,0.0,0.0
+replicate_1_vs_replicate_2,4,0.0,0.0,0.0
