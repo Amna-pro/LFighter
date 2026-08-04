@@ -1,0 +1,17 @@
+seed,candidate,instant_column,ema_column,instant_quantile,ema_quantile,instant_threshold,ema_threshold,clean_instant_fpr,clean_ema_fpr,clean_policy_fpr,attack_labels_used,reserved_test_accessed
+7,D0_frozen_task40_lfighter,d0_instant,d0_ema,0.95,0.99,3.556685835586877,2.7057387482501896,0.0375,0.0,0.0375,False,False
+7,D1_trigger_response_shift,d1_trigger_response_shift,d1_trigger_response_shift_ema,0.95,0.99,2.202744952537377,2.027500192445886,0.0375,0.0,0.0375,False,False
+7,D2_trigger_gradient_alignment,d2_trigger_gradient_alignment,d2_trigger_gradient_alignment_ema,0.95,0.99,3.67950012122448,2.1002140490656163,0.0375,0.0,0.0375,False,False
+7,D3_equal_rank_fusion,d3_equal_rank_fusion,d3_equal_rank_fusion_ema,0.95,0.99,0.8541666666666666,0.5806386979166667,0.0375,0.0,0.0375,False,False
+99,D0_frozen_task40_lfighter,d0_instant,d0_ema,0.95,0.99,4.548035456423376,3.1674867457807268,0.0375,0.0,0.0375,False,False
+99,D1_trigger_response_shift,d1_trigger_response_shift,d1_trigger_response_shift_ema,0.95,0.99,2.331268865957309,1.582213443344906,0.0375,0.0,0.0375,False,False
+99,D2_trigger_gradient_alignment,d2_trigger_gradient_alignment,d2_trigger_gradient_alignment_ema,0.95,0.99,2.330784514879564,1.303597678725234,0.0375,0.0,0.0375,False,False
+99,D3_equal_rank_fusion,d3_equal_rank_fusion,d3_equal_rank_fusion_ema,0.95,0.99,0.8833333333333333,0.595,0.0375,0.0,0.0375,False,False
+123,D0_frozen_task40_lfighter,d0_instant,d0_ema,0.95,0.99,3.9357766742908327,2.8836981439564573,0.0375,0.0,0.0375,False,False
+123,D1_trigger_response_shift,d1_trigger_response_shift,d1_trigger_response_shift_ema,0.95,0.99,3.252724897987711,2.547004381950839,0.0375,0.0,0.0375,False,False
+123,D2_trigger_gradient_alignment,d2_trigger_gradient_alignment,d2_trigger_gradient_alignment_ema,0.95,0.99,5.181017340483884,2.627818004357908,0.0375,0.0,0.0375,False,False
+123,D3_equal_rank_fusion,d3_equal_rank_fusion,d3_equal_rank_fusion_ema,0.95,0.99,0.9333333333333332,0.5413511979166666,0.0375,0.0,0.0375,False,False
+2026,D0_frozen_task40_lfighter,d0_instant,d0_ema,0.95,0.99,3.669214633398585,2.430841776633188,0.0375,0.0,0.0375,False,False
+2026,D1_trigger_response_shift,d1_trigger_response_shift,d1_trigger_response_shift_ema,0.95,0.99,3.719211935931861,1.7599368036115046,0.0375,0.0,0.0375,False,False
+2026,D2_trigger_gradient_alignment,d2_trigger_gradient_alignment,d2_trigger_gradient_alignment_ema,0.95,0.99,4.11414066916883,1.9428750679274087,0.0375,0.0,0.0375,False,False
+2026,D3_equal_rank_fusion,d3_equal_rank_fusion,d3_equal_rank_fusion_ema,0.95,0.99,0.875,0.5157590885416667,0.0375,0.0,0.0375,False,False

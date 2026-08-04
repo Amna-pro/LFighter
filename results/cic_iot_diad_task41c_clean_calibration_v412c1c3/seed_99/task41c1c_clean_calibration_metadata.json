@@ -1,0 +1,48 @@
+{
+  "experiment_version": "4.12C.1c3",
+  "stage": "task41c_clean_only_detector_calibration_post_replay",
+  "seed": 99,
+  "trigger_slots": [
+    "flow_iat_exact",
+    "active_idle_exact"
+  ],
+  "trigger_candidates": [
+    "multi_flow_iat_bundle__exact_template__donor_00",
+    "multi_active_idle_bundle__exact_template__donor_18"
+  ],
+  "trigger_spec_sha256": "6e9b7400c134e11238e32eb818588bc9dcf15f1a290ff813fa51cb399bad313e",
+  "feature_count": 14,
+  "num_clients": 20,
+  "warmup_rounds": 4,
+  "ema_decay": 0.65,
+  "instant_quantile": 0.95,
+  "ema_quantile": 0.99,
+  "d1_definition": "maximum positive robust-z deviation of client excess Benign-target response shift from its historical profile",
+  "d2_definition": "maximum positive robust-z deviation of client-update cosine alignment with negative triggered target gradients",
+  "d3_definition": "equal mean of empirical clean ranks of D0, D1, and D2",
+  "d3_weights": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "weight_tuning_used": false,
+  "attack_specific_thresholds": false,
+  "trigger_specific_thresholds": false,
+  "profile_sha256": "a6990a4f855b051af3e36e9952d049533eba4da5bb546eb9041ec4f0ee32b40f",
+  "threshold_sha256": "7dfd262c9c483b1e13082efcf460020c6ee8774b1d7bf75a6bb5b7864c51861c",
+  "partition_hash_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+  "probe_hash_sha256": "4f4243b5725fd80f8f17be179711241a0fd9b459acc5ea6f1725b880c54865bf",
+  "common_warmup_checkpoint_sha256": "2e6736f8b96602614e3589fff8622e79878912deee2de64fe7c0e23121f3834f",
+  "replay_max_abs_state_difference": 0.0,
+  "replay_relative_state_l2_difference": 0.0,
+  "replay_equivalence_tolerance": 1e-08,
+  "signature_replay_max_abs_difference": 0.0,
+  "frozen_client_probe_chronology_replayed": true,
+  "frozen_round_validation_chronology_replayed": true,
+  "diagnostics_deferred_until_after_exact_replay": true,
+  "c1d_replay_classification": "EXACT_FROZEN_REPLAY",
+  "attack_labels_used": false,
+  "attack_execution_performed": false,
+  "reserved_test_accessed": false,
+  "total_seconds": 144.98567414283752
+}

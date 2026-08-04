@@ -1,0 +1,31 @@
+{
+  "experiment_version": "4.12C.1c3",
+  "stage": "task41c_clean_only_detector_calibration_post_replay",
+  "seed_count": 4,
+  "ready_seed_count": 4,
+  "candidate_count": 4,
+  "calibrated_candidates": [
+    "D0_frozen_task40_lfighter",
+    "D1_trigger_response_shift",
+    "D2_trigger_gradient_alignment",
+    "D3_equal_rank_fusion"
+  ],
+  "d3_weights": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "weight_tuning_used": false,
+  "attack_specific_thresholds": false,
+  "trigger_specific_thresholds": false,
+  "maximum_clean_policy_fpr": 0.0375,
+  "clean_fpr_ceiling": 0.05,
+  "clean_fpr_gate_passed": true,
+  "replay_equivalence_passed_all_seeds": true,
+  "attack_labels_used": false,
+  "attack_execution_performed": false,
+  "task41b_reopened": false,
+  "reserved_test_accessed": false,
+  "c2_seed7_screen_allowed": true,
+  "next_stage": "Freeze C1c3 calibration evidence, then implement the exact seed-7 C2 candidate screen. Do not run confirmatory multiseed attacks before C2 selects one candidate."
+}

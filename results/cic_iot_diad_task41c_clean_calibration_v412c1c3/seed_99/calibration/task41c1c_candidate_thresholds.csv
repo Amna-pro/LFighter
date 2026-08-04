@@ -1,0 +1,5 @@
+candidate,instant_column,ema_column,instant_quantile,ema_quantile,instant_threshold,ema_threshold,clean_instant_fpr,clean_ema_fpr,clean_policy_fpr,attack_labels_used,reserved_test_accessed
+D0_frozen_task40_lfighter,d0_instant,d0_ema,0.95,0.99,4.548035456423376,3.1674867457807268,0.0375,0.0,0.0375,False,False
+D1_trigger_response_shift,d1_trigger_response_shift,d1_trigger_response_shift_ema,0.95,0.99,2.3312688659573095,1.582213443344906,0.0375,0.0,0.0375,False,False
+D2_trigger_gradient_alignment,d2_trigger_gradient_alignment,d2_trigger_gradient_alignment_ema,0.95,0.99,2.330784514879564,1.3035976787252341,0.0375,0.0,0.0375,False,False
+D3_equal_rank_fusion,d3_equal_rank_fusion,d3_equal_rank_fusion_ema,0.95,0.99,0.8833333333333333,0.595,0.0375,0.0,0.0375,False,False
