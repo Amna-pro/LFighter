@@ -1,0 +1,17 @@
+{
+  "experiment_version": "4.12C.2a",
+  "stage": "task41c_c2_static_implementation_audit",
+  "integrity_check_count": 25,
+  "integrity_checks_passed": 25,
+  "implementation_frozen_ready": true,
+  "attack_execution_performed": false,
+  "dataset_arrays_loaded": false,
+  "reserved_test_accessed": false,
+  "A2_executed": false,
+  "adaptive_attack_executed": false,
+  "thresholds_retuned": false,
+  "profiles_retuned": false,
+  "weights_retuned": false,
+  "task41b_reopened": false,
+  "c2_local_preflight_allowed": true
+}

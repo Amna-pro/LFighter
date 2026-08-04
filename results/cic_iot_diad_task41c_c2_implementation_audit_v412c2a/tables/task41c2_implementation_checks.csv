@@ -1,0 +1,26 @@
+check_name,passed,detail
+contract_version,True,4.12C.2a
+script_version,True,4.12C.2a
+script_sha256,True,8791b877a620d72e4ce797141b5223f532c3ef8a6ff5e5497b86606c3a3cb3c6
+model_seed,True,7
+attack_seed,True,42
+num_clients,True,20
+malicious_clients,True,"(1, 7, 8, 10, 14, 15, 17, 18)"
+continuation_rounds,True,4
+poison_fractions,True,"(0.005, 0.01, 0.02)"
+candidate_arms,True,"['plain_fedavg', 'D0_frozen_task40_lfighter', 'D1_trigger_response_shift', 'D2_trigger_gradient_alignment', 'D3_equal_rank_fusion']"
+d3_equal_weights,True,"[1.0, 1.0, 1.0]"
+frozen_threshold_source,True,seed_7_task41c1c3_clean_calibration
+selection_rule_count,True,6
+preflight_supported,True,--preflight-only
+resume_supported,True,branch resume functions
+exact_pair_hash_supported,True,exact_pair_hash
+manifest_supported,True,write_output_manifest
+required_detector_helpers_imported,True,"['Any', 'BACKDOOR_ATTACK_TYPE', 'CLASS_NAMES', 'D0_EMA', 'D0_INSTANT', 'Dict', 'Iterable', 'List', 'Mapping', 'NUM_CLASSES', 'Path', 'Sequence', 'Tuple', 'add_candidate_and_ema', 'annotations', 'apply_feature_calibration', 'argparse', 'balanced_probe_indices', 'build_model', 'build_triggered_validation', 'checkpoint_sha256', 'class_conditional_probability_means', 'coordinate_median', 'copy', 'cosine', 'dataclass', 'evaluate_triggered_asr', 'evaluate_validation', 'file_sha256', 'floating_update', 'hashlib', 'json', 'load_fixed_partitions', 'load_profiles_npz', 'load_trigger_panel', 'load_trigger_spec', 'math', 'matplotlib', 'normalize_rows', 'np', 'parameter_names', 'pd', 'plt', 'positive_z', 'predict_probabilities', 'prepare_backdoor_attack', 'raw_features', 'read_clean_partition_hash', 'reconstruct_update', 'response_vector', 'save_poisoned_indices', 'save_poisoned_labels', 'set_seed', 'shutil', 'sqrt_class_weights', 'state_from_update', 'subprocess', 'sys', 'time', 'torch', 'train_local_model', 'trigger_gradient_panel', 'update_norm', 'update_vector', 'verify_trigger_application', 'weighted_average_states']"
+reserved_literal_subscripts_absent,True,[]
+development_array_loader_restricted,True,ALLOWED_ARRAYS-only loader
+A2_not_in_condition_panel,True,A2 absent
+adaptive_attacks_not_in_condition_panel,True,A3/A4 absent
+retuning_prohibited,True,retuning flags
+task41b_reopening_prohibited,True,False
+final_claims_blocked,True,False

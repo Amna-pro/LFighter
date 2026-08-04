@@ -1,0 +1,99 @@
+{
+  "experiment_version": "4.12C.2a",
+  "stage": "task41c_c2_seed7_development_screen_implementation",
+  "script_filename": "run_task41c_seed7_c2_screen_v412c2a.py",
+  "script_sha256": "8791b877a620d72e4ce797141b5223f532c3ef8a6ff5e5497b86606c3a3cb3c6",
+  "model_seed": 7,
+  "attack_seed": 42,
+  "num_clients": 20,
+  "malicious_clients": [
+    1,
+    7,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18
+  ],
+  "continuation_rounds": 4,
+  "trigger_slots": {
+    "flow_iat_exact": "multi_flow_iat_bundle__exact_template__donor_00",
+    "active_idle_exact": "multi_active_idle_bundle__exact_template__donor_18"
+  },
+  "A1_poison_fractions": [
+    0.005,
+    0.01,
+    0.02
+  ],
+  "conditions": {
+    "clean_reference_count": 1,
+    "A1_condition_count": 6,
+    "total_condition_count": 7
+  },
+  "arms": [
+    "plain_fedavg",
+    "D0_frozen_task40_lfighter",
+    "D1_trigger_response_shift",
+    "D2_trigger_gradient_alignment",
+    "D3_equal_rank_fusion"
+  ],
+  "candidate_count": 4,
+  "D3_weights": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "ema_decay": 0.65,
+  "threshold_source": "seed_7_task41c1c3_clean_calibration",
+  "selection_rule": [
+    "Reject candidate if maximum benign FPR > 0.05.",
+    "Reject candidate if mean clean macro-F1 loss > 0.01 or any clean round loss > 0.02.",
+    "Among survivors, maximize mean malicious-client recall across all A1 seed-7 condition-rounds.",
+    "Break ties by mean paired relative macro triggered-ASR reduction.",
+    "Break remaining ties by lower runtime overhead.",
+    "If no candidate survives, record failure and do not create a new candidate."
+  ],
+  "development_arrays_allowed": [
+    "X_train",
+    "y_train",
+    "X_val",
+    "y_val"
+  ],
+  "reserved_arrays_forbidden": [
+    "X_test_natural",
+    "y_test_natural",
+    "X_test_diagnostic",
+    "y_test_diagnostic"
+  ],
+  "A2_execution_allowed": false,
+  "adaptive_attack_execution_allowed": false,
+  "threshold_retuning_allowed": false,
+  "profile_retuning_allowed": false,
+  "weight_retuning_allowed": false,
+  "task41b_reopening_allowed": false,
+  "required_artifacts": [
+    "CSV",
+    "JSON",
+    "PNG",
+    "PDF",
+    "SHA256"
+  ],
+  "branch_resume_policy": "skip only valid complete branches; archive and rerun partial branches",
+  "exact_pair_hash_fields": [
+    "experiment_version",
+    "condition_id",
+    "trigger_slot",
+    "trigger_candidate_id",
+    "poison_fraction",
+    "model_seed",
+    "attack_seed",
+    "partition_hash",
+    "warmup_checkpoint_hash",
+    "trigger_spec_hash",
+    "poison_plan_hash",
+    "monitoring_round",
+    "global_round"
+  ],
+  "final_claims_allowed": false
+}
