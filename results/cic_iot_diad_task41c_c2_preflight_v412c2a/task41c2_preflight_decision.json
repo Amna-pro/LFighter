@@ -1,0 +1,39 @@
+{
+  "experiment_version": "4.12C.2a",
+  "stage": "task41c_c2_seed7_preflight",
+  "preflight_passed": true,
+  "model_seed": 7,
+  "condition_count": 7,
+  "A1_condition_count": 6,
+  "arm_count": 5,
+  "candidate_count": 4,
+  "partition_hash_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+  "probe_hash_sha256": "4f4243b5725fd80f8f17be179711241a0fd9b459acc5ea6f1725b880c54865bf",
+  "warmup_checkpoint_sha256": "6932b93e1a91dd82715595caecd99f15995b072d8c21c2e41ebaea30b06f7c63",
+  "detector_profile_sha256": "0f28efc5b9d73e8168d6f9192ec8eb15f0f3705ff772d9e92db84744329f9c57",
+  "detector_threshold_sha256": "a6e8c30b8246962a53a80c3a924831089cdbf674a3cd724391bb1138ee512612",
+  "trigger_spec_sha256": "6e9b7400c134e11238e32eb818588bc9dcf15f1a290ff813fa51cb399bad313e",
+  "development_arrays_loaded": [
+    "X_train",
+    "y_train",
+    "X_val",
+    "y_val"
+  ],
+  "reserved_arrays_loaded": [],
+  "attack_execution_performed": false,
+  "a2_executed": false,
+  "adaptive_attack_executed": false,
+  "thresholds_retuned": false,
+  "profiles_retuned": false,
+  "weights_retuned": false,
+  "task41b_reopened": false,
+  "reserved_test_accessed": false,
+  "git_integrity": {
+    "c0_tag": "task41c-c0-preregistered-v4.12c0",
+    "c0_commit": "a60554177a6823c16a503e8b9316aed8c2d961a4",
+    "c1_results_tag": "task41c-c1c3-results-v4.12c1c3",
+    "c1_results_commit": "2184d793bb5ac70cfefcbfabd98f324c288ee065",
+    "current_head": "ac931a8f1062cbcac7c20b8a950c5cab78233dc8"
+  },
+  "c2_execution_allowed": true
+}

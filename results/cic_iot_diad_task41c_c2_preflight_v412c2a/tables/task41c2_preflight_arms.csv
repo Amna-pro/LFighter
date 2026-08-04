@@ -1,0 +1,6 @@
+arm,role,thresholds_frozen,profiles_frozen
+plain_fedavg,paired_plain_reference,False,False
+D0_frozen_task40_lfighter,frozen_candidate,True,True
+D1_trigger_response_shift,frozen_candidate,True,True
+D2_trigger_gradient_alignment,frozen_candidate,True,True
+D3_equal_rank_fusion,frozen_candidate,True,True

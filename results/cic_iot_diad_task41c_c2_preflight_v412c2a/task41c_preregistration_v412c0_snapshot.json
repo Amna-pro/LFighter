@@ -1,0 +1,271 @@
+{
+  "experiment_version": "4.12C.0",
+  "stage": "task41c_preregistered_backdoor_defense_extension",
+  "status": "preregistered_before_any_task41c_experiment",
+  "parent_frozen_task": {
+    "task": "Task 41B",
+    "tag": "task41b-frozen-v4.11b9",
+    "commit": "f29b026",
+    "method_reopened": false
+  },
+  "research_questions": [
+    "Can a backdoor-aware client detector improve malicious-client recall under low-rate trigger poisoning while preserving benign-client precision?",
+    "Can a separately calibrated backdoor-aware reconstruction policy reduce triggered ASR consistently across triggers and seeds?",
+    "Does the extension remain effective against detector-aware and reconstruction-aware adaptive attackers?"
+  ],
+  "hypotheses": {
+    "H1_detection": "Mean malicious-client recall >= 0.50 and maximum benign-client FPR <= 0.05.",
+    "H2_mitigation": "For each confirmatory trigger family, mean triggered ASR reduction >= 25% relative to exact paired FedAvg and improvement in at least 3 of 4 seeds.",
+    "H3_clean_utility": "Mean clean validation macro-F1 loss <= 0.01 and no seed loss > 0.02.",
+    "H4_adaptive_robustness": "Under adaptive attacks, positive ASR reduction in at least 3 of 4 seeds, mean malicious-client recall >= 0.35, and maximum benign-client FPR <= 0.05."
+  },
+  "data_policy": {
+    "dataset": "CIC IoT-DIAD 2024 processed protocol v2.1",
+    "development_arrays_allowed": [
+      "X_train",
+      "y_train",
+      "X_val",
+      "y_val"
+    ],
+    "reserved_arrays_forbidden": [
+      "X_test_natural",
+      "y_test_natural",
+      "X_test_diagnostic",
+      "y_test_diagnostic"
+    ],
+    "reserved_test_access_before_final_freeze": false,
+    "final_test_access_requires_separate_gate": true
+  },
+  "frozen_seeds": [
+    7,
+    99,
+    123,
+    2026
+  ],
+  "frozen_clients": {
+    "num_clients": 20,
+    "malicious_clients": [
+      1,
+      7,
+      8,
+      10,
+      14,
+      15,
+      17,
+      18
+    ],
+    "partition_file": "results/cic_iot_diad_federated_tuning_v27_alpha05_seed42/partitions/client_partitions.npz",
+    "stable_client_identities": true
+  },
+  "attack_panel": [
+    {
+      "id": "A1_dirty_label_low_rate",
+      "label_policy": "dirty_label_all_nonbenign_to_benign",
+      "deployment_policy": "centralized_full_trigger",
+      "trigger_slots": [
+        "flow_iat_exact",
+        "active_idle_exact"
+      ],
+      "poison_fractions": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "adaptive": false
+    },
+    {
+      "id": "A2_clean_label_source_specific",
+      "label_policy": "clean_label_source_preserving",
+      "deployment_policy": "centralized_full_trigger",
+      "trigger_slots": [
+        "flow_iat_exact",
+        "active_idle_exact"
+      ],
+      "poison_fractions": [
+        0.01,
+        0.02
+      ],
+      "adaptive": false
+    },
+    {
+      "id": "A3_detector_aware_objective",
+      "label_policy": "dirty_label_all_nonbenign_to_benign",
+      "deployment_policy": "centralized_full_trigger",
+      "trigger_slots": [
+        "flow_iat_exact",
+        "active_idle_exact"
+      ],
+      "poison_fractions": [
+        0.01
+      ],
+      "adaptive": true,
+      "attacker_knowledge": "white_box_defense_score_and_threshold",
+      "adaptive_objective": "maximize_target_ASR_plus_clean_utility_minus_detection_score"
+    },
+    {
+      "id": "A4_reconstruction_aware_scaled_update",
+      "label_policy": "dirty_label_all_nonbenign_to_benign",
+      "deployment_policy": "centralized_full_trigger",
+      "trigger_slots": [
+        "flow_iat_exact",
+        "active_idle_exact"
+      ],
+      "poison_fractions": [
+        0.01
+      ],
+      "adaptive": true,
+      "attacker_knowledge": "white_box_reconstruction_policy",
+      "adaptive_objective": "retain_trigger_effect_after_center_plus_residual_reconstruction"
+    }
+  ],
+  "defense_candidates": [
+    {
+      "id": "D0_frozen_task40_lfighter",
+      "role": "mandatory_reference",
+      "description": "Unchanged Task 40 detector plus center_plus_residual reconstruction."
+    },
+    {
+      "id": "D1_trigger_response_shift",
+      "role": "candidate",
+      "description": "Client score from class-conditional prediction shifts on frozen triggered server probes.",
+      "threshold_calibration": "clean_warmup_and_independent_anchor_only"
+    },
+    {
+      "id": "D2_trigger_gradient_alignment",
+      "role": "candidate",
+      "description": "Client-update alignment with target-class trigger-gradient directions.",
+      "threshold_calibration": "clean_warmup_and_independent_anchor_only"
+    },
+    {
+      "id": "D3_equal_rank_fusion",
+      "role": "candidate",
+      "description": "Equal-weight rank fusion of frozen Task 40 score, D1, and D2.",
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "weight_tuning_allowed": false,
+      "threshold_calibration": "clean_warmup_and_independent_anchor_only"
+    }
+  ],
+  "comparison_arms": [
+    "plain_fedavg",
+    "frozen_task40_lfighter",
+    "coordinate_median",
+    "trimmed_mean",
+    "multi_krum",
+    "rfa_geometric_median",
+    "foolsgold",
+    "D1_trigger_response_shift",
+    "D2_trigger_gradient_alignment",
+    "D3_equal_rank_fusion"
+  ],
+  "staged_execution": [
+    {
+      "stage": "C0_preregistration_and_integrity",
+      "allowed": "No training or attack execution",
+      "gate": "All preregistration checks pass and commit is created"
+    },
+    {
+      "stage": "C1_clean_calibration",
+      "allowed": "Clean warmup, independent anchor, and validation only",
+      "gate": "Thresholds and transforms frozen without attack labels"
+    },
+    {
+      "stage": "C2_seed7_development_screen",
+      "allowed": "All preregistered candidates on seed 7 only",
+      "gate": "One defense selected by lexicographic rule"
+    },
+    {
+      "stage": "C3_confirmatory_multiseed",
+      "allowed": "Selected defense, all frozen seeds, A1 and A2",
+      "gate": "H1, H2, and H3 evaluated"
+    },
+    {
+      "stage": "C4_adaptive_multiseed",
+      "allowed": "Selected defense, all frozen seeds, A3 and A4",
+      "gate": "H4 evaluated"
+    },
+    {
+      "stage": "C5_final_test_gate",
+      "allowed": "Reserved tests only after all choices are frozen and committed",
+      "gate": "Single final evaluation, no subsequent retuning"
+    }
+  ],
+  "selection_rule": {
+    "type": "lexicographic",
+    "steps": [
+      "Reject candidate if benign FPR > 0.05.",
+      "Reject candidate if mean clean macro-F1 loss > 0.01 or any seed-7 round loss > 0.02.",
+      "Among survivors, maximize mean malicious-client recall across all A1 seed-7 conditions.",
+      "Break ties by larger mean relative ASR reduction.",
+      "Break remaining ties by lower runtime overhead.",
+      "If no candidate survives, record failure and do not invent a new candidate inside Task 41C."
+    ]
+  },
+  "primary_metrics": [
+    "macro_triggered_ASR",
+    "worst_source_triggered_ASR",
+    "malicious_client_recall",
+    "benign_client_FPR",
+    "clean_validation_macro_F1"
+  ],
+  "secondary_metrics": [
+    "per_source_triggered_ASR",
+    "detection_delay_rounds",
+    "replaced_client_rounds",
+    "runtime_seconds",
+    "communication_overhead_bytes",
+    "memory_overhead_bytes"
+  ],
+  "statistics": {
+    "pairing": "Exact paired plain-versus-defense by trigger, poison fraction, seed, partition, warmup, poison plan, and round",
+    "confidence_intervals": "Deterministic paired bootstrap 95% CI",
+    "hypothesis_tests": "Exact paired sign-flip tests where sample count permits",
+    "multiple_comparison_control": "Holm correction within each hypothesis family",
+    "report_all_seeds": true,
+    "report_negative_results": true
+  },
+  "prohibited_posthoc_changes": [
+    "Changing seeds",
+    "Changing malicious clients",
+    "Changing client partitions",
+    "Changing trigger templates after C0",
+    "Changing poison fractions after C0",
+    "Changing candidate weights after C0",
+    "Attack-specific thresholds",
+    "Trigger-specific thresholds",
+    "Using reserved test arrays for development",
+    "Dropping failed attacks or seeds",
+    "Adding a defense after observing confirmatory outcomes",
+    "Reopening Task 41B"
+  ],
+  "artifact_requirements": {
+    "every_stage": [
+      "CSV",
+      "JSON",
+      "PNG",
+      "PDF"
+    ],
+    "source_hash_manifest": true,
+    "exact_pair_hashes": [
+      "trigger_spec_sha256",
+      "poison_index_hash_sha256",
+      "partition_hash_sha256",
+      "warmup_profile_sha256"
+    ]
+  },
+  "stopping_rules": [
+    "Stop immediately if any reserved test array is accessed before C5.",
+    "Stop if exact-pair hashes differ between plain and defended branches.",
+    "Stop if protocol files change after the C0 freeze commit.",
+    "Stop candidate development if all preregistered candidates fail the selection rule.",
+    "Do not continue to final testing unless C3 and C4 are complete and frozen."
+  ],
+  "final_claim_policy": {
+    "development_claims_allowed": true,
+    "final_paper_claims_allowed_before_C5": false,
+    "negative_boundary_results_must_be_reported": true
+  }
+}
