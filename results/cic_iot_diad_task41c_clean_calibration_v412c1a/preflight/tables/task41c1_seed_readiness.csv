@@ -1,0 +1,5 @@
+seed,clean_artifact_count,clean_ready,warmup_artifact_count,warmup_checkpoint_present,warmup_ready,calibration_artifact_count,calibration_ready,c1_seed_ready
+7,10,True,22,True,True,12,True,True
+99,10,True,22,True,True,12,True,True
+123,10,True,22,True,True,12,True,True
+2026,10,True,22,True,True,12,True,True

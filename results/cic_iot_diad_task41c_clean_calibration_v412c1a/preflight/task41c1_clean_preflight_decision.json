@@ -1,0 +1,19 @@
+{
+  "experiment_version": "4.12C.1",
+  "stage": "task41c_c1_clean_only_calibration_preflight",
+  "git_branch": "feature/cic-iot-diad-task41c-backdoor-extension-v1",
+  "git_head": "a60554177a6823c16a503e8b9316aed8c2d961a4",
+  "integrity_check_count": 13,
+  "integrity_checks_passed": 13,
+  "seed_count": 4,
+  "ready_seed_count": 4,
+  "c1_clean_calibration_allowed": true,
+  "attack_execution_allowed": false,
+  "task41c_experiments_started": false,
+  "task41b_reopened": false,
+  "reserved_name_reference_count": 8,
+  "reserved_name_references_hashed": false,
+  "reserved_name_references_loaded": false,
+  "reserved_test_accessed": false,
+  "next_stage": "Commit C0 and C1 preflight evidence, then implement clean-only D1, D2, and D3 calibration."
+}

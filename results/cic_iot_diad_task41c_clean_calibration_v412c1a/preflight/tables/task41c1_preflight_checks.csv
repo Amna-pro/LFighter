@@ -1,0 +1,14 @@
+check_name,passed,detail
+branch,True,feature/cic-iot-diad-task41c-backdoor-extension-v1
+protocol_version,True,4.12C.0
+parent_tag,True,task41b-frozen-v4.11b9
+parent_commit,True,f29b026
+tag_commit,True,f29b026ab556a430225eb6702f8e3bbc57c9e155
+preregistration_frozen,True,True
+experiments_not_started,True,False
+task41b_not_reopened,True,False
+test_not_accessed,True,False
+seeds,True,"[7, 99, 123, 2026]"
+reserved_test_policy,True,False
+all_seed_inputs_ready,True,"[{'seed': 7, 'clean_artifact_count': 10, 'clean_ready': True, 'warmup_artifact_count': 22, 'warmup_checkpoint_present': True, 'warmup_ready': True, 'calibration_artifact_count': 12, 'calibration_ready': True, 'c1_seed_ready': True}, {'seed': 99, 'clean_artifact_count': 10, 'clean_ready': True, 'warmup_artifact_count': 22, 'warmup_checkpoint_present': True, 'warmup_ready': True, 'calibration_artifact_count': 12, 'calibration_ready': True, 'c1_seed_ready': True}, {'seed': 123, 'clean_artifact_count': 10, 'clean_ready': True, 'warmup_artifact_count': 22, 'warmup_checkpoint_present': True, 'warmup_ready': True, 'calibration_artifact_count': 12, 'calibration_ready': True, 'c1_seed_ready': True}, {'seed': 2026, 'clean_artifact_count': 10, 'clean_ready': True, 'warmup_artifact_count': 22, 'warmup_checkpoint_present': True, 'warmup_ready': True, 'calibration_artifact_count': 12, 'calibration_ready': True, 'c1_seed_ready': True}]"
+no_reserved_test_artifacts_hashed_or_loaded,True,"{'included_reserved_count': 0, 'excluded_name_reference_count': 8}"
