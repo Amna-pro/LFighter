@@ -1,0 +1,26 @@
+{
+  "7": {
+    "clean_seed_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_federated_multiseed_v28_fixed_partition\\seed_runs\\seed_7",
+    "warmup_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_true_warmup_anchor_v3101_multiseed\\seed_7\\warmup",
+    "reconstruction_calibration_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_frozen_reconstruction_v3123_multiseed\\seed_7\\calibration",
+    "c1_calibration_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_task41c_clean_calibration_v412c1c3"
+  },
+  "99": {
+    "clean_seed_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_federated_multiseed_v28_fixed_partition\\seed_runs\\seed_99",
+    "warmup_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_true_warmup_anchor_v3101_multiseed\\seed_99\\warmup",
+    "reconstruction_calibration_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_frozen_reconstruction_v3123_multiseed\\seed_99\\calibration",
+    "c1_calibration_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_task41c_clean_calibration_v412c1c3"
+  },
+  "123": {
+    "clean_seed_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_federated_multiseed_v28_fixed_partition\\seed_runs\\seed_123",
+    "warmup_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_true_warmup_anchor_v3101_multiseed\\seed_123\\warmup",
+    "reconstruction_calibration_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_frozen_reconstruction_v3123_multiseed\\seed_123\\calibration",
+    "c1_calibration_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_task41c_clean_calibration_v412c1c3"
+  },
+  "2026": {
+    "clean_seed_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_federated_multiseed_v28_fixed_partition\\seed_runs\\seed_2026",
+    "warmup_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_true_warmup_anchor_v3101_multiseed\\seed_2026\\warmup",
+    "reconstruction_calibration_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_frozen_reconstruction_v3123_multiseed\\seed_2026\\calibration",
+    "c1_calibration_dir": "C:\\Users\\Amm\\LFighter-research\\results\\cic_iot_diad_task41c_clean_calibration_v412c1c3"
+  }
+}
