@@ -1,0 +1,16 @@
+{
+  "experiment_version": "4.13.C2a",
+  "stage": "task42_c2_seed7_screen_selection",
+  "selection_status": "NO_CANDIDATE_SURVIVED",
+  "selected_candidate": null,
+  "candidate_count": 4,
+  "candidate_survivor_count": 0,
+  "selection_rule": [
+    "Reject maximum benign FPR above 0.05.",
+    "Reject mean clean macro-F1 loss above 0.01 or any clean round loss above 0.02.",
+    "Maximize mean malicious recall across all attack condition-rounds.",
+    "Tie-break by mean damage-removed fraction (macro-F1 convention).",
+    "Tie-break by candidate name (deterministic, stable ordering)."
+  ],
+  "next_stage": "Record Task 42 candidate-development failure. Do not invent a new candidate inside this preregistered task."
+}

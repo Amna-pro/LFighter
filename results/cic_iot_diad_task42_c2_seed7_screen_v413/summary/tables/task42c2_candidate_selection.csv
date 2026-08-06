@@ -1,0 +1,5 @@
+candidate,maximum_benign_fpr,fpr_ceiling,survives_fpr_gate,mean_clean_macro_f1_loss,maximum_clean_round_macro_f1_loss,survives_clean_utility_gate,survives_hard_gates,mean_malicious_recall_all_conditions,minimum_malicious_recall_any_condition,mean_damage_removed_fraction,collapsed_round_count,attack_condition_count,attack_round_pair_count,selected
+D0_frozen_task40_lfighter,0.1666666666666666,0.05,False,7.329289816827844e-05,0.00036401195780971785,True,False,0.61875,0.0,0.6819732784553533,0,10,40,False
+D1_update_norm_deviation,0.25,0.05,False,0.0,0.0,True,False,0.9375,0.0,2.005915792375411,0,10,40,False
+D2_update_direction_deviation,1.0,0.05,False,3.426179946525165e-05,0.0001370471978610066,True,False,0.678125,0.0,-0.18361992713476544,0,10,40,False
+D3_equal_weight_fusion,0.1666666666666666,0.05,False,0.0002704086862035521,0.0011524751099508124,True,False,0.98125,0.75,2.0516921799430605,0,10,40,False
