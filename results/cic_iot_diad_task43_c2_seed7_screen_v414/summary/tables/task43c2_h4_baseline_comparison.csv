@@ -1,0 +1,4 @@
+attack_type,d0_mean_damage_removed_fraction,best_baseline_arm,best_baseline_mean_damage_removed_fraction,d0_strictly_better,d0_clean_loss,best_baseline_clean_loss,d0_equal_or_lower_clean_cost,h4_satisfied_this_attack_type
+constant,1.062680567663963,trimmed_mean,-0.41225418724372315,True,0.00028893768512897045,0.016380943876967466,True,True
+extreme_value,0.98738737283519,coordinate_median,0.5303011659945643,True,0.00028893768512897045,0.028944268982506363,True,True
+coordinated_split,0.90295064212209,coordinate_median,0.7528761983590603,True,0.00028893768512897045,0.028944268982506363,True,True

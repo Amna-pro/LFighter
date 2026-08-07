@@ -1,0 +1,5 @@
+arm,mean_clean_macro_f1_loss,maximum_clean_round_macro_f1_loss,survives_clean_utility_gate_h3,mean_damage_removed_fraction,maximum_benign_fpr,survives_fpr_gate_h1,mean_malicious_recall,minimum_malicious_recall
+D0_frozen_task40_lfighter,0.00028893768512897045,0.0010554038631799822,True,0.9619563732194003,0.1666666666666666,False,1.0,1.0
+coordinate_median,0.028944268982506363,0.07311777114168355,False,0.4481051614004768,,,,
+trimmed_mean,0.016380943876967466,0.06266174632027427,False,-0.40868416675554914,,,,
+multi_krum,0.051807386657098484,0.07877729301203173,False,0.16820892715570443,,,,

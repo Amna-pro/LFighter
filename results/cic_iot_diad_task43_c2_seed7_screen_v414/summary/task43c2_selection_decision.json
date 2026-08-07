@@ -1,0 +1,11 @@
+{
+  "experiment_version": "4.14.C2a",
+  "stage": "task43_c2_seed7_screen_selection",
+  "preregistration_wording_correction": "H4 referenced '3 of the 4 attack types' but the frozen panel has 3 types (constant, extreme_value, coordinated_split), not 4. Evaluated as a majority threshold (>=2 of 3) as the natural correction; documented here rather than silently changed in the prereg file itself.",
+  "d0_h1_detection_pass": false,
+  "d0_h3_clean_utility_pass": true,
+  "h4_attack_types_satisfied": 3,
+  "h4_attack_types_total": 3,
+  "h4_pass": true,
+  "known_gap": "Baseline arms (coordinate_median/trimmed_mean/multi_krum) do not log which clients were actually selected/retained per round -- only D0 has per-client audit data. The multi_krum extreme_value pattern (worse at 2x, fully recovers at 5x/10x) is observed but not mechanistically confirmed without this logging. Flagged as a follow-up need, not asserted as fact."
+}
