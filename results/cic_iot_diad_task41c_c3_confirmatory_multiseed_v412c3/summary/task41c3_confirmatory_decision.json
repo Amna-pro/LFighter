@@ -1,0 +1,24 @@
+{
+  "experiment_version": "4.12C.3",
+  "stage": "task41c_c3_confirmatory_multiseed_A1",
+  "confirmatory_seeds": [
+    7,
+    99,
+    123,
+    2026
+  ],
+  "candidate_evaluated": "D2_trigger_gradient_alignment",
+  "mandatory_reference": "D0_frozen_task40_lfighter",
+  "a2_executed": false,
+  "adaptive_attack_executed": false,
+  "reserved_test_accessed": false,
+  "h1_detection_pass": false,
+  "h2_mitigation_pass_by_trigger_family": {
+    "flow_iat_exact": false,
+    "active_idle_exact": false
+  },
+  "h2_mitigation_pass": false,
+  "h3_clean_utility_pass": true,
+  "confirmatory_status": "CONFIRMATORY_FAILURE_RECORD_AND_STOP",
+  "next_stage": "Record Task 41C confirmatory failure for D2. Do not retune or select a replacement candidate inside this preregistered task."
+}

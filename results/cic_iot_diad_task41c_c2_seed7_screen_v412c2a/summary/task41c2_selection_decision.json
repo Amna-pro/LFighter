@@ -1,0 +1,35 @@
+{
+  "experiment_version": "4.12C.2a",
+  "stage": "task41c_c2_seed7_development_screen",
+  "selection_status": "ONE_CANDIDATE_SELECTED",
+  "selected_candidate": "D2_trigger_gradient_alignment",
+  "candidate_count": 4,
+  "candidate_survivor_count": 2,
+  "A1_condition_count": 6,
+  "attack_round_pair_count_per_candidate": 24,
+  "clean_round_pair_count_per_candidate": 4,
+  "selection_rule": [
+    "Reject maximum benign FPR above 0.05.",
+    "Reject mean clean macro-F1 loss above 0.01 or any clean round loss above 0.02.",
+    "Maximize mean malicious recall across all A1 seed-7 condition-rounds.",
+    "Tie-break by mean paired relative ASR reduction.",
+    "Tie-break by lower runtime overhead."
+  ],
+  "c3_confirmatory_multiseed_allowed_after_c2_freeze": true,
+  "a2_executed": false,
+  "adaptive_attack_executed": false,
+  "reserved_test_accessed": false,
+  "task41b_reopened": false,
+  "thresholds_retuned": false,
+  "profiles_retuned": false,
+  "weights_retuned": false,
+  "git_integrity": {
+    "c0_tag": "task41c-c0-preregistered-v4.12c0",
+    "c0_commit": "a60554177a6823c16a503e8b9316aed8c2d961a4",
+    "c1_results_tag": "task41c-c1c3-results-v4.12c1c3",
+    "c1_results_commit": "2184d793bb5ac70cfefcbfabd98f324c288ee065",
+    "current_head": "919e4cdcd622f4bfdf33de215dedb553bd5b0d78"
+  },
+  "next_stage": "Freeze C2 evidence and selected candidate. Then run C3 confirmatory multiseed A1 and A2 only with no retuning.",
+  "total_screen_seconds": 4440.895321846008
+}

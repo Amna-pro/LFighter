@@ -1,0 +1,17 @@
+trigger_slot,model_seed,mean_relative_asr_reduction,seed_passes_threshold,candidate
+active_idle_exact,7,-0.07332275869028328,False,D0_frozen_task40_lfighter
+active_idle_exact,99,-0.04247732757117793,False,D0_frozen_task40_lfighter
+active_idle_exact,123,0.00791969426362566,False,D0_frozen_task40_lfighter
+active_idle_exact,2026,0.03723143927163438,False,D0_frozen_task40_lfighter
+flow_iat_exact,7,0.053299960765337245,False,D0_frozen_task40_lfighter
+flow_iat_exact,99,-0.08073404610167707,False,D0_frozen_task40_lfighter
+flow_iat_exact,123,-0.03608517443690629,False,D0_frozen_task40_lfighter
+flow_iat_exact,2026,-0.050530054994589596,False,D0_frozen_task40_lfighter
+active_idle_exact,7,0.2427506650948548,False,D2_trigger_gradient_alignment
+active_idle_exact,99,0.1308123056432455,False,D2_trigger_gradient_alignment
+active_idle_exact,123,0.3605251702263584,True,D2_trigger_gradient_alignment
+active_idle_exact,2026,0.2907472309064301,True,D2_trigger_gradient_alignment
+flow_iat_exact,7,0.3616666678547062,True,D2_trigger_gradient_alignment
+flow_iat_exact,99,-0.024548596302647108,False,D2_trigger_gradient_alignment
+flow_iat_exact,123,0.2142986239639354,False,D2_trigger_gradient_alignment
+flow_iat_exact,2026,-0.6885301894223992,False,D2_trigger_gradient_alignment

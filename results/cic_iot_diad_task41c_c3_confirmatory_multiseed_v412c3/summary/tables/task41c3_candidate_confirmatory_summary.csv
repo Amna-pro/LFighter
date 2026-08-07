@@ -1,0 +1,3 @@
+candidate,maximum_benign_fpr,fpr_ceiling,mean_clean_macro_f1_loss,maximum_clean_round_macro_f1_loss,mean_malicious_recall_all_seeds,minimum_malicious_recall_all_seeds,mean_relative_asr_reduction,seeds_with_positive_mean_recall,seed_count
+D0_frozen_task40_lfighter,0.05,0.05,3.499675118602205e-05,0.03663610657658117,0.07682291666666667,0.0,-0.02308728343675461,4,4
+D2_trigger_gradient_alignment,0.3,0.05,-0.002877282217581774,0.001227493703706617,0.4973958333333333,0.0,0.11096523474556048,4,4
