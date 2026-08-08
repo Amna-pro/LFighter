@@ -1,0 +1,2 @@
+mode,attack_type,diagnostic_source_class,diagnostic_target_class,malicious_clients,partition_hash_sha256,poison_index_hash_sha256
+strong_attack,pairwise_swap,DDoS,Benign,1|7|8|10|14|15|17|18,5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48,ad2d16f5e3b9420b014d8c2565fa5ff4bddccd5551fece5699d7c7f8e4ae60ab
