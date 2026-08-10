@@ -1,0 +1,6 @@
+attack_type,mean_damage_at_0p25,damage_still_meaningful
+all_to_one_benign,-0.002346613119178914,False
+cyclic_shift,0.00014037523399622331,False
+multiclass_partial_cycle,0.004080122818022933,False
+pairwise_swap,-0.004868698319183115,False
+random_flip,-0.002507875028819398,False

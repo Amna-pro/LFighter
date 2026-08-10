@@ -1,0 +1,6 @@
+attack_type,fractions,recalls,monotonic_non_decreasing
+all_to_one_benign,"[np.float64(0.25), np.float64(0.5), np.float64(0.75), np.float64(1.0)]","[np.float64(0.6484375), np.float64(1.0), np.float64(1.0), np.float64(1.0)]",True
+cyclic_shift,"[np.float64(0.25), np.float64(0.5), np.float64(0.75), np.float64(1.0)]","[np.float64(0.9765625), np.float64(1.0), np.float64(1.0), np.float64(1.0)]",True
+multiclass_partial_cycle,"[np.float64(0.25), np.float64(0.5), np.float64(0.75), np.float64(1.0)]","[np.float64(0.3828125), np.float64(0.8828125), np.float64(0.9921875), np.float64(1.0)]",True
+pairwise_swap,"[np.float64(0.25), np.float64(0.5), np.float64(0.75), np.float64(1.0)]","[np.float64(0.875), np.float64(0.953125), np.float64(0.984375), np.float64(1.0)]",True
+random_flip,"[np.float64(0.25), np.float64(0.5), np.float64(0.75), np.float64(1.0)]","[np.float64(0.9375), np.float64(1.0), np.float64(1.0), np.float64(1.0)]",True

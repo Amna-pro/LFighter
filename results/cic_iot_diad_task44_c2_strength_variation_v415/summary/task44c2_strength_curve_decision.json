@@ -1,0 +1,12 @@
+{
+  "experiment_version": "4.15.C2",
+  "stage": "task44_c2_strength_curve_selection",
+  "h1_monotonicity_pass_count": 5,
+  "h1_total_attacks": 5,
+  "h2_fpr_relief_pass_count": 0,
+  "h2_required": 3,
+  "h2_pass": false,
+  "h3_damage_floor_pass_count": 0,
+  "h3_required": 3,
+  "h3_pass": false
+}

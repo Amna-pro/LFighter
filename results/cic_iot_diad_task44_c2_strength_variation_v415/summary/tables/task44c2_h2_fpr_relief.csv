@@ -1,0 +1,6 @@
+attack_type,fpr_at_0p25,fpr_at_1p00,relief
+all_to_one_benign,0.005208333333333331,0.0052083333333333,False
+cyclic_shift,0.0,0.0,False
+multiclass_partial_cycle,0.0,0.0,False
+pairwise_swap,0.0,0.0,False
+random_flip,0.0,0.0,False
