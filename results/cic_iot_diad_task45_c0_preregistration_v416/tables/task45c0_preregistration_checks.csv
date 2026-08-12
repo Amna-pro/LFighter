@@ -1,0 +1,105 @@
+check_name,passed,detail
+parent_commit,True,cc84bc343508ad355064b03e89645fa165a6daad
+parent_tag,True,['task44-c2-strength-curve-decided-v415']
+version,True,4.16.0
+status,True,preregistered_before_any_task45_experiment
+protocol_parent_commit,True,cc84bc343508ad355064b03e89645fa165a6daad
+protocol_parent_tag,True,task44-c2-strength-curve-decided-v415
+task44_not_reopened,True,"{'task': 'Task 44', 'tag': 'task44-c2-strength-curve-decided-v415', 'commit': 'cc84bc343508ad355064b03e89645fa165a6daad', 'method_reopened': False}"
+seeds,True,"[7, 99, 123, 2026]"
+sizes,True,"[1, 2, 4, 6, 8, 10]"
+family_count,True,3
+eligible_ids,True,"[1, 3, 5, 7, 8, 10, 13, 14, 15, 16, 17, 18, 19]"
+eligible_count,True,13
+source,True,DDoS
+target,True,Benign
+poison_fraction,True,1.0
+minimum_source_rows,True,1000
+safe_adapter_required,True,True
+allowed_arrays,True,"['X_train', 'y_train', 'X_val', 'y_val']"
+reserved_arrays,True,"['X_test_natural', 'y_test_natural', 'X_test_diagnostic', 'y_test_diagnostic']"
+reserved_access_false,True,False
+A_development_anchor_eligible_order,True,"[7, 15, 1, 14, 18, 10, 17, 8, 13, 19, 16, 3, 5]"
+A_development_anchor_size_1,True,[7]
+A_development_anchor_nested_1,True,[7]
+A_development_anchor_distinct_1,True,"(7,)"
+A_development_anchor_size_2,True,"[7, 15]"
+A_development_anchor_nested_2,True,"[7, 15]"
+A_development_anchor_distinct_2,True,"(7, 15)"
+A_development_anchor_size_4,True,"[1, 7, 14, 15]"
+A_development_anchor_nested_4,True,"[1, 7, 14, 15]"
+A_development_anchor_distinct_4,True,"(1, 7, 14, 15)"
+A_development_anchor_size_6,True,"[1, 7, 10, 14, 15, 18]"
+A_development_anchor_nested_6,True,"[1, 7, 10, 14, 15, 18]"
+A_development_anchor_distinct_6,True,"(1, 7, 10, 14, 15, 18)"
+A_development_anchor_size_8,True,"[1, 7, 8, 10, 14, 15, 17, 18]"
+A_development_anchor_nested_8,True,"[1, 7, 8, 10, 14, 15, 17, 18]"
+A_development_anchor_distinct_8,True,"(1, 7, 8, 10, 14, 15, 17, 18)"
+A_development_anchor_size_10,True,"[1, 7, 8, 10, 13, 14, 15, 17, 18, 19]"
+A_development_anchor_nested_10,True,"[1, 7, 8, 10, 13, 14, 15, 17, 18, 19]"
+A_development_anchor_distinct_10,True,"(1, 7, 8, 10, 13, 14, 15, 17, 18, 19)"
+B_hash_ranked_eligible_order,True,"[19, 16, 13, 15, 7, 5, 10, 8, 18, 14, 17, 1, 3]"
+B_hash_ranked_size_1,True,[19]
+B_hash_ranked_nested_1,True,[19]
+B_hash_ranked_distinct_1,True,"(19,)"
+B_hash_ranked_size_2,True,"[16, 19]"
+B_hash_ranked_nested_2,True,"[16, 19]"
+B_hash_ranked_distinct_2,True,"(16, 19)"
+B_hash_ranked_size_4,True,"[13, 15, 16, 19]"
+B_hash_ranked_nested_4,True,"[13, 15, 16, 19]"
+B_hash_ranked_distinct_4,True,"(13, 15, 16, 19)"
+B_hash_ranked_size_6,True,"[5, 7, 13, 15, 16, 19]"
+B_hash_ranked_nested_6,True,"[5, 7, 13, 15, 16, 19]"
+B_hash_ranked_distinct_6,True,"(5, 7, 13, 15, 16, 19)"
+B_hash_ranked_size_8,True,"[5, 7, 8, 10, 13, 15, 16, 19]"
+B_hash_ranked_nested_8,True,"[5, 7, 8, 10, 13, 15, 16, 19]"
+B_hash_ranked_distinct_8,True,"(5, 7, 8, 10, 13, 15, 16, 19)"
+B_hash_ranked_size_10,True,"[5, 7, 8, 10, 13, 14, 15, 16, 18, 19]"
+B_hash_ranked_nested_10,True,"[5, 7, 8, 10, 13, 14, 15, 16, 18, 19]"
+B_hash_ranked_distinct_10,True,"(5, 7, 8, 10, 13, 14, 15, 16, 18, 19)"
+C_hash_ranked_eligible_order,True,"[8, 16, 5, 3, 1, 18, 7, 15, 14, 19, 13, 17, 10]"
+C_hash_ranked_size_1,True,[8]
+C_hash_ranked_nested_1,True,[8]
+C_hash_ranked_distinct_1,True,"(8,)"
+C_hash_ranked_size_2,True,"[8, 16]"
+C_hash_ranked_nested_2,True,"[8, 16]"
+C_hash_ranked_distinct_2,True,"(8, 16)"
+C_hash_ranked_size_4,True,"[3, 5, 8, 16]"
+C_hash_ranked_nested_4,True,"[3, 5, 8, 16]"
+C_hash_ranked_distinct_4,True,"(3, 5, 8, 16)"
+C_hash_ranked_size_6,True,"[1, 3, 5, 8, 16, 18]"
+C_hash_ranked_nested_6,True,"[1, 3, 5, 8, 16, 18]"
+C_hash_ranked_distinct_6,True,"(1, 3, 5, 8, 16, 18)"
+C_hash_ranked_size_8,True,"[1, 3, 5, 7, 8, 15, 16, 18]"
+C_hash_ranked_nested_8,True,"[1, 3, 5, 7, 8, 15, 16, 18]"
+C_hash_ranked_distinct_8,True,"(1, 3, 5, 7, 8, 15, 16, 18)"
+C_hash_ranked_size_10,True,"[1, 3, 5, 7, 8, 14, 15, 16, 18, 19]"
+C_hash_ranked_nested_10,True,"[1, 3, 5, 7, 8, 14, 15, 16, 18, 19]"
+C_hash_ranked_distinct_10,True,"(1, 3, 5, 7, 8, 14, 15, 16, 18, 19)"
+development_anchor_size8,True,"[7, 15, 1, 14, 18, 10, 17, 8]"
+adapter_allows_X_train,True,X_train
+adapter_allows_y_train,True,y_train
+adapter_allows_X_val,True,X_val
+adapter_allows_y_val,True,y_val
+adapter_blocks_X_test_natural,True,X_test_natural
+plain_does_not_reference_X_test_natural,True,X_test_natural
+defense_does_not_reference_X_test_natural,True,X_test_natural
+adapter_blocks_y_test_natural,True,y_test_natural
+plain_does_not_reference_y_test_natural,True,y_test_natural
+defense_does_not_reference_y_test_natural,True,y_test_natural
+adapter_blocks_X_test_diagnostic,True,X_test_diagnostic
+plain_does_not_reference_X_test_diagnostic,True,X_test_diagnostic
+defense_does_not_reference_X_test_diagnostic,True,X_test_diagnostic
+adapter_blocks_y_test_diagnostic,True,y_test_diagnostic
+plain_does_not_reference_y_test_diagnostic,True,y_test_diagnostic
+defense_does_not_reference_y_test_diagnostic,True,y_test_diagnostic
+inherited_loader_eager_materialization_confirmed,True,shared loader eagerly materializes all NPZ arrays
+selector_avoids_inherited_loader,True,selector reads y_train directly
+selector_reads_only_y_train,True,y_train
+markdown_records_loader_issue,True,documented
+task44_draft_caveat_is_real,True,inherited Task 44 Markdown status
+markdown_records_task44_caveat,True,documented
+stage_count,True,6
+condition_count,True,18
+negative_results_required,True,"{'development_claims_allowed': True, 'final_paper_claims_allowed_before_C5': False, 'negative_boundary_results_must_be_reported': True}"
+final_claims_blocked,True,"{'development_claims_allowed': True, 'final_paper_claims_allowed_before_C5': False, 'negative_boundary_results_must_be_reported': True}"

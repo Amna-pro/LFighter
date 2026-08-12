@@ -1,0 +1,7 @@
+stage,allowed,gate
+C0_preregistration_and_integrity,"Protocol files, selector, safe loader adapter, and audit only. No training or attack execution.",All C0 checks pass and the C0 files and audit outputs are committed.
+C1_data_interface_and_coalition_freeze,"Training partition source row counting, coalition manifest generation, static source review, dry runs, and exact anchor reuse checks only.","Eligibility, nesting, distinct identities, forbidden array isolation, runner arguments, partition hashes, warmup hashes, and reusable size 8 anchor hashes pass."
+C2_seed7_development_curve,"All 18 preregistered family by size conditions on seed 7, exact paired plain and frozen D0 arms only.",Every condition completes with matching pair hashes; no condition may be dropped.
+C3_confirmatory_multiseed_curve,"The same 18 frozen conditions on seeds 99, 123, and 2026 without protocol changes.",All four seeds and all coalition identities are complete and frozen.
+C4_summary_and_hypothesis_evaluation,"Development and validation artifacts only; full curves, family sensitivity, paired statistics, and H1 through H3 evaluation.","All outcomes, including negative and boundary results, are reported."
+C5_final_reserved_test_gate,Reserved tests only after a separate gate is preregistered and committed.,Single final evaluation with no subsequent retuning.

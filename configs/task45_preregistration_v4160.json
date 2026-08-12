@@ -1,0 +1,299 @@
+{
+  "experiment_version": "4.16.0",
+  "stage": "task45_preregistered_coalition_size_variation",
+  "status": "preregistered_before_any_task45_experiment",
+  "parent_frozen_task": {
+    "task": "Task 44",
+    "tag": "task44-c2-strength-curve-decided-v415",
+    "commit": "cc84bc343508ad355064b03e89645fa165a6daad",
+    "method_reopened": false
+  },
+  "scope": {
+    "roadmap_task": 45,
+    "research_variable": "malicious_coalition_size",
+    "attack_pair": "DDoS_to_Benign",
+    "source_class": "DDoS",
+    "target_class": "Benign",
+    "poison_fraction": 1.0,
+    "min_source_samples": 1000,
+    "num_clients": 20,
+    "defense": "D0_frozen_task40_lfighter_center_plus_residual",
+    "defense_reconfigured": false,
+    "other_attack_variables_changed": false
+  },
+  "research_questions": [
+    "How do plain attack damage, malicious client recall, benign client false positive rate, and reconstruction effectiveness change as malicious coalition size increases?",
+    "How sensitive are those curves to coalition identity at the same coalition size?",
+    "At what coalition sizes, if any, does contamination of the current round consensus reduce the effectiveness of the frozen detector or reconstruction policy?"
+  ],
+  "hypotheses": {
+    "H1_detection_robustness": "At every coalition size, mean malicious client recall across all preregistered coalition families and seeds is at least 0.50 and maximum benign client FPR is at most 0.05.",
+    "H2_mitigation": "At every coalition size with mean plain FedAvg attack excess greater than 0.05, mean damage removed fraction by frozen D0 is positive.",
+    "H3_attack_scale": "Within at least two of the three nested coalition families, mean plain FedAvg attack excess is nondecreasing across coalition sizes when averaged over the four frozen seeds."
+  },
+  "data_policy": {
+    "dataset": "CIC IoT-DIAD 2024 processed protocol v2.1",
+    "development_arrays_allowed": [
+      "X_train",
+      "y_train",
+      "X_val",
+      "y_val"
+    ],
+    "reserved_arrays_forbidden": [
+      "X_test_natural",
+      "y_test_natural",
+      "X_test_diagnostic",
+      "y_test_diagnostic"
+    ],
+    "safe_loader_adapter_required": true,
+    "reserved_test_access_before_final_freeze": false,
+    "final_test_access_requires_separate_gate": true
+  },
+  "frozen_seeds": [
+    7,
+    99,
+    123,
+    2026
+  ],
+  "frozen_partition": {
+    "num_clients": 20,
+    "partition_file": "results/cic_iot_diad_federated_tuning_v27_alpha05_seed42/partitions/client_partitions.npz",
+    "stable_client_identities": true
+  },
+  "eligibility": {
+    "rule": "clean DDoS rows greater than or equal to 1000 in the frozen training partition",
+    "expected_eligible_client_ids": [
+      1,
+      3,
+      5,
+      7,
+      8,
+      10,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "expected_eligible_count": 13,
+    "selection_uses_attack_outcomes": false,
+    "selection_uses_validation_metrics": false,
+    "selection_uses_reserved_tests": false
+  },
+  "coalition_design": {
+    "sizes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    "family_count": 3,
+    "nested_within_family": true,
+    "membership_fixed_across_model_seeds": true,
+    "identity_replication_unit": "coalition_family",
+    "seed_is_not_a_new_coalition_identity": true,
+    "ranking_rule": "ascending SHA256 hexadecimal digest of the frozen UTF-8 ranking key, with ascending client ID as an unreachable deterministic tie break",
+    "families": [
+      {
+        "family_id": "A_development_anchor",
+        "purpose": "Preserve the original development coalition exactly at size 8.",
+        "ordered_client_ids": [
+          7,
+          15,
+          1,
+          14,
+          18,
+          10,
+          17,
+          8,
+          13,
+          19,
+          16,
+          3,
+          5
+        ],
+        "first_eight_set": [
+          1,
+          7,
+          8,
+          10,
+          14,
+          15,
+          17,
+          18
+        ],
+        "ranking_keys": {
+          "anchor_pool": "task45_v416|family_A|client_{client_id_3digit}",
+          "extension_pool": "task45_v416|family_A|extension|client_{client_id_3digit}"
+        }
+      },
+      {
+        "family_id": "B_hash_ranked",
+        "purpose": "First independent attack outcome free identity replicate.",
+        "ordered_client_ids": [
+          19,
+          16,
+          13,
+          15,
+          7,
+          5,
+          10,
+          8,
+          18,
+          14,
+          17,
+          1,
+          3
+        ],
+        "ranking_keys": {
+          "eligible_pool": "task45_v416|family_B|client_{client_id_3digit}"
+        }
+      },
+      {
+        "family_id": "C_hash_ranked",
+        "purpose": "Second independent attack outcome free identity replicate.",
+        "ordered_client_ids": [
+          8,
+          16,
+          5,
+          3,
+          1,
+          18,
+          7,
+          15,
+          14,
+          19,
+          13,
+          17,
+          10
+        ],
+        "ranking_keys": {
+          "eligible_pool": "task45_v416|family_C|client_{client_id_3digit}"
+        }
+      }
+    ],
+    "require_distinct_identity_at_each_size": true
+  },
+  "pairing": {
+    "plain_arm": "run_exact_plain_fedavg_v3132.py through the Task 45 development only loader adapter",
+    "defended_arm": "run_frozen_reconstruction_v3123.py with trusted_reconstruction through the Task 45 development only loader adapter",
+    "same_model_seed_within_pair": true,
+    "same_attack_seed_within_pair": true,
+    "same_poison_index_hash_within_pair": true,
+    "same_partition_hash_within_pair": true,
+    "same_warmup_checkpoint_within_pair": true,
+    "attack_seed_policy": "attack seed equals model seed, matching the frozen multiseed protocol"
+  },
+  "staged_execution": [
+    {
+      "stage": "C0_preregistration_and_integrity",
+      "allowed": "Protocol files, selector, safe loader adapter, and audit only. No training or attack execution.",
+      "gate": "All C0 checks pass and the C0 files and audit outputs are committed."
+    },
+    {
+      "stage": "C1_data_interface_and_coalition_freeze",
+      "allowed": "Training partition source row counting, coalition manifest generation, static source review, dry runs, and exact anchor reuse checks only.",
+      "gate": "Eligibility, nesting, distinct identities, forbidden array isolation, runner arguments, partition hashes, warmup hashes, and reusable size 8 anchor hashes pass."
+    },
+    {
+      "stage": "C2_seed7_development_curve",
+      "allowed": "All 18 preregistered family by size conditions on seed 7, exact paired plain and frozen D0 arms only.",
+      "gate": "Every condition completes with matching pair hashes; no condition may be dropped."
+    },
+    {
+      "stage": "C3_confirmatory_multiseed_curve",
+      "allowed": "The same 18 frozen conditions on seeds 99, 123, and 2026 without protocol changes.",
+      "gate": "All four seeds and all coalition identities are complete and frozen."
+    },
+    {
+      "stage": "C4_summary_and_hypothesis_evaluation",
+      "allowed": "Development and validation artifacts only; full curves, family sensitivity, paired statistics, and H1 through H3 evaluation.",
+      "gate": "All outcomes, including negative and boundary results, are reported."
+    },
+    {
+      "stage": "C5_final_reserved_test_gate",
+      "allowed": "Reserved tests only after a separate gate is preregistered and committed.",
+      "gate": "Single final evaluation with no subsequent retuning."
+    }
+  ],
+  "primary_metrics": [
+    "plain_attack_excess_source_to_target_rate",
+    "damage_removed_fraction",
+    "malicious_client_recall",
+    "benign_client_FPR",
+    "clean_validation_macro_F1"
+  ],
+  "secondary_metrics": [
+    "per_round_source_to_target_rate",
+    "detection_delay_rounds",
+    "reconstructed_client_rounds",
+    "coalition_source_row_exposure_fraction",
+    "between_family_range",
+    "between_family_standard_deviation",
+    "runtime_seconds"
+  ],
+  "statistics": {
+    "pairing": "Exact plain versus frozen D0 pairing by family, coalition size, seed, partition, warmup checkpoint, poison index hash, and round.",
+    "coalition_identity_analysis": "Report each family separately and summarize across exactly three family replicates at each size.",
+    "seed_analysis": "Report all seeds; seeds are repeated measurements within a family and are not counted as independent coalition identities.",
+    "confidence_intervals": "Deterministic paired bootstrap 95 percent confidence intervals where the estimand and sample count permit.",
+    "hypothesis_tests": "Exact paired sign flip tests where sample count permits.",
+    "multiple_comparison_control": "Holm correction within each hypothesis family.",
+    "report_negative_results": true
+  },
+  "artifact_requirements": {
+    "every_stage": [
+      "CSV",
+      "JSON",
+      "PNG",
+      "PDF"
+    ],
+    "source_hash_manifest": true,
+    "exact_pair_hashes": [
+      "partition_hash_sha256",
+      "poison_index_hash_sha256",
+      "warmup_profile_sha256",
+      "common_warmup_checkpoint_sha256"
+    ],
+    "coalition_hash_required": true
+  },
+  "prohibited_posthoc_changes": [
+    "Changing coalition sizes",
+    "Changing coalition family membership or ordering",
+    "Changing the eligible client threshold",
+    "Changing seeds",
+    "Changing the client partition",
+    "Changing poison fraction",
+    "Changing attack source or target class",
+    "Changing detector thresholds or reconstruction rules",
+    "Treating model seeds as independent coalition identities",
+    "Using the original all array loader without the Task 45 development only adapter",
+    "Accessing reserved test arrays before C5",
+    "Dropping failed families, sizes, rounds, or seeds",
+    "Adding a new coalition family after observing outcomes"
+  ],
+  "stopping_rules": [
+    "Stop immediately if a reserved test array is requested or materialized before C5.",
+    "Stop if current HEAD differs from the C0 freeze commit after C0 is committed.",
+    "Stop if the frozen partition does not produce exactly the 13 expected eligible client IDs.",
+    "Stop if any family is not nested or if coalition identities are not distinct at every size.",
+    "Stop if a requested malicious client has fewer than 1000 clean DDoS rows.",
+    "Stop if exact pair hashes differ between plain and defended arms.",
+    "Stop if the size 8 family A anchor cannot be shown equivalent to the original development coalition.",
+    "Stop if protocol files change after the C0 freeze commit.",
+    "Do not continue to C5 unless C3 and C4 are complete and frozen."
+  ],
+  "inherited_metadata_caveat": {
+    "task44_markdown_status": "The committed Task 44 Markdown still contains a DRAFT status line although Task 44 has completed and is tagged.",
+    "task45_action": "Record the inconsistency without editing or replacing frozen Task 44 history."
+  },
+  "final_claim_policy": {
+    "development_claims_allowed": true,
+    "final_paper_claims_allowed_before_C5": false,
+    "negative_boundary_results_must_be_reported": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "experiment_version": "4.16.0",
+  "stage": "task45_c0_preregistration_integrity",
+  "integrity_check_count": 104,
+  "integrity_checks_passed": 104,
+  "ready_for_c0_freeze_commit": true,
+  "preregistration_frozen_by_commit": false,
+  "task45_training_started": false,
+  "reserved_test_arrays_materialized": false,
+  "task44_reopened": false,
+  "next_stage": "Commit C0 files and audit outputs, tag the C0 freeze, then begin C1 read-only coalition and interface preflight."
+}
