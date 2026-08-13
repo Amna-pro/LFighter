@@ -1,0 +1,14 @@
+{
+  "experiment_version": "4.16.C2",
+  "stage": "task45_c2_seed7_audit_and_development_summary",
+  "checks_passed": 649,
+  "check_count": 649,
+  "conditions_verified": 18,
+  "paired_branches_verified": 36,
+  "seed": 7,
+  "exact_poison_pairing_all": true,
+  "reserved_test_arrays_materialized": false,
+  "c2_outcomes_used_to_change_c3": false,
+  "ready_for_c2_freeze_commit": true,
+  "ready_for_c3_confirmatory_multiseed": true
+}
