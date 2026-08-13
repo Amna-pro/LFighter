@@ -1,0 +1,48 @@
+check,passed,detail
+c1_all_checks_passed,True,79/79
+c1_reserved_arrays_closed,True,False
+c2_all_checks_passed,True,36/36
+c2_ready_for_c3,True,True
+c2_margin_identity_exact,True,True
+c2_reserved_arrays_closed,True,False
+config_training_forbidden,True,False
+config_test_gate_closed,True,False
+metadata_complete,True,True
+metadata_confirmatory_seeds,True,"[99, 123, 2026]"
+metadata_three_families,True,"['A_development_anchor', 'B_hash_ranked', 'C_hash_ranked']"
+metadata_size_10,True,10
+metadata_21_unique_states,True,21
+metadata_27_logical_states,True,27
+metadata_128_background,True,128
+metadata_128_probe,True,128
+metadata_69_features,True,69
+metadata_shap_0p48,True,0.48.0
+metadata_allowed_arrays_exact,True,"['X_train', 'y_train', 'X_val', 'y_val']"
+metadata_no_training,True,False
+metadata_reserved_arrays_closed,True,False
+metadata_scientific_result_deferred,True,False
+background_hash_matches_c1,True,83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be
+probe_hash_matches_c1,True,81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815
+21_confirmatory_physical_states,True,21
+checkpoint_hashes_match_c1,True,21
+all_state_markers_verified,True,21
+all_tensor_shapes_valid,True,21
+all_attribution_tensors_finite,True,21
+exact_derived_margin_identity,True,21
+same_probe_labels_features_all_states,True,21
+all_long_schemas_valid,True,21
+all_long_row_counts_valid,True,185472
+all_feature_summaries_valid,True,21
+all_state_summaries_valid,True,21
+all_state_reserved_arrays_closed,True,21
+confirmatory_exact_partition_and_poison_pairing,True,True
+27_confirmatory_logical_rows,True,27
+21_confirmatory_state_summary_rows,True,21
+confirmatory_feature_summary_row_count,True,2898
+progress_has_21_states,True,21
+c2_seed7_tables_complete,True,9/7/966
+all_seed_exact_partition_and_poison_pairing,True,True
+all_four_seeds_present,True,"[np.int64(7), np.int64(99), np.int64(123), np.int64(2026)]"
+28_all_seed_physical_states,True,28
+36_all_seed_logical_states,True,36
+all_seed_feature_summary_row_count,True,3864

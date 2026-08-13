@@ -1,0 +1,16 @@
+{
+  "experiment_version": "4.17.C3",
+  "state_key": "seed_123__B_hash_ranked__reconstructed",
+  "checkpoint_sha256": "8590fb6750255fdfc7459752d4612ff0b6a00b7649edb04e1fa0a22550393cf1",
+  "config_sha256": "34ce3245f2d785251d3ba49c17ce582481e1e37a00ba783525cbd3360ad8e14b",
+  "background_manifest_sha256": "83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be",
+  "probe_manifest_sha256": "81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815",
+  "output_sha256": {
+    "task55c3_attributions.npz": "020799bb46d6525dc67344d2bf6eeef54e1809c5efadd824dd776158a80926dc",
+    "task55c3_attributions_long.parquet": "d85101c73be2c53a7d4c24b399e1eb44ac93679aaf60fafa92c8a1546244dff1",
+    "task55c3_feature_summary.csv": "c4cd9f11354ab0bb09fdfb126b8e366439b32b3dec79d157b70c352f1d1dcd6f",
+    "state_summary.json": "c53ef4f1432d380d77e099df56d2499bce76617472a31365bf65f4a03acbb12e"
+  },
+  "reserved_test_arrays_materialized": false,
+  "complete": true
+}

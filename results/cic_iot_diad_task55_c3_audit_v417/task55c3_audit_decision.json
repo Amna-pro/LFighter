@@ -1,0 +1,36 @@
+{
+  "experiment_version": "4.17.C3A",
+  "stage": "task55_confirmatory_multiseed_attribution_audit",
+  "checks_passed": 47,
+  "check_count": 47,
+  "confirmatory_seeds_verified": [
+    99,
+    123,
+    2026
+  ],
+  "all_seeds_verified": [
+    7,
+    99,
+    123,
+    2026
+  ],
+  "families_verified": [
+    "A_development_anchor",
+    "B_hash_ranked",
+    "C_hash_ranked"
+  ],
+  "coalition_size": 10,
+  "confirmatory_unique_checkpoint_states_verified": 21,
+  "confirmatory_logical_state_comparisons_verified": 27,
+  "all_seed_unique_checkpoint_states_verified": 28,
+  "all_seed_logical_state_comparisons_verified": 36,
+  "attribution_tensors_finite": true,
+  "exact_derived_margin_identity": true,
+  "exact_partition_and_poison_pairing": true,
+  "same_frozen_probe_all_states": true,
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "scientific_result_evaluated": false,
+  "task56_validation_deferred": true,
+  "ready_for_task56_validation": true
+}

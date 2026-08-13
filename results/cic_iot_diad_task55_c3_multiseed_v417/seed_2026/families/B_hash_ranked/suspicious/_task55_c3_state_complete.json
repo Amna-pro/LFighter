@@ -1,0 +1,16 @@
+{
+  "experiment_version": "4.17.C3",
+  "state_key": "seed_2026__B_hash_ranked__suspicious",
+  "checkpoint_sha256": "2d81290b6851723866d0cc35552bb8a15c86f7e4ba3b1136a38abe10dfda6573",
+  "config_sha256": "34ce3245f2d785251d3ba49c17ce582481e1e37a00ba783525cbd3360ad8e14b",
+  "background_manifest_sha256": "83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be",
+  "probe_manifest_sha256": "81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815",
+  "output_sha256": {
+    "task55c3_attributions.npz": "e77724eb71cc2e1f5c4024995832c538c801483e33605b8e4a47dcf1f673d768",
+    "task55c3_attributions_long.parquet": "6a5edee973e81103d8319c1a36e2bc20ca70404f0f7825ca053d97f2284db64e",
+    "task55c3_feature_summary.csv": "e19c04830c4c830e0b11e39a1f0160fafe992e6d4f92123f5469bcc93c529e40",
+    "state_summary.json": "78179e6070d8ff7252ba0a1f1c909d8c5c1a2a88edf3636f343e25e495e45905"
+  },
+  "reserved_test_arrays_materialized": false,
+  "complete": true
+}
