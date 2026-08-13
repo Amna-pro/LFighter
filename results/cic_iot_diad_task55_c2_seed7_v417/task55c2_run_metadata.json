@@ -1,0 +1,50 @@
+{
+  "experiment_version": "4.17.C2",
+  "stage": "task55_seed7_three_family_shap_pilot",
+  "c1_tag": "task55-c1-xai-preflight-frozen-v4171",
+  "c1_commit": "abc05f1426f34baf3d103a459838140230a65f4a",
+  "seed": 7,
+  "coalition_size": 10,
+  "families": [
+    "A_development_anchor",
+    "B_hash_ranked",
+    "C_hash_ranked"
+  ],
+  "unique_checkpoint_states": 7,
+  "logical_state_comparisons": 9,
+  "background_rows": 128,
+  "probe_rows": 128,
+  "feature_count": 69,
+  "explainer": {
+    "package": "shap",
+    "pinned_version": "0.48.0",
+    "primary": "shap.GradientExplainer",
+    "algorithm": "expected_gradients",
+    "model_output": "logits",
+    "primary_attribution_target": "source_logit_minus_target_logit",
+    "secondary_attribution_targets": [
+      "source_logit",
+      "target_logit"
+    ],
+    "nsamples": 128,
+    "batch_size": 64,
+    "local_smoothing": 0.0,
+    "rseed": 5517,
+    "model_eval_mode_required": true
+  },
+  "background_manifest_sha256": "83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be",
+  "probe_manifest_sha256": "81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815",
+  "python_version": "3.10.11",
+  "torch_version": "2.13.0+cpu",
+  "shap_version": "0.48.0",
+  "pyarrow_version": "25.0.0",
+  "arrays_materialized": [
+    "X_train",
+    "y_train",
+    "X_val",
+    "y_val"
+  ],
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "complete": true
+}

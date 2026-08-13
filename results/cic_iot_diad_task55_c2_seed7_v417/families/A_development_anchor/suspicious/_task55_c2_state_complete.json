@@ -1,0 +1,16 @@
+{
+  "experiment_version": "4.17.C2",
+  "state_key": "A_development_anchor__suspicious",
+  "checkpoint_sha256": "b38a8bad913be6955cc9956ea2f3d73649718af9f2b1a2d49448fe78eba047d1",
+  "config_sha256": "34ce3245f2d785251d3ba49c17ce582481e1e37a00ba783525cbd3360ad8e14b",
+  "background_manifest_sha256": "83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be",
+  "probe_manifest_sha256": "81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815",
+  "output_sha256": {
+    "task55c2_attributions.npz": "77097ba8092247b260cb119e67fbe6c20aba7825744606e8c1502227c7e6d3b5",
+    "task55c2_attributions_long.parquet": "e64a75d62206672e05693c5b80d4dc22e56e323361a0c5bded989cc9847fb69b",
+    "task55c2_feature_summary.csv": "e868eab23ae5c8e0274095745d347c3cff34b3f9e3a4b07fd76338024590f847",
+    "state_summary.json": "d4fcbee1485245413466d52c37a083b20780ca155ca0286993a259c632028c28"
+  },
+  "reserved_test_arrays_materialized": false,
+  "complete": true
+}

@@ -1,0 +1,37 @@
+check,passed,detail
+c1_all_checks_passed,True,79/79
+c1_ready_for_c2,True,True
+c1_reserved_arrays_closed,True,False
+config_training_forbidden,True,False
+config_test_gate_closed,True,False
+metadata_complete,True,True
+metadata_seed_7,True,7
+metadata_size_10,True,10
+metadata_three_families,True,"['A_development_anchor', 'B_hash_ranked', 'C_hash_ranked']"
+metadata_seven_unique_states,True,7
+metadata_nine_logical_states,True,9
+metadata_128_background,True,128
+metadata_128_probe,True,128
+metadata_69_features,True,69
+metadata_shap_0p48,True,0.48.0
+metadata_allowed_arrays_exact,True,"['X_train', 'y_train', 'X_val', 'y_val']"
+metadata_no_training,True,False
+metadata_reserved_arrays_closed,True,False
+background_hash_matches_c1,True,83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be
+probe_hash_matches_c1,True,81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815
+seven_physical_states,True,7
+checkpoint_hashes_match_c1,True,7
+all_state_markers_verified,True,7
+all_tensor_shapes_valid,True,7
+all_attribution_tensors_finite,True,7
+exact_derived_margin_identity,True,7
+same_probe_labels_features_all_states,True,7
+all_long_schemas_valid,True,7
+all_long_row_counts_valid,True,61824
+all_feature_summaries_valid,True,7
+all_state_summaries_valid,True,7
+all_state_reserved_arrays_closed,True,7
+nine_logical_state_rows,True,9
+seven_state_summary_rows,True,7
+feature_summary_row_count,True,966
+progress_has_seven_states,True,7

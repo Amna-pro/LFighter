@@ -1,0 +1,23 @@
+{
+  "experiment_version": "4.17.C2A",
+  "stage": "task55_seed7_three_family_shap_pilot_audit",
+  "checks_passed": 36,
+  "check_count": 36,
+  "seed": 7,
+  "coalition_size": 10,
+  "families_verified": [
+    "A_development_anchor",
+    "B_hash_ranked",
+    "C_hash_ranked"
+  ],
+  "unique_checkpoint_states_verified": 7,
+  "logical_state_comparisons_verified": 9,
+  "attribution_tensors_finite": true,
+  "exact_derived_margin_identity": true,
+  "same_frozen_probe_all_states": true,
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "scientific_result_evaluated": false,
+  "task56_validation_deferred": true,
+  "ready_for_c3_confirmatory_multiseed": true
+}
