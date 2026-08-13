@@ -1,0 +1,20 @@
+{
+  "experiment_version": "4.18.C2",
+  "stage": "task56_validation_shap_execution",
+  "frozen_tag": "task56-c1-xai-validation-preflight-frozen-v4181",
+  "frozen_commit": "14d82bbb27e3f1423e0c6c842f4e4368a71fc164",
+  "physical_checkpoint_states": 28,
+  "new_shap_state_evaluations": 140,
+  "repeat_evaluations": 84,
+  "alternate_background_evaluations": 56,
+  "python_version": "3.10.11",
+  "arrays_materialized": [
+    "X_train",
+    "y_train",
+    "X_val",
+    "y_val"
+  ],
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "complete": true
+}

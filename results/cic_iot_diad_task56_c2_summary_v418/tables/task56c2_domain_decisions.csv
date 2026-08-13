@@ -1,0 +1,7 @@
+domain,metrics_passed,metric_count,domain_pass
+repeated_run_stability,4,4,True
+background_sensitivity,3,3,True
+probe_size_sensitivity,3,3,True
+feature_perturbation_faithfulness,4,4,True
+class_specificity,2,2,True
+cross_seed_consistency,2,2,True

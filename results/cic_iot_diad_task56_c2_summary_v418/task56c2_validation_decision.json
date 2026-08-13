@@ -1,0 +1,42 @@
+{
+  "experiment_version": "4.18.C2",
+  "stage": "task56_xai_validation_summary",
+  "scientific_result": "PASS",
+  "core_domains_passed": true,
+  "robustness_domains_passed": 4,
+  "domain_results": {
+    "repeated_run_stability": true,
+    "background_sensitivity": true,
+    "probe_size_sensitivity": true,
+    "feature_perturbation_faithfulness": true,
+    "class_specificity": true,
+    "cross_seed_consistency": true
+  },
+  "physical_checkpoint_states": 28,
+  "new_shap_state_evaluations": 140,
+  "repeat_comparisons": 84,
+  "background_comparisons": 56,
+  "probe_size_comparisons": 56,
+  "faithfulness_states": 28,
+  "class_specificity_states": 28,
+  "cross_seed_comparisons": 42,
+  "runtime_and_memory": {
+    "evaluation_count": 140,
+    "median_wall_seconds": 4.2957,
+    "total_wall_seconds": 626.1544000000001,
+    "maximum_peak_rss_bytes": 550592512
+  },
+  "task57_primary_claim_allowed": true,
+  "task57_exploratory_only": false,
+  "task57_recovery_claim_blocked": false,
+  "negative_results_retained": true,
+  "arrays_materialized": [
+    "X_train",
+    "y_train",
+    "X_val",
+    "y_val"
+  ],
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "complete": true
+}

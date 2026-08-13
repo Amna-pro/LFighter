@@ -1,0 +1,14 @@
+{
+  "experiment_version": "4.18.C2",
+  "complete": true,
+  "mode": "repeat",
+  "variant_seed": 56103,
+  "checkpoint_sha256": "3a4c80a39cb0d5d0509aee31d3772760b63b81cd9343e5243b311b26d2645006",
+  "config_sha256": "cf1a4c59a36a21d1f6c968a9b55a1db5624060eb01db33dc1ac3665472568110",
+  "output_sha256": {
+    "task56c2_margin_attributions.npz": "8652e9af3ede50bfbfbf55ce9e19604d218b4dc8b408502638666a69bac385d6",
+    "evaluation_summary.json": "3ae5a5f70520af51d1c6393bfb293e5bc5bd9fd0d78ae73f8162f772c950614f"
+  },
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false
+}
