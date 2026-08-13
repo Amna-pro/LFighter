@@ -1,0 +1,33 @@
+check,passed,detail
+config_exists,True,C:\Users\Amm\LFighter-research\configs\task55_preregistration_v4170.json
+protocol_exists,True,C:\Users\Amm\LFighter-research\configs\TASK55_PREREGISTRATION_V417.md
+parent_tag_exact,True,task45-c4-coalition-size-partial-v4164
+parent_commit_config_exact,True,9c8a7dc107191e153e1e7eff2062546c3c7de633
+parent_tag_resolves_exact,True,9c8a7dc107191e153e1e7eff2062546c3c7de633
+parent_is_head_ancestor,True,9c8a7dc107191e153e1e7eff2062546c3c7de633
+task_number,True,55
+experiment_version,True,4.17.0
+post_detection_role,True,post_detection_forensic_explanation_only
+no_detector_authority,True,False
+no_training,True,False
+no_method_reopening,True,False
+allowed_arrays_exact,True,"['X_train', 'y_train', 'X_val', 'y_val']"
+reserved_arrays_exact,True,"['X_test_natural', 'y_test_natural', 'X_test_diagnostic', 'y_test_diagnostic']"
+feature_count_69,True,69
+raw_input_features,True,"{'name': 'behavioral_only', 'expected_feature_count': 69, 'feature_name_file': 'data/processed/cic_iot_diad_2024_v2_1/preprocessors/behavioral_only/selected_features.csv', 'explain_raw_network_traffic_features': True, 'explain_detector_signature_features': False, 'explain_client_descriptor_features': False}"
+no_detector_feature_explanations,True,"{'name': 'behavioral_only', 'expected_feature_count': 69, 'feature_name_file': 'data/processed/cic_iot_diad_2024_v2_1/preprocessors/behavioral_only/selected_features.csv', 'explain_raw_network_traffic_features': True, 'explain_detector_signature_features': False, 'explain_client_descriptor_features': False}"
+gradient_explainer,True,shap.GradientExplainer
+shap_version_pinned,True,0.48.0
+logit_margin_primary,True,source_logit_minus_target_logit
+source_ddos,True,"{'source_class': 'DDoS', 'source_class_id': 2, 'target_class': 'Benign', 'target_class_id': 0}"
+target_benign,True,"{'source_class': 'DDoS', 'source_class_id': 2, 'target_class': 'Benign', 'target_class_id': 0}"
+balanced_background_128,True,"{'split': 'train', 'selection': 'class_stratified_without_replacement', 'samples_per_class': 16, 'total_samples': 128, 'seed': 5501, 'shared_across_all_states_and_seeds': True}"
+balanced_probe_128,True,"{'split': 'validation', 'selection': 'class_stratified_without_replacement', 'samples_per_class': 16, 'total_samples': 128, 'seed': 5502, 'shared_across_all_states_and_seeds': True, 'primary_analysis_rows': 'true_DDoS_rows', 'all_class_rows_retained_for_class_specific_diagnostics': True}"
+same_samples_all_states,True,background and probe
+panel_size_10,True,10
+panel_three_families,True,"['A_development_anchor', 'B_hash_ranked', 'C_hash_ranked']"
+panel_four_seeds,True,"[7, 99, 123, 2026]"
+panel_12_conditions,True,12
+panel_36_state_evaluations,True,36
+negative_results_retained,True,True
+reserved_gate_closed,True,False

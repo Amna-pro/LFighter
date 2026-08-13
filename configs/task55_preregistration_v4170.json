@@ -1,0 +1,157 @@
+{
+  "experiment_version": "4.17.0",
+  "task": 55,
+  "stage": "C0_preregistered_post_detection_xai_protocol",
+  "parent_tag": "task45-c4-coalition-size-partial-v4164",
+  "parent_commit": "9c8a7dc107191e153e1e7eff2062546c3c7de633",
+  "scientific_role": "post_detection_forensic_explanation_only",
+  "detector_authority": false,
+  "training_permitted": false,
+  "method_reopening_permitted": false,
+  "development_arrays_allowed": [
+    "X_train",
+    "y_train",
+    "X_val",
+    "y_val"
+  ],
+  "reserved_arrays_forbidden": [
+    "X_test_natural",
+    "y_test_natural",
+    "X_test_diagnostic",
+    "y_test_diagnostic"
+  ],
+  "input_representation": {
+    "name": "behavioral_only",
+    "expected_feature_count": 69,
+    "feature_name_file": "data/processed/cic_iot_diad_2024_v2_1/preprocessors/behavioral_only/selected_features.csv",
+    "explain_raw_network_traffic_features": true,
+    "explain_detector_signature_features": false,
+    "explain_client_descriptor_features": false
+  },
+  "classes": [
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web-Based"
+  ],
+  "attack_transition": {
+    "source_class": "DDoS",
+    "source_class_id": 2,
+    "target_class": "Benign",
+    "target_class_id": 0
+  },
+  "explainer": {
+    "package": "shap",
+    "pinned_version": "0.48.0",
+    "primary": "shap.GradientExplainer",
+    "algorithm": "expected_gradients",
+    "model_output": "logits",
+    "primary_attribution_target": "source_logit_minus_target_logit",
+    "secondary_attribution_targets": [
+      "source_logit",
+      "target_logit"
+    ],
+    "nsamples": 128,
+    "batch_size": 64,
+    "local_smoothing": 0.0,
+    "rseed": 5517,
+    "model_eval_mode_required": true
+  },
+  "background": {
+    "split": "train",
+    "selection": "class_stratified_without_replacement",
+    "samples_per_class": 16,
+    "total_samples": 128,
+    "seed": 5501,
+    "shared_across_all_states_and_seeds": true
+  },
+  "probe": {
+    "split": "validation",
+    "selection": "class_stratified_without_replacement",
+    "samples_per_class": 16,
+    "total_samples": 128,
+    "seed": 5502,
+    "shared_across_all_states_and_seeds": true,
+    "primary_analysis_rows": "true_DDoS_rows",
+    "all_class_rows_retained_for_class_specific_diagnostics": true
+  },
+  "state_comparison": {
+    "clean_reference": "common_round4_warmup_model",
+    "suspicious": "task45_plain_attack_final_model",
+    "reconstructed": "task45_trusted_reconstruction_final_model",
+    "same_probe_and_background_required": true,
+    "same_seed_partition_and_attack_pairing_required": true
+  },
+  "frozen_primary_panel": {
+    "task45_coalition_size": 10,
+    "families": [
+      "A_development_anchor",
+      "B_hash_ranked",
+      "C_hash_ranked"
+    ],
+    "development_seed": 7,
+    "confirmatory_seeds": [
+      99,
+      123,
+      2026
+    ],
+    "all_seeds": [
+      7,
+      99,
+      123,
+      2026
+    ],
+    "condition_count": 12,
+    "state_evaluations": 36
+  },
+  "storage_schema": {
+    "sample_index_manifest": "npz",
+    "attribution_tensor": "compressed_npz_float32",
+    "long_form_attributions": "parquet",
+    "summary_tables": "csv",
+    "metadata_and_decisions": "json",
+    "required_keys": [
+      "family_id",
+      "coalition_size",
+      "seed",
+      "state",
+      "probe_global_index",
+      "true_class_id",
+      "predicted_class_id",
+      "feature_index",
+      "feature_name",
+      "source_logit_shap",
+      "target_logit_shap",
+      "source_minus_target_margin_shap",
+      "checkpoint_sha256",
+      "background_manifest_sha256",
+      "probe_manifest_sha256",
+      "explainer_version"
+    ]
+  },
+  "validation_deferred_to_task56": [
+    "repeated_run_stability",
+    "rank_correlation",
+    "feature_perturbation_faithfulness",
+    "class_specificity",
+    "background_sensitivity",
+    "probe_size_sensitivity",
+    "cross_seed_consistency",
+    "runtime_and_memory"
+  ],
+  "execution_stages": [
+    "C0_preregistration_and_integrity_audit",
+    "C1_local_artifact_inventory_and_explainer_compatibility",
+    "C2_seed7_three_family_pilot",
+    "C3_confirmatory_multiseed_attribution_run",
+    "C4_task56_stability_and_faithfulness_validation",
+    "C5_task57_reconstruction_recovery_analysis",
+    "C6_task58_publication_figures_and_cases"
+  ],
+  "negative_results_retained": true,
+  "reserved_test_gate_opened": false
+}

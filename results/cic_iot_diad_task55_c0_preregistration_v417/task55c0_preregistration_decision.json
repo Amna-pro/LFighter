@@ -1,0 +1,13 @@
+{
+  "experiment_version": "4.17.0",
+  "stage": "task55_c0_preregistration_integrity_audit",
+  "parent_tag": "task45-c4-coalition-size-partial-v4164",
+  "parent_commit": "9c8a7dc107191e153e1e7eff2062546c3c7de633",
+  "head_commit": "9c8a7dc107191e153e1e7eff2062546c3c7de633",
+  "checks_passed": 32,
+  "check_count": 32,
+  "post_detection_only": true,
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "ready_for_c1_local_inventory": true
+}
