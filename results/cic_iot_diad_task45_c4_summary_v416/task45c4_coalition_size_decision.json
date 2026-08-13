@@ -1,0 +1,42 @@
+{
+  "experiment_version": "4.16.C4",
+  "stage": "task45_coalition_size_summary_and_hypothesis_evaluation",
+  "c3_tag": "task45-c3-confirmatory-frozen-v4163",
+  "c3_commit": "27b76abe079173dccaf38a53929ff92aa00c8a47",
+  "seeds": [
+    7,
+    99,
+    123,
+    2026
+  ],
+  "coalition_families": [
+    "A_development_anchor",
+    "B_hash_ranked",
+    "C_hash_ranked"
+  ],
+  "coalition_sizes": [
+    1,
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "conditions_analyzed": 72,
+  "paired_branches_analyzed": 144,
+  "rounds_analyzed": 288,
+  "h1_detection_robustness_pass": false,
+  "h2_mitigation_pass": true,
+  "h3_attack_scale_nondecreasing_family_count": 3,
+  "h3_attack_scale_required_family_count": 2,
+  "h3_attack_scale_pass": true,
+  "overall_preregistered_hypothesis_result": "PARTIAL",
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 451604,
+  "multiple_comparison_control": "Holm adjustment across six H2 size tests",
+  "negative_and_boundary_results_retained": true,
+  "reserved_test_arrays_materialized": false,
+  "task45_development_and_validation_closeout_complete": true,
+  "c5_reserved_test_gate_opened": false,
+  "method_reopened": false
+}
