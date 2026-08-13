@@ -1,0 +1,13 @@
+{
+  "experiment_version": "4.18.C0",
+  "stage": "task56_preregistration_integrity_audit",
+  "parent_tag": "task55-c3-confirmatory-xai-frozen-v4173",
+  "parent_commit": "8226e0ca76c9344113e2c5d53039119ea37d3eed",
+  "head_commit": "8226e0ca76c9344113e2c5d53039119ea37d3eed",
+  "checks_passed": 45,
+  "check_count": 45,
+  "outcomes_inspected": false,
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "ready_for_c1_preflight": true
+}

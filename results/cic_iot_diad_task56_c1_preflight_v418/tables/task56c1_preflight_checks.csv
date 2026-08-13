@@ -1,0 +1,50 @@
+check,passed,detail
+exists_data,True,C:\Users\Amm\LFighter-research\data\processed\cic_iot_diad_2024_v2_1\arrays\behavioral_only.npz
+exists_features,True,C:\Users\Amm\LFighter-research\data\processed\cic_iot_diad_2024_v2_1\preprocessors\behavioral_only\selected_features.csv
+exists_indices,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c1_preflight_v417\tables\task55c1_frozen_sample_indices.npz
+exists_inventory,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c1_preflight_v417\tables\task55c1_checkpoint_inventory.csv
+exists_warmup,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_true_warmup_anchor_v3101_multiseed
+exists_task45_c2,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task45_c2_seed7_v416
+exists_task45_c3,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task45_c3_multiseed_v416
+exists_task55_c2,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c2_seed7_v417
+exists_task55_c3,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c3_multiseed_v417
+exists_task55_audit,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c3_audit_v417
+parent_tag_exact,True,8226e0ca76c9344113e2c5d53039119ea37d3eed
+parent_is_ancestor,True,8226e0ca76c9344113e2c5d53039119ea37d3eed
+shap_version_exact,True,0.48.0
+pyarrow_available,True,25.0.0
+psutil_available,True,7.2.2
+python_3_10_or_newer,True,3.10.11
+task55_all_47_checks_passed,True,47/47
+task55_ready_for_task56,True,True
+task55_exact_pairing,True,True
+task55_reserved_closed,True,False
+69_unique_features,True,69
+allowed_arrays_only_materialized,True,"['X_train', 'y_train', 'X_val', 'y_val']"
+reserved_arrays_not_materialized,True,"['X_train', 'y_train', 'X_val', 'y_val']"
+development_feature_dimensions,True,"(483734, 69)/(121835, 69)"
+baseline_background_hash,True,83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be
+baseline_probe_hash,True,81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815
+baseline_labels_match,True,train and validation
+baseline_balanced,True,16 per class
+alternate_background_counts,True,128/128
+alternate_backgrounds_balanced,True,16 per class
+alternate_backgrounds_disjoint,True,pairwise disjoint
+ddos_probe_count_16,True,16
+nested_probe_subsets,True,8 subset 12 subset 16
+random_panel_shapes,True,"{1: (256, 1), 5: (256, 5), 10: (256, 10), 20: (256, 20)}"
+28_state_specs,True,28
+28_inventory_rows,True,28
+all_checkpoint_hashes_match,True,28
+all_task55_markers_valid,True,28
+all_tensor_shapes_valid,True,28
+all_tensors_finite,True,28
+all_margin_identities_exact,True,28
+same_frozen_samples_all_states,True,28
+all_summaries_match_checkpoints,True,28
+all_state_reserved_arrays_closed,True,28
+gradient_explainer_smoke_shape,True,"(2, 69)"
+gradient_explainer_smoke_finite,True,138
+validation_plan_140_rows,True,140
+validation_plan_84_repeats,True,84
+validation_plan_56_backgrounds,True,56

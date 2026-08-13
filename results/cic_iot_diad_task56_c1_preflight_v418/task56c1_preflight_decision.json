@@ -1,0 +1,30 @@
+{
+  "experiment_version": "4.18.C1",
+  "stage": "task56_local_validation_preflight",
+  "checks_passed": 49,
+  "check_count": 49,
+  "parent_tag": "task55-c3-confirmatory-xai-frozen-v4173",
+  "parent_commit": "8226e0ca76c9344113e2c5d53039119ea37d3eed",
+  "physical_checkpoint_states_verified": 28,
+  "planned_new_shap_state_evaluations": 140,
+  "repeat_evaluations": 84,
+  "alternate_background_evaluations": 56,
+  "alternate_backgrounds_disjoint": true,
+  "nested_ddos_probe_sizes": [
+    8,
+    12,
+    16
+  ],
+  "random_panels_per_k": 256,
+  "arrays_materialized": [
+    "X_train",
+    "y_train",
+    "X_val",
+    "y_val"
+  ],
+  "scientific_outcomes_evaluated": false,
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "elapsed_seconds": 3.16,
+  "ready_for_c2_validation_run": true
+}

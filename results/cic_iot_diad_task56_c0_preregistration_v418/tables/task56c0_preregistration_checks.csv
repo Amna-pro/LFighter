@@ -1,0 +1,46 @@
+check,passed,detail
+config_exists,True,C:\Users\Amm\LFighter-research\configs\task56_preregistration_v4180.json
+protocol_exists,True,C:\Users\Amm\LFighter-research\configs\TASK56_PREREGISTRATION_V418.md
+parent_tag_exact,True,task55-c3-confirmatory-xai-frozen-v4173
+parent_commit_exact,True,8226e0ca76c9344113e2c5d53039119ea37d3eed
+parent_tag_resolves_exact,True,8226e0ca76c9344113e2c5d53039119ea37d3eed
+parent_is_head_ancestor,True,8226e0ca76c9344113e2c5d53039119ea37d3eed
+task_number_56,True,56
+version_4p18p0,True,4.18.0
+validation_role_only,True,post_detection_xai_validation_only
+no_detector_authority,True,False
+no_training,True,False
+task57_not_permitted,True,False
+no_method_reopening,True,False
+allowed_arrays_exact,True,"['X_train', 'y_train', 'X_val', 'y_val']"
+reserved_arrays_exact,True,"['X_test_natural', 'y_test_natural', 'X_test_diagnostic', 'y_test_diagnostic']"
+four_seeds,True,"[7, 99, 123, 2026]"
+three_families,True,"['A_development_anchor', 'B_hash_ranked', 'C_hash_ranked']"
+size_10,True,10
+28_physical_states,True,28
+36_logical_states,True,36
+69_features,True,69
+primary_true_ddos,True,true_DDoS_rows
+primary_margin_attribution,True,source_minus_target_margin_shap
+task55_shap_frozen,True,"{'explainer': 'shap.GradientExplainer', 'shap_version': '0.48.0', 'nsamples': 128, 'batch_size': 64, 'local_smoothing': 0.0, 'rseed': 5517, 'background_rows': 128, 'probe_rows': 128, 'ddos_probe_rows': 16, 'background_manifest_sha256': '83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be', 'probe_manifest_sha256': '81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815'}"
+task55_samples_frozen,True,"{'explainer': 'shap.GradientExplainer', 'shap_version': '0.48.0', 'nsamples': 128, 'batch_size': 64, 'local_smoothing': 0.0, 'rseed': 5517, 'background_rows': 128, 'probe_rows': 128, 'ddos_probe_rows': 16, 'background_manifest_sha256': '83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be', 'probe_manifest_sha256': '81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815'}"
+three_repeat_seeds_frozen,True,"[56101, 56102, 56103]"
+84_repeat_evaluations,True,84
+repeat_thresholds_complete,True,"{'median_spearman_at_least': 0.9, 'fifth_percentile_spearman_at_least': 0.75, 'median_top10_jaccard_at_least': 0.67, 'median_normalized_l1_drift_at_most': 0.25}"
+alternate_background_seeds_frozen,True,"[5601, 5602]"
+background_disjoint_rule,True,class_stratified_16_per_class_disjoint_from_baseline_and_each_other
+56_background_evaluations,True,56
+probe_sizes_frozen,True,"[8, 12, 16]"
+faithfulness_replacement_frozen,True,frozen_baseline_background_feature_mean
+faithfulness_topk_frozen,True,"[1, 5, 10, 20]"
+faithfulness_random_controls,True,"{'replacement': 'frozen_baseline_background_feature_mean', 'rows': 'true_DDoS_rows', 'individual_feature_metric': 'mean_absolute_change_in_DDoS_minus_Benign_logit_margin', 'ranking_metric': 'spearman_between_mean_absolute_margin_shap_and_individual_feature_impact', 'cumulative_top_k': [1, 5, 10, 20], 'random_control_seed': 5604, 'random_panels_per_k': 256, 'pass_rules': {'median_state_spearman_at_least': 0.5, 'fraction_states_positive_spearman_at_least': 0.75, 'median_top10_random_percentile_at_least': 0.9, 'fraction_states_top10_above_random_median_at_least': 0.75}}"
+class_specificity_frozen,True,"{'profile': 'sample_absolute_margin_shap_by_feature', 'primary_rows': 'true_DDoS_rows', 'within_reference': 'leave_one_out_true_DDoS_centroid', 'between_reference': 'pooled_non_DDoS_centroid', 'metric': 'spearman_within_minus_between', 'pass_rules': {'median_state_difference_at_least': 0.1, 'fraction_states_positive_at_least': 0.75}}"
+42_cross_seed_comparisons,True,42
+runtime_and_memory_measured,True,"{'measure_wall_seconds': True, 'measure_process_peak_rss_bytes': True, 'report_per_state_and_aggregate': True, 'affects_scientific_pass_fail': False}"
+runtime_not_scientific_gate,True,False
+all_domains_in_policy,True,"{'core_domains': ['repeated_run_stability', 'feature_perturbation_faithfulness'], 'robustness_domains': ['background_sensitivity', 'probe_size_sensitivity', 'class_specificity', 'cross_seed_consistency'], 'PASS': 'both_core_and_all_four_robustness_domains_pass', 'PARTIAL': 'both_core_pass_and_at_least_two_robustness_domains_pass', 'FAIL': 'either_core_domain_fails_or_fewer_than_two_robustness_domains_pass', 'task57_primary_claim_allowed_only_if': 'PASS', 'task57_exploratory_only_if': 'PARTIAL', 'task57_recovery_claim_blocked_if': 'FAIL'}"
+pass_partial_fail_frozen,True,"{'core_domains': ['repeated_run_stability', 'feature_perturbation_faithfulness'], 'robustness_domains': ['background_sensitivity', 'probe_size_sensitivity', 'class_specificity', 'cross_seed_consistency'], 'PASS': 'both_core_and_all_four_robustness_domains_pass', 'PARTIAL': 'both_core_pass_and_at_least_two_robustness_domains_pass', 'FAIL': 'either_core_domain_fails_or_fewer_than_two_robustness_domains_pass', 'task57_primary_claim_allowed_only_if': 'PASS', 'task57_exploratory_only_if': 'PARTIAL', 'task57_recovery_claim_blocked_if': 'FAIL'}"
+task57_claim_gate_frozen,True,"{'core_domains': ['repeated_run_stability', 'feature_perturbation_faithfulness'], 'robustness_domains': ['background_sensitivity', 'probe_size_sensitivity', 'class_specificity', 'cross_seed_consistency'], 'PASS': 'both_core_and_all_four_robustness_domains_pass', 'PARTIAL': 'both_core_pass_and_at_least_two_robustness_domains_pass', 'FAIL': 'either_core_domain_fails_or_fewer_than_two_robustness_domains_pass', 'task57_primary_claim_allowed_only_if': 'PASS', 'task57_exploratory_only_if': 'PARTIAL', 'task57_recovery_claim_blocked_if': 'FAIL'}"
+140_new_shap_evaluations,True,140
+negative_results_retained,True,True
+reserved_gate_closed,True,False
