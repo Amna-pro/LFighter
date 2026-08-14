@@ -1,0 +1,40 @@
+{
+  "protocol_id": "task61_c2_recovery_v4232",
+  "parent_protocol_id": "task61_v4230",
+  "parent_tag": "task61-c1-llm-evaluation-preflight-frozen-v4231",
+  "amendment_reason": "The first confirmatory attempt produced truncated JSON at planned call 25 because the frozen 700 token output cap was exhausted.",
+  "amendment_timing": "before automated semantic outcome evaluation",
+  "original_attempt": {
+    "output_root": "results/cic_iot_diad_task61_c2_llm_reports_v423",
+    "completed_reports": 24,
+    "incomplete_api_attempts": 1,
+    "total_api_attempts": 25,
+    "maximum_output_tokens": 700,
+    "disposition": "aborted_whole_attempt_retained_not_used_for_confirmatory_comparison"
+  },
+  "confirmatory_restart": {
+    "output_root": "results/cic_iot_diad_task61_c2_llm_reports_v4232",
+    "summary_root": "results/cic_iot_diad_task61_c2_summary_v4232",
+    "audit_root": "results/cic_iot_diad_task61_c2_audit_v4232",
+    "model_id": "gpt-5.6-terra",
+    "reasoning_effort": "low",
+    "maximum_output_tokens": 1100,
+    "planned_reports": 36,
+    "planned_api_calls": 36,
+    "max_retries": 0,
+    "restart_entire_matrix": true,
+    "reuse_original_completed_reports": false,
+    "best_output_selection_permitted": false
+  },
+  "combined_accounting": {
+    "maximum_total_api_attempts": 61,
+    "amended_cost_ceiling_usd": 1.5,
+    "failed_attempt_usage_available": false
+  },
+  "scientific_boundaries": {
+    "training_permitted": false,
+    "new_shap_evaluations": 0,
+    "reserved_test_arrays_materialized": false,
+    "llm_role": "report_only"
+  }
+}

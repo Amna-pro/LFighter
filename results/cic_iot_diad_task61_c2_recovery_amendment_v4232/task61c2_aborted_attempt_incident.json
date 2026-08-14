@@ -1,0 +1,18 @@
+{
+  "automated_semantic_outcomes_evaluated_before_amendment": false,
+  "combined_api_attempts_after_successful_restart": 61,
+  "completed_reports_verified": 24,
+  "confirmatory_restart_planned_calls": 36,
+  "console_log_sha256": "45eb939226cb216a5d49a566f003d22623e22b4465e20b3c4aeef71c72b9d0f7",
+  "failed_attempt_usage_available": false,
+  "failure_call_index": 25,
+  "failure_type": "structured_json_truncated_at_max_output_tokens",
+  "incomplete_api_attempts_observed": 1,
+  "original_attempt_disposition": "aborted_whole_attempt_retained_not_used_for_confirmatory_comparison",
+  "original_reports_retained": true,
+  "original_reports_reused": false,
+  "preflight_passed": true,
+  "protocol_id": "task61_c2_recovery_v4232",
+  "response_id_available": false,
+  "total_original_api_attempts": 25
+}

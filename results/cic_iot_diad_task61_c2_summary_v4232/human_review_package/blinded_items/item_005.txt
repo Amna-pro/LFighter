@@ -1,0 +1,25 @@
+TASK 61 BLINDED REVIEW ITEM item_005
+
+SUMMARY
+Observed DDoS-to-Benign prediction rates were higher in the plain attack branch than the paired clean branch; the defended branch reduced the plain-attack mean rate. Reconstruction reduced normalized attribution distance relative to the paired preattack reference.
+
+FACTS
+* The plain attack mean DDoS-to-Benign prediction rate was 0.191026, versus 0.056499 in the paired clean branch.
+* The defended mean DDoS-to-Benign prediction rate was 0.094131, an absolute reduction of 0.096894 from the plain attack branch.
+* Mean and minimum malicious recall were 1.000000, and maximum benign false-positive rate was 0.100000.
+* Normalized attribution distance decreased from 0.860237 to 0.520150, with recovery fraction 0.395341.
+
+INTERPRETATIONS
+* The observed prediction behavior is consistent with targeted suppression of DDoS predictions toward the Benign class, but does not establish malicious intent. [confidence: moderate]
+* Reconstruction moved the attribution profile toward its paired preattack clean reference; this is not evidence of oracle clean restoration. [confidence: high]
+
+UNCERTAINTIES
+* The clean attribution comparator is the paired round 4 preattack reference, not an oracle clean state.
+* Rejected and oracle-clean attribution states were unavailable.
+* Per-client detector scores and numeric thresholds were not materialized.
+* Evidence is limited to development and validation; reserved test arrays remained closed.
+
+REFUSALS
+* Refuse to claim verified malicious intent; the supplied evidence does not establish it.
+* Refuse to claim oracle clean recovery; oracle-clean attribution state was unavailable and not substituted.
+* Refuse to make client-flagging, threshold, trust-weight, reconstruction, or aggregation decisions.

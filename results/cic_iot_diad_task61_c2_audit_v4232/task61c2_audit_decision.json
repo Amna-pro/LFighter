@@ -1,0 +1,23 @@
+{
+  "all_checks_passed": true,
+  "api_calls_verified": 36,
+  "automated_gate_result_verified": "FAIL",
+  "cases_verified": 12,
+  "checks_passed": 88,
+  "checks_total": 88,
+  "citation_validity_verified": true,
+  "combined_api_attempts": 61,
+  "confirmatory_api_calls_verified": 36,
+  "failed_attempt_cost_observed": false,
+  "human_review_complete": false,
+  "llm_superiority_claim_permitted": false,
+  "new_shap_evaluations": 0,
+  "numeric_grounding_independently_recomputed": true,
+  "original_api_attempts_retained": 25,
+  "original_attempt_outputs_reused": false,
+  "ready_for_independent_human_review": false,
+  "reports_verified": 36,
+  "reserved_test_arrays_materialized": false,
+  "schema_conformance_verified": true,
+  "training_permitted": false
+}

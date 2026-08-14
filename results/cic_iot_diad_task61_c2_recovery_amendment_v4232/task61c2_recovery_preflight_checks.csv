@@ -1,0 +1,18 @@
+check_id,passed
+frozen C1 tag verified,True
+C1 audit passed,True
+C1 authorized C2,True
+call plan remains 36 rows,True
+original completed indices are exactly 1 through 24,True
+original completed files pass hashes,True
+report 25 is not complete,True
+no later report is complete,True
+console log identifies call 25,True
+console log identifies JSON EOF,True
+console log identifies 700 token cap,True
+automated summary was not run,True
+fresh restart contains only verified complete outputs,True
+fresh restart completed indices form a prefix,True
+entire matrix restart required,True
+original reports cannot be reused,True
+best output selection prohibited,True

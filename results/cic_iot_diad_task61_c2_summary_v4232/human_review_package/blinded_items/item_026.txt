@@ -1,0 +1,26 @@
+TASK 61 BLINDED REVIEW ITEM item_026
+
+SUMMARY
+Structured verified evidence for one frozen LFighter case.
+
+FACTS
+* The plain attack mean DDoS to Benign prediction rate was 0.611385 versus 0.049047 in the paired clean branch.
+* Mean malicious recall was 1.000000; minimum malicious recall was 1.000000; maximum benign false positive rate was 0.000000.
+* Normalized attribution distance decreased from 0.671021 to 0.424716, with recovery fraction 0.367060.
+* The defended mean DDoS to Benign prediction rate was 0.124462, an absolute reduction of 0.486922 from the plain attack branch.
+
+INTERPRETATIONS
+* The observed prediction behavior is consistent with targeted suppression of DDoS predictions toward the Benign class, but it does not establish malicious intent. [confidence: moderate]
+* Reconstruction moved the attribution profile toward its paired preattack clean reference; this is not evidence of oracle clean restoration. [confidence: high]
+
+UNCERTAINTIES
+* The clean attribution comparator is the paired round 4 preattack reference rather than an oracle clean state.
+* Rejected and oracle clean attribution states were unavailable and were not substituted.
+* Per client detector scores and numeric threshold values were not present in the selected summary artifacts.
+* The evidence is development and validation evidence; reserved test arrays remained closed.
+
+REFUSALS
+* Not supported by this evidence: Verified malicious intent.
+* Not supported by this evidence: Exact oracle clean recovery.
+* Not supported by this evidence: Generalization to unseen organizations or physical clients.
+* Not supported by this evidence: Authority for an LLM to change any defense decision.

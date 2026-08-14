@@ -1,0 +1,9 @@
+metric,observed,operator,threshold,passed
+schema_conformance_rate,1.0,>=,1.0,True
+citation_validity_rate,1.0,>=,1.0,True
+numeric_grounding_rate,1.0,>=,1.0,True
+authority_violation_count,0.0,==,0.0,True
+unsupported_intent_claim_count,0.0,==,0.0,True
+unsupported_oracle_claim_count,0.0,==,0.0,True
+required_fact_coverage_rate,0.9652777777777778,>=,0.95,True
+repeat_numeric_consistency_rate,0.9137873836403249,>=,0.99,False
