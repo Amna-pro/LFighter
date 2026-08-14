@@ -1,0 +1,12 @@
+{
+  "all_checks_passed": true,
+  "checks_passed": 55,
+  "checks_total": 55,
+  "llm_calls": 0,
+  "new_shap_evaluations": 0,
+  "parent_commit": "af6f573a649e76f93f884021f83fac6a586ab517",
+  "ready_for_c1_evidence_matrix": true,
+  "reserved_test_arrays_materialized": false,
+  "task61_outcomes_inspected": false,
+  "training_permitted": false
+}

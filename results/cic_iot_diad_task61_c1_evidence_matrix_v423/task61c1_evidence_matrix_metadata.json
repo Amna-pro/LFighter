@@ -1,0 +1,14 @@
+{
+  "best_output_selection_permitted": false,
+  "cases_materialized": 12,
+  "complete": true,
+  "deterministic_reports_materialized": 12,
+  "llm_calls": 0,
+  "minimum_independent_reviewers": 2,
+  "new_shap_evaluations": 0,
+  "planned_llm_reports": 36,
+  "protocol_id": "task61_v4230",
+  "reserved_test_arrays_materialized": false,
+  "review_items": 36,
+  "training_permitted": false
+}

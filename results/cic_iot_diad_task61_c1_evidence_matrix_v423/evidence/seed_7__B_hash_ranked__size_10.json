@@ -1,0 +1,319 @@
+{
+  "attack": {
+    "attack_type": "targeted_label_flip",
+    "coalition_family": "B_hash_ranked",
+    "coalition_size": 10,
+    "exact_poison_pair": true,
+    "selected_client_ids": [
+      5,
+      7,
+      8,
+      10,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19
+    ],
+    "source_class": "DDoS",
+    "source_ref": "src:task45_condition",
+    "target_class": "Benign"
+  },
+  "authority": {
+    "can_change_thresholds": false,
+    "can_change_trust_weights": false,
+    "can_claim_malicious_intent": false,
+    "can_control_aggregation": false,
+    "can_flag_clients": false,
+    "can_reconstruct_updates": false,
+    "decision_authority": "deterministic_pipeline",
+    "llm_role": "report_only"
+  },
+  "behavior": {
+    "condition_summary": {
+      "absolute_rate_reduction": 0.0968943788757751,
+      "clean_macro_f1": 0.3670833905463948,
+      "clean_source_to_target_rate": 0.0564987997599519,
+      "damage_removed_fraction": 0.7202602230483272,
+      "defended_macro_f1": 0.3594108205566785,
+      "defended_source_to_target_rate": 0.094131326265253,
+      "plain_macro_f1": 0.3682271606846404,
+      "plain_source_to_target_rate": 0.1910257051410281
+    },
+    "round_metrics": [
+      {
+        "benign_fpr": 0.0,
+        "clean_source_to_target_rate": 0.0182036407281456,
+        "defended_source_to_target_rate": 0.018003600720144,
+        "defense_improved_vs_plain": true,
+        "malicious_recall": 1.0,
+        "plain_source_to_target_rate": 0.2861572314462892,
+        "round": 1,
+        "source_ref": "src:task45_rounds"
+      },
+      {
+        "benign_fpr": 0.0,
+        "clean_source_to_target_rate": 0.0985697139427885,
+        "defended_source_to_target_rate": 0.161882376475295,
+        "defense_improved_vs_plain": false,
+        "malicious_recall": 1.0,
+        "plain_source_to_target_rate": 0.1169733946789357,
+        "round": 2,
+        "source_ref": "src:task45_rounds"
+      },
+      {
+        "benign_fpr": 0.1,
+        "clean_source_to_target_rate": 0.0272054410882176,
+        "defended_source_to_target_rate": 0.048009601920384,
+        "defense_improved_vs_plain": true,
+        "malicious_recall": 1.0,
+        "plain_source_to_target_rate": 0.2594518903780756,
+        "round": 3,
+        "source_ref": "src:task45_rounds"
+      },
+      {
+        "benign_fpr": 0.0,
+        "clean_source_to_target_rate": 0.0820164032806561,
+        "defended_source_to_target_rate": 0.148629725945189,
+        "defense_improved_vs_plain": false,
+        "malicious_recall": 1.0,
+        "plain_source_to_target_rate": 0.1015203040608121,
+        "round": 4,
+        "source_ref": "src:task45_rounds"
+      }
+    ],
+    "source_refs": [
+      "src:task45_condition",
+      "src:task45_rounds"
+    ]
+  },
+  "case_id": "seed_7__B_hash_ranked__size_10",
+  "cohort_selection": {
+    "case_exclusion_permitted": false,
+    "coalition_size": 10,
+    "family_id": "B_hash_ranked",
+    "manual_substitution": false,
+    "rule": "complete Task 57 triplet cohort at coalition size 10",
+    "seed": 7
+  },
+  "detection": {
+    "decision_authority": "deterministic_pipeline",
+    "missing_fields": [
+      "Per client detector scores and numeric detector thresholds were not materialized and are not invented."
+    ],
+    "source_refs": [
+      "src:task45_condition",
+      "src:task45_rounds"
+    ],
+    "summary": {
+      "maximum_benign_fpr": 0.1,
+      "mean_benign_fpr": 0.025,
+      "mean_malicious_recall": 1.0,
+      "minimum_malicious_recall": 1.0
+    }
+  },
+  "experiment": {
+    "dataset": "CIC IoT-DIAD 2024",
+    "development_and_validation_only": true,
+    "seed": 7
+  },
+  "interpretations": [
+    {
+      "basis_refs": [
+        "src:task45_condition",
+        "src:task45_rounds"
+      ],
+      "confidence": "moderate",
+      "interpretation_id": "interpretation.targeted_suppression",
+      "not_a_security_decision": true,
+      "statement": "The observed prediction behavior is consistent with targeted suppression of DDoS predictions toward the Benign class, but it does not establish malicious intent."
+    },
+    {
+      "basis_refs": [
+        "src:task57_triplets",
+        "src:task57_decision"
+      ],
+      "confidence": "high",
+      "interpretation_id": "interpretation.reference_recovery",
+      "not_a_security_decision": true,
+      "statement": "Reconstruction moved the attribution profile toward its paired preattack clean reference; this is not evidence of oracle clean restoration."
+    }
+  ],
+  "observed_facts": [
+    {
+      "evidence_refs": [
+        "src:task45_condition"
+      ],
+      "fact_id": "fact.behavior_rate",
+      "statement": "The plain attack mean DDoS to Benign prediction rate was 0.191026 versus 0.056499 in the paired clean branch."
+    },
+    {
+      "evidence_refs": [
+        "src:task45_condition"
+      ],
+      "fact_id": "fact.detector_performance",
+      "statement": "Mean malicious recall was 1.000000; minimum malicious recall was 1.000000; maximum benign false positive rate was 0.100000."
+    },
+    {
+      "evidence_refs": [
+        "src:task57_triplets"
+      ],
+      "fact_id": "fact.attribution_recovery",
+      "statement": "Normalized attribution distance decreased from 0.860237 to 0.520150, with recovery fraction 0.395341."
+    },
+    {
+      "evidence_refs": [
+        "src:task45_condition"
+      ],
+      "fact_id": "fact.defense_effect",
+      "statement": "The defended mean DDoS to Benign prediction rate was 0.094131, an absolute reduction of 0.096894 from the plain attack branch."
+    }
+  ],
+  "provenance": {
+    "source_artifacts": [
+      {
+        "path": "results/cic_iot_diad_task45_c4_summary_v416/tables/task45c4_condition_seed_summary.csv",
+        "sha256": "00e81a4d99046848a72b3063d8e02a9185e1bd80c82b23a2b446f850905f34d5",
+        "source_id": "src:task45_condition"
+      },
+      {
+        "path": "results/cic_iot_diad_task45_c4_summary_v416/tables/task45c4_round_level_summary.csv",
+        "sha256": "1ccbdc74e7e6dd94abdd9fb99cb3aad291f53c473cb0a52ffe062ea35a5967ba",
+        "source_id": "src:task45_rounds"
+      },
+      {
+        "path": "results/cic_iot_diad_task56_c2_summary_v418/task56c2_validation_decision.json",
+        "sha256": "d4ae63ed39c50bca1155d1b927963a2e3e7f08a430a8d75f5e4ddfbaeb7b6afc",
+        "source_id": "src:task56_validation"
+      },
+      {
+        "path": "results/cic_iot_diad_task57_c2_summary_v419/task57c2_attribution_recovery_decision.json",
+        "sha256": "53b66c9bcda06cb5d597369209f3f95adcc70bb98bf0a70d2118790b8dc35d4b",
+        "source_id": "src:task57_decision"
+      },
+      {
+        "path": "results/cic_iot_diad_task57_c2_summary_v419/tables/task57c2_triplet_recovery_metrics.csv",
+        "sha256": "5c699224a87afa7b52b04acf97abfe0028fd83001ab3006cdb21f6896c8f64b4",
+        "source_id": "src:task57_triplets"
+      },
+      {
+        "path": "results/cic_iot_diad_task57_c2_summary_v419/tables/task57c2_top10_prespecified_features.csv",
+        "sha256": "ddc5d202fa7c25c4e4d84f2c640129e7b7b1e43c6d8bc79d79bd9cea81535867",
+        "source_id": "src:task57_features"
+      },
+      {
+        "path": "results/cic_iot_diad_task60_c1_audit_v422/task60c1_report_audit_decision.json",
+        "sha256": "3e540343aff7823499b1d362777d1acb05d8ca7999831ea05a6f16b6d33b062a",
+        "source_id": "src:task60_audit"
+      }
+    ]
+  },
+  "reconstruction": {
+    "applied": true,
+    "llm_involvement": false,
+    "method": "center_plus_residual",
+    "source_refs": [
+      "src:task45_condition"
+    ]
+  },
+  "record_id": "lfighter:task61:seed7:B_hash_ranked:size10",
+  "schema_version": "1.0.0",
+  "uncertainty": {
+    "known_limitations": [
+      "The clean attribution comparator is the paired round 4 preattack reference rather than an oracle clean state.",
+      "Rejected and oracle clean attribution states were unavailable and were not substituted.",
+      "Per client detector scores and numeric threshold values were not present in the selected summary artifacts.",
+      "The evidence is development and validation evidence; reserved test arrays remained closed."
+    ],
+    "unsupported_claims": [
+      "Verified malicious intent",
+      "Exact oracle clean recovery",
+      "Generalization to unseen organizations or physical clients",
+      "Authority for an LLM to change any defense decision"
+    ]
+  },
+  "xai": {
+    "method": "SHAP GradientExplainer",
+    "missing_states": [
+      "rejected",
+      "oracle_clean"
+    ],
+    "output": "DDoS_minus_Benign_logit_margin",
+    "prediction_context": {
+      "clean_ddos_prediction_rate": 0.75,
+      "reconstructed_ddos_prediction_rate": 0.75,
+      "suspicious_ddos_prediction_rate": 0.6875
+    },
+    "recovery": {
+      "attack_distance": 0.8602368235588074,
+      "attack_exceeds_repeat_noise_q95": true,
+      "distance_reduction": 0.3400865793228149,
+      "reconstructed_distance": 0.5201502442359924,
+      "recovery_fraction": 0.3953406434240675
+    },
+    "source_refs": [
+      "src:task56_validation",
+      "src:task57_decision",
+      "src:task57_triplets",
+      "src:task57_features"
+    ],
+    "top_features": [
+      {
+        "feature": "Fwd Segment Size Avg",
+        "majority_direction": "negative",
+        "median_absolute_attack_shift": 0.4971334040164947,
+        "median_absolute_reconstructed_shift": 0.0641079246997833,
+        "rank": 1,
+        "recovery_fraction": 0.8710448258317877,
+        "same_direction_fraction": 0.75,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "feature": "Packet Length Mean",
+        "majority_direction": "negative",
+        "median_absolute_attack_shift": 0.4034549593925476,
+        "median_absolute_reconstructed_shift": 0.1013365089893341,
+        "rank": 2,
+        "recovery_fraction": 0.7488281984638161,
+        "same_direction_fraction": 0.8333333333333334,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "feature": "Average Packet Size",
+        "majority_direction": "negative",
+        "median_absolute_attack_shift": 0.3939023017883301,
+        "median_absolute_reconstructed_shift": 0.0778509378433227,
+        "rank": 3,
+        "recovery_fraction": 0.8023597793415352,
+        "same_direction_fraction": 0.8333333333333334,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "feature": "Packet Length Min",
+        "majority_direction": "negative",
+        "median_absolute_attack_shift": 0.3689928948879242,
+        "median_absolute_reconstructed_shift": 0.0821887105703353,
+        "rank": 4,
+        "recovery_fraction": 0.7772620781890694,
+        "same_direction_fraction": 1.0,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "feature": "Packet Length Max",
+        "majority_direction": "negative",
+        "median_absolute_attack_shift": 0.3548330068588257,
+        "median_absolute_reconstructed_shift": 0.123063325881958,
+        "rank": 5,
+        "recovery_fraction": 0.6531795985627681,
+        "same_direction_fraction": 1.0,
+        "source_ref": "src:task57_features"
+      }
+    ],
+    "validation": {
+      "task56_result": "PASS",
+      "task57_result": "PASS",
+      "task57_triplets_analyzed": 12
+    }
+  }
+}
