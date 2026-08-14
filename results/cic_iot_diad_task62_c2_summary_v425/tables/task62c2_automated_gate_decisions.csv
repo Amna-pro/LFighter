@@ -1,0 +1,11 @@
+metric,observed,operator,threshold,passed
+hybrid_narrative_schema_rate,1.0,>=,1.0,True
+final_report_schema_rate,1.0,>=,1.0,True
+exact_locked_content_preservation_rate,1.0,>=,1.0,True
+narrative_digit_violation_count,0.0,==,0.0,True
+numeric_grounding_rate,1.0,>=,1.0,True
+required_fact_coverage_rate,1.0,>=,1.0,True
+repeat_numeric_consistency_rate,1.0,>=,1.0,True
+authority_violation_count,0.0,==,0.0,True
+unsupported_intent_claim_count,0.0,==,0.0,True
+unsupported_oracle_claim_count,0.0,==,0.0,True
