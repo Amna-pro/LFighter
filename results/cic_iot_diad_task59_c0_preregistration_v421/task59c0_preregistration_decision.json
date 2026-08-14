@@ -1,0 +1,11 @@
+{
+  "experiment_version": "4.21.0",
+  "checks_passed": 35,
+  "checks_total": 35,
+  "all_checks_passed": true,
+  "llm_calls": 0,
+  "training_permitted": false,
+  "new_shap_evaluations": 0,
+  "reserved_test_arrays_materialized": false,
+  "ready_for_c1_schema": true
+}

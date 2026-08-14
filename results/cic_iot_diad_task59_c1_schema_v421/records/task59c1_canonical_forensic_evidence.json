@@ -1,0 +1,674 @@
+{
+  "schema_version": "1.0.0",
+  "record_id": "lfighter:task59:seed7:B_hash_ranked:size10",
+  "case_selection": {
+    "rule": "Task 58 triplet nearest cohort median recovery and probe nearest suspicious median margin",
+    "seed": 7,
+    "family_id": "B_hash_ranked",
+    "coalition_size": 10,
+    "probe_validation_index": 48310,
+    "manual_substitution": false
+  },
+  "experiment": {
+    "dataset": "CIC IoT-DIAD 2024",
+    "classes": [
+      "Benign",
+      "BruteForce",
+      "DDoS",
+      "DoS",
+      "Mirai",
+      "Recon",
+      "Spoofing",
+      "Web-Based"
+    ],
+    "logical_client_count": 20,
+    "partition_alpha": 0.5,
+    "seed": 7,
+    "monitoring_rounds": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "development_and_validation_only": true
+  },
+  "attack": {
+    "attack_type": "targeted_label_flip",
+    "source_class": "DDoS",
+    "source_class_id": 2,
+    "target_class": "Benign",
+    "target_class_id": 0,
+    "poison_fraction": 1.0,
+    "coalition_family": "B_hash_ranked",
+    "coalition_size": 10,
+    "selected_client_ids": [
+      5,
+      7,
+      8,
+      10,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19
+    ],
+    "exact_poison_pair": true,
+    "source_ref": "src:task45_condition"
+  },
+  "detection": {
+    "detector_name": "LFighter D0 frozen detector",
+    "decision_authority": "deterministic_pipeline",
+    "flagged_client_ids": [
+      5,
+      7,
+      8,
+      10,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19
+    ],
+    "score_records": [],
+    "threshold_records": [],
+    "summary": {
+      "mean_malicious_recall": 1.0,
+      "minimum_malicious_recall": 1.0,
+      "mean_benign_fpr": 0.025,
+      "maximum_benign_fpr": 0.1
+    },
+    "missing_fields": [
+      "Per client detector scores and numeric detector thresholds were not materialized in the selected summary artifacts and are not invented."
+    ],
+    "source_refs": [
+      "src:task45_condition",
+      "src:task45_rounds"
+    ]
+  },
+  "reconstruction": {
+    "applied": true,
+    "method": "center_plus_residual",
+    "reconstructed_client_ids": [
+      5,
+      7,
+      8,
+      10,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19
+    ],
+    "preserved_original_sample_weights": true,
+    "llm_involvement": false,
+    "source_refs": [
+      "src:task45_condition"
+    ]
+  },
+  "behavior": {
+    "condition_summary": {
+      "clean_source_to_target_rate": 0.0564987997599519,
+      "plain_source_to_target_rate": 0.1910257051410281,
+      "defended_source_to_target_rate": 0.094131326265253,
+      "absolute_rate_reduction": 0.0968943788757751,
+      "damage_removed_fraction": 0.7202602230483272,
+      "clean_macro_f1": 0.3670833905463948,
+      "plain_macro_f1": 0.3682271606846404,
+      "defended_macro_f1": 0.3594108205566785
+    },
+    "round_metrics": [
+      {
+        "round": 1,
+        "clean_source_to_target_rate": 0.0182036407281456,
+        "plain_source_to_target_rate": 0.2861572314462892,
+        "defended_source_to_target_rate": 0.018003600720144,
+        "malicious_recall": 1.0,
+        "benign_fpr": 0.0,
+        "defense_improved_vs_plain": true,
+        "source_ref": "src:task45_rounds"
+      },
+      {
+        "round": 2,
+        "clean_source_to_target_rate": 0.0985697139427885,
+        "plain_source_to_target_rate": 0.1169733946789357,
+        "defended_source_to_target_rate": 0.161882376475295,
+        "malicious_recall": 1.0,
+        "benign_fpr": 0.0,
+        "defense_improved_vs_plain": false,
+        "source_ref": "src:task45_rounds"
+      },
+      {
+        "round": 3,
+        "clean_source_to_target_rate": 0.0272054410882176,
+        "plain_source_to_target_rate": 0.2594518903780756,
+        "defended_source_to_target_rate": 0.048009601920384,
+        "malicious_recall": 1.0,
+        "benign_fpr": 0.1,
+        "defense_improved_vs_plain": true,
+        "source_ref": "src:task45_rounds"
+      },
+      {
+        "round": 4,
+        "clean_source_to_target_rate": 0.0820164032806561,
+        "plain_source_to_target_rate": 0.1015203040608121,
+        "defended_source_to_target_rate": 0.148629725945189,
+        "malicious_recall": 1.0,
+        "benign_fpr": 0.0,
+        "defense_improved_vs_plain": false,
+        "source_ref": "src:task45_rounds"
+      }
+    ],
+    "source_refs": [
+      "src:task45_condition",
+      "src:task45_rounds"
+    ]
+  },
+  "xai": {
+    "method": "SHAP GradientExplainer",
+    "output": "DDoS_minus_Benign_logit_margin",
+    "analysis_rows": 16,
+    "feature_count": 69,
+    "recovery": {
+      "attack_distance": 0.8602368235588074,
+      "reconstructed_distance": 0.5201502442359924,
+      "distance_reduction": 0.3400865793228149,
+      "recovery_fraction": 0.3953406434240675,
+      "attack_exceeds_repeat_noise_q95": true
+    },
+    "top_features": [
+      {
+        "rank": 1,
+        "feature": "Fwd Segment Size Avg",
+        "majority_direction": "negative",
+        "same_direction_fraction": 0.75,
+        "median_absolute_attack_shift": 0.4971334040164947,
+        "median_absolute_reconstructed_shift": 0.0641079246997833,
+        "recovery_fraction": 0.8710448258317877,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 2,
+        "feature": "Packet Length Mean",
+        "majority_direction": "negative",
+        "same_direction_fraction": 0.8333333333333334,
+        "median_absolute_attack_shift": 0.4034549593925476,
+        "median_absolute_reconstructed_shift": 0.1013365089893341,
+        "recovery_fraction": 0.7488281984638161,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 3,
+        "feature": "Average Packet Size",
+        "majority_direction": "negative",
+        "same_direction_fraction": 0.8333333333333334,
+        "median_absolute_attack_shift": 0.3939023017883301,
+        "median_absolute_reconstructed_shift": 0.0778509378433227,
+        "recovery_fraction": 0.8023597793415352,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 4,
+        "feature": "Packet Length Min",
+        "majority_direction": "negative",
+        "same_direction_fraction": 1.0,
+        "median_absolute_attack_shift": 0.3689928948879242,
+        "median_absolute_reconstructed_shift": 0.0821887105703353,
+        "recovery_fraction": 0.7772620781890694,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 5,
+        "feature": "Packet Length Max",
+        "majority_direction": "negative",
+        "same_direction_fraction": 1.0,
+        "median_absolute_attack_shift": 0.3548330068588257,
+        "median_absolute_reconstructed_shift": 0.123063325881958,
+        "recovery_fraction": 0.6531795985627681,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 7,
+        "feature": "Fwd Packet Length Max",
+        "majority_direction": "negative",
+        "same_direction_fraction": 1.0,
+        "median_absolute_attack_shift": 0.3062457740306854,
+        "median_absolute_reconstructed_shift": 0.0726181715726852,
+        "recovery_fraction": 0.7628761676711039,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 8,
+        "feature": "Fwd IAT Mean",
+        "majority_direction": "positive",
+        "same_direction_fraction": 0.75,
+        "median_absolute_attack_shift": 0.2998061776161194,
+        "median_absolute_reconstructed_shift": 0.1874410212039947,
+        "recovery_fraction": 0.3747926653999781,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 9,
+        "feature": "Flow IAT Max",
+        "majority_direction": "positive",
+        "same_direction_fraction": 0.75,
+        "median_absolute_attack_shift": 0.2867967486381531,
+        "median_absolute_reconstructed_shift": 0.1463778913021087,
+        "recovery_fraction": 0.4896110503442581,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 11,
+        "feature": "Flow IAT Mean",
+        "majority_direction": "negative",
+        "same_direction_fraction": 1.0,
+        "median_absolute_attack_shift": 0.2530280351638794,
+        "median_absolute_reconstructed_shift": 0.1070877760648727,
+        "recovery_fraction": 0.5767750557936598,
+        "source_ref": "src:task57_features"
+      },
+      {
+        "rank": 12,
+        "feature": "Idle Min",
+        "majority_direction": "negative",
+        "same_direction_fraction": 0.75,
+        "median_absolute_attack_shift": 0.2491986006498336,
+        "median_absolute_reconstructed_shift": 0.0647377595305442,
+        "recovery_fraction": 0.7402161996025338,
+        "source_ref": "src:task57_features"
+      }
+    ],
+    "case_feature_contributions": [
+      {
+        "state": "Clean",
+        "feature": "Fwd IAT Mean",
+        "shap_contribution": 0.6214194297790527,
+        "absolute_contribution": 0.6214194297790527,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Clean",
+        "feature": "Average Packet Size",
+        "shap_contribution": 0.4263869822025299,
+        "absolute_contribution": 0.4263869822025299,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Clean",
+        "feature": "Flow IAT Mean",
+        "shap_contribution": 0.3230790793895721,
+        "absolute_contribution": 0.3230790793895721,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Clean",
+        "feature": "Flow IAT Max",
+        "shap_contribution": 0.7040528059005737,
+        "absolute_contribution": 0.7040528059005737,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Clean",
+        "feature": "Fwd Packet Length Min",
+        "shap_contribution": 0.3158455491065979,
+        "absolute_contribution": 0.3158455491065979,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Clean",
+        "feature": "Packet Length Mean",
+        "shap_contribution": 0.2528516352176666,
+        "absolute_contribution": 0.2528516352176666,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Clean",
+        "feature": "Idle Min",
+        "shap_contribution": 0.2766118943691253,
+        "absolute_contribution": 0.2766118943691253,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Clean",
+        "feature": "Fwd IAT Min",
+        "shap_contribution": 0.2266052812337875,
+        "absolute_contribution": 0.2266052812337875,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Clean",
+        "feature": "All other features",
+        "shap_contribution": 1.3127295617698564,
+        "absolute_contribution": 1.3127295617698564,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "Fwd IAT Mean",
+        "shap_contribution": 1.9977015256881716,
+        "absolute_contribution": 1.9977015256881716,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "Average Packet Size",
+        "shap_contribution": 1.8459222316741943,
+        "absolute_contribution": 1.8459222316741943,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "Flow IAT Mean",
+        "shap_contribution": -1.7054660320281982,
+        "absolute_contribution": 1.7054660320281982,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "Flow IAT Max",
+        "shap_contribution": 1.567336916923523,
+        "absolute_contribution": 1.567336916923523,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "Fwd Packet Length Min",
+        "shap_contribution": 1.3965740203857422,
+        "absolute_contribution": 1.3965740203857422,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "Packet Length Mean",
+        "shap_contribution": 1.229313850402832,
+        "absolute_contribution": 1.229313850402832,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "Idle Min",
+        "shap_contribution": -1.0639925003051758,
+        "absolute_contribution": 1.0639925003051758,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "Fwd IAT Min",
+        "shap_contribution": -0.8524898886680603,
+        "absolute_contribution": 0.8524898886680603,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Suspicious",
+        "feature": "All other features",
+        "shap_contribution": -0.8429136372028552,
+        "absolute_contribution": 0.8429136372028552,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "Fwd IAT Mean",
+        "shap_contribution": 1.1721532344818115,
+        "absolute_contribution": 1.1721532344818115,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "Average Packet Size",
+        "shap_contribution": 0.4980292916297912,
+        "absolute_contribution": 0.4980292916297912,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "Flow IAT Mean",
+        "shap_contribution": 0.4596574902534485,
+        "absolute_contribution": 0.4596574902534485,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "Flow IAT Max",
+        "shap_contribution": 0.8555337190628052,
+        "absolute_contribution": 0.8555337190628052,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "Fwd Packet Length Min",
+        "shap_contribution": 0.4798651337623596,
+        "absolute_contribution": 0.4798651337623596,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "Packet Length Mean",
+        "shap_contribution": 0.1793050915002823,
+        "absolute_contribution": 0.1793050915002823,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "Idle Min",
+        "shap_contribution": 0.2228741943836212,
+        "absolute_contribution": 0.2228741943836212,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "Fwd IAT Min",
+        "shap_contribution": 0.102006584405899,
+        "absolute_contribution": 0.102006584405899,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      },
+      {
+        "state": "Reconstructed",
+        "feature": "All other features",
+        "shap_contribution": 1.6376021491582833,
+        "absolute_contribution": 1.6376021491582833,
+        "probe_validation_index": 48310,
+        "source_ref": "src:task58_contributions"
+      }
+    ],
+    "validation": {
+      "task56_result": "PASS",
+      "repeat_noise_q95": 0.12184864742664225,
+      "task57_result": "PASS",
+      "task58_case_selection_deterministic": true
+    },
+    "missing_states": [
+      "rejected",
+      "oracle_clean"
+    ],
+    "source_refs": [
+      "src:task56_validation",
+      "src:task57_decision",
+      "src:task57_triplets",
+      "src:task57_features",
+      "src:task58_case",
+      "src:task58_contributions",
+      "src:task58_decision"
+    ]
+  },
+  "observed_facts": [
+    {
+      "fact_id": "fact.attack_rate",
+      "statement": "The plain attack mean DDoS to Benign rate was 0.191026 versus 0.056499 in the paired clean branch.",
+      "evidence_refs": [
+        "src:task45_condition"
+      ]
+    },
+    {
+      "fact_id": "fact.detector_recall",
+      "statement": "Mean and minimum malicious recall were both 1.000; maximum benign false positive rate was 0.100.",
+      "evidence_refs": [
+        "src:task45_condition"
+      ]
+    },
+    {
+      "fact_id": "fact.attribution_recovery",
+      "statement": "Normalized attribution distance decreased from 0.860237 to 0.520150, a recovery fraction of 0.395341.",
+      "evidence_refs": [
+        "src:task57_triplets"
+      ]
+    },
+    {
+      "fact_id": "fact.case_selection",
+      "statement": "The case was selected by the frozen Task 58 median based rule without manual substitution.",
+      "evidence_refs": [
+        "src:task58_case",
+        "src:task58_decision"
+      ]
+    }
+  ],
+  "interpretations": [
+    {
+      "interpretation_id": "interpretation.targeted_suppression",
+      "statement": "The observed behavior is consistent with targeted suppression of DDoS predictions toward the Benign class, but it does not establish malicious intent.",
+      "confidence": "moderate",
+      "basis_refs": [
+        "src:task45_condition",
+        "src:task45_rounds"
+      ],
+      "not_a_security_decision": true
+    },
+    {
+      "interpretation_id": "interpretation.reference_recovery",
+      "statement": "Reconstruction moved this attribution profile toward its paired preattack clean reference; this is not evidence of oracle clean restoration.",
+      "confidence": "high",
+      "basis_refs": [
+        "src:task57_triplets",
+        "src:task57_decision"
+      ],
+      "not_a_security_decision": true
+    }
+  ],
+  "uncertainty": {
+    "known_limitations": [
+      "The clean attribution comparator is the paired round 4 preattack reference rather than a round 8 oracle clean state.",
+      "Rejected and oracle clean attribution states were unavailable and were not substituted.",
+      "Per client detector scores and numeric threshold values were not present in the selected summary artifacts.",
+      "The evidence is development and validation evidence; reserved test arrays remained closed."
+    ],
+    "unsupported_claims": [
+      "Verified malicious intent",
+      "Exact oracle clean recovery",
+      "Generalization to unseen organizations or physical clients",
+      "Authority for an LLM to change any defense decision"
+    ],
+    "oracle_recovery_claim_permitted": false,
+    "malicious_intent_claim_permitted": false
+  },
+  "authority": {
+    "llm_role": "report_only",
+    "decision_authority": "deterministic_pipeline",
+    "can_flag_clients": false,
+    "can_change_thresholds": false,
+    "can_change_trust_weights": false,
+    "can_reconstruct_updates": false,
+    "can_control_aggregation": false,
+    "can_claim_malicious_intent": false,
+    "allowed_operations": [
+      "summarize_verified_evidence",
+      "cite_evidence",
+      "state_uncertainty",
+      "refuse_unsupported_claim"
+    ]
+  },
+  "provenance": {
+    "parent_tag": "task58-c1-xai-publication-frozen-v4201",
+    "parent_commit": "2d13ee9af11feb643593e18acfc2133f708db3bd",
+    "source_artifacts": [
+      {
+        "source_id": "src:task45_condition",
+        "path": "results/cic_iot_diad_task45_c4_summary_v416/tables/task45c4_condition_seed_summary.csv",
+        "sha256": "00e81a4d99046848a72b3063d8e02a9185e1bd80c82b23a2b446f850905f34d5",
+        "bytes": 25181
+      },
+      {
+        "source_id": "src:task45_rounds",
+        "path": "results/cic_iot_diad_task45_c4_summary_v416/tables/task45c4_round_level_summary.csv",
+        "sha256": "1ccbdc74e7e6dd94abdd9fb99cb3aad291f53c473cb0a52ffe062ea35a5967ba",
+        "bytes": 28630
+      },
+      {
+        "source_id": "src:task56_validation",
+        "path": "results/cic_iot_diad_task56_c2_summary_v418/task56c2_validation_decision.json",
+        "sha256": "d4ae63ed39c50bca1155d1b927963a2e3e7f08a430a8d75f5e4ddfbaeb7b6afc",
+        "bytes": 1245
+      },
+      {
+        "source_id": "src:task57_decision",
+        "path": "results/cic_iot_diad_task57_c2_summary_v419/task57c2_attribution_recovery_decision.json",
+        "sha256": "53b66c9bcda06cb5d597369209f3f95adcc70bb98bf0a70d2118790b8dc35d4b",
+        "bytes": 2344
+      },
+      {
+        "source_id": "src:task57_triplets",
+        "path": "results/cic_iot_diad_task57_c2_summary_v419/tables/task57c2_triplet_recovery_metrics.csv",
+        "sha256": "5c699224a87afa7b52b04acf97abfe0028fd83001ab3006cdb21f6896c8f64b4",
+        "bytes": 4907
+      },
+      {
+        "source_id": "src:task57_features",
+        "path": "results/cic_iot_diad_task57_c2_summary_v419/tables/task57c2_top10_prespecified_features.csv",
+        "sha256": "ddc5d202fa7c25c4e4d84f2c640129e7b7b1e43c6d8bc79d79bd9cea81535867",
+        "bytes": 2047
+      },
+      {
+        "source_id": "src:task58_case",
+        "path": "results/cic_iot_diad_task58_c1_publication_v420/tables/task58c1_case_selection.csv",
+        "sha256": "81a157c52a67694e5ae546b3d26f2f45491e44a370685ed3d1dfd4ce405d952e",
+        "bytes": 414
+      },
+      {
+        "source_id": "src:task58_contributions",
+        "path": "results/cic_iot_diad_task58_c1_publication_v420/tables/task58c1_case_feature_contributions.csv",
+        "sha256": "72c6273b8596218794ece3061b651ac24fc74eeadf3a3b25a338f8858e0da0df",
+        "bytes": 2104
+      },
+      {
+        "source_id": "src:task58_decision",
+        "path": "results/cic_iot_diad_task58_c1_publication_v420/task58c1_publication_decision.json",
+        "sha256": "cb0b8a55d6d0970338f5f671badba95118d7448e5d37e5272039819939a1365f",
+        "bytes": 694
+      },
+      {
+        "source_id": "src:task59_schema",
+        "path": "schemas/lfighter_forensic_evidence_v1.schema.json",
+        "sha256": "cd028f7fb0a7d4d7c4428d9a00b09d0ebfd8b7f1d52713220feec20e670a16bc",
+        "bytes": 16172
+      }
+    ],
+    "record_builder": "scripts/build_task59_c1_evidence_schema_v421.py",
+    "record_builder_sha256": "9ea1e2e25220fb12dabef4290adf04b5b3665f73d6e2bf66eb90a2958d83ced8"
+  }
+}

@@ -1,0 +1,36 @@
+check,passed,detail
+config_exists,True,C:\Users\Amm\LFighter-research\configs\task59_preregistration_v4210.json
+narrative_exists,True,C:\Users\Amm\LFighter-research\configs\TASK59_PREREGISTRATION_V421.md
+task,True,59
+version,True,4.21.0
+parent_tag,True,task58-c1-xai-publication-frozen-v4201
+parent_commit,True,2d13ee9
+schema_standard,True,https://json-schema.org/draft/2020-12/schema
+schema_version,True,1.0.0
+no_llm_calls,True,False
+no_training,True,False
+no_new_shap,True,False
+reserved_closed,True,False
+required_domains,True,"['case_selection', 'experiment', 'attack', 'detection', 'reconstruction', 'behavior', 'xai', 'observed_facts', 'interpretations', 'uncertainty', 'authority', 'provenance']"
+report_only,True,"{'llm_role': 'report_only', 'decision_authority': 'deterministic_pipeline', 'can_flag_clients': False, 'can_change_thresholds': False, 'can_change_trust_weights': False, 'can_reconstruct_updates': False, 'can_control_aggregation': False, 'can_claim_malicious_intent': False}"
+deterministic_authority,True,"{'llm_role': 'report_only', 'decision_authority': 'deterministic_pipeline', 'can_flag_clients': False, 'can_change_thresholds': False, 'can_change_trust_weights': False, 'can_reconstruct_updates': False, 'can_control_aggregation': False, 'can_claim_malicious_intent': False}"
+authority_can_flag_clients,True,False
+authority_can_change_thresholds,True,False
+authority_can_change_trust_weights,True,False
+authority_can_reconstruct_updates,True,False
+authority_can_control_aggregation,True,False
+authority_can_claim_malicious_intent,True,False
+grounding_all_observed_facts_require_evidence_references,True,True
+grounding_all_interpretations_require_basis_references,True,True
+grounding_facts_and_interpretations_are_separate,True,True
+grounding_missing_values_are_explicit,True,True
+grounding_unknown_threshold_values_must_not_be_invented,True,True
+grounding_source_files_require_sha256,True,True
+grounding_additional_properties_rejected,True,True
+grounding_control_characters_rejected,True,True
+case_seed,True,"{'seed': 7, 'family_id': 'B_hash_ranked', 'coalition_size': 10, 'source_class': 'DDoS', 'target_class': 'Benign'}"
+case_family,True,"{'seed': 7, 'family_id': 'B_hash_ranked', 'coalition_size': 10, 'source_class': 'DDoS', 'target_class': 'Benign'}"
+case_size,True,"{'seed': 7, 'family_id': 'B_hash_ranked', 'coalition_size': 10, 'source_class': 'DDoS', 'target_class': 'Benign'}"
+case_pair,True,"{'seed': 7, 'family_id': 'B_hash_ranked', 'coalition_size': 10, 'source_class': 'DDoS', 'target_class': 'Benign'}"
+negative_tests,True,"['authority_escalation', 'unknown_property', 'out_of_range_rate', 'missing_provenance', 'control_character_injection']"
+parent_tag_resolves,True,2d13ee9af11feb643593e18acfc2133f708db3bd

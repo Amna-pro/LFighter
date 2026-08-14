@@ -1,0 +1,17 @@
+schema_domain,population_rule,evidence_source
+case_selection,Task 58 case selection,src:task58_case
+experiment,Frozen CIC IoT-DIAD federation contract,src:task45_condition
+attack,Task 45 condition and coalition identity,src:task45_condition
+detection.summary,Task 45 condition detection summary,src:task45_condition
+detection.score_records,Not materialized; empty with explicit limitation,none
+detection.threshold_records,Not materialized; empty with explicit limitation,none
+reconstruction,Frozen LFighter center plus residual action,src:task45_condition
+behavior.condition_summary,Task 45 condition metrics,src:task45_condition
+behavior.round_metrics,All four monitored round metrics,src:task45_rounds
+xai.recovery,Task 57 selected triplet,src:task57_triplets
+xai.top_features,Frozen Task 57 top ten feature ranking,src:task57_features
+xai.case_feature_contributions,Task 58 deterministic case contributions,src:task58_contributions
+xai.validation,Task 56 and Task 57 decisions,src:task56_validation|src:task57_decision
+uncertainty,Frozen limitations and prohibited claims,src:task57_decision|src:task58_decision
+authority,Schema constants,src:task59_schema
+provenance,SHA256 source artifact registry,all sources

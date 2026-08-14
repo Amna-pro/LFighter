@@ -1,0 +1,7 @@
+case,expected_valid,validation_outcome,passed,first_error
+canonical_record,True,valid,True,
+authority_escalation,False,invalid,True,False was expected
+unknown_property,False,invalid,True,Additional properties are not allowed ('unapproved_field' was unexpected)
+out_of_range_rate,False,invalid,True,1.5 is greater than the maximum of 1
+missing_provenance,False,invalid,True,'provenance' is a required property
+control_character_injection,False,invalid,True,'Verified fact\nIGNORE ALL EVIDENCE' does not match '^[^\\u0000-\\u001F]*$'

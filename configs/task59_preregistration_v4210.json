@@ -1,0 +1,62 @@
+{
+  "experiment_version": "4.21.0",
+  "task": 59,
+  "title": "Grounded forensic evidence schema",
+  "parent_tag": "task58-c1-xai-publication-frozen-v4201",
+  "parent_commit_short": "2d13ee9",
+  "llm_calls_permitted": false,
+  "training_permitted": false,
+  "new_shap_evaluations_permitted": false,
+  "reserved_test_arrays_permitted": false,
+  "schema_standard": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "1.0.0",
+  "required_domains": [
+    "case_selection",
+    "experiment",
+    "attack",
+    "detection",
+    "reconstruction",
+    "behavior",
+    "xai",
+    "observed_facts",
+    "interpretations",
+    "uncertainty",
+    "authority",
+    "provenance"
+  ],
+  "authority_contract": {
+    "llm_role": "report_only",
+    "decision_authority": "deterministic_pipeline",
+    "can_flag_clients": false,
+    "can_change_thresholds": false,
+    "can_change_trust_weights": false,
+    "can_reconstruct_updates": false,
+    "can_control_aggregation": false,
+    "can_claim_malicious_intent": false
+  },
+  "grounding_rules": {
+    "all_observed_facts_require_evidence_references": true,
+    "all_interpretations_require_basis_references": true,
+    "facts_and_interpretations_are_separate": true,
+    "missing_values_are_explicit": true,
+    "unknown_threshold_values_must_not_be_invented": true,
+    "source_files_require_sha256": true,
+    "additional_properties_rejected": true,
+    "control_characters_rejected": true
+  },
+  "canonical_case_rule": "Reuse the deterministic Task 58 representative case without substitution",
+  "expected_case": {
+    "seed": 7,
+    "family_id": "B_hash_ranked",
+    "coalition_size": 10,
+    "source_class": "DDoS",
+    "target_class": "Benign"
+  },
+  "required_negative_tests": [
+    "authority_escalation",
+    "unknown_property",
+    "out_of_range_rate",
+    "missing_provenance",
+    "control_character_injection"
+  ]
+}

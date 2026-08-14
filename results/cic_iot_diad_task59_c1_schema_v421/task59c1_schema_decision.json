@@ -1,0 +1,19 @@
+{
+  "experiment_version": "4.21.C1",
+  "schema_id": "https://lfighter.dev/schemas/forensic-evidence/1.0.0",
+  "schema_version": "1.0.0",
+  "schema_standard": "https://json-schema.org/draft/2020-12/schema",
+  "schema_valid": true,
+  "canonical_record_valid": true,
+  "negative_cases_rejected": 5,
+  "negative_cases_total": 5,
+  "all_negative_cases_rejected": true,
+  "authority_is_report_only": true,
+  "facts_and_interpretations_separated": true,
+  "missing_detector_scores_and_thresholds_explicit": true,
+  "llm_calls": 0,
+  "training_permitted": false,
+  "new_shap_evaluations": 0,
+  "reserved_test_arrays_materialized": false,
+  "task59_c1_complete": true
+}

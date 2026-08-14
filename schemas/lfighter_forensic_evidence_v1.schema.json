@@ -1,0 +1,326 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lfighter.dev/schemas/forensic-evidence/1.0.0",
+  "title": "LFighter grounded forensic evidence record",
+  "description": "Strict read only evidence contract for deterministic and LLM forensic reporting.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "case_selection",
+    "experiment",
+    "attack",
+    "detection",
+    "reconstruction",
+    "behavior",
+    "xai",
+    "observed_facts",
+    "interpretations",
+    "uncertainty",
+    "authority",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "record_id": {"$ref": "#/$defs/safe_id"},
+    "case_selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule", "seed", "family_id", "coalition_size", "probe_validation_index", "manual_substitution"],
+      "properties": {
+        "rule": {"$ref": "#/$defs/safe_text"},
+        "seed": {"type": "integer", "minimum": 0},
+        "family_id": {"enum": ["A_development_anchor", "B_hash_ranked", "C_hash_ranked"]},
+        "coalition_size": {"type": "integer", "minimum": 1, "maximum": 20},
+        "probe_validation_index": {"type": "integer", "minimum": 0},
+        "manual_substitution": {"const": false}
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataset", "classes", "logical_client_count", "partition_alpha", "seed", "monitoring_rounds", "development_and_validation_only"],
+      "properties": {
+        "dataset": {"const": "CIC IoT-DIAD 2024"},
+        "classes": {"type": "array", "prefixItems": [{"const": "Benign"}, {"const": "BruteForce"}, {"const": "DDoS"}, {"const": "DoS"}, {"const": "Mirai"}, {"const": "Recon"}, {"const": "Spoofing"}, {"const": "Web-Based"}], "items": false},
+        "logical_client_count": {"const": 20},
+        "partition_alpha": {"const": 0.5},
+        "seed": {"type": "integer", "minimum": 0},
+        "monitoring_rounds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}},
+        "development_and_validation_only": {"const": true}
+      }
+    },
+    "attack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attack_type", "source_class", "source_class_id", "target_class", "target_class_id", "poison_fraction", "coalition_family", "coalition_size", "selected_client_ids", "exact_poison_pair", "source_ref"],
+      "properties": {
+        "attack_type": {"const": "targeted_label_flip"},
+        "source_class": {"const": "DDoS"},
+        "source_class_id": {"const": 2},
+        "target_class": {"const": "Benign"},
+        "target_class_id": {"const": 0},
+        "poison_fraction": {"const": 1.0},
+        "coalition_family": {"enum": ["A_development_anchor", "B_hash_ranked", "C_hash_ranked"]},
+        "coalition_size": {"type": "integer", "minimum": 1, "maximum": 20},
+        "selected_client_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 19}},
+        "exact_poison_pair": {"type": "boolean"},
+        "source_ref": {"$ref": "#/$defs/evidence_ref"}
+      }
+    },
+    "detection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["detector_name", "decision_authority", "flagged_client_ids", "score_records", "threshold_records", "summary", "missing_fields", "source_refs"],
+      "properties": {
+        "detector_name": {"const": "LFighter D0 frozen detector"},
+        "decision_authority": {"const": "deterministic_pipeline"},
+        "flagged_client_ids": {"type": "array", "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 19}},
+        "score_records": {"type": "array", "items": {"$ref": "#/$defs/score_record"}},
+        "threshold_records": {"type": "array", "items": {"$ref": "#/$defs/threshold_record"}},
+        "summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mean_malicious_recall", "minimum_malicious_recall", "mean_benign_fpr", "maximum_benign_fpr"],
+          "properties": {
+            "mean_malicious_recall": {"$ref": "#/$defs/rate"},
+            "minimum_malicious_recall": {"$ref": "#/$defs/rate"},
+            "mean_benign_fpr": {"$ref": "#/$defs/rate"},
+            "maximum_benign_fpr": {"$ref": "#/$defs/rate"}
+          }
+        },
+        "missing_fields": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/safe_text"}},
+        "source_refs": {"$ref": "#/$defs/evidence_refs"}
+      }
+    },
+    "reconstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applied", "method", "reconstructed_client_ids", "preserved_original_sample_weights", "llm_involvement", "source_refs"],
+      "properties": {
+        "applied": {"const": true},
+        "method": {"const": "center_plus_residual"},
+        "reconstructed_client_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 19}},
+        "preserved_original_sample_weights": {"const": true},
+        "llm_involvement": {"const": false},
+        "source_refs": {"$ref": "#/$defs/evidence_refs"}
+      }
+    },
+    "behavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition_summary", "round_metrics", "source_refs"],
+      "properties": {
+        "condition_summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["clean_source_to_target_rate", "plain_source_to_target_rate", "defended_source_to_target_rate", "absolute_rate_reduction", "damage_removed_fraction", "clean_macro_f1", "plain_macro_f1", "defended_macro_f1"],
+          "properties": {
+            "clean_source_to_target_rate": {"$ref": "#/$defs/rate"},
+            "plain_source_to_target_rate": {"$ref": "#/$defs/rate"},
+            "defended_source_to_target_rate": {"$ref": "#/$defs/rate"},
+            "absolute_rate_reduction": {"type": "number"},
+            "damage_removed_fraction": {"type": "number"},
+            "clean_macro_f1": {"$ref": "#/$defs/rate"},
+            "plain_macro_f1": {"$ref": "#/$defs/rate"},
+            "defended_macro_f1": {"$ref": "#/$defs/rate"}
+          }
+        },
+        "round_metrics": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/round_metric"}},
+        "source_refs": {"$ref": "#/$defs/evidence_refs"}
+      }
+    },
+    "xai": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "output", "analysis_rows", "feature_count", "recovery", "top_features", "case_feature_contributions", "validation", "missing_states", "source_refs"],
+      "properties": {
+        "method": {"const": "SHAP GradientExplainer"},
+        "output": {"const": "DDoS_minus_Benign_logit_margin"},
+        "analysis_rows": {"const": 16},
+        "feature_count": {"const": 69},
+        "recovery": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["attack_distance", "reconstructed_distance", "distance_reduction", "recovery_fraction", "attack_exceeds_repeat_noise_q95"],
+          "properties": {
+            "attack_distance": {"type": "number", "minimum": 0},
+            "reconstructed_distance": {"type": "number", "minimum": 0},
+            "distance_reduction": {"type": "number"},
+            "recovery_fraction": {"type": "number"},
+            "attack_exceeds_repeat_noise_q95": {"type": "boolean"}
+          }
+        },
+        "top_features": {"type": "array", "minItems": 1, "maxItems": 10, "items": {"$ref": "#/$defs/top_feature"}},
+        "case_feature_contributions": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/feature_contribution"}},
+        "validation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["task56_result", "repeat_noise_q95", "task57_result", "task58_case_selection_deterministic"],
+          "properties": {
+            "task56_result": {"const": "PASS"},
+            "repeat_noise_q95": {"type": "number", "minimum": 0},
+            "task57_result": {"const": "PASS"},
+            "task58_case_selection_deterministic": {"const": true}
+          }
+        },
+        "missing_states": {"type": "array", "uniqueItems": true, "items": {"enum": ["rejected", "oracle_clean"]}},
+        "source_refs": {"$ref": "#/$defs/evidence_refs"}
+      }
+    },
+    "observed_facts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/observed_fact"}},
+    "interpretations": {"type": "array", "items": {"$ref": "#/$defs/interpretation"}},
+    "uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["known_limitations", "unsupported_claims", "oracle_recovery_claim_permitted", "malicious_intent_claim_permitted"],
+      "properties": {
+        "known_limitations": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/safe_text"}},
+        "unsupported_claims": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/safe_text"}},
+        "oracle_recovery_claim_permitted": {"const": false},
+        "malicious_intent_claim_permitted": {"const": false}
+      }
+    },
+    "authority": {"$ref": "#/$defs/authority"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parent_tag", "parent_commit", "source_artifacts", "record_builder", "record_builder_sha256"],
+      "properties": {
+        "parent_tag": {"const": "task58-c1-xai-publication-frozen-v4201"},
+        "parent_commit": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+        "source_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source_artifact"}},
+        "record_builder": {"$ref": "#/$defs/safe_path"},
+        "record_builder_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "$defs": {
+    "safe_text": {"type": "string", "minLength": 1, "maxLength": 512, "pattern": "^[^\\u0000-\\u001F]*$"},
+    "safe_id": {"type": "string", "minLength": 1, "maxLength": 160, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"},
+    "safe_path": {"type": "string", "minLength": 1, "maxLength": 512, "pattern": "^[^\\u0000-\\u001F]*$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "evidence_ref": {"type": "string", "pattern": "^src:[A-Za-z0-9._-]+$"},
+    "evidence_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/evidence_ref"}},
+    "score_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["client_id", "round", "score_name", "score_value", "threshold_name", "flagged", "source_ref"],
+      "properties": {
+        "client_id": {"type": "integer", "minimum": 0, "maximum": 19},
+        "round": {"type": "integer", "minimum": 1},
+        "score_name": {"$ref": "#/$defs/safe_id"},
+        "score_value": {"type": "number"},
+        "threshold_name": {"$ref": "#/$defs/safe_id"},
+        "flagged": {"type": "boolean"},
+        "source_ref": {"$ref": "#/$defs/evidence_ref"}
+      }
+    },
+    "threshold_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["threshold_name", "value", "comparator", "calibration_source", "source_ref"],
+      "properties": {
+        "threshold_name": {"$ref": "#/$defs/safe_id"},
+        "value": {"type": "number"},
+        "comparator": {"enum": [">", ">=", "<", "<="]},
+        "calibration_source": {"$ref": "#/$defs/safe_text"},
+        "source_ref": {"$ref": "#/$defs/evidence_ref"}
+      }
+    },
+    "round_metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["round", "clean_source_to_target_rate", "plain_source_to_target_rate", "defended_source_to_target_rate", "malicious_recall", "benign_fpr", "defense_improved_vs_plain", "source_ref"],
+      "properties": {
+        "round": {"type": "integer", "minimum": 1},
+        "clean_source_to_target_rate": {"$ref": "#/$defs/rate"},
+        "plain_source_to_target_rate": {"$ref": "#/$defs/rate"},
+        "defended_source_to_target_rate": {"$ref": "#/$defs/rate"},
+        "malicious_recall": {"$ref": "#/$defs/rate"},
+        "benign_fpr": {"$ref": "#/$defs/rate"},
+        "defense_improved_vs_plain": {"type": "boolean"},
+        "source_ref": {"$ref": "#/$defs/evidence_ref"}
+      }
+    },
+    "top_feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rank", "feature", "majority_direction", "same_direction_fraction", "median_absolute_attack_shift", "median_absolute_reconstructed_shift", "recovery_fraction", "source_ref"],
+      "properties": {
+        "rank": {"type": "integer", "minimum": 1},
+        "feature": {"$ref": "#/$defs/safe_text"},
+        "majority_direction": {"enum": ["positive", "negative", "mixed"]},
+        "same_direction_fraction": {"$ref": "#/$defs/rate"},
+        "median_absolute_attack_shift": {"type": "number", "minimum": 0},
+        "median_absolute_reconstructed_shift": {"type": "number", "minimum": 0},
+        "recovery_fraction": {"type": "number"},
+        "source_ref": {"$ref": "#/$defs/evidence_ref"}
+      }
+    },
+    "feature_contribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "feature", "shap_contribution", "absolute_contribution", "probe_validation_index", "source_ref"],
+      "properties": {
+        "state": {"enum": ["Clean", "Suspicious", "Reconstructed"]},
+        "feature": {"$ref": "#/$defs/safe_text"},
+        "shap_contribution": {"type": "number"},
+        "absolute_contribution": {"type": "number", "minimum": 0},
+        "probe_validation_index": {"type": "integer", "minimum": 0},
+        "source_ref": {"$ref": "#/$defs/evidence_ref"}
+      }
+    },
+    "observed_fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fact_id", "statement", "evidence_refs"],
+      "properties": {
+        "fact_id": {"$ref": "#/$defs/safe_id"},
+        "statement": {"$ref": "#/$defs/safe_text"},
+        "evidence_refs": {"$ref": "#/$defs/evidence_refs"}
+      }
+    },
+    "interpretation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["interpretation_id", "statement", "confidence", "basis_refs", "not_a_security_decision"],
+      "properties": {
+        "interpretation_id": {"$ref": "#/$defs/safe_id"},
+        "statement": {"$ref": "#/$defs/safe_text"},
+        "confidence": {"enum": ["low", "moderate", "high"]},
+        "basis_refs": {"$ref": "#/$defs/evidence_refs"},
+        "not_a_security_decision": {"const": true}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["llm_role", "decision_authority", "can_flag_clients", "can_change_thresholds", "can_change_trust_weights", "can_reconstruct_updates", "can_control_aggregation", "can_claim_malicious_intent", "allowed_operations"],
+      "properties": {
+        "llm_role": {"const": "report_only"},
+        "decision_authority": {"const": "deterministic_pipeline"},
+        "can_flag_clients": {"const": false},
+        "can_change_thresholds": {"const": false},
+        "can_change_trust_weights": {"const": false},
+        "can_reconstruct_updates": {"const": false},
+        "can_control_aggregation": {"const": false},
+        "can_claim_malicious_intent": {"const": false},
+        "allowed_operations": {"type": "array", "uniqueItems": true, "items": {"enum": ["summarize_verified_evidence", "cite_evidence", "state_uncertainty", "refuse_unsupported_claim"]}}
+      }
+    },
+    "source_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "path", "sha256", "bytes"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^src:[A-Za-z0-9._-]+$"},
+        "path": {"$ref": "#/$defs/safe_path"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "bytes": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}
