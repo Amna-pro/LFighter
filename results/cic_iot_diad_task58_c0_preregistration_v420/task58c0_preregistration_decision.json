@@ -1,0 +1,11 @@
+{
+  "experiment_version": "4.20.0",
+  "checks_passed": 29,
+  "checks_total": 29,
+  "all_checks_passed": true,
+  "outcomes_inspected": false,
+  "training_permitted": false,
+  "new_shap_evaluations_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "ready_for_c1_publication_figures": true
+}

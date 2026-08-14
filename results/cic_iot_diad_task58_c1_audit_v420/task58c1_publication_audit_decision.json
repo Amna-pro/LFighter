@@ -1,0 +1,14 @@
+{
+  "experiment_version": "4.20.1.audit",
+  "checks_passed": 91,
+  "checks_total": 91,
+  "all_checks_passed": true,
+  "figure_stems_verified": 5,
+  "figure_files_verified": 10,
+  "triplets_verified": 12,
+  "case_selection_independently_recomputed": true,
+  "source_hashes_verified": true,
+  "new_shap_evaluations": 0,
+  "reserved_test_arrays_materialized": false,
+  "task58_ready_to_freeze": true
+}

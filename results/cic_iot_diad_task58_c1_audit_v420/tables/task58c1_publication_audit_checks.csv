@@ -1,0 +1,92 @@
+check,passed,detail
+c0_all_checks,True,"{'experiment_version': '4.20.0', 'checks_passed': 29, 'checks_total': 29, 'all_checks_passed': True, 'outcomes_inspected': False, 'training_permitted': False, 'new_shap_evaluations_permitted': False, 'reserved_test_arrays_materialized': False, 'ready_for_c1_publication_figures': True}"
+c0_ready,True,True
+decision_complete,True,True
+parent_tag,True,task57-c2-attribution-recovery-pass-v4192
+parent_commit,True,20122c6
+scientific_result,True,PASS
+five_stems_decision,True,5
+ten_files_decision,True,10
+twelve_triplets_decision,True,12
+all_rows_decision,True,True
+deterministic_case_decision,True,True
+no_manual_case_decision,True,False
+no_training,True,False
+no_new_shap,True,0
+reserved_closed,True,False
+rejected_unavailable,True,False
+oracle_unavailable,True,False
+clean_qualified,True,paired round 4 preattack state
+manifest_rows,True,10
+manifest_stems,True,"['task58_all_triplet_recovery', 'task58_prediction_state_trajectories', 'task58_representative_case_waterfall', 'task58_top10_poison_associated_features', 'task58_xai_validation_dashboard']"
+manifest_formats,True,"['pdf', 'png']"
+two_formats_each,True,"{'task58_all_triplet_recovery': 2, 'task58_prediction_state_trajectories': 2, 'task58_representative_case_waterfall': 2, 'task58_top10_poison_associated_features': 2, 'task58_xai_validation_dashboard': 2}"
+unique_paths,True,10
+figure_exists_task58_xai_validation_dashboard_png,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_xai_validation_dashboard.png
+figure_hash_task58_xai_validation_dashboard_png,True,54004a8e64ab8391481a83b769bccb44a9733e4848abda71aae42789eb8ec45c
+figure_bytes_task58_xai_validation_dashboard_png,True,307764
+png_dimensions_task58_xai_validation_dashboard,True,3094.0x2164.0
+figure_exists_task58_xai_validation_dashboard_pdf,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_xai_validation_dashboard.pdf
+figure_hash_task58_xai_validation_dashboard_pdf,True,e3a97c1773099925ced5062a0a58f84343e1f732f6b78b7fe8b93154e6fbe7bb
+figure_bytes_task58_xai_validation_dashboard_pdf,True,30255
+pdf_header_task58_xai_validation_dashboard,True,b'%PDF-'
+figure_exists_task58_all_triplet_recovery_png,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_all_triplet_recovery.png
+figure_hash_task58_all_triplet_recovery_png,True,9cedd0c309d7db11f87371ec4098b7505e7844ee0eacf04d9944b45e90287b6a
+figure_bytes_task58_all_triplet_recovery_png,True,140098
+png_dimensions_task58_all_triplet_recovery,True,2494.0x1894.0
+figure_exists_task58_all_triplet_recovery_pdf,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_all_triplet_recovery.pdf
+figure_hash_task58_all_triplet_recovery_pdf,True,91af7f0a08dc6e39604aa67b702e8203f742482e8c114f7165559c3a27214d5d
+figure_bytes_task58_all_triplet_recovery_pdf,True,24843
+pdf_header_task58_all_triplet_recovery,True,b'%PDF-'
+figure_exists_task58_prediction_state_trajectories_png,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_prediction_state_trajectories.png
+figure_hash_task58_prediction_state_trajectories_png,True,0c5424d3e7d1c9ca3dac397a2629b4c3a4af5d6289af5936c05846c6e4c4d25c
+figure_bytes_task58_prediction_state_trajectories_png,True,543761
+png_dimensions_task58_prediction_state_trajectories,True,3154.0x1414.0
+figure_exists_task58_prediction_state_trajectories_pdf,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_prediction_state_trajectories.pdf
+figure_hash_task58_prediction_state_trajectories_pdf,True,27f7d8cd5c46c622e1e61a7522fc1d6f00366d5592e7479bda24b256c0a60f3e
+figure_bytes_task58_prediction_state_trajectories_pdf,True,23991
+pdf_header_task58_prediction_state_trajectories,True,b'%PDF-'
+figure_exists_task58_top10_poison_associated_features_png,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_top10_poison_associated_features.png
+figure_hash_task58_top10_poison_associated_features_png,True,057b0fab934969eac6c1e3cc83a8a4ebae62a716788e551a8fb1a81c951537b3
+figure_bytes_task58_top10_poison_associated_features_png,True,177330
+png_dimensions_task58_top10_poison_associated_features,True,2794.0x1894.0
+figure_exists_task58_top10_poison_associated_features_pdf,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_top10_poison_associated_features.pdf
+figure_hash_task58_top10_poison_associated_features_pdf,True,84896c6d183549b8e5b49d0fada8e55ffaa0aa21506c30499ad5006e904ff6d3
+figure_bytes_task58_top10_poison_associated_features_pdf,True,25511
+pdf_header_task58_top10_poison_associated_features,True,b'%PDF-'
+figure_exists_task58_representative_case_waterfall_png,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_representative_case_waterfall.png
+figure_hash_task58_representative_case_waterfall_png,True,e512875e67654effd0e53624d4788853a18a5d8fde3cfe5824edf38a27862f08
+figure_bytes_task58_representative_case_waterfall_png,True,174710
+png_dimensions_task58_representative_case_waterfall,True,3934.0x1744.0
+figure_exists_task58_representative_case_waterfall_pdf,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\figures\task58_representative_case_waterfall.pdf
+figure_hash_task58_representative_case_waterfall_pdf,True,d14218e99cfed468a519bbd840689c0b802fac941cb22e7c6b2afa0333561b1f
+figure_bytes_task58_representative_case_waterfall_pdf,True,29911
+pdf_header_task58_representative_case_waterfall,True,b'%PDF-'
+triplet_source_rows,True,12
+triplet_seed_count,True,4
+triplet_family_count,True,3
+top10_rows,True,10
+top10_ranks,True,"[1, 2, 3, 4, 5, 7, 8, 9, 11, 12]"
+case_one_row,True,1
+case_median_exact,True,0.3972772913490517
+case_seed_exact,True,7
+case_family_exact,True,B_hash_ranked
+case_recovery_exact,True,0.3953406434240675
+case_gap_exact,True,0.0019366479249842
+case_no_manual,True,False
+case_three_states,True,"['Clean', 'Reconstructed', 'Suspicious']"
+case_equal_feature_rows,True,"{'Clean': 9, 'Reconstructed': 9, 'Suspicious': 9}"
+case_nine_rows_per_state,True,"{'Clean': 9, 'Reconstructed': 9, 'Suspicious': 9}"
+case_finite,True,finite
+validation_summary_nonempty,True,10
+validation_summary_finite,True,finite
+source_manifest_nonempty,True,14
+source_manifest_exact,True,True
+captions_exist,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\TASK58_FIGURE_CAPTIONS.md
+caption_F1,True,F1
+caption_F2,True,F2
+caption_F3,True,F3
+caption_F4,True,F4
+caption_F5,True,F5
+caption_scope_limitation,True,scope stated
+closeout_exists,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task58_c1_publication_v420\TASK58_C1_CLOSEOUT.md

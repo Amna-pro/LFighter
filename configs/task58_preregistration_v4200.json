@@ -1,0 +1,60 @@
+{
+  "experiment_version": "4.20.0",
+  "task": 58,
+  "title": "Publication ready XAI figures and case studies",
+  "parent_tag": "task57-c2-attribution-recovery-pass-v4192",
+  "parent_commit_short": "20122c6",
+  "outcomes_inspected_before_freeze": false,
+  "training_permitted": false,
+  "new_shap_evaluations_permitted": false,
+  "reserved_test_arrays_permitted": false,
+  "source_panels": {
+    "xai_validation": "Task 56 complete validation summary",
+    "attribution_recovery": "Task 57 complete twelve triplet panel",
+    "raw_case_evidence": "Task 55 frozen attribution tensors"
+  },
+  "figure_plan": [
+    {
+      "id": "F1",
+      "stem": "task58_xai_validation_dashboard",
+      "selection": "all available Task 56 validation rows"
+    },
+    {
+      "id": "F2",
+      "stem": "task58_all_triplet_recovery",
+      "selection": "all twelve Task 57 triplets"
+    },
+    {
+      "id": "F3",
+      "stem": "task58_prediction_state_trajectories",
+      "selection": "all twelve Task 57 triplets"
+    },
+    {
+      "id": "F4",
+      "stem": "task58_top10_poison_associated_features",
+      "selection": "frozen Task 57 top ten prespecified ranking"
+    },
+    {
+      "id": "F5",
+      "stem": "task58_representative_case_waterfall",
+      "selection": "triplet closest to the cohort median recovery fraction, ties resolved by seed then family; true DDoS probe row closest to the suspicious state median margin"
+    }
+  ],
+  "anti_cherry_picking": {
+    "cohort_figures_use_all_rows": true,
+    "feature_figure_uses_frozen_ranking": true,
+    "case_selection_is_deterministic": true,
+    "manual_case_substitution_permitted": false
+  },
+  "state_limitation": "Rejected and round 8 oracle clean attribution states are unavailable and must not be substituted. Clean reference is the paired round 4 preattack state.",
+  "formats": ["png", "pdf"],
+  "png_dpi": 300,
+  "minimum_expected_outputs": {
+    "figure_stems": 5,
+    "figure_files": 10,
+    "triplets": 12,
+    "seeds": 4,
+    "families": 3,
+    "features": 69
+  }
+}

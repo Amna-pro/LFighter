@@ -1,0 +1,30 @@
+check,passed,detail
+config_exists,True,C:\Users\Amm\LFighter-research\configs\task58_preregistration_v4200.json
+narrative_exists,True,C:\Users\Amm\LFighter-research\configs\TASK58_PREREGISTRATION_V420.md
+task_number,True,58
+version,True,4.20.0
+parent_tag,True,task57-c2-attribution-recovery-pass-v4192
+parent_commit,True,20122c6
+outcomes_uninspected,True,False
+no_training,True,False
+no_new_shap,True,False
+reserved_closed,True,False
+five_figure_families,True,5
+unique_figure_ids,True,"['F1', 'F2', 'F3', 'F4', 'F5']"
+unique_stems,True,"['task58_xai_validation_dashboard', 'task58_all_triplet_recovery', 'task58_prediction_state_trajectories', 'task58_top10_poison_associated_features', 'task58_representative_case_waterfall']"
+all_cohort_rows,True,"{'cohort_figures_use_all_rows': True, 'feature_figure_uses_frozen_ranking': True, 'case_selection_is_deterministic': True, 'manual_case_substitution_permitted': False}"
+frozen_feature_ranking,True,"{'cohort_figures_use_all_rows': True, 'feature_figure_uses_frozen_ranking': True, 'case_selection_is_deterministic': True, 'manual_case_substitution_permitted': False}"
+deterministic_case,True,"{'cohort_figures_use_all_rows': True, 'feature_figure_uses_frozen_ranking': True, 'case_selection_is_deterministic': True, 'manual_case_substitution_permitted': False}"
+no_manual_substitution,True,"{'cohort_figures_use_all_rows': True, 'feature_figure_uses_frozen_ranking': True, 'case_selection_is_deterministic': True, 'manual_case_substitution_permitted': False}"
+formats,True,"['png', 'pdf']"
+dpi,True,300
+expected_figure_stems,True,5
+expected_figure_files,True,10
+expected_triplets,True,12
+expected_seeds,True,4
+expected_families,True,3
+expected_features,True,69
+rejected_limitation,True,Rejected and round 8 oracle clean attribution states are unavailable and must not be substituted. Clean reference is the paired round 4 preattack state.
+oracle_limitation,True,Rejected and round 8 oracle clean attribution states are unavailable and must not be substituted. Clean reference is the paired round 4 preattack state.
+clean_reference_qualified,True,Rejected and round 8 oracle clean attribution states are unavailable and must not be substituted. Clean reference is the paired round 4 preattack state.
+parent_tag_resolves,True,20122c60d0879e93df3d174f79bbab4e3589557c

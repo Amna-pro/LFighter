@@ -1,0 +1,20 @@
+{
+  "experiment_version": "4.20.1",
+  "parent_tag": "task57-c2-attribution-recovery-pass-v4192",
+  "parent_commit_short": "20122c6",
+  "figure_stems": 5,
+  "figure_files": 10,
+  "triplets_represented": 12,
+  "features_in_frozen_ranking": 10,
+  "case_selection_deterministic": true,
+  "manual_case_substitution": false,
+  "all_cohort_rows_used": true,
+  "training_permitted": false,
+  "new_shap_evaluations": 0,
+  "reserved_test_arrays_materialized": false,
+  "rejected_state_available": false,
+  "oracle_clean_state_available": false,
+  "clean_reference": "paired round 4 preattack state",
+  "scientific_result_inherited_from_task57": "PASS",
+  "task58_c1_complete": true
+}
