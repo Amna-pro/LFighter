@@ -1,0 +1,13 @@
+case_id,seed,family_id,parent_reported_consistency,parent_reproduced_consistency,scientific_only_consistency_diagnostic,parent_threshold,parent_case_passed,scientific_selection_varies,context_selection_varies,strict_fact_selection_varies,aggregate_fact_selection_varies,atomic_statement_split_detected,contradictory_required_fact_values_detected,primary_cause
+seed_123__A_development_anchor__size_10,123,A_development_anchor,1.0,1.0,1.0,0.99,True,False,False,False,False,False,False,stable
+seed_123__B_hash_ranked__size_10,123,B_hash_ranked,0.485650623885918,0.485650623885918,0.7777777777777777,0.99,False,True,True,True,True,True,False,scientific_fact_omission_and_context_selection
+seed_123__C_hash_ranked__size_10,123,C_hash_ranked,1.0,1.0,1.0,0.99,True,False,False,False,False,False,False,stable
+seed_2026__A_development_anchor__size_10,2026,A_development_anchor,0.7777777777777777,0.7777777777777777,0.7999999999999999,0.99,False,True,True,True,True,False,False,scientific_fact_omission_and_context_selection
+seed_2026__B_hash_ranked__size_10,2026,B_hash_ranked,0.9444444444444443,0.9444444444444443,1.0,0.99,False,False,True,False,False,False,False,context_only_numeric_selection
+seed_2026__C_hash_ranked__size_10,2026,C_hash_ranked,1.0,1.0,1.0,0.99,True,False,False,False,False,False,False,stable
+seed_7__A_development_anchor__size_10,7,A_development_anchor,1.0,1.0,1.0,0.99,True,False,False,False,False,False,False,stable
+seed_7__B_hash_ranked__size_10,7,B_hash_ranked,1.0,1.0,1.0,0.99,True,False,False,False,False,False,False,stable
+seed_7__C_hash_ranked__size_10,7,C_hash_ranked,0.7575757575757575,0.7575757575757575,0.7777777777777777,0.99,False,True,True,True,True,False,False,scientific_fact_omission_and_context_selection
+seed_99__A_development_anchor__size_10,99,A_development_anchor,1.0,1.0,1.0,0.99,True,False,False,False,False,False,False,stable
+seed_99__B_hash_ranked__size_10,99,B_hash_ranked,1.0,1.0,1.0,0.99,True,False,False,False,False,False,False,stable
+seed_99__C_hash_ranked__size_10,99,C_hash_ranked,1.0,1.0,1.0,0.99,True,False,False,False,False,False,False,stable

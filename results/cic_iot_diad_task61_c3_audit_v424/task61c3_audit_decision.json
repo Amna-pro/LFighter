@@ -1,0 +1,17 @@
+{
+  "all_checks_passed": true,
+  "api_calls": 0,
+  "automated_result_retained": "FAIL",
+  "cases_independently_recomputed": 12,
+  "checks_passed": 42,
+  "checks_total": 42,
+  "context_only_instability_cases_verified": 1,
+  "new_shap_evaluations": 0,
+  "parent_consistency_independently_recomputed": 0.9137873836403249,
+  "parent_threshold_changed": false,
+  "post_hoc_diagnostic_verified": true,
+  "reports_independently_recomputed": 36,
+  "reserved_test_arrays_materialized": false,
+  "scientific_fact_selection_instability_cases_verified": 3,
+  "training_permitted": false
+}

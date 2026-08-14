@@ -1,0 +1,47 @@
+{
+  "analysis_role": "post_hoc_failure_diagnostic",
+  "api_calls": 0,
+  "atomic_statement_split_cases": [
+    "seed_123__B_hash_ranked__size_10"
+  ],
+  "automated_result_after_diagnostic": "FAIL",
+  "automated_result_changed": false,
+  "best_output_selection_permitted": false,
+  "cases_analyzed": 12,
+  "context_only_instability_case_ids": [
+    "seed_2026__B_hash_ranked__size_10"
+  ],
+  "context_only_instability_cases": 1,
+  "contradictory_required_fact_value_count": 0,
+  "diagnostic_scientific_only_consistency_rate": 0.9462962962962962,
+  "diagnostic_scientific_only_threshold_comparison_report_only": false,
+  "exact_parent_consistency_reproduced": true,
+  "new_shap_evaluations": 0,
+  "outcomes_inspected": true,
+  "parent_audit_all_checks_passed": true,
+  "parent_automated_result": "FAIL",
+  "parent_protocol_id": "task61_c2_recovery_v4232",
+  "parent_repeat_numeric_consistency_rate": 0.9137873836403249,
+  "parent_repeat_numeric_consistency_threshold": 0.99,
+  "post_hoc_diagnostic_complete": true,
+  "protocol_id": "task61_c3_posthoc_diagnostic_v4240",
+  "recommended_task62_architecture": "deterministic_fact_selection_then_llm_surface_realization",
+  "reports_analyzed": 36,
+  "reserved_test_arrays_materialized": false,
+  "scientific_fact_selection_instability_case_ids": [
+    "seed_123__B_hash_ranked__size_10",
+    "seed_2026__A_development_anchor__size_10",
+    "seed_7__C_hash_ranked__size_10"
+  ],
+  "scientific_fact_selection_instability_cases": 3,
+  "task62_hybrid_evaluation_justified": true,
+  "threshold_changed": false,
+  "training_permitted": false,
+  "unstable_case_ids": [
+    "seed_123__B_hash_ranked__size_10",
+    "seed_2026__A_development_anchor__size_10",
+    "seed_2026__B_hash_ranked__size_10",
+    "seed_7__C_hash_ranked__size_10"
+  ],
+  "unstable_cases": 4
+}

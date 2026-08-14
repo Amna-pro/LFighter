@@ -1,0 +1,43 @@
+check_id,passed,detail
+protocol_is_post_hoc,True,The analysis does not claim preregistration.
+parent_result_is_fail,True,Frozen Task 61 C2 result is FAIL.
+threshold_unchanged,True,The 0.99 parent threshold is unchanged.
+automated_result_unchanged,True,C3 retains the parent failure.
+no_api_calls,True,No LLM call is permitted or reported.
+no_best_output_selection,True,All repeats remain retained.
+no_training,True,Training is prohibited.
+no_new_shap,True,No SHAP evaluation occurred.
+reserved_test_closed,True,Reserved test arrays remain closed.
+case_row_count,True,Observed 12 case rows.
+inventory_row_count,True,Observed 36 repeat rows.
+coverage_row_count,True,Observed 36 coverage rows.
+pairwise_row_count,True,Observed 36 pairwise rows.
+statement_inventory_nonempty,True,Observed 372 numeric occurrences.
+failure_summary_row_count,True,Observed 4 unstable case summaries.
+source_hashes_verified,True,All diagnostic source hashes match.
+reports_independently_recomputed,True,Recomputed 36 reports.
+all_numbers_independently_grounded,True,Every narrative number is grounded in its case record.
+parent_mean_exactly_reproduced,True,Recomputed 0.913787383640325.
+decision_parent_mean_matches,True,Decision matches independent recomputation.
+science_mean_matches,True,Recomputed 0.946296296296296.
+science_mean_still_below_threshold,True,0.946296296296 remains below 0.99.
+parent_case_reproduced::seed_123__A_development_anchor__size_10,True,Observed 1.000000000000000; parent 1.000000000000000.
+parent_case_reproduced::seed_123__B_hash_ranked__size_10,True,Observed 0.485650623885918; parent 0.485650623885918.
+parent_case_reproduced::seed_123__C_hash_ranked__size_10,True,Observed 1.000000000000000; parent 1.000000000000000.
+parent_case_reproduced::seed_2026__A_development_anchor__size_10,True,Observed 0.777777777777778; parent 0.777777777777778.
+parent_case_reproduced::seed_2026__B_hash_ranked__size_10,True,Observed 0.944444444444444; parent 0.944444444444444.
+parent_case_reproduced::seed_2026__C_hash_ranked__size_10,True,Observed 1.000000000000000; parent 1.000000000000000.
+parent_case_reproduced::seed_7__A_development_anchor__size_10,True,Observed 1.000000000000000; parent 1.000000000000000.
+parent_case_reproduced::seed_7__B_hash_ranked__size_10,True,Observed 1.000000000000000; parent 1.000000000000000.
+parent_case_reproduced::seed_7__C_hash_ranked__size_10,True,Observed 0.757575757575757; parent 0.757575757575757.
+parent_case_reproduced::seed_99__A_development_anchor__size_10,True,Observed 1.000000000000000; parent 1.000000000000000.
+parent_case_reproduced::seed_99__B_hash_ranked__size_10,True,Observed 1.000000000000000; parent 1.000000000000000.
+parent_case_reproduced::seed_99__C_hash_ranked__size_10,True,Observed 1.000000000000000; parent 1.000000000000000.
+four_unstable_cases_verified,True,"[""seed_123__B_hash_ranked__size_10"", ""seed_2026__A_development_anchor__size_10"", ""seed_2026__B_hash_ranked__size_10"", ""seed_7__C_hash_ranked__size_10""]"
+three_scientific_selection_cases_verified,True,"[""seed_123__B_hash_ranked__size_10"", ""seed_2026__A_development_anchor__size_10"", ""seed_7__C_hash_ranked__size_10""]"
+one_context_only_case_verified,True,"[""seed_2026__B_hash_ranked__size_10""]"
+decision_unstable_cases_match,True,Decision lists all four unstable cases.
+decision_science_cases_match,True,Decision lists all three scientific selection cases.
+decision_context_case_matches,True,Decision lists the context only case.
+no_contradictory_required_values,True,No conflicting required scientific value was detected.
+analysis_has_no_network_client,True,Diagnostic source contains no API or network client.

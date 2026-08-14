@@ -1,0 +1,23 @@
+{
+  "analysis_role": "post_hoc_failure_diagnostic",
+  "automated_result_may_change": false,
+  "best_output_selection_permitted": false,
+  "expected_cases": 12,
+  "expected_reports": 36,
+  "llm_calls_permitted": 0,
+  "new_shap_evaluations_permitted": 0,
+  "outcomes_inspected": true,
+  "parent_automated_result": "FAIL",
+  "parent_protocol_id": "task61_c2_recovery_v4232",
+  "parent_repeat_numeric_consistency_threshold": 0.99,
+  "protocol_id": "task61_c3_posthoc_diagnostic_v4240",
+  "reserved_test_arrays_materialized": false,
+  "scientific_questions": [
+    "Did repeated reports contain conflicting scientific values?",
+    "Did repeated reports omit different required facts?",
+    "Did optional contextual numbers change the parent Jaccard score?",
+    "Does a deterministic fact selection stage have direct empirical justification?"
+  ],
+  "threshold_change_permitted": false,
+  "training_permitted": false
+}
