@@ -1,0 +1,19 @@
+{
+  "experiment_version": "4.19.C2A",
+  "stage": "task57_attribution_recovery_integrity_audit",
+  "parent_tag": "task57-c1-attribution-recovery-preflight-frozen-v4191",
+  "parent_commit": "e9a969dbea5fbcd227d8630a4a8cde9e28996adb",
+  "head_commit": "e9a969dbea5fbcd227d8630a4a8cde9e28996adb",
+  "checks_passed": 60,
+  "check_count": 60,
+  "scientific_result_verified": "PASS",
+  "triplets_verified": 12,
+  "features_verified": 69,
+  "source_files_verified": 117,
+  "raw_triplet_metrics_independently_recomputed": true,
+  "training_permitted": false,
+  "new_shap_evaluations": 0,
+  "reserved_test_arrays_materialized": false,
+  "integrity_audit_passed": true,
+  "ready_for_task57_freeze": true
+}

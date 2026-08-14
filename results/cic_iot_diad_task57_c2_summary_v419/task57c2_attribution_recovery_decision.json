@@ -1,0 +1,73 @@
+{
+  "experiment_version": "4.19.C2",
+  "stage": "task57_attribution_recovery_summary",
+  "parent_tag": "task57-c1-attribution-recovery-preflight-frozen-v4191",
+  "parent_commit": "e9a969dbea5fbcd227d8630a4a8cde9e28996adb",
+  "scientific_result": "PASS",
+  "claim": "reconstruction_moves_attributions_toward_the_frozen_preattack_clean_reference",
+  "oracle_recovery_claim_permitted": false,
+  "triplets_analyzed": 12,
+  "seeds_analyzed": [
+    7,
+    99,
+    123,
+    2026
+  ],
+  "families_analyzed": [
+    "A_development_anchor",
+    "B_hash_ranked",
+    "C_hash_ranked"
+  ],
+  "physical_attribution_states_reused": 28,
+  "new_shap_evaluations": 0,
+  "attack_signal": {
+    "repeat_noise_q95": 0.12184864742664225,
+    "median_attack_distance": 0.738775908946991,
+    "triplets_above_noise": 12,
+    "passed": true
+  },
+  "recovery": {
+    "positive_triplets": 12,
+    "positive_seed_means": 4,
+    "median_recovery_fraction": 0.3972772913490517,
+    "hierarchical_bootstrap_ci95_low": 0.3670602111094688,
+    "hierarchical_bootstrap_ci95_high": 0.609167133081438,
+    "triplet_sign_flip_p_one_sided": 0.000244140625,
+    "seed_blocked_sign_flip_p_one_sided_report_only": 0.0625,
+    "individual_gate_results": {
+      "minimum_positive_triplets": true,
+      "minimum_positive_seed_means": true,
+      "minimum_median_recovery_fraction": true,
+      "triplet_sign_flip_p": true,
+      "hierarchical_bootstrap_ci_low": true
+    },
+    "all_primary_gates_passed": true
+  },
+  "secondary": {
+    "median_rank_recovery": 0.02683644202488178,
+    "positive_rank_recovery_triplets": 12,
+    "median_top10_recovery": 0.3333333333333333,
+    "positive_top10_recovery_triplets": 12,
+    "prespecified_poison_associated_features": 39,
+    "fixed_reported_feature_count": 10
+  },
+  "state_coverage": {
+    "available": [
+      "clean_reference",
+      "suspicious",
+      "reconstructed"
+    ],
+    "unavailable": [
+      "rejected",
+      "oracle_clean"
+    ],
+    "five_state_roadmap_complete": false,
+    "three_state_primary_analysis_complete": true
+  },
+  "training_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "negative_and_boundary_results_retained": true,
+  "publication_figures_deferred_to_task58": true,
+  "elapsed_seconds": 2.3,
+  "complete": true
+}

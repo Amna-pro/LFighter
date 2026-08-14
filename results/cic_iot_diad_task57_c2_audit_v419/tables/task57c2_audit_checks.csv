@@ -1,0 +1,61 @@
+check,passed,detail
+parent_tag_resolves_expected,True,e9a969dbea5fbcd227d8630a4a8cde9e28996adb
+parent_is_head_ancestor,True,e9a969dbea5fbcd227d8630a4a8cde9e28996adb
+c1_all_checks_passed,True,42/42
+c1_ready_for_c2,True,True
+c1_three_state_complete,True,True
+c1_five_state_incomplete,True,False
+exists_triplets,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\tables\task57c2_triplet_recovery_metrics.csv
+exists_seeds,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\tables\task57c2_seed_summary.csv
+exists_families,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\tables\task57c2_family_summary.csv
+exists_features,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\tables\task57c2_feature_association.csv
+exists_top_features,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\tables\task57c2_top10_prespecified_features.csv
+exists_hypotheses,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\tables\task57c2_hypothesis_decisions.csv
+exists_coverage,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\tables\task57c2_state_coverage.csv
+exists_sources,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\tables\task57c2_source_manifest_sha256.csv
+exists_decision,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\task57c2_attribution_recovery_decision.json
+exists_closeout,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\TASK57_C2_CLOSEOUT.md
+12_triplet_rows,True,12
+4_seed_rows,True,4
+3_family_rows,True,3
+69_feature_rows,True,69
+top_feature_count_at_most_10,True,10
+8_hypothesis_rows,True,8
+5_state_coverage_rows,True,5
+all_triplet_numeric_finite,True,finite
+all_feature_numeric_finite,True,finite
+seeds_exact,True,"[7, 99, 123, 2026]"
+families_exact,True,"['A_development_anchor', 'B_hash_ranked', 'C_hash_ranked']"
+one_row_per_triplet,True,12 unique
+raw_triplet_metrics_recomputed_exactly,True,"['attack_distance', 'reconstructed_distance', 'distance_reduction', 'recovery_fraction', 'suspicious_clean_spearman', 'reconstructed_clean_spearman', 'rank_recovery', 'suspicious_clean_top10_jaccard', 'reconstructed_clean_top10_jaccard', 'top10_recovery', 'signed_attack_distance', 'signed_reconstructed_distance', 'clean_mean_ddos_minus_benign_logit_margin', 'suspicious_mean_ddos_minus_benign_logit_margin', 'reconstructed_mean_ddos_minus_benign_logit_margin', 'clean_ddos_prediction_rate', 'suspicious_ddos_prediction_rate', 'reconstructed_ddos_prediction_rate']"
+signed_distance_reduction_identity,True,exact
+distance_reduction_identity,True,exact
+recovery_fraction_identity,True,exact
+decision_median_attack_exact,True,0.738775908946991
+decision_attack_count_exact,True,12
+decision_attack_gate_exact,True,True
+decision_positive_triplets_exact,True,12
+decision_positive_seed_means_exact,True,4
+decision_median_recovery_exact,True,0.3972772913490517
+decision_triplet_p_exact,True,0.000244140625
+decision_seed_p_exact,True,0.0625
+decision_bootstrap_low_exact,True,0.3670602111094688
+decision_bootstrap_high_exact,True,0.609167133081438
+individual_gate_results_exact,True,"{'minimum_positive_triplets': True, 'minimum_positive_seed_means': True, 'minimum_median_recovery_fraction': True, 'triplet_sign_flip_p': True, 'hierarchical_bootstrap_ci_low': True}"
+scientific_result_exact,True,PASS
+feature_association_rule_exact,True,39
+feature_ranking_deterministic,True,descending shift then feature
+top_feature_table_exact,True,"['Fwd Segment Size Avg', 'Packet Length Mean', 'Average Packet Size', 'Packet Length Min', 'Packet Length Max', 'Fwd Packet Length Max', 'Fwd IAT Mean', 'Flow IAT Max', 'Flow IAT Mean', 'Idle Min']"
+all_69_features_unique,True,69
+coverage_available_states_exact,True,"{'clean_reference': 'available', 'suspicious': 'available', 'reconstructed': 'available', 'rejected': 'unavailable', 'oracle_clean': 'unavailable'}"
+coverage_unavailable_states_exact,True,"{'clean_reference': 'available', 'suspicious': 'available', 'reconstructed': 'available', 'rejected': 'unavailable', 'oracle_clean': 'unavailable'}"
+oracle_claim_forbidden,True,False
+claim_limited_to_preattack,True,reconstruction_moves_attributions_toward_the_frozen_preattack_clean_reference
+no_new_shap,True,0
+no_training,True,False
+reserved_test_closed,True,False
+negative_results_retained,True,True
+task58_figures_deferred,True,True
+no_task57_figures_created,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task57_c2_summary_v419\figures
+source_manifest_paths_unique,True,117
+all_source_hashes_verified,True,117

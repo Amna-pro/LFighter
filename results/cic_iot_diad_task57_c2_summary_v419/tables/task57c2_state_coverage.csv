@@ -1,0 +1,6 @@
+state,availability,included_in_primary_analysis,limitation
+clean_reference,available,True,round 4 preattack reference rather than round 8 oracle clean
+suspicious,available,True,none
+reconstructed,available,True,none
+rejected,unavailable,False,no exact paired rejected attribution artifact
+oracle_clean,unavailable,False,no round 8 counterfactual clean attribution artifact

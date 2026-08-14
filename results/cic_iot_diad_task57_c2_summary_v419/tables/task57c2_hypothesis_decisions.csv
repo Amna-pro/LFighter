@@ -1,0 +1,9 @@
+gate,value,threshold,passed
+attack_signal_median_above_noise_q95,0.738775908946991,0.12184864742664225,True
+attack_signal_triplets_above_noise_q95,12.0,8.0,True
+positive_triplets,12.0,9.0,True
+positive_seed_means,4.0,4.0,True
+median_recovery_fraction,0.3972772913490517,0.25,True
+triplet_sign_flip_p_one_sided,0.000244140625,0.05,True
+hierarchical_bootstrap_ci95_low,0.3670602111094688,0.0,True
+seed_blocked_sign_flip_p_report_only,0.0625,0.0625,True
