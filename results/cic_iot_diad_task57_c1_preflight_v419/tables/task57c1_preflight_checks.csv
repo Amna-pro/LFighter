@@ -1,0 +1,43 @@
+check,passed,detail
+config_exists,True,C:\Users\Amm\LFighter-research\configs\task57_preregistration_v4190.json
+exists_inventory,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c1_preflight_v417\tables\task55c1_checkpoint_inventory.csv
+exists_task55_c2,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c2_seed7_v417
+exists_task55_c3,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c3_multiseed_v417
+exists_task55_audit,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task55_c3_audit_v417
+exists_task56_summary,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task56_c2_summary_v418
+exists_task56_audit,True,C:\Users\Amm\LFighter-research\results\cic_iot_diad_task56_c2_audit_v418
+parent_tag_resolves_expected,True,d067e54abb9b2b122c912d1e0aa21db4e9281115
+parent_is_head_ancestor,True,d067e54abb9b2b122c912d1e0aa21db4e9281115
+task55_all_47_checks_passed,True,47/47
+task55_28_physical_states,True,28
+task55_36_logical_states,True,36
+task55_exact_pairing,True,True
+task55_same_probe,True,True
+task55_reserved_closed,True,False
+task56_scientific_pass,True,PASS
+task56_all_domains_pass,True,"{'repeated_run_stability': True, 'background_sensitivity': True, 'probe_size_sensitivity': True, 'feature_perturbation_faithfulness': True, 'class_specificity': True, 'cross_seed_consistency': True}"
+task56_37_checks_passed,True,37/37
+task57_primary_claim_allowed,True,True
+task56_integrity_passed,True,True
+task56_reserved_closed,True,False
+repeat_comparison_count_84,True,84
+repeat_q95_matches_frozen,True,0.12184864742664225
+checkpoint_inventory_28_rows,True,28
+inventory_states_exact,True,"['clean_reference', 'reconstructed', 'suspicious']"
+inventory_four_seeds,True,"[7, 99, 123, 2026]"
+inventory_no_rejected_or_oracle,True,"['clean_reference', 'reconstructed', 'suspicious']"
+logical_manifest_36_rows,True,36
+logical_states_exact,True,"['clean_reference', 'reconstructed', 'suspicious']"
+logical_background_hash_frozen,True,['83c8e725df051b22d155512f47afedf6338196b8b8d54529dd9df2637c9ae7be']
+logical_probe_hash_frozen,True,['81a7a8c57cbcfd1d6c01cf304f3cc2fed811aa1dc78a262e5486ec485cccc815']
+all_12_logical_triplets_complete,True,4 seeds x 3 families x 3 states
+28_physical_tensor_specs,True,28
+all_28_tensor_files_exist,True,28
+tensor_keys_exact,True,"['feature_names', 'logits', 'output_names', 'predicted_class_id', 'probe_validation_indices', 'source_logit_shap', 'source_minus_target_margin_shap', 'standardized_probe_values', 'target_logit_shap', 'true_class_id']"
+tensor_shapes_exact,True,128x69 attributions; 128x8 logits
+all_tensor_values_finite,True,True
+exact_derived_margin_identity,True,True
+16_true_ddos_rows_each,True,True
+same_probe_content_within_seed,True,True
+same_69_feature_names_all_states,True,0108b522b1234e99a979e4f68989fc90a83f5560fd992ca077d9e3758f850926
+no_rejected_or_oracle_attribution_paths,True,[]

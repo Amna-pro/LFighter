@@ -1,0 +1,67 @@
+check,passed,detail
+config_exists,True,C:\Users\Amm\LFighter-research\configs\task57_preregistration_v4190.json
+protocol_exists,True,C:\Users\Amm\LFighter-research\configs\TASK57_PREREGISTRATION_V419.md
+parent_tag_exact,True,task56-c2-xai-validation-frozen-v4182
+parent_commit_short_exact,True,d067e54
+parent_tag_resolves_expected,True,d067e54abb9b2b122c912d1e0aa21db4e9281115
+parent_is_head_ancestor,True,d067e54abb9b2b122c912d1e0aa21db4e9281115
+task_number_57,True,57
+version_4p19p0,True,4.19.0
+post_detection_role,True,post_detection_attribution_recovery_analysis
+no_detector_authority,True,False
+no_training,True,False
+no_new_shap,True,False
+no_method_reopening,True,False
+no_development_arrays_needed,True,[]
+reserved_arrays_exact,True,"['X_test_natural', 'y_test_natural', 'X_test_diagnostic', 'y_test_diagnostic']"
+task56_pass_required,True,PASS
+task56_37_checks_required,True,37
+task57_claim_authorization_required,True,True
+six_validation_domains_required,True,"['repeated_run_stability', 'background_sensitivity', 'probe_size_sensitivity', 'feature_perturbation_faithfulness', 'class_specificity', 'cross_seed_consistency']"
+four_seeds_exact,True,"[7, 99, 123, 2026]"
+three_families_exact,True,"['A_development_anchor', 'B_hash_ranked', 'C_hash_ranked']"
+size_10_exact,True,10
+three_available_states,True,"['clean_reference', 'suspicious', 'reconstructed']"
+two_unavailable_states,True,"['rejected', 'oracle_clean']"
+28_physical_states,True,28
+36_logical_rows,True,36
+12_triplets,True,12
+69_features,True,69
+128_probe_rows,True,128
+16_primary_rows,True,16
+ddos_to_benign_pair,True,"(2, 0)"
+primary_margin_shap,True,source_minus_target_margin_shap
+no_state_substitution,True,False
+rejected_marked_unavailable,True,unavailable_no_exact_paired_attribution_artifact
+oracle_marked_unavailable,True,unavailable_no_round8_counterfactual_clean_attribution_artifact
+claim_limited_to_preattack_reference,True,reconstruction_moves_attributions_toward_the_frozen_preattack_clean_reference
+oracle_recovery_claim_forbidden,True,reconstruction_recovers_the_unobserved_oracle_clean_model
+validated_primary_profile,True,mean_absolute_margin_shap_true_DDoS_by_feature
+signed_secondary_profile,True,mean_signed_margin_shap_true_DDoS_by_feature
+top10_frozen,True,10
+noise_q95_frozen,True,0.12184864742664225
+noise_84_comparisons,True,84
+attack_signal_8_of_12,True,8
+positive_9_of_12,True,9
+all_four_seed_means_positive,True,4
+minimum_recovery_fraction_0p25,True,0.25
+triplet_sign_flip_alpha,True,0.05
+cluster_test_report_only,True,True
+feature_role_descriptive,True,descriptive_prespecified_ranking_not_confirmatory_feature_discovery
+feature_consistency_9,True,9
+all_69_features_retained,True,True
+no_posthoc_feature_selection,True,False
+hierarchical_bootstrap_20000,True,20000
+hierarchical_bootstrap_seed_5719,True,5719
+4096_triplet_patterns,True,4096
+16_seed_block_patterns,True,16
+seed_test_resolution_disclosed,True,"{'triplet_unit_count': 12, 'seed_cluster_count': 4, 'hierarchical_bootstrap_seed': 5719, 'hierarchical_bootstrap_replicates': 20000, 'bootstrap_order': 'resample_seeds_then_families_within_seed', 'triplet_exact_sign_flip_patterns': 4096, 'seed_blocked_sign_flip_patterns': 16, 'seed_blocked_minimum_one_sided_p': 0.0625, 'seed_blocked_test_is_resolution_limited': True, 'no_posthoc_threshold_changes': True}"
+no_posthoc_threshold_changes,True,True
+four_outcomes_frozen,True,"['FAIL', 'INCONCLUSIVE', 'PARTIAL', 'PASS', 'negative_and_boundary_results_retained']"
+negative_results_retained,True,True
+task58_figures_deferred,True,"{'triplet_metrics': 12, 'feature_rows': 69, 'family_seed_summary': 12, 'state_coverage_rows': 5, 'publication_figures_deferred_to_task58': True}"
+reserved_gate_closed,True,False
+protocol_names_missing_states,True,rejected and oracle clean
+protocol_forbids_substitution,True,explicit prohibition
+protocol_discloses_seed_dependence,True,seed dependence
+protocol_keeps_task58_separate,True,Task 58

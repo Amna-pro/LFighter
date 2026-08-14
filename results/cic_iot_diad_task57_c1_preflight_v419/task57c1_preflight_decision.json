@@ -1,0 +1,29 @@
+{
+  "experiment_version": "4.19.C1",
+  "stage": "task57_local_attribution_recovery_preflight",
+  "parent_tag": "task56-c2-xai-validation-frozen-v4182",
+  "parent_commit": "d067e54abb9b2b122c912d1e0aa21db4e9281115",
+  "head_commit": "d067e54abb9b2b122c912d1e0aa21db4e9281115",
+  "checks_passed": 42,
+  "check_count": 42,
+  "physical_attribution_states_verified": 28,
+  "paired_triplets_verified": 12,
+  "available_states": [
+    "clean_reference",
+    "suspicious",
+    "reconstructed"
+  ],
+  "unavailable_states": [
+    "rejected",
+    "oracle_clean"
+  ],
+  "five_state_roadmap_complete": false,
+  "three_state_primary_panel_complete": true,
+  "task57_outcomes_evaluated": false,
+  "training_permitted": false,
+  "new_shap_evaluations_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "measurement_noise_q95": 0.12184864742664225,
+  "elapsed_seconds": 0.51,
+  "ready_for_c2_recovery_analysis": true
+}

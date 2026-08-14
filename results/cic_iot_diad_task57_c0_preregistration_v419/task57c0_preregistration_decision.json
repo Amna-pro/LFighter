@@ -1,0 +1,14 @@
+{
+  "experiment_version": "4.19.C0",
+  "stage": "task57_preregistration_integrity_audit",
+  "parent_tag": "task56-c2-xai-validation-frozen-v4182",
+  "parent_commit": "d067e54abb9b2b122c912d1e0aa21db4e9281115",
+  "head_commit": "d067e54abb9b2b122c912d1e0aa21db4e9281115",
+  "checks_passed": 66,
+  "check_count": 66,
+  "task57_outcomes_inspected": false,
+  "training_permitted": false,
+  "new_shap_evaluations_permitted": false,
+  "reserved_test_arrays_materialized": false,
+  "ready_for_c1_preflight": true
+}

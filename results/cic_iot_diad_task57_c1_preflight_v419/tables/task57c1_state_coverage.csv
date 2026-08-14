@@ -1,0 +1,6 @@
+state,availability,role,reason
+clean_reference,available,primary,paired seed specific round 4 preattack warmup attribution
+suspicious,available,primary,paired size 10 plain attack round 8 attribution
+reconstructed,available,primary,paired size 10 trusted reconstruction round 8 attribution
+rejected,unavailable,roadmap_gap,no exact paired rejected attribution artifact; substitution forbidden
+oracle_clean,unavailable,roadmap_gap,no round 8 counterfactual clean attribution artifact; substitution forbidden

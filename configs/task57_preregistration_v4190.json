@@ -1,0 +1,147 @@
+{
+  "experiment_version": "4.19.0",
+  "task": 57,
+  "stage": "C0_preregistered_attribution_recovery",
+  "parent_tag": "task56-c2-xai-validation-frozen-v4182",
+  "parent_commit_short": "d067e54",
+  "scientific_role": "post_detection_attribution_recovery_analysis",
+  "detector_authority": false,
+  "training_permitted": false,
+  "new_shap_evaluations_permitted": false,
+  "method_reopening_permitted": false,
+  "development_arrays_allowed": [],
+  "reserved_arrays_forbidden": [
+    "X_test_natural",
+    "y_test_natural",
+    "X_test_diagnostic",
+    "y_test_diagnostic"
+  ],
+  "upstream_gate": {
+    "task56_required_result": "PASS",
+    "task56_required_checks": 37,
+    "task57_primary_claim_required": true,
+    "required_validation_domains": [
+      "repeated_run_stability",
+      "background_sensitivity",
+      "probe_size_sensitivity",
+      "feature_perturbation_faithfulness",
+      "class_specificity",
+      "cross_seed_consistency"
+    ]
+  },
+  "frozen_panel": {
+    "seeds": [7, 99, 123, 2026],
+    "families": [
+      "A_development_anchor",
+      "B_hash_ranked",
+      "C_hash_ranked"
+    ],
+    "coalition_size": 10,
+    "available_states": [
+      "clean_reference",
+      "suspicious",
+      "reconstructed"
+    ],
+    "planned_but_unavailable_states": [
+      "rejected",
+      "oracle_clean"
+    ],
+    "physical_checkpoint_states": 28,
+    "logical_state_rows": 36,
+    "paired_triplets": 12,
+    "feature_count": 69,
+    "probe_rows": 128,
+    "primary_rows": "true_DDoS_rows",
+    "primary_row_count": 16,
+    "source_class_id": 2,
+    "target_class_id": 0,
+    "primary_attribution": "source_minus_target_margin_shap"
+  },
+  "state_scope_policy": {
+    "clean_reference_definition": "paired_seed_round4_preattack_warmup_checkpoint",
+    "suspicious_definition": "paired_size10_plain_attack_round8_checkpoint",
+    "reconstructed_definition": "paired_size10_trusted_reconstruction_round8_checkpoint",
+    "rejected_status": "unavailable_no_exact_paired_attribution_artifact",
+    "oracle_clean_status": "unavailable_no_round8_counterfactual_clean_attribution_artifact",
+    "substitution_permitted": false,
+    "claim_wording": "reconstruction_moves_attributions_toward_the_frozen_preattack_clean_reference",
+    "forbidden_claim_wording": "reconstruction_recovers_the_unobserved_oracle_clean_model"
+  },
+  "profiles": {
+    "primary": "mean_absolute_margin_shap_true_DDoS_by_feature",
+    "secondary_signed": "mean_signed_margin_shap_true_DDoS_by_feature",
+    "ranking_k": 10,
+    "epsilon": 1e-12
+  },
+  "primary_metrics": {
+    "attack_distance": "normalized_l1_between_suspicious_and_clean_primary_profiles",
+    "reconstructed_distance": "normalized_l1_between_reconstructed_and_clean_primary_profiles",
+    "distance_reduction": "attack_distance_minus_reconstructed_distance",
+    "recovery_fraction": "distance_reduction_divided_by_attack_distance",
+    "normalization": "sum_absolute_clean_primary_profile_plus_epsilon"
+  },
+  "secondary_metrics": {
+    "rank_recovery": "spearman_reconstructed_clean_minus_spearman_suspicious_clean",
+    "top10_recovery": "top10_jaccard_reconstructed_clean_minus_top10_jaccard_suspicious_clean",
+    "signed_distance_reduction": "normalized_l1_signed_suspicious_clean_minus_normalized_l1_signed_reconstructed_clean",
+    "prediction_context": [
+      "mean_DDoS_minus_Benign_logit_margin",
+      "DDoS_prediction_rate"
+    ]
+  },
+  "measurement_noise_gate": {
+    "source": "task56_repeated_run_stability_normalized_l1_drift",
+    "quantile": 0.95,
+    "frozen_value": 0.12184864742664225,
+    "comparison_count": 84,
+    "attack_signal_triplets_required": 8,
+    "attack_signal_median_must_exceed_noise": true
+  },
+  "primary_recovery_gate": {
+    "minimum_positive_triplets": 9,
+    "minimum_positive_seed_means": 4,
+    "minimum_median_recovery_fraction": 0.25,
+    "triplet_sign_flip_p_at_most": 0.05,
+    "hierarchical_bootstrap_ci95_low_above": 0.0,
+    "seed_blocked_sign_flip_report_only": true
+  },
+  "feature_association_policy": {
+    "role": "descriptive_prespecified_ranking_not_confirmatory_feature_discovery",
+    "attack_displacement": "suspicious_minus_clean_signed_primary_row_profile",
+    "minimum_same_direction_triplets": 9,
+    "minimum_same_direction_fraction": 0.75,
+    "noise_reference": "feature_specific_absolute_repeat_displacement_q95",
+    "minimum_median_absolute_shift_to_noise_ratio": 1.0,
+    "fixed_report_count": 10,
+    "ranking": "descending_median_absolute_attack_displacement_then_feature_name",
+    "all_69_features_retained_in_table": true,
+    "posthoc_feature_selection_permitted": false
+  },
+  "uncertainty_and_inference": {
+    "triplet_unit_count": 12,
+    "seed_cluster_count": 4,
+    "hierarchical_bootstrap_seed": 5719,
+    "hierarchical_bootstrap_replicates": 20000,
+    "bootstrap_order": "resample_seeds_then_families_within_seed",
+    "triplet_exact_sign_flip_patterns": 4096,
+    "seed_blocked_sign_flip_patterns": 16,
+    "seed_blocked_minimum_one_sided_p": 0.0625,
+    "seed_blocked_test_is_resolution_limited": true,
+    "no_posthoc_threshold_changes": true
+  },
+  "decision_policy": {
+    "INCONCLUSIVE": "attack_signal_gate_fails",
+    "PASS": "attack_signal_gate_passes_and_all_primary_recovery_gates_pass",
+    "PARTIAL": "attack_signal_gate_passes_and_median_recovery_is_positive_but_one_or_more_primary_recovery_gates_fail",
+    "FAIL": "attack_signal_gate_passes_and_median_recovery_is_nonpositive",
+    "negative_and_boundary_results_retained": true
+  },
+  "outputs_planned": {
+    "triplet_metrics": 12,
+    "feature_rows": 69,
+    "family_seed_summary": 12,
+    "state_coverage_rows": 5,
+    "publication_figures_deferred_to_task58": true
+  },
+  "reserved_test_gate_opened": false
+}
