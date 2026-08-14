@@ -1,0 +1,13 @@
+{
+  "all_checks_passed": true,
+  "api_calls": 1,
+  "checks_passed": 50,
+  "checks_total": 50,
+  "deterministic_report_valid": true,
+  "llm_report_valid": true,
+  "model": "gpt-5.6-terra",
+  "new_shap_evaluations": 0,
+  "ready_for_task61_evaluation": true,
+  "reserved_test_arrays_materialized": false,
+  "training_permitted": false
+}

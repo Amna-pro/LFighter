@@ -1,0 +1,4 @@
+Create one concise analyst report from the JSON evidence below. Separate facts from interpretations and uncertainty. Include explicit refusals for unsupported malicious intent and oracle clean recovery. Copy the record_id exactly. Each fact and interpretation must cite one or more valid source identifiers from the evidence. The authority statement must use the exact schema value.
+
+EVIDENCE_JSON
+{evidence_json}

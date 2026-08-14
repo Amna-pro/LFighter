@@ -1,0 +1,52 @@
+{
+  "protocol_id": "task60_v4220",
+  "task": 60,
+  "phase": "C0_C1",
+  "parent_tag": "task59-c1-evidence-schema-frozen-v4211",
+  "parent_commit": "91e2670",
+  "input_record": "results/cic_iot_diad_task59_c1_schema_v421/records/task59c1_canonical_forensic_evidence.json",
+  "input_schema": "schemas/lfighter_forensic_evidence_v1.schema.json",
+  "report_schema": "schemas/lfighter_forensic_report_v1.schema.json",
+  "model": {
+    "provider": "OpenAI",
+    "api": "Responses API",
+    "model_id": "gpt-5.6-terra",
+    "reasoning_effort": "low",
+    "max_output_tokens": 700,
+    "max_retries": 0,
+    "timeout_seconds": 90,
+    "calls_per_record": 1,
+    "tools_enabled": false,
+    "conversation_history_enabled": false
+  },
+  "reporting": {
+    "schema_version": "1.0.0",
+    "deterministic_baseline_required": true,
+    "structured_output_required": true,
+    "evidence_citations_required": true,
+    "facts_interpretations_uncertainty_separated": true,
+    "unsupported_claim_refusals_required": true,
+    "model_independent_interface_required": true
+  },
+  "authority": {
+    "llm_role": "report_only",
+    "decision_authority": "deterministic_pipeline",
+    "can_flag_clients": false,
+    "can_change_thresholds": false,
+    "can_change_trust_weights": false,
+    "can_reconstruct_updates": false,
+    "can_control_aggregation": false,
+    "can_claim_malicious_intent": false
+  },
+  "data_boundaries": {
+    "training_permitted": false,
+    "new_shap_evaluations_permitted": false,
+    "reserved_test_arrays_materialized": false,
+    "network_access": "OpenAI API only for the single report call",
+    "prompt_source": "validated Task 59 canonical record only"
+  },
+  "outputs": {
+    "root": "results/cic_iot_diad_task60_c1_reporting_v422",
+    "audit_root": "results/cic_iot_diad_task60_c1_audit_v422"
+  }
+}

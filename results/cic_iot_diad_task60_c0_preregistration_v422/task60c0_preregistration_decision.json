@@ -1,0 +1,11 @@
+{
+  "all_checks_passed": true,
+  "checks_passed": 41,
+  "checks_total": 41,
+  "llm_calls": 0,
+  "new_shap_evaluations": 0,
+  "outcomes_inspected": false,
+  "ready_for_c1_report_generation": true,
+  "reserved_test_arrays_materialized": false,
+  "training_permitted": false
+}
