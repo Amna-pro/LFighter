@@ -1,0 +1,14 @@
+{
+  "api_calls": 0,
+  "best_output_selection_permitted": false,
+  "cases_materialized": 12,
+  "deterministic_reports": 12,
+  "expected_hybrid_reports": 36,
+  "hybrid_contract_version": "1.0.0",
+  "llm_numeric_tokens_permitted": false,
+  "new_shap_evaluations": 0,
+  "protocol_id": "task62_v4250",
+  "reserved_test_arrays_materialized": false,
+  "review_items_planned": 24,
+  "training_permitted": false
+}

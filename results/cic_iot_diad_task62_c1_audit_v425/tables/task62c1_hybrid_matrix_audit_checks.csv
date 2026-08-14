@@ -1,0 +1,28 @@
+check_id,passed,detail
+c0_passed,True,C0 preregistration passed.
+case_count,True,Observed 12 contracts.
+call_count,True,Observed 36 planned calls.
+review_item_count,True,Twenty four paired review items are planned.
+call_indices_complete,True,Call indices are complete and ordered.
+three_calls_per_case,True,Every case has three calls.
+all_repetitions_present,True,Every case has repetitions one through three.
+model_plan_frozen,True,All calls use the frozen model plan.
+token_plan_frozen,True,Every call uses the compact token cap.
+review_repeat_one_only,True,Human review uses prospectively selected repeat one.
+paired_conditions,True,Review conditions are balanced.
+blinded_ids_unique,True,Blinded identifiers are unique.
+contract_hashes_verified,True,Every locked content hash was independently recomputed.
+facts_exactly_preserved,True,All four facts match source evidence exactly.
+interpretations_exactly_preserved,True,Interpretations and citations match source evidence exactly.
+narrative_requests_exclude_numbers,True,Narrative request metadata confirms numeric exclusion.
+deterministic_reports_valid,True,All comparator reports preserve locked fields.
+contract_hashes_case_specific,True,Every case has a distinct locked content hash.
+source_hashes_verified,True,All source hashes match.
+planned_cost_within_ceiling,True,Conservative planned cost is USD 0.165600.
+metadata_no_calls,True,C1 made no API call.
+metadata_no_training,True,Training remained prohibited.
+metadata_no_shap,True,No new SHAP evaluation occurred.
+metadata_reserved_test_closed,True,Reserved test arrays remain closed.
+metadata_no_best_output,True,Best output selection remains prohibited.
+metadata_counts,True,Metadata counts are exact.
+builder_has_no_network_client,True,C1 builder contains no API or network client.

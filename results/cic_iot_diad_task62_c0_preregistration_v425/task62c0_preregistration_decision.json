@@ -1,0 +1,14 @@
+{
+  "all_checks_passed": true,
+  "api_calls": 0,
+  "checks_passed": 46,
+  "checks_total": 46,
+  "hybrid_contract_frozen": true,
+  "llm_numeric_tokens_permitted": false,
+  "new_shap_evaluations": 0,
+  "parent_task61_result_retained": "FAIL",
+  "ready_for_c1_hybrid_matrix": true,
+  "reserved_test_arrays_materialized": false,
+  "task62_outcomes_inspected": false,
+  "training_permitted": false
+}

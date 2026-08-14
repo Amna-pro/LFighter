@@ -1,0 +1,3 @@
+Write a clear executive summary of forty five to eighty words from this qualitative capsule. Do not use digits in the executive summary.
+
+The case concerns targeted suppression of DDoS predictions toward the Benign class. The frozen facts separately report the plain attack branch, paired clean branch, defended branch, detector performance, and attribution recovery. Reconstruction moved the attribution profile toward a paired preattack clean reference. This does not establish malicious intent or oracle clean restoration. Evidence is limited to development and validation, and reserved test arrays remain closed.

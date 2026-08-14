@@ -1,0 +1,17 @@
+{
+  "all_checks_passed": true,
+  "api_calls": 0,
+  "cases_verified": 12,
+  "checks_passed": 27,
+  "checks_total": 27,
+  "deterministic_reports_verified": 12,
+  "exact_locked_content_verified": true,
+  "llm_numeric_tokens_permitted": false,
+  "new_shap_evaluations": 0,
+  "planned_hybrid_reports_verified": 36,
+  "planned_maximum_cost_usd": 0.1656,
+  "ready_for_task62_c2_hybrid_run": true,
+  "reserved_test_arrays_materialized": false,
+  "review_items_verified": 24,
+  "training_permitted": false
+}

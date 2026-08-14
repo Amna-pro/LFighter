@@ -1,0 +1,47 @@
+check_id,passed,detail
+protocol_id,True,Frozen protocol identifier.
+task_number,True,Task number is 62.
+parent_tag,True,Parent is the frozen C3 diagnostic.
+prospective_task62,True,Task 62 outcomes have not been inspected.
+parent_failure_retained,True,Task 61 failure remains frozen.
+parent_audit_passed,True,Task 61 C3 audit passed.
+parent_diagnosis_supports_hybrid,True,C3 motivates the hybrid architecture.
+expected_cases,True,Twelve cases are frozen.
+expected_reports,True,Thirty six reports are planned.
+three_repetitions,True,Three retained repetitions per case.
+no_case_exclusion,True,Case exclusion is prohibited.
+no_best_output,True,Best output selection is prohibited.
+review_repeat_frozen,True,Repeat one is prospectively selected for review.
+four_locked_facts,True,Every case locks four facts.
+only_summary_is_llm,True,Only the summary is generated.
+numeric_tokens_prohibited,True,Narrative digits are prohibited.
+locked_fields_complete,True,Eight report fields are deterministic.
+model_frozen,True,Model identifier is frozen.
+reasoning_frozen,True,Reasoning effort is low.
+token_cap_frozen,True,Compact narrative token cap is frozen.
+no_retries,True,Retries are disabled.
+no_tools,True,Tools are disabled.
+no_history,True,Conversation history is disabled.
+call_limit,True,At most thirty six calls are permitted.
+cost_ceiling,True,Cost ceiling is frozen.
+c0_c1_no_calls,True,C0 and C1 make no API calls.
+training_prohibited,True,Training is prohibited.
+new_shap_prohibited,True,New SHAP evaluation is prohibited.
+reserved_test_closed,True,Reserved test arrays remain closed.
+authority_deterministic,True,Decision authority remains deterministic.
+two_reviewers,True,Two independent reviewers are required.
+blinded_review,True,Human review is blinded.
+superiority_blocked,True,Superiority is blocked.
+all_automated_gates_frozen,True,Ten automated gates are frozen.
+exact_preservation_gate,True,Exact preservation is required.
+repeat_consistency_gate,True,Exact numeric repeat consistency is required.
+schema_blocks_digits,True,Narrative schema blocks digits.
+schema_has_two_fields,True,Narrative object is minimal.
+system_prompt_has_no_digits,True,System prompt contains no numeric token.
+user_prompt_has_no_digits,True,User prompt contains no numeric token.
+system_prompt_prohibits_digits,True,Digit prohibition is scoped to the generated narrative field.
+system_prompt_protects_authority,True,Decision boundaries are explicit.
+user_prompt_preserves_limits,True,Unsupported claims are blocked.
+protocol_declares_hybrid_split,True,Protocol states the architectural split.
+report_schema_present,True,Frozen final report schema exists.
+evidence_count,True,Twelve evidence records exist.

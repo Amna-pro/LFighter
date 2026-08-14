@@ -1,0 +1,11 @@
+{
+  "case_id_for_orchestration_only": "seed_99__B_hash_ranked__size_10",
+  "llm_output_fields": [
+    "schema_version",
+    "executive_summary"
+  ],
+  "narrative_schema_version": "1.0.0",
+  "prompt_contains_numeric_tokens": false,
+  "system_prompt_sha256": "f40e9f306a5d1aed82b80b7358e23df6d0d5807ed8d39b72d4a09430d983eb2c",
+  "user_prompt_sha256": "2a0378b848a90c030986cb2e79da6051125974d7490a40b08941970af9c6876e"
+}

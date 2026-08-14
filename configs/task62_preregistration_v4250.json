@@ -1,0 +1,111 @@
+{
+  "automated_metrics": {
+    "authority_violation_count_required": 0,
+    "exact_locked_content_preservation_rate_required": 1.0,
+    "final_report_schema_rate_required": 1.0,
+    "hybrid_narrative_schema_rate_required": 1.0,
+    "narrative_digit_violation_count_required": 0,
+    "numeric_grounding_rate_required": 1.0,
+    "repeat_numeric_consistency_rate_required": 1.0,
+    "required_fact_coverage_rate_required": 1.0,
+    "unsupported_intent_claim_count_required": 0,
+    "unsupported_oracle_claim_count_required": 0
+  },
+  "cohort": {
+    "best_output_selection_permitted": false,
+    "case_exclusion_permitted": false,
+    "coalition_size": 10,
+    "expected_cases": 12,
+    "expected_hybrid_reports": 36,
+    "families": [
+      "A_development_anchor",
+      "B_hash_ranked",
+      "C_hash_ranked"
+    ],
+    "human_review_repetition": 1,
+    "llm_repetitions_per_case": 3,
+    "seeds": [
+      7,
+      99,
+      123,
+      2026
+    ]
+  },
+  "cost_control": {
+    "hard_estimated_cost_ceiling_usd": 0.25,
+    "input_usd_per_million_tokens": 2.0,
+    "output_usd_per_million_tokens": 12.0,
+    "planned_maximum_input_tokens_per_call": 800,
+    "planned_maximum_output_tokens_per_call": 250,
+    "pricing_retrieved_date": "2026-08-14"
+  },
+  "data_boundaries": {
+    "llm_role": "qualitative_executive_summary_only",
+    "new_shap_evaluations_permitted": false,
+    "reserved_test_arrays_materialized": false,
+    "security_decision_authority": "deterministic_pipeline",
+    "training_permitted": false
+  },
+  "human_evaluation": {
+    "analyst_completion_time_recorded": true,
+    "blinded": true,
+    "dimensions": [
+      "factual_accuracy",
+      "clarity",
+      "usefulness",
+      "trustworthiness",
+      "uncertainty_quality"
+    ],
+    "minimum_independent_reviewers": 2,
+    "randomization_seed": 620425,
+    "scale_maximum": 5,
+    "scale_minimum": 1,
+    "superiority_claim_blocked_until_review_complete": true
+  },
+  "hybrid_contract": {
+    "deterministic_fields": [
+      "schema_version",
+      "record_id",
+      "report_title",
+      "facts",
+      "interpretations",
+      "uncertainties",
+      "refusals",
+      "authority_statement"
+    ],
+    "llm_fields": [
+      "executive_summary"
+    ],
+    "llm_numeric_tokens_permitted": false,
+    "locked_fact_count_per_case": 4
+  },
+  "inputs": {
+    "c1_evidence_root": "results/cic_iot_diad_task61_c1_evidence_matrix_v423/evidence",
+    "parent_c3_decision": "results/cic_iot_diad_task61_c3_failure_diagnostic_v424/task61c3_failure_diagnostic_decision.json",
+    "parent_c3_audit": "results/cic_iot_diad_task61_c3_audit_v424/task61c3_audit_decision.json",
+    "report_schema": "schemas/lfighter_forensic_report_v1.schema.json"
+  },
+  "model": {
+    "api": "Responses API",
+    "conversation_history_enabled": false,
+    "maximum_api_calls_task62_c2": 36,
+    "max_output_tokens": 250,
+    "max_retries": 0,
+    "model_id": "gpt-5.6-terra",
+    "provider": "OpenAI",
+    "reasoning_effort": "low",
+    "tools_enabled": false
+  },
+  "outputs": {
+    "c0_root": "results/cic_iot_diad_task62_c0_preregistration_v425",
+    "c1_audit_root": "results/cic_iot_diad_task62_c1_audit_v425",
+    "c1_root": "results/cic_iot_diad_task62_c1_hybrid_matrix_v425"
+  },
+  "parent_tag": "task61-c3-llm-failure-diagnostic-frozen-v4240",
+  "phase": "C0_C1",
+  "protocol_id": "task62_v4250",
+  "purpose": "preregister_and_materialize_deterministic_fact_locked_llm_narrative_evaluation",
+  "task62_outcomes_inspected": false,
+  "api_calls_c0_c1": 0,
+  "task": 62
+}
