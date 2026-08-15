@@ -1,0 +1,141 @@
+{
+  "task": 63,
+  "protocol_id": "task63_v4260",
+  "experiment_version": "4.26.0",
+  "phase": "C0_C1",
+  "title": "Final scope reconciliation and complete final protocol freeze",
+  "parent_tag": "task62-c2-provenance-complete-v4251",
+  "created_date": "2026-08-15",
+  "purpose": "Freeze the final confirmatory scope, claim boundaries, evaluation rules, statistics, XAI and reporting rules before untouched final seeds are selected or final test arrays are materialized.",
+  "scope_reconciliation": {
+    "completed_lineage": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ],
+    "deferred_unexecuted_tasks": [
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "deferred_policy": "Tasks 46-54 are not completed evidence and cannot support final claims. They are limitations/future work unless separately preregistered after the final evaluation lineage.",
+    "no_backfill": true
+  },
+  "evidence_boundaries": {
+    "task41b": "Attack evidence material but seed heterogeneous; defense not consistently effective; no final paper defense claim.",
+    "task41c": "Confirmatory failure; H1 detection failed, H2 mitigation failed under corrected per-seed rule, H3 clean utility passed.",
+    "task42": "No candidate survived.",
+    "task43": "H4 baseline breadth passed on 3/3 attack types; D0 H1 detection failed; D0 H3 clean utility passed; baseline retention mechanism not logged and must not be asserted.",
+    "task44": "Attack-strength monotonicity passed 5/5; FPR relief and damage-floor hypotheses failed.",
+    "task45": "Overall preregistered result PARTIAL; H1 detection robustness failed; H2 mitigation passed; H3 attack-scale nondecreasing passed; negative/boundary results retained.",
+    "task56": "XAI validation PASS across all six listed validation domains; reserved test arrays not materialized.",
+    "task57": "Attribution recovery PASS: reconstruction moves attribution toward frozen preattack clean reference; oracle recovery claim prohibited.",
+    "task58": "Publication XAI figures are deterministic reuse of frozen Task57 evidence; no new SHAP evaluations.",
+    "task59": "Forensic evidence schema valid; authority is report-only; facts and interpretations separated.",
+    "task60": "Deterministic and LLM report formats audited valid for the evaluated case; no security authority.",
+    "task61": "Automated LLM evaluation FAIL retained; repeat numeric consistency 0.9137873836403249 vs 0.99 threshold; no superiority claim.",
+    "task62": "Hybrid reporting automated PASS 10/10; repeat numeric consistency 1.0; human review pending; no LLM superiority claim."
+  },
+  "claim_classes": {
+    "supported_positive": [
+      "Task43 H4 attack-type baseline breadth result under its corrected 3-type panel",
+      "Task44 monotonic attack-strength response across all five attacks",
+      "Task45 mitigation and attack-scale hypotheses only, while retaining overall PARTIAL verdict",
+      "Task56 XAI validation PASS",
+      "Task57 non-oracle attribution recovery claim",
+      "Task59 evidence-schema integrity",
+      "Task62 automated fact-locked hybrid reporting result"
+    ],
+    "boundary_or_partial": [
+      "Task41b attack effect is material but seed heterogeneous",
+      "Task43 baseline mechanism explanation unavailable because retained-client logging is absent",
+      "Task45 overall result is PARTIAL",
+      "Task62 human review remains pending"
+    ],
+    "negative": [
+      "Task41b defense not consistently effective",
+      "Task41C confirmatory failure",
+      "Task42 no candidate survived",
+      "Task44 FPR-relief and damage-floor failures",
+      "Task45 H1 detection robustness failure",
+      "Task61 automated LLM evaluation failure"
+    ],
+    "prohibited": [
+      "Any claim that Tasks 46-54 were executed",
+      "Consistent multiseed Task41B defense efficacy",
+      "Task41C confirmatory success",
+      "Task42 candidate success",
+      "Task44 FPR relief or damage-floor success",
+      "Task45 overall full hypothesis success",
+      "Mechanistic explanation of Task43 multi-Krum behavior from unlogged client retention",
+      "Oracle-clean attribution recovery",
+      "LLM superiority from Task61 or Task62 before required human review",
+      "Any security-decision authority for SHAP or LLM",
+      "Any claim based on final test outcomes before Task65"
+    ]
+  },
+  "final_method": {
+    "federation": "20 controlled logical Dirichlet clients, alpha=0.5",
+    "trusted_warmup_rounds": 4,
+    "detector": "independent historical anchor plus robust current-round consensus over 8x8 class-conditional transition signatures with temporal EMA and instantaneous rescue",
+    "reconstruction": "center_plus_residual trusted update reconstruction preserving original client sample weights",
+    "xai_role": "post-detection forensic explanation only; not a primary detector or aggregation authority",
+    "llm_role": "grounded report surface realization only; no authority over security decisions or deterministic fact selection"
+  },
+  "final_evaluation_freeze": {
+    "task64_seed_policy": "Select and register new untouched final seeds only after Task63 freeze. Development seeds 7,42,99,123,2026 are ineligible as fully untouched final seeds.",
+    "task65_test_policy": "Natural and diagnostic final test arrays may be materialized only after Task64. Evaluate the frozen final methods once. No retuning, threshold changes, attack-specific adaptation, best-run selection, or claim-threshold changes after outcome inspection.",
+    "negative_results_retained": true,
+    "stop_on_protocol_violation": true,
+    "final_attack_scope": "Only attack conditions explicitly frozen by the Task63 evaluation manifest created before Task64 are confirmatory. Deferred Tasks46-54 cannot be silently reintroduced.",
+    "baselines_policy": "Only baselines with frozen, reproducible implementations and parameterization before Task64 may enter confirmatory comparison."
+  },
+  "statistics_freeze": {
+    "unit_of_pairing": "same final seed and matched experimental condition",
+    "report": [
+      "per-condition raw values",
+      "mean",
+      "median",
+      "95% confidence interval",
+      "paired effect size"
+    ],
+    "primary_inference": "paired nonparametric or paired bootstrap inference chosen in the Task63 final evaluation manifest before Task64; no test shopping after outcomes",
+    "multiple_comparisons": "Holm family-wise adjustment for prespecified families of multiple primary comparisons",
+    "bootstrap_seed_must_be_fixed_before_task65": true,
+    "practical_significance_thresholds_must_be_fixed_before_task65": true
+  },
+  "data_boundary": {
+    "reserved_test_arrays_materialized_in_tasks41_62": false,
+    "task63_may_materialize_reserved_test_arrays": false,
+    "task63_may_train": false,
+    "task63_may_run_new_shap": false,
+    "task63_may_call_llm": false
+  },
+  "task63_exit_gates": [
+    "scope reconciliation frozen",
+    "claim ledger frozen",
+    "deferred tasks explicitly recorded",
+    "final method roles frozen",
+    "Task64 untouched-seed rule frozen",
+    "Task65 one-shot/no-retuning rule frozen",
+    "statistics rules frozen",
+    "reserved test arrays remain unmaterialized",
+    "independent audit passes"
+  ]
+}

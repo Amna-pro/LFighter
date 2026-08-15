@@ -1,0 +1,16 @@
+TASK 63 V4.26 C0/C1 PACKAGE
+
+Repository-relative files are already arranged in the correct folders.
+This package does not run training, SHAP, LLM calls, or final test evaluation.
+
+Install from CMD after extracting:
+  xcopy /E /I /Y task63_v426_c0_c1_package "%USERPROFILE%\LFighter-research"
+
+Then audit:
+  cd /d "%USERPROFILE%\LFighter-research"
+  call .venv\Scripts\activate.bat
+  python scripts\audit_task63_protocol_v426.py
+  git diff --check
+  git status --short
+
+Do not commit until the audit prints READY TO FREEZE TASK 63 C0/C1: True.
