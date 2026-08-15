@@ -1,0 +1,9 @@
+claim_id,claim,evidence,final_status
+C1,LFighter shows positive mean Macro-F1 contrast for all five frozen attacks on both final datasets.,Task66 outcome synopsis + primary statistics,SUPPORTED DIRECTIONALLY; not conventional p<0.05 significance
+C2,LFighter shows positive mean balanced-accuracy contrast for all five frozen attacks on both final datasets.,Task66 outcome synopsis + primary statistics,SUPPORTED DIRECTIONALLY; not conventional p<0.05 significance
+C3,The five-seed exact paired test cannot attain two-sided p<0.05.,Task66 completion marker + exact sign-flip grid,SUPPORTED; minimum p=0.0625
+C4,Worst-class recall improvement is supported.,Task66 outcome synopsis,NOT SUPPORTED; retain negative/null finding
+C5,Attack-excess-removed fraction is fully estimable across all attacks/datasets.,Task66 outcome synopsis,NOT SUPPORTED; partly non-estimable
+C6,Final results were obtained without post-outcome retuning/best-round selection.,Task65 completion + Task66/67 decisions,SUPPORTED within recorded provenance
+C7,Publication tables preserve Task66 scientific values.,Task67 C3 semantic-equivalence audit,SUPPORTED; C2 byte-identity failure retained
+C8,Task46-54 contributed executed experiments to the final evidence.,Tracked filenames + frozen protocol history,NOT SUPPORTED; deliberately unexecuted/deferred

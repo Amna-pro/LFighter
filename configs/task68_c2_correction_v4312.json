@@ -1,0 +1,36 @@
+{
+  "task": 68,
+  "phase": "C2_final_audit_implementation_correction",
+  "protocol_id": "task68_c2_v4312",
+  "experiment_version": "4.31.2",
+  "parent_tag": "task68-c0-independent-final-audit-frozen-v4310",
+  "source_protocol_id": "task68_c1_v4310",
+  "source_output_root": "results/cic_iot_diad_task68_independent_final_audit_v4310",
+  "corrected_output_root": "results/cic_iot_diad_task68_c2_final_audit_v4312",
+  "task65_root": "results/cic_iot_diad_task65_c1_one_shot_v4282",
+  "original_failed_checks": [
+    "task65_completion_hashes_match",
+    "task65_training_reports_no_reserved_test_materialization"
+  ],
+  "corrections": {
+    "task65_completion_hashes_match": "Task65 completion output_sha256 keys are filenames relative to the Task65 final/ directory, not the Task65 result root.",
+    "task65_training_reports_no_reserved_test_materialization": "Task65 training completion records reserved_test_arrays_materialized_during_training, not reserved_test_arrays_materialized."
+  },
+  "known_installed_files": [
+    "TASK68_C2_FINAL_AUDIT_CORRECTION_V4312.md",
+    "configs/task68_c2_correction_v4312.json",
+    "scripts/audit_task68_c2_final_correction_v4312.py",
+    "scripts/run_task68_c2_final_correction_v4312.bat"
+  ],
+  "audit_only": {
+    "scientific_results_recomputed": false,
+    "training_rerun": false,
+    "models_loaded": false,
+    "reserved_npz_opened": false,
+    "task65_rerun": false,
+    "task66_inference_rerun": false,
+    "task67_outputs_regenerated": false,
+    "shap_recomputed": false,
+    "llm_used": false
+  }
+}
