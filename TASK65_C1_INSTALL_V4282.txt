@@ -1,0 +1,7 @@
+TASK 65 C1 V4.28.2 CORRECTED IMPLEMENTATION FREEZE
+
+Run only the corrected static preflight first:
+call scripts\run_task65_c1_implementation_preflight_v4282.bat
+
+Do NOT run the one-shot execution until V4.28.2 is committed and tagged.
+This setup performs no training and no final test access.

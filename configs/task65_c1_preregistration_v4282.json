@@ -1,0 +1,144 @@
+{
+  "task": 65,
+  "phase": "C1_corrected_implementation_freeze_before_final_access",
+  "protocol_id": "task65_c1_v4282",
+  "experiment_version": "4.28.2",
+  "parent_tag": "task65-c0-final-evaluation-preflight-frozen-v4280",
+  "required_execution_tag": "task65-c1-implementation-frozen-v4282",
+  "correction_from_unfrozen_v4281": {
+    "v4281_was_committed": false,
+    "v4281_was_tagged": false,
+    "training_runs_started": 0,
+    "reserved_test_arrays_materialized": false,
+    "final_test_metrics_computed": 0,
+    "corrections": [
+      "Capture round checkpoints from both historical checkpoint filenames: continuation_last_round_model.pt and v320b1_last_round_model.pt.",
+      "Pass the reconstruction builder output root itself to --reconstruction-calibration-dir; the historical defense runner appends calibration/trusted_update_reconstruction_profiles.pt.",
+      "Restart only incomplete training stages deterministically before final access instead of relying on within-stage resume.",
+      "Strengthen the implementation audit to check historical checkpoint names, reconstruction-path plumbing, psutil availability, and exact clean partition-hash metadata key."
+    ]
+  },
+  "data_file": "data/processed/cic_iot_diad_2024_v2_1/arrays/behavioral_only.npz",
+  "partition_file": "results/cic_iot_diad_federated_tuning_v27_alpha05_seed42/partitions/client_partitions.npz",
+  "output_root": "results/cic_iot_diad_task65_c1_one_shot_v4282",
+  "final_seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "malicious_clients": [
+    1,
+    7,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18
+  ],
+  "poison_fraction": 1.0,
+  "num_clients": 20,
+  "warmup_rounds": 4,
+  "monitored_rounds": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "primary_endpoint_round": 8,
+  "training_parameters": {
+    "batch_size": 2048,
+    "evaluation_batch_size": 4096,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "threads": 6,
+    "probe_per_class": 48,
+    "probe_seed": 3701,
+    "source_class": "DDoS",
+    "target_class": "Benign",
+    "ema_decay": 0.65,
+    "clean_threshold_quantile": 0.95,
+    "reconstruction_policy": "center_plus_residual"
+  },
+  "frozen_source_hashes": {
+    "scripts/run_exact_untargeted_plain_v320a3.py": "c579d04815a7e7a72a934926c8092056e83714702322a38a97f2b3b4dab38b75",
+    "scripts/run_frozen_untargeted_defense_v320b1.py": "5f3852fc13959301b31adf47f57df3b65456fb028a647978b355f976e5aee951",
+    "scripts/run_true_warmup_v310.py": "68c9504432f49d34fd332637444098da1d268a5b1bbf0bc9f258da853b7208c5",
+    "scripts/build_frozen_reconstruction_calibration_v3123.py": "670d7cce4da093ce25fd5c593d314991c4bb833744ea2fd092b774bdd1f51f2b"
+  },
+  "historical_interface_contract": {
+    "plain_checkpoint_filename": "continuation_last_round_model.pt",
+    "defense_checkpoint_filename": "v320b1_last_round_model.pt",
+    "clean_partition_metadata_filename": "seed_metadata.json",
+    "clean_partition_hash_key": "partition_hash_sha256",
+    "reconstruction_builder_output_subpath": "calibration/trusted_update_reconstruction_profiles.pt",
+    "defense_reconstruction_argument_receives_builder_output_root": true
+  },
+  "test_access_boundary": {
+    "training_processes_receive_train_and_validation_arrays_only": true,
+    "guard_materializes_test_arrays": false,
+    "final_evaluator_is_only_component_permitted_to_materialize_test_arrays": true,
+    "final_evaluator_requires_frozen_c1_tag_at_head": true,
+    "final_evaluator_refuses_if_access_marker_exists": true,
+    "final_access_marker": "TASK65_FINAL_ACCESS_STARTED.json",
+    "final_completion_marker": "TASK65_FINAL_EVALUATION_COMPLETE.json"
+  },
+  "checkpoint_capture": {
+    "source_checkpoint_names": [
+      "continuation_last_round_model.pt",
+      "v320b1_last_round_model.pt"
+    ],
+    "captured_rounds": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "capture_directory": "task65_round_checkpoints"
+  },
+  "final_datasets": [
+    "diagnostic",
+    "natural"
+  ],
+  "all_eight_classes": [
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web-Based"
+  ],
+  "attack_excess_removed_fraction_formula": {
+    "utility": "macro_f1",
+    "numerator": "defended_macro_f1 - plain_macro_f1",
+    "denominator": "clean_macro_f1 - plain_macro_f1",
+    "defined_when": "denominator > 1e-12",
+    "otherwise": "NaN"
+  },
+  "clean_utility_threshold_scope": {
+    "interpretation": "The exact Task65 comparison arms contain one clean FedAvg reference and attacked plain/defended arms; no new clean-defense arm is added at the final gate. Therefore the frozen clean-utility thresholds remain carried-forward development safety constraints and are not recomputed from reserved final test arrays.",
+    "numeric_thresholds_changed": false,
+    "new_comparison_arm_added": false
+  },
+  "execution_policy": {
+    "deterministic_restart_of_incomplete_training_stage_before_final_access": true,
+    "final_test_evaluation_rerun_permitted": false,
+    "post_outcome_retuning_permitted": false,
+    "best_round_selection_permitted": false,
+    "best_seed_selection_permitted": false,
+    "failed_seed_or_attack_dropping_permitted": false,
+    "task46_54_conditions_permitted": false,
+    "task66_statistics_run_inside_task65": false
+  }
+}
