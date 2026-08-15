@@ -1,0 +1,77 @@
+{
+  "all_six_semantically_identical": true,
+  "byte_identity": {
+    "table01_primary_statistics.csv": false,
+    "table02_primary_seed_values.csv": false,
+    "table03_holm_families.csv": true,
+    "table04_practical_gates.csv": false,
+    "table05_secondary_round_descriptives.csv": false,
+    "table06_resource_summary.csv": false
+  },
+  "comparison_policy": {
+    "column_order_must_match": true,
+    "nan_positions_must_match": true,
+    "numeric_atol": 1e-12,
+    "numeric_rtol": 1e-12,
+    "reason": "Task67 C1 intentionally reserialized frozen Task66 DataFrames with pandas.to_csv; byte identity is not a scientific requirement when parsed values, columns, row order, and missingness are preserved.",
+    "row_order_must_match": true,
+    "string_values_exact": true
+  },
+  "original_c2_byte_identity_failure_retained": true,
+  "tables": {
+    "table01_primary_statistics.csv": {
+      "column_count_equal": true,
+      "columns_equal": true,
+      "nan_positions_equal": true,
+      "row_count_equal": true,
+      "semantic_equal": true,
+      "source": "task66_primary_statistics.csv",
+      "values_equal": true
+    },
+    "table02_primary_seed_values.csv": {
+      "column_count_equal": true,
+      "columns_equal": true,
+      "nan_positions_equal": true,
+      "row_count_equal": true,
+      "semantic_equal": true,
+      "source": "task66_primary_seed_values.csv",
+      "values_equal": true
+    },
+    "table03_holm_families.csv": {
+      "column_count_equal": true,
+      "columns_equal": true,
+      "nan_positions_equal": true,
+      "row_count_equal": true,
+      "semantic_equal": true,
+      "source": "task66_holm_families.csv",
+      "values_equal": true
+    },
+    "table04_practical_gates.csv": {
+      "column_count_equal": true,
+      "columns_equal": true,
+      "nan_positions_equal": true,
+      "row_count_equal": true,
+      "semantic_equal": true,
+      "source": "task66_practical_gates.csv",
+      "values_equal": true
+    },
+    "table05_secondary_round_descriptives.csv": {
+      "column_count_equal": true,
+      "columns_equal": true,
+      "nan_positions_equal": true,
+      "row_count_equal": true,
+      "semantic_equal": true,
+      "source": "task66_secondary_round_descriptives.csv",
+      "values_equal": true
+    },
+    "table06_resource_summary.csv": {
+      "column_count_equal": true,
+      "columns_equal": true,
+      "nan_positions_equal": true,
+      "row_count_equal": true,
+      "semantic_equal": true,
+      "source": "task66_resource_summary.csv",
+      "values_equal": true
+    }
+  }
+}

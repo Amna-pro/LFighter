@@ -1,0 +1,49 @@
+{
+  "task": 67,
+  "phase": "C2_publication_output_integrity_audit",
+  "protocol_id": "task67_c2_v4301",
+  "experiment_version": "4.30.1",
+  "parent_tag": "task67-c0-publication-implementation-frozen-v4300",
+  "source_protocol_id": "task67_c0_v4300",
+  "source_output_root": "results/cic_iot_diad_task67_publication_outputs_v4300",
+  "task66_root": "results/cic_iot_diad_task66_final_statistics_v4290",
+  "expected": {
+    "figure_stem_count": 30,
+    "png_count": 30,
+    "pdf_count": 30,
+    "publication_table_count": 7,
+    "png_dpi_target": 300,
+    "table_row_counts": {
+      "table01_primary_statistics.csv": 60,
+      "table02_primary_seed_values.csv": 300,
+      "table03_holm_families.csv": 12,
+      "table04_practical_gates.csv": 10,
+      "table05_secondary_round_descriptives.csv": 240,
+      "table07_claim_boundary_summary.csv": 6
+    }
+  },
+  "source_table_map": {
+    "table01_primary_statistics.csv": "task66_primary_statistics.csv",
+    "table02_primary_seed_values.csv": "task66_primary_seed_values.csv",
+    "table03_holm_families.csv": "task66_holm_families.csv",
+    "table04_practical_gates.csv": "task66_practical_gates.csv",
+    "table05_secondary_round_descriptives.csv": "task66_secondary_round_descriptives.csv",
+    "table06_resource_summary.csv": "task66_resource_summary.csv"
+  },
+  "claim_boundaries_required": [
+    "Conventional p<0.05 significance",
+    "Worst-class recall improvement",
+    "Attack-excess-removed fraction",
+    "Best run / best round selection"
+  ],
+  "audit_only": {
+    "publication_regeneration": false,
+    "task66_inference_rerun": false,
+    "task65_rerun": false,
+    "reserved_npz_access": false,
+    "model_loading": false,
+    "training": false,
+    "shap_recomputation": false,
+    "llm_use": false
+  }
+}

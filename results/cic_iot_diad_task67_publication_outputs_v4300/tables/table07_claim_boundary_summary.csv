@@ -1,0 +1,7 @@
+claim,status
+Macro F1 / balanced accuracy directionality,Consistent positive mean contrasts across all five attacks in both datasets; exact p resolution and Holm-adjusted p-values must be reported.
+Conventional p<0.05 significance,Not supported by five-seed exact sign-flip test; minimum attainable two-sided raw p is 0.0625.
+Worst-class recall improvement,Not supported by frozen Task66 outcome synopsis; negative/null results retained.
+Attack-excess-removed fraction,Partly non-estimable because frozen seed-level denominators can be non-finite; no seed dropping allowed.
+Detector safety,Report malicious-client recall and benign-client FPR against frozen practical thresholds; do not convert into unregistered superiority claims.
+Best run / best round selection,Prohibited.
