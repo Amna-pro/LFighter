@@ -1,0 +1,135 @@
+{
+  "task": 68,
+  "phase": "C0_independent_final_audit_implementation_freeze",
+  "protocol_id": "task68_c0_v4310",
+  "experiment_version": "4.31.0",
+  "parent_required_tag": "task67-c3-publication-outputs-audited-v4302",
+  "required_execution_tag": "task68-c0-independent-final-audit-frozen-v4310",
+  "output_root": "results/cic_iot_diad_task68_independent_final_audit_v4310",
+  "required_tag_chain": [
+    "task62-c2-provenance-complete-v4251",
+    "task63-c2-final-manifest-frozen-v4262",
+    "task64-c2-replacement-seeds-frozen-v4271",
+    "task65-c0-final-evaluation-preflight-frozen-v4280",
+    "task65-c1-implementation-frozen-v4282",
+    "task65-c2-final-results-audited-v4283",
+    "task66-c0-statistics-implementation-frozen-v4290",
+    "task66-c2-final-statistics-audited-v4291",
+    "task67-c0-publication-implementation-frozen-v4300",
+    "task67-c3-publication-outputs-audited-v4302"
+  ],
+  "final_seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "superseded_c1_seeds": [
+    1371338874,
+    959960781,
+    968407367,
+    1778991631,
+    1216611438
+  ],
+  "development_seeds": [
+    7,
+    42,
+    99,
+    123,
+    2026
+  ],
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "malicious_clients": [
+    1,
+    7,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18
+  ],
+  "poison_fraction": 1.0,
+  "datasets": [
+    "diagnostic",
+    "natural"
+  ],
+  "primary_round": 8,
+  "monitored_rounds": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "task65": {
+    "root": "results/cic_iot_diad_task65_c1_one_shot_v4282",
+    "audit": "results/cic_iot_diad_task65_c2_postaccess_audit_v4283/task65c2_postaccess_integrity_audit_v4283.json",
+    "expected_rows": {
+      "final/raw_checkpoint_metrics.csv": 440,
+      "final/per_class_metrics.csv": 3520,
+      "final/confusion_matrix_long.csv": 28160,
+      "final/paired_primary_metrics.csv": 200
+    }
+  },
+  "task66": {
+    "root": "results/cic_iot_diad_task66_final_statistics_v4290",
+    "audit": "results/cic_iot_diad_task66_c2_statistics_audit_v4291/task66c2_statistics_integrity_audit_v4291.json",
+    "expected_rows": {
+      "task66_primary_statistics.csv": 60,
+      "task66_primary_seed_values.csv": 300,
+      "task66_holm_families.csv": 12,
+      "task66_practical_gates.csv": 10,
+      "task66_secondary_round_descriptives.csv": 240
+    },
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 650428,
+    "sign_patterns": 32,
+    "minimum_attainable_two_sided_p": 0.0625,
+    "holm_family_size": 5
+  },
+  "task67": {
+    "root": "results/cic_iot_diad_task67_publication_outputs_v4300",
+    "audit": "results/cic_iot_diad_task67_c3_publication_audit_v4302/task67c3_publication_integrity_audit_v4302.json",
+    "failed_c2_audit": "results/cic_iot_diad_task67_c2_publication_audit_v4301/task67c2_publication_integrity_audit_v4301.json",
+    "semantic_equivalence": "results/cic_iot_diad_task67_c3_publication_audit_v4302/task67c3_table_semantic_equivalence_v4302.json",
+    "figure_stems": 30,
+    "png_count": 30,
+    "pdf_count": 30,
+    "table_count": 7,
+    "completion_hash_count": 67
+  },
+  "task65_source_sha256": {
+    "scripts/run_exact_untargeted_plain_v320a3.py": "c579d04815a7e7a72a934926c8092056e83714702322a38a97f2b3b4dab38b75",
+    "scripts/run_frozen_untargeted_defense_v320b1.py": "5f3852fc13959301b31adf47f57df3b65456fb028a647978b355f976e5aee951",
+    "scripts/run_true_warmup_v310.py": "68c9504432f49d34fd332637444098da1d268a5b1bbf0bc9f258da853b7208c5",
+    "scripts/build_frozen_reconstruction_calibration_v3123.py": "670d7cce4da093ce25fd5c593d314991c4bb833744ea2fd092b774bdd1f51f2b"
+  },
+  "claim_boundaries": {
+    "minimum_exact_two_sided_p": 0.0625,
+    "no_conventional_p_lt_0_05_claim": true,
+    "worst_class_recall_improvement_not_supported": true,
+    "attack_excess_removed_partly_non_estimable": true,
+    "negative_results_retained": true,
+    "task61_superiority_blocked": true,
+    "task62_superiority_blocked": true,
+    "task46_to_54_unexecuted": true
+  },
+  "audit_only": {
+    "no_training": true,
+    "no_model_loading": true,
+    "no_npz_access": true,
+    "no_task65_rerun": true,
+    "no_task66_rerun": true,
+    "no_task67_regeneration": true,
+    "no_shap_recomputation": true,
+    "no_llm_calls": true,
+    "no_scientific_result_modification": true
+  }
+}
