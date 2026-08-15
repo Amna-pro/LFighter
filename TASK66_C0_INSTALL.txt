@@ -1,0 +1,4 @@
+Task 66 C0 V4.29.0
+Run only: call scripts\run_task66_c0_statistics_preflight_v4290.bat
+Do not run Task66 C1 until the C0 implementation is committed and tagged.
+C0 computes no final statistics and does not load Task65 CSV values.

@@ -1,0 +1,144 @@
+{
+  "task": 66,
+  "phase": "C0_statistics_implementation_freeze_before_inference",
+  "protocol_id": "task66_c0_v4290",
+  "experiment_version": "4.29.0",
+  "parent_required_tag": "task65-c2-final-results-audited-v4283",
+  "task63_manifest": "configs/task63_final_evaluation_manifest_v4262.json",
+  "task65_primary_table": "results/cic_iot_diad_task65_c1_one_shot_v4282/final/paired_primary_metrics.csv",
+  "task65_resource_table": "results/cic_iot_diad_task65_c1_one_shot_v4282/training/branch_resource_metrics.csv",
+  "task65_completion_marker": "results/cic_iot_diad_task65_c1_one_shot_v4282/TASK65_FINAL_EVALUATION_COMPLETE.json",
+  "task65_c2_audit": "results/cic_iot_diad_task65_c2_postaccess_audit_v4283/task65c2_postaccess_integrity_audit_v4283.json",
+  "required_execution_tag": "task66-c0-statistics-implementation-frozen-v4290",
+  "output_root": "results/cic_iot_diad_task66_final_statistics_v4290",
+  "final_seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "datasets": [
+    "diagnostic",
+    "natural"
+  ],
+  "primary_round": 8,
+  "secondary_rounds": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "primary_metrics": [
+    "macro_f1",
+    "balanced_accuracy",
+    "worst_class_recall",
+    "attack_excess_removed_fraction",
+    "malicious_client_recall",
+    "benign_client_fpr"
+  ],
+  "metric_contrasts": {
+    "macro_f1": {
+      "seed_value": "defended_macro_f1 - plain_macro_f1",
+      "null_value": 0.0,
+      "positive_direction": "defense_better"
+    },
+    "balanced_accuracy": {
+      "seed_value": "defended_balanced_accuracy - plain_balanced_accuracy",
+      "null_value": 0.0,
+      "positive_direction": "defense_better"
+    },
+    "worst_class_recall": {
+      "seed_value": "defended_worst_class_recall - plain_worst_class_recall",
+      "null_value": 0.0,
+      "positive_direction": "defense_better"
+    },
+    "attack_excess_removed_fraction": {
+      "seed_value": "attack_excess_removed_fraction",
+      "null_value": 0.0,
+      "positive_direction": "attack_excess_removed",
+      "nonfinite_policy": "retain_seed_and_mark_family_not_estimable; never drop a seed"
+    },
+    "malicious_client_recall": {
+      "seed_value": "malicious_client_recall - 0.50",
+      "reported_level": "malicious_client_recall",
+      "null_value": 0.0,
+      "positive_direction": "above_frozen_practical_minimum",
+      "threshold": 0.5,
+      "dataset_invariant_training_side_metric": true
+    },
+    "benign_client_fpr": {
+      "seed_value": "0.05 - benign_client_fpr",
+      "reported_level": "benign_client_fpr",
+      "null_value": 0.0,
+      "positive_direction": "below_frozen_practical_maximum",
+      "threshold": 0.05,
+      "dataset_invariant_training_side_metric": true
+    }
+  },
+  "bootstrap": {
+    "type": "paired_percentile_bootstrap_on_seed_level_contrasts",
+    "replicates": 20000,
+    "rng_seed": 650428,
+    "confidence_level": 0.95,
+    "statistic": "mean_seed_level_contrast",
+    "resample_unit": "final_seed",
+    "sample_size": 5
+  },
+  "exact_sign_flip": {
+    "type": "exact_paired_sign_flip_two_sided",
+    "statistic": "absolute_mean_seed_level_contrast",
+    "seed_count": 5,
+    "sign_patterns": 32,
+    "minimum_attainable_two_sided_p": 0.0625,
+    "alpha": 0.05,
+    "resolution_limited": true
+  },
+  "holm": {
+    "method": "Holm step-down family-wise error correction",
+    "family": "five attacks separately within each dataset and primary metric family",
+    "family_size": 5,
+    "alpha": 0.05,
+    "nonfinite_policy": "if any of five raw p-values is nonfinite, do not silently shrink the family; mark the whole family adjustment not estimable"
+  },
+  "effect_sizes": {
+    "paired_mean_difference": true,
+    "paired_median_difference": true,
+    "cohen_dz_when_defined": true,
+    "relative_attack_excess_reduction": true
+  },
+  "practical_thresholds": {
+    "clean_mean_macro_f1_loss_max": 0.01,
+    "clean_any_seed_macro_f1_loss_max": 0.02,
+    "benign_fpr_max": 0.05,
+    "mean_malicious_client_recall_min": 0.5,
+    "mean_relative_attack_excess_reduction_min": 0.25,
+    "positive_mitigation_seed_count_min": 4,
+    "positive_mitigation_seed_count_denominator": 5,
+    "clean_utility_scope": "carried-forward development safety constraint; not recomputed because final Task65 has no clean-defense arm"
+  },
+  "no_flexibility_rules": {
+    "round8_only_for_confirmatory_inference": true,
+    "all_five_final_seeds_required": true,
+    "drop_failed_seed_or_attack": false,
+    "best_seed_selection": false,
+    "best_round_selection": false,
+    "change_bootstrap_seed": false,
+    "change_test": false,
+    "change_holm_family": false,
+    "change_practical_thresholds": false,
+    "task65_rerun": false,
+    "reserved_npz_access": false,
+    "model_loading": false,
+    "new_training": false,
+    "new_shap": false,
+    "llm_calls": false
+  }
+}
