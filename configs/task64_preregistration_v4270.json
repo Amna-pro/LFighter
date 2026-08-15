@@ -1,0 +1,68 @@
+{
+  "task": 64,
+  "protocol_id": "task64_v4270",
+  "experiment_version": "4.27.0",
+  "phase": "C0_C1",
+  "title": "Deterministic reservation of untouched final seeds",
+  "parent_tag": "task63-c1-final-protocol-frozen-v4261",
+  "created_date": "2026-08-15",
+  "purpose": "Select and register new final model seeds only after the complete Task 63 protocol freeze, using a deterministic outcome-free procedure and a repository-wide prior-usage audit.",
+  "seed_policy": {
+    "final_seed_count": 5,
+    "development_seeds_ineligible": [7, 42, 99, 123, 2026],
+    "selection_uses_model_or_test_outcomes": false,
+    "manual_seed_substitution_permitted": false,
+    "best_seed_selection_permitted": false,
+    "candidate_pool_size": 256,
+    "derivation_namespace": "LFighter|task64_v4270|parent_tag=task63-c1-final-protocol-frozen-v4261|candidate={candidate_index}",
+    "derivation_hash": "SHA256",
+    "integer_derivation": "first_8_digest_bytes_big_endian_modulo_closed_interval",
+    "minimum_seed": 100000,
+    "maximum_seed": 2147483000,
+    "acceptance_rule": "Accept the earliest candidate indices whose derived integer is unique, is not a development seed, and has zero exact numeric-token usage hits in the pre-Task64 repository corpus.",
+    "numeric_token_definition": "candidate seed delimited by non-digits or string boundaries",
+    "conservative_collision_policy": "Any exact numeric-token occurrence in the audited prior corpus rejects that candidate even if the occurrence may be unrelated to random seeding."
+  },
+  "prior_usage_audit": {
+    "scope": "Repository filesystem present at Task64 execution, excluding Task64 files, virtual environments, Git internals, caches, and reserved-test paths.",
+    "path_names_scanned": true,
+    "text_file_contents_scanned": true,
+    "text_extensions": [".bat", ".cfg", ".csv", ".ini", ".ipynb", ".json", ".log", ".md", ".ps1", ".py", ".rst", ".sh", ".toml", ".tsv", ".txt", ".xml", ".yaml", ".yml"],
+    "reserved_test_path_tokens": ["x_test_natural", "y_test_natural", "x_test_diagnostic", "y_test_diagnostic"],
+    "binary_array_materialization_permitted": false,
+    "unreadable_eligible_text_file_policy": "FAIL"
+  },
+  "data_boundary": {
+    "training_permitted": false,
+    "reserved_test_arrays_materialized": false,
+    "reserved_test_array_access_permitted": false,
+    "new_shap_evaluations_permitted": false,
+    "llm_calls_permitted": false
+  },
+  "task65_handoff": {
+    "only_reserved_manifest_seeds_permitted": true,
+    "seed_set_change_after_task64_freeze_permitted": false,
+    "one_shot_final_evaluation": true,
+    "post_outcome_retuning_permitted": false
+  },
+  "outputs": {
+    "root": "results/cic_iot_diad_task64_c1_seed_reservation_v427",
+    "seed_manifest": "task64_final_seed_manifest.csv",
+    "rejected_candidates": "task64_rejected_candidates.csv",
+    "usage_hits": "task64_seed_usage_hits.csv",
+    "reservation_decision": "task64_seed_reservation_decision.json",
+    "audit_decision": "task64_audit_decision.json"
+  },
+  "exit_gates": [
+    "Task63 parent tag resolves and is an ancestor of current HEAD",
+    "exactly five final seeds are selected",
+    "all final seeds are unique",
+    "no final seed is one of 7, 42, 99, 123, or 2026",
+    "selection is deterministic from the frozen namespace and prior-usage rule",
+    "all selected seeds have zero prior-usage hits",
+    "no unreadable eligible prior text files remain",
+    "no reserved test array path is opened",
+    "no training, SHAP evaluation, or LLM call occurs",
+    "independent Task64 audit passes"
+  ]
+}

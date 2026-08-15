@@ -1,0 +1,36 @@
+{
+  "binary_arrays_loaded": 0,
+  "development_seeds_excluded": [
+    7,
+    42,
+    99,
+    123,
+    2026
+  ],
+  "experiment_version": "4.27.0",
+  "files_considered": 18718,
+  "final_seed_count": 5,
+  "final_seeds": [
+    1371338874,
+    959960781,
+    968407367,
+    1778991631,
+    1216611438
+  ],
+  "head_commit_at_reservation": "8489f6612521a9f9e4b55e1e3566674ae7344442",
+  "llm_calls": 0,
+  "manual_seed_substitution_permitted": false,
+  "new_shap_evaluations": 0,
+  "parent_commit": "8489f6612521a9f9e4b55e1e3566674ae7344442",
+  "parent_tag": "task63-c1-final-protocol-frozen-v4261",
+  "protocol_id": "task64_v4270",
+  "ready_for_independent_task64_audit": true,
+  "reserved_test_paths_opened": 0,
+  "seed_manifest_sha256": "eeced22cebacbb3c940071b64041d463fc9f4c39c66905d33fc40db8ac8a7491",
+  "selected_seed_prior_usage_hits": 0,
+  "selection_uses_model_or_test_outcomes": false,
+  "task": 64,
+  "text_files_read": 12732,
+  "training_permitted": false,
+  "unreadable_eligible_text_files": 0
+}

@@ -1,0 +1,8 @@
+TASK 64 C0/C1 INSTALL AND RUN
+
+1. Start from tag task63-c1-final-protocol-frozen-v4261 on a new Task 64 branch.
+2. Copy this package into the repository root preserving configs/ and scripts/.
+3. Run scripts\run_task64_c0_c1_v427.bat from the repository root.
+4. Expect the reservation stage and independent audit to PASS.
+5. Do not run Task 65, train, inspect final test outcomes, or change the reserved seed set.
+6. Before committing, inspect the generated Task 64 results and force-add only the small manifest/decision/audit artifacts because results/ is ignored by the repository.
