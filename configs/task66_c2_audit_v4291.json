@@ -1,0 +1,59 @@
+{
+  "task": 66,
+  "phase": "C2_final_statistics_integrity_audit",
+  "protocol_id": "task66_c2_v4291",
+  "experiment_version": "4.29.1",
+  "parent_tag": "task66-c0-statistics-implementation-frozen-v4290",
+  "source_protocol_id": "task66_c0_v4290",
+  "source_output_root": "results/cic_iot_diad_task66_final_statistics_v4290",
+  "expected": {
+    "primary_statistics_rows": 60,
+    "primary_seed_value_rows": 300,
+    "holm_family_rows": 12,
+    "practical_gate_rows": 10,
+    "secondary_descriptive_rows": 240,
+    "metrics": 6,
+    "datasets": 2,
+    "attacks": 5,
+    "seeds": 5,
+    "primary_round": 8,
+    "holm_family_size": 5,
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 650428,
+    "sign_patterns": 32,
+    "minimum_attainable_two_sided_p": 0.0625
+  },
+  "final_seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "datasets": [
+    "diagnostic",
+    "natural"
+  ],
+  "metrics": [
+    "macro_f1",
+    "balanced_accuracy",
+    "worst_class_recall",
+    "attack_excess_removed_fraction",
+    "malicious_client_recall",
+    "benign_client_fpr"
+  ],
+  "audit_only": {
+    "recompute_inference": false,
+    "task65_rerun": false,
+    "reserved_npz_access": false,
+    "model_loading": false,
+    "training": false
+  }
+}

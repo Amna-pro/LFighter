@@ -1,0 +1,110 @@
+[
+  {
+    "metric": "macro_f1",
+    "dataset": "diagnostic",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": 0.3125,
+    "positive_mean_contrast_attack_count": 5,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "macro_f1",
+    "dataset": "natural",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": 0.3125,
+    "positive_mean_contrast_attack_count": 5,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "balanced_accuracy",
+    "dataset": "diagnostic",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": 0.3125,
+    "positive_mean_contrast_attack_count": 5,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "balanced_accuracy",
+    "dataset": "natural",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": 0.3125,
+    "positive_mean_contrast_attack_count": 5,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "worst_class_recall",
+    "dataset": "diagnostic",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.125,
+    "minimum_holm_adjusted_p": 0.625,
+    "positive_mean_contrast_attack_count": 0,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "worst_class_recall",
+    "dataset": "natural",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 1.0,
+    "minimum_holm_adjusted_p": 1.0,
+    "positive_mean_contrast_attack_count": 0,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "attack_excess_removed_fraction",
+    "dataset": "diagnostic",
+    "finite_raw_p_count": 1,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": null,
+    "positive_mean_contrast_attack_count": 1,
+    "estimable_attack_count": 1
+  },
+  {
+    "metric": "attack_excess_removed_fraction",
+    "dataset": "natural",
+    "finite_raw_p_count": 4,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": null,
+    "positive_mean_contrast_attack_count": 4,
+    "estimable_attack_count": 4
+  },
+  {
+    "metric": "malicious_client_recall",
+    "dataset": "diagnostic",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": 0.3125,
+    "positive_mean_contrast_attack_count": 5,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "malicious_client_recall",
+    "dataset": "natural",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": 0.3125,
+    "positive_mean_contrast_attack_count": 5,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "benign_client_fpr",
+    "dataset": "diagnostic",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": 0.3125,
+    "positive_mean_contrast_attack_count": 4,
+    "estimable_attack_count": 5
+  },
+  {
+    "metric": "benign_client_fpr",
+    "dataset": "natural",
+    "finite_raw_p_count": 5,
+    "minimum_raw_p": 0.0625,
+    "minimum_holm_adjusted_p": 0.3125,
+    "positive_mean_contrast_attack_count": 4,
+    "estimable_attack_count": 5
+  }
+]

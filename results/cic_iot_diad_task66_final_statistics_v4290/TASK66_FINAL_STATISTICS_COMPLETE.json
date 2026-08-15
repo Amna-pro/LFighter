@@ -1,0 +1,38 @@
+{
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "best_round_selection_used": false,
+  "best_seed_selection_used": false,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 650428,
+  "datasets": [
+    "diagnostic",
+    "natural"
+  ],
+  "final_seed_count": 5,
+  "head": "fd4361e301827128ddd5122bd814ad8fb60f3179",
+  "holm_family_size": 5,
+  "minimum_attainable_two_sided_p": 0.0625,
+  "models_loaded": false,
+  "negative_results_retained": true,
+  "output_sha256": {
+    "task66_holm_families.csv": "4e92ab08b7e814fdb6ed4985ad4e911d08d53022ff5f0856ff2a6ac110e02a69",
+    "task66_practical_gates.csv": "d8e3cfbc8cf2b52b84670f791e33155e270a1f9dcf3908dd09c328b83d4fb88d",
+    "task66_primary_seed_values.csv": "98172573de046ac15289183470cf0644d160e352614723c93a8363f9a7ea32f7",
+    "task66_primary_statistics.csv": "45b813f08dd8e1996d9ee9c296ec28616c26cd9658f050b779cdf21a456b59c2",
+    "task66_resource_summary.csv": "6f077458ed7f355a97005843877103219dcb22e323e3e39044458be4f20065e1",
+    "task66_secondary_round_descriptives.csv": "37eb88400e6e79c1ed48b2a9382927488b70db17a6541c683776c2dc035d09b3"
+  },
+  "parent_task65_tag": "task65-c2-final-results-audited-v4283",
+  "primary_round": 8,
+  "protocol_id": "task66_c0_v4290",
+  "reserved_npz_accessed": false,
+  "sign_patterns": 32,
+  "task": 66,
+  "task65_rerun_used": false
+}

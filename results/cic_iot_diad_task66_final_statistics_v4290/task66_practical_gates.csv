@@ -1,0 +1,11 @@
+dataset,attack,mean_attack_excess_removed_fraction,mean_removed_fraction_gate_ge_0_25,positive_mitigation_seed_count,positive_mitigation_gate_ge_4_of_5,mean_malicious_client_recall,mean_malicious_recall_gate_ge_0_50,mean_benign_client_fpr,mean_benign_fpr_gate_le_0_05,clean_utility_gate_recomputed_on_reserved_test
+diagnostic,all_to_one_benign,1.00053074508968,True,5,True,1.0,True,0.13333333333333333,False,False
+diagnostic,cyclic_shift,,False,-1,False,1.0,True,0.0,True,False
+diagnostic,multiclass_partial_cycle,,False,-1,False,1.0,True,0.0,True,False
+diagnostic,pairwise_swap,,False,-1,False,0.975,True,0.0,True,False
+diagnostic,random_flip,,False,-1,False,1.0,True,0.0,True,False
+natural,all_to_one_benign,1.041230939685279,True,5,True,1.0,True,0.13333333333333333,False,False
+natural,cyclic_shift,1.1157123936553377,True,5,True,1.0,True,0.0,True,False
+natural,multiclass_partial_cycle,1.1445612144594435,True,5,True,1.0,True,0.0,True,False
+natural,pairwise_swap,,False,-1,False,0.975,True,0.0,True,False
+natural,random_flip,1.0813276418424662,True,5,True,1.0,True,0.0,True,False

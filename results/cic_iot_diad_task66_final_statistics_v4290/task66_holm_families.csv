@@ -1,0 +1,13 @@
+metric,dataset,family_size_required,family_size_observed,holm_status,all_five_raw_p_finite
+macro_f1,diagnostic,5,5,OK,True
+macro_f1,natural,5,5,OK,True
+balanced_accuracy,diagnostic,5,5,OK,True
+balanced_accuracy,natural,5,5,OK,True
+worst_class_recall,diagnostic,5,5,OK,True
+worst_class_recall,natural,5,5,OK,True
+attack_excess_removed_fraction,diagnostic,5,5,NOT_ESTIMABLE_FULL_FIVE_ATTACK_FAMILY_REQUIRED,False
+attack_excess_removed_fraction,natural,5,5,NOT_ESTIMABLE_FULL_FIVE_ATTACK_FAMILY_REQUIRED,False
+malicious_client_recall,diagnostic,5,5,OK,True
+malicious_client_recall,natural,5,5,OK,True
+benign_client_fpr,diagnostic,5,5,OK,True
+benign_client_fpr,natural,5,5,OK,True
