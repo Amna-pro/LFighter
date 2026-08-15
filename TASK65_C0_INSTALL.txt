@@ -1,0 +1,10 @@
+TASK 65 C0 V4.28.0
+
+Static preflight only.
+
+Run:
+call scripts\run_task65_c0_preflight_v4280.bat
+
+This package does not import experiment runners, open NPZ files, train models, or compute final test metrics.
+
+After PASS, paste the output into ChatGPT. Do not start Task 65 C1 yet.

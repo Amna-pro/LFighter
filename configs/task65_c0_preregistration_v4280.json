@@ -1,0 +1,53 @@
+{
+  "task": 65,
+  "phase": "C0_preflight_only",
+  "protocol_id": "task65_c0_v4280",
+  "experiment_version": "4.28.0",
+  "parent_tag": "task64-c2-replacement-seeds-frozen-v4271",
+  "task63_manifest": "configs/task63_final_evaluation_manifest_v4262.json",
+  "task64c2_seed_manifest": "results/cic_iot_diad_task64_c2_replacement_seed_reservation_v4271/task64c2_final_seed_manifest.csv",
+  "required_final_seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "required_attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "required_malicious_clients": [
+    1,
+    7,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18
+  ],
+  "required_poison_fraction": 1.0,
+  "required_primary_endpoint_round": 8,
+  "critical_runners": {
+    "plain": "scripts/run_exact_untargeted_plain_v320a3.py",
+    "defense": "scripts/run_frozen_untargeted_defense_v320b1.py",
+    "clean_base": "scripts/run_federated_clean_v26.py",
+    "clean_multiseed": "scripts/run_federated_multiseed_v28.py",
+    "reconstruction": "scripts/run_frozen_reconstruction_v3123.py",
+    "reconstruction_multiseed": "scripts/run_frozen_reconstruction_multiseed_v3123.py",
+    "reconstruction_builder": "scripts/build_frozen_reconstruction_calibration_v3123.py"
+  },
+  "preflight_rules": {
+    "experiment_scripts_imported": false,
+    "experiment_scripts_executed": false,
+    "npz_files_opened": false,
+    "reserved_test_arrays_materialized": false,
+    "training_permitted": false,
+    "final_metrics_computed": false,
+    "task65_c1_permitted_before_preflight_freeze": false
+  }
+}
