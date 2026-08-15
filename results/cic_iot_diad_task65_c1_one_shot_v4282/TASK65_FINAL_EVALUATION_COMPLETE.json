@@ -1,0 +1,20 @@
+{
+  "best_round_selection_used": false,
+  "confusion_rows": 28160,
+  "head": "2e40296e2d8577ba18dd1f5b169d141df2b3889b",
+  "negative_results_retained": true,
+  "output_sha256": {
+    "confusion_matrix_long.csv": "02a71477b17a9832c625eaa1e1994e1eccc7a9f0feb230461b74081e8d25393c",
+    "paired_primary_metrics.csv": "c4b10062d17ac154e8f9748ebc5a5e47bf950ae8d41df0600d61a116a51d67cf",
+    "per_class_metrics.csv": "25bbacf48b2c58fb7acbf7be845d7f00ab3add6aa8aeedb32028687abc081e90",
+    "raw_checkpoint_metrics.csv": "0da23eecdb794bf15478142b71ee0e3e79008d07fb685dcc678814abdb84622e"
+  },
+  "paired_primary_rows": 200,
+  "per_class_rows": 3520,
+  "post_outcome_retuning_used": false,
+  "protocol_id": "task65_c1_v4282",
+  "raw_checkpoint_metric_rows": 440,
+  "reserved_test_arrays_materialized": true,
+  "task": 65,
+  "time_unix": 1786815218.5682695
+}

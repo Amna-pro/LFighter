@@ -1,0 +1,23 @@
+{
+  "task": 65,
+  "protocol_id": "task65_c1_v4282",
+  "head": "2e40296e2d8577ba18dd1f5b169d141df2b3889b",
+  "partition_hash_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+  "seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "training_complete": true,
+  "reserved_test_arrays_materialized_during_training": false,
+  "final_access_started": false
+}

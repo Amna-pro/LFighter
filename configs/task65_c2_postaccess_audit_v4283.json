@@ -1,0 +1,47 @@
+{
+  "task": 65,
+  "phase": "C2_postaccess_integrity_audit_only",
+  "protocol_id": "task65_c2_v4283",
+  "experiment_version": "4.28.3",
+  "parent_tag": "task65-c1-implementation-frozen-v4282",
+  "source_protocol_id": "task65_c1_v4282",
+  "source_output_root": "results/cic_iot_diad_task65_c1_one_shot_v4282",
+  "final_seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "datasets": [
+    "diagnostic",
+    "natural"
+  ],
+  "rounds": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "expected_rows": {
+    "raw_checkpoint_metrics.csv": 440,
+    "per_class_metrics.csv": 3520,
+    "confusion_matrix_long.csv": 28160,
+    "paired_primary_metrics.csv": 200,
+    "primary_endpoint_rows": 50
+  },
+  "correction": {
+    "scientific_results_recomputed": false,
+    "reserved_test_arrays_opened": false,
+    "training_rerun": false,
+    "final_evaluator_rerun": false,
+    "reason": "The frozen C1 evaluator completed and wrote final outputs. The frozen integrity audit then failed only while JSON-serializing numpy/pandas boolean scalar values. V4.28.3 performs an audit-only serialization-safe verification over already-written result files and markers."
+  }
+}
