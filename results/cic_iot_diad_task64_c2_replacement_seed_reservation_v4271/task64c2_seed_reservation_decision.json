@@ -1,0 +1,45 @@
+{
+  "binary_arrays_loaded": 0,
+  "development_seeds_excluded": [
+    7,
+    42,
+    99,
+    123,
+    2026
+  ],
+  "experiment_version": "4.27.1",
+  "files_considered": 18725,
+  "final_seed_count": 5,
+  "final_seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "head_commit_at_reservation": "97be34fea0b456d5647a61d6c242dfd7bd646955",
+  "llm_calls": 0,
+  "manual_seed_substitution_permitted": false,
+  "new_shap_evaluations": 0,
+  "parent_commit": "97be34fea0b456d5647a61d6c242dfd7bd646955",
+  "parent_tag": "task63-c2-final-manifest-frozen-v4262",
+  "phase": "C2_replacement_seed_reservation",
+  "protocol_id": "task64_c2_v4271",
+  "ready_for_independent_task64_c2_audit": true,
+  "reserved_test_paths_opened": 0,
+  "seed_manifest_sha256": "26f3c524475122e6737cd01858755875d59d307d52a9b1f6e1134e9ade37462f",
+  "selected_seed_prior_usage_hits": 0,
+  "selection_uses_model_or_test_outcomes": false,
+  "superseded_task64_c1_seeds_excluded": [
+    959960781,
+    968407367,
+    1216611438,
+    1371338874,
+    1778991631
+  ],
+  "task": 64,
+  "task65_permitted_before_freeze": false,
+  "text_files_read": 12739,
+  "training_permitted": false,
+  "unreadable_eligible_text_files": 0
+}

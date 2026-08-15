@@ -1,0 +1,16 @@
+TASK 64 C2 V4.27.1 INSTALL
+
+Purpose:
+Reserve five replacement untouched final seeds after Task 63 C2 is frozen.
+
+Required parent tag:
+task63-c2-final-manifest-frozen-v4262
+
+Run:
+call scripts\run_task64_c2_v4271.bat
+
+Expected:
+The selector completes, the independent audit passes, and Task 65 remains blocked until the resulting Task 64 C2 artifacts are committed and tagged.
+
+Do not commit automatically.
+Do not run Task 65 from this package.
