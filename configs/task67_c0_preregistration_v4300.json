@@ -1,0 +1,93 @@
+{
+  "task": 67,
+  "phase": "C0_publication_output_implementation_freeze",
+  "protocol_id": "task67_c0_v4300",
+  "experiment_version": "4.30.0",
+  "parent_required_tag": "task66-c2-final-statistics-audited-v4291",
+  "required_execution_tag": "task67-c0-publication-implementation-frozen-v4300",
+  "input_root": "results/cic_iot_diad_task66_final_statistics_v4290",
+  "audit_input": "results/cic_iot_diad_task66_c2_statistics_audit_v4291/task66c2_statistics_integrity_audit_v4291.json",
+  "output_root": "results/cic_iot_diad_task67_publication_outputs_v4300",
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "datasets": [
+    "diagnostic",
+    "natural"
+  ],
+  "metrics": [
+    "macro_f1",
+    "balanced_accuracy",
+    "worst_class_recall",
+    "attack_excess_removed_fraction",
+    "malicious_client_recall",
+    "benign_client_fpr"
+  ],
+  "primary_round": 8,
+  "required_figure_stems": [
+    "fig01_macro_f1_contrast_diagnostic",
+    "fig02_macro_f1_contrast_natural",
+    "fig03_balanced_accuracy_contrast_diagnostic",
+    "fig04_balanced_accuracy_contrast_natural",
+    "fig05_worst_class_recall_contrast_diagnostic",
+    "fig06_worst_class_recall_contrast_natural",
+    "fig07_attack_excess_removed_fraction_diagnostic",
+    "fig08_attack_excess_removed_fraction_natural",
+    "fig09_malicious_client_recall_margin_diagnostic",
+    "fig10_malicious_client_recall_margin_natural",
+    "fig11_benign_client_fpr_margin_diagnostic",
+    "fig12_benign_client_fpr_margin_natural",
+    "fig13_seed_level_macro_f1_diagnostic",
+    "fig14_seed_level_macro_f1_natural",
+    "fig15_seed_level_balanced_accuracy_diagnostic",
+    "fig16_seed_level_balanced_accuracy_natural",
+    "fig17_seed_level_worst_class_recall_diagnostic",
+    "fig18_seed_level_worst_class_recall_natural",
+    "fig19_raw_exact_p_value_heatmap",
+    "fig20_holm_adjusted_p_value_heatmap",
+    "fig21_cohen_dz_heatmap",
+    "fig22_positive_seed_count_heatmap",
+    "fig23_bootstrap_ci_macro_f1",
+    "fig24_bootstrap_ci_balanced_accuracy",
+    "fig25_bootstrap_ci_worst_class_recall",
+    "fig26_secondary_macro_f1_trajectories",
+    "fig27_secondary_balanced_accuracy_trajectories",
+    "fig28_secondary_worst_class_recall_trajectories",
+    "fig29_runtime_summary",
+    "fig30_peak_rss_summary"
+  ],
+  "required_figure_count": 30,
+  "formats": [
+    "png",
+    "pdf"
+  ],
+  "png_dpi": 300,
+  "publication_tables": [
+    "table01_primary_statistics.csv",
+    "table02_primary_seed_values.csv",
+    "table03_holm_families.csv",
+    "table04_practical_gates.csv",
+    "table05_secondary_round_descriptives.csv",
+    "table06_resource_summary.csv",
+    "table07_claim_boundary_summary.csv"
+  ],
+  "claim_boundaries": {
+    "no_conventional_significance_claim_from_exact_p_below_0_05": true,
+    "minimum_exact_two_sided_p": 0.0625,
+    "holm_adjusted_results_reported": true,
+    "non_estimable_attack_excess_cells_retained": true,
+    "worst_class_recall_negative_or_null_results_retained": true,
+    "no_best_seed_or_round_figures": true,
+    "no_task65_rerun": true,
+    "no_task66_rerun": true,
+    "no_npz_access": true,
+    "no_model_loading": true,
+    "no_new_training": true,
+    "no_shap_recomputation": true,
+    "no_llm_generation": true
+  }
+}

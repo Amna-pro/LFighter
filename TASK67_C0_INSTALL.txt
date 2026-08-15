@@ -1,0 +1,4 @@
+Task 67 C0 V4.30.0
+Run only: call scripts\run_task67_c0_publication_preflight_v4300.bat
+Do not run Task67 C1 until the publication implementation is committed and tagged.
+C0 generates zero figures and zero publication tables.
