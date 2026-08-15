@@ -1,0 +1,15 @@
+Task 63 C2 V4.26.2 protocol-completion amendment.
+
+This package DOES NOT access natural/diagnostic test arrays and DOES NOT run training.
+It exists because Task63 V4.26.0 referenced an exact final-evaluation manifest that was not materialized before Task64 C1.
+
+Install by copying this package into the LFighter repository root, then run:
+
+  call .venv\Scripts\activate.bat
+  call scripts\run_task63_c2_v4262.bat
+
+Expected final lines:
+  READY TO FREEZE TASK 63 C2: True
+  NEXT REQUIRED STAGE: Task 64 C2 replacement untouched-seed reservation
+
+Do not run Task65 until a new Task64 C2 seed reservation is frozen.

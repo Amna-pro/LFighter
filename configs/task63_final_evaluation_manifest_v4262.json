@@ -1,0 +1,159 @@
+{
+  "task": 63,
+  "phase": "C2_protocol_completion",
+  "protocol_id": "task63_c2_v4262",
+  "experiment_version": "4.26.2",
+  "created_date": "2026-08-15",
+  "parent_required_tag": "task64-c1-untouched-seeds-frozen-v4270",
+  "purpose": "Materialize the exact final evaluation manifest referenced but absent from Task63 V4.26.0, transparently record the ordering deviation, supersede the first outcome-free seed reservation, and restore strict protocol-before-final-seed ordering before Task65.",
+  "protocol_deviation": {
+    "deviation_present": true,
+    "description": "Task63 V4.26.0 referenced a separate final evaluation manifest, but that manifest was not materialized before Task64 C1 seed reservation.",
+    "scientific_outcomes_seen_before_correction": false,
+    "task64_c1_training_permitted": false,
+    "task64_c1_reserved_test_arrays_materialized": false,
+    "task64_c1_seed_selection_outcome_free": true,
+    "recovery_action": "Freeze this exact manifest, permanently supersede Task64 C1 seeds without using them, then run a new deterministic Task64 C2 reservation before Task65."
+  },
+  "superseded_task64_c1_seeds": {
+    "status": "SUPERSEDED_UNUSED_FOR_FINAL_EVALUATION",
+    "seeds": [1371338874, 959960781, 968407367, 1778991631, 1216611438],
+    "may_be_used_in_task65": false
+  },
+  "final_method": {
+    "federation": "20 controlled logical Dirichlet clients, alpha=0.5",
+    "trusted_warmup_rounds": 4,
+    "monitored_rounds": [5, 6, 7, 8],
+    "primary_endpoint_round": 8,
+    "detector": "frozen independent historical anchor plus robust current-round consensus over 8x8 class-conditional transition signatures with temporal EMA and instantaneous rescue",
+    "reconstruction": "frozen center_plus_residual preserving original client sample weights",
+    "method_reconfiguration_permitted": false
+  },
+  "final_attack_panel": {
+    "attack_family": "untargeted_label_poisoning",
+    "attacks": [
+      "all_to_one_benign",
+      "cyclic_shift",
+      "multiclass_partial_cycle",
+      "pairwise_swap",
+      "random_flip"
+    ],
+    "poison_fraction": 1.0,
+    "malicious_clients": [1, 7, 8, 10, 14, 15, 17, 18],
+    "malicious_client_count": 8,
+    "attack_specific_retuning_permitted": false,
+    "task46_54_conditions_permitted": false
+  },
+  "comparison_arms": {
+    "clean_reference": "clean_fedavg_once_per_final_seed",
+    "attacked_baseline": "plain_fedavg",
+    "attacked_defense": "frozen_lfighter_center_plus_residual",
+    "cross_attack_robust_aggregation_baselines_promoted": false,
+    "baseline_scope_note": "Task43 coordinate_median, trimmed_mean and multi_krum remain development/boundary evidence and are not promoted to the Task65 cross-attack panel because a frozen cross-attack implementation was not established before the final gate."
+  },
+  "reserved_test_evaluation": {
+    "datasets": ["diagnostic", "natural"],
+    "full_arrays_required": true,
+    "primary_endpoint": "round_8_only",
+    "secondary_round_trajectory": [5, 6, 7, 8],
+    "best_round_selection_permitted": false,
+    "all_eight_classes_required": ["Benign", "BruteForce", "DDoS", "DoS", "Mirai", "Recon", "Spoofing", "Web-Based"],
+    "per_class_metrics": ["precision", "recall", "f1", "support"],
+    "confusion_matrix_required": true
+  },
+  "primary_metrics": [
+    "macro_f1",
+    "balanced_accuracy",
+    "worst_class_recall",
+    "attack_excess_removed_fraction",
+    "malicious_client_recall",
+    "benign_client_fpr"
+  ],
+  "secondary_metrics": [
+    "per_class_precision",
+    "per_class_recall",
+    "per_class_f1",
+    "source_to_target_or_attack_specific_error_rate_where_defined",
+    "reconstructed_client_round_count",
+    "runtime_seconds",
+    "peak_rss_bytes"
+  ],
+  "statistics": {
+    "pairing_unit": "same replacement final seed, attack, dataset, and endpoint",
+    "bootstrap": {
+      "type": "paired_percentile_bootstrap_on_seed_level_differences",
+      "replicates": 20000,
+      "seed": 650428,
+      "confidence_level": 0.95
+    },
+    "hypothesis_test": {
+      "type": "exact_paired_sign_flip_two_sided",
+      "final_seed_count": 5,
+      "sign_patterns": 32,
+      "minimum_attainable_two_sided_p": 0.0625,
+      "resolution_limited": true
+    },
+    "multiple_comparisons": "Holm family-wise adjustment across the five attacks separately within each dataset and primary metric family",
+    "effect_sizes": [
+      "paired_mean_difference",
+      "paired_median_difference",
+      "cohen_dz_when_defined",
+      "relative_attack_excess_reduction"
+    ],
+    "report_all_seed_values": true,
+    "negative_results_retained": true
+  },
+  "practical_significance_thresholds": {
+    "clean_mean_macro_f1_loss_max": 0.01,
+    "clean_any_seed_macro_f1_loss_max": 0.02,
+    "benign_fpr_max": 0.05,
+    "mean_malicious_client_recall_min": 0.50,
+    "mean_relative_attack_excess_reduction_min": 0.25,
+    "positive_mitigation_seed_count_min": 4,
+    "positive_mitigation_seed_count_denominator": 5
+  },
+  "task64_c2_requirement": {
+    "replacement_seed_count": 5,
+    "new_namespace_required": true,
+    "exclude_development_seeds": [7, 42, 99, 123, 2026],
+    "exclude_superseded_task64_c1_seeds": [1371338874, 959960781, 968407367, 1778991631, 1216611438],
+    "manual_substitution_permitted": false,
+    "outcome_based_selection_permitted": false,
+    "task65_blocked_until_task64_c2_frozen": true
+  },
+  "data_boundary": {
+    "training_permitted": false,
+    "reserved_test_arrays_materialized": false,
+    "reserved_test_array_access_permitted": false,
+    "new_shap_evaluations_permitted": false,
+    "llm_calls_permitted": false
+  },
+  "task65_prohibited_changes": [
+    "Changing attacks after any final outcome is seen",
+    "Changing poison fraction",
+    "Changing malicious-client identities",
+    "Changing detector thresholds",
+    "Changing reconstruction rules",
+    "Changing client sample weighting",
+    "Changing final seed set after Task64 C2 freeze",
+    "Dropping a failed attack or seed",
+    "Best-run or best-round selection",
+    "Changing statistical test, bootstrap seed, Holm family, effect size, or practical threshold",
+    "Adding Task46-54 conditions",
+    "Using superseded Task64 C1 seeds"
+  ],
+  "exit_gates": [
+    "Task64 C1 audit proves no reserved test arrays were materialized",
+    "ordering deviation is explicit",
+    "superseded seed list is exact and prohibited from Task65",
+    "final attack panel is exact",
+    "comparison arms are exact",
+    "round 8 primary endpoint is exact",
+    "bootstrap method, replicate count and seed are exact",
+    "exact sign-flip inference and its five-seed resolution limitation are explicit",
+    "Holm family is exact",
+    "practical thresholds are exact",
+    "Task65 remains blocked pending Task64 C2",
+    "no reserved test array is accessed by this amendment"
+  ]
+}
