@@ -1,0 +1,4 @@
+openai==3.0.0
+jsonschema>=4.20
+pydantic<3,>=2.12
+pandas>=2.0
