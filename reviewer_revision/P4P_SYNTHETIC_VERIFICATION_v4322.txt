@@ -1,0 +1,14 @@
+========================================================================================
+P4P MATCHED COMPARATOR v4.32.2 SYNTHETIC VERIFICATION
+========================================================================================
+[PASS] historical global probe
+[PASS] cosine probe responses
+[PASS] MAD magnitude filtering
+[PASS] KMeans equal-size lower-cosine tie rule
+[PASS] degenerate KMeans no-vote rule
+[PASS] temporal suspicion and permanent ban
+[PASS] trusted-set sample-count FedAvg
+[PASS] empty trusted-set abort
+[PASS] complete decision path
+
+ALL P4P SYNTHETIC TESTS PASSED
