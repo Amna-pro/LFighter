@@ -1,0 +1,101 @@
+{
+  "protocol": "reviewer_v4323_task65_historical_warmup_fingerprints",
+  "source_description": "Archived Task65 terminal transcript captured before reviewer revision. Values are historical evidence only and were not selected from reviewer-extension outcomes.",
+  "partition_hash_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+  "probe_hash_sha256": "4f4243b5725fd80f8f17be179711241a0fd9b459acc5ea6f1725b880c54865bf",
+  "historical_reconstruction_replay_evidence": {
+    "seed_1379954285_max_absolute_state_difference": 0.0,
+    "seed_1379954285_relative_state_l2_difference": 0.0,
+    "seed_1379954285_max_round_macro_f1_difference": 0.0,
+    "seed_1379954285_max_round_source_target_difference": 2.77555756156e-17,
+    "seed_1379954285_replay_equivalence_passed": true,
+    "note": "This was recorded by the original Task65 reconstruction-calibration stage while the historical round4 checkpoint still existed."
+  },
+  "seeds": {
+    "1379954285": {
+      "round_macro_f1_4dp": [
+        0.2798,
+        0.3014,
+        0.3726,
+        0.3221
+      ],
+      "round_source_to_target_percent_4dp": [
+        0.4151,
+        1.1652,
+        0.7201,
+        1.5903
+      ],
+      "ema_threshold_6dp": 1.996594,
+      "clean_fpr": 0.0375,
+      "profile_sha256": "8294bce76ee36b2e660df627bc38646823a439083fa6ee3f575a3cb1bc4e3607"
+    },
+    "1886033230": {
+      "round_macro_f1_4dp": [
+        0.3239,
+        0.3797,
+        0.3645,
+        0.3668
+      ],
+      "round_source_to_target_percent_4dp": [
+        0.8002,
+        5.8412,
+        1.2352,
+        11.3923
+      ],
+      "ema_threshold_6dp": 2.421834,
+      "clean_fpr": 0.0375,
+      "profile_sha256": "945ba698ff9b51fb4b3a077df9453a4cfe32c9aca7367a9d02f648b4b62b35c1"
+    },
+    "480705558": {
+      "round_macro_f1_4dp": [
+        0.2963,
+        0.2934,
+        0.3586,
+        0.3609
+      ],
+      "round_source_to_target_percent_4dp": [
+        1.5503,
+        15.078,
+        1.8554,
+        13.1626
+      ],
+      "ema_threshold_6dp": 2.243329,
+      "clean_fpr": 0.0375,
+      "profile_sha256": "6d84e5b7ae59120a6a4fb56f4b29ce767c84569a273f031d2b4d50336a362559"
+    },
+    "1377035733": {
+      "round_macro_f1_4dp": [
+        0.261,
+        0.3415,
+        0.3495,
+        0.3903
+      ],
+      "round_source_to_target_percent_4dp": [
+        16.3383,
+        0.5651,
+        13.1226,
+        1.8304
+      ],
+      "ema_threshold_6dp": 2.70361,
+      "clean_fpr": 0.0375,
+      "profile_sha256": "4e2a557f50df0d363b85d1095b8f30c14a0e06b067b222cfc50f3f3c5032b3cb"
+    },
+    "1707771978": {
+      "round_macro_f1_4dp": [
+        0.3273,
+        0.3106,
+        0.3489,
+        0.3653
+      ],
+      "round_source_to_target_percent_4dp": [
+        0.0,
+        1.7153,
+        0.9102,
+        2.0954
+      ],
+      "ema_threshold_6dp": 2.063308,
+      "clean_fpr": 0.0375,
+      "profile_sha256": "4e0cab7886c2fdd25e2f9d8a9caac736068841d4a250d8544a51a44ad4fff608"
+    }
+  }
+}
