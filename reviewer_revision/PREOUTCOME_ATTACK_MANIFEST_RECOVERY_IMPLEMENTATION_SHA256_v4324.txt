@@ -1,0 +1,2 @@
+LFighter Task65 Attack Manifest Recovery Implementation SHA256 v4.32.4
+1B0AB10C0BCA1561A4595EA7287336ADE68DC9EDFF033D42D29CD593D0AE7B3C  scripts\recover_task65_attack_manifest_v4324.py
