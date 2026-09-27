@@ -1,0 +1,21 @@
+{
+  "protocol": "reviewer_v4323_five_seed_task65_warmup_recovery_verification",
+  "seed_count": 5,
+  "seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "all_historical_fingerprints_verified": true,
+  "all_historical_checkpoint_files_recovered": false,
+  "historical_checkpoint_files_recovered_count": 0,
+  "all_test_arrays_materialized_false": true,
+  "max_independent_w4_replay_difference": 0.0,
+  "equivalence_tolerance": 1e-07,
+  "partition_hash_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+  "probe_hash_sha256": "4f4243b5725fd80f8f17be179711241a0fd9b459acc5ea6f1725b880c54865bf",
+  "preoutcome_status": "PASS",
+  "attack_outcomes_run_by_this_workflow": false
+}
