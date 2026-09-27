@@ -1,0 +1,50 @@
+{
+  "protocol": "reviewer_v4324_task65_attack_manifest_recovery",
+  "task65_git_reference": "2e40296",
+  "condition": {
+    "model_seed": 1377035733,
+    "attack_seed": 1377035733,
+    "attack_type": "multiclass_partial_cycle",
+    "num_clients": 20,
+    "malicious_clients": [
+      1,
+      7,
+      8,
+      10,
+      14,
+      15,
+      17,
+      18
+    ],
+    "poison_fraction": 1.0
+  },
+  "data_sha256": "1475d26cbddfcaf874c5f00ad83d027b1de529e06be6bf0c330d89abe26752fd",
+  "partition_logical_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+  "plain_source_raw_worktree_sha256": "ca6ce506e6d7a827b202791be489cb372f15e5a4d0df52f6792b48f653de14f8",
+  "plain_source_lf_normalized_sha256": "c579d04815a7e7a72a934926c8092056e83714702322a38a97f2b3b4dab38b75",
+  "defense_source_raw_worktree_sha256": "5f3852fc13959301b31adf47f57df3b65456fb028a647978b355f976e5aee951",
+  "defense_source_lf_normalized_sha256": "9103a41b8152034be2745cd9fbcdbc320b2d935023ceb93eb7b06d93cf7e5b33",
+  "poison_index_hash_sha256": "ecfd858b0cfc8f733d704cc3b60fa5aa5b8f64303acd90ffb313ff79f4d05e04",
+  "total_poisoned_rows": 71566,
+  "malicious_poisoned_rows": 71566,
+  "independent_constructor_repeat_exact": true,
+  "existing_exact_loader_validation_passed": true,
+  "manifest_discrete_columns_exact": true,
+  "manifest_float_rate_validation": {
+    "rtol": 0.0,
+    "atol": 5e-15,
+    "recomputed_from_integer_counts": true
+  },
+  "historical_attack_manifest_binary_recovered": false,
+  "test_arrays_materialized": false,
+  "local_model_training_run": false,
+  "p4p_attack_outcome_run": false,
+  "batr_attack_outcome_run": false,
+  "manifest_files": {
+    "malicious_client_poison_manifest_csv_sha256": "8b4cfeb1c47db57a34d9fc6553fca54ee5598a7483e37b99aeb8f563ee7081e9",
+    "poisoned_indices_npz_sha256": "4cd405956577b984b4e5ccc031055cf3153a837fa91ccdfcf66e014741104da4",
+    "poisoned_labels_npz_sha256": "6b0a928154f0e0b3711dcd4f87d0916e049e0364f5391cd241251c5c78ce74ee",
+    "metadata_json_sha256": "434bde88be31eeeda0942d9d7eb64e522f455fc407657278c34b780187faf4aa"
+  },
+  "status": "PASS"
+}
