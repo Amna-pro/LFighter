@@ -1,0 +1,20 @@
+{
+  "protocol": "reviewer_v4326_p4p_round8_reserved_test_evaluation",
+  "time_unix": 1790543331.7710433,
+  "git_head": "57116cc1bf1591abcf5ebad71a2f19dda865147b",
+  "data_file": "data/processed/cic_iot_diad_2024_v2_1_recovery_check/arrays/behavioral_only.npz",
+  "data_file_sha256": "1475d26cbddfcaf874c5f00ad83d027b1de529e06be6bf0c330d89abe26752fd",
+  "global_round_fixed": 8,
+  "conditions_fixed": 25,
+  "prior_structural_test_array_shape_access": true,
+  "prior_p4p_test_outcome_evaluation": false,
+  "checkpoint_selection_used_test_outcomes": false,
+  "post_outcome_retuning_permitted": false,
+  "rerun_permitted": false,
+  "source_hashes": {
+    "task65_evaluator_sha256": "805b39b24ee9ca20fa2ea484472928fad97a5b560f26fdad1787e3bdee84559a",
+    "p4p_runner_sha256": "fa904d89f391eb41a2d5920e174abc89915a4040e6dee8e92d401e782c95a09f",
+    "federated_iot_v26_sha256": "4f66434a6ab8749baf3643d2c7f048047c8c3598e4848ddd9470ebf678f904af",
+    "neural_models_v24_sha256": "40d15f8ed7ed452a4d211fc4d0f434f6796d4bb354424de1ea593c2cb7ca58f9"
+  }
+}

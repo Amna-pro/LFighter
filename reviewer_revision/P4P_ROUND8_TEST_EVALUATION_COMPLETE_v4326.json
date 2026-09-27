@@ -1,0 +1,40 @@
+{
+  "protocol": "reviewer_v4326_p4p_round8_reserved_test_evaluation",
+  "status": "PASS",
+  "time_unix": 1790543472.3818853,
+  "git_head": "57116cc1bf1591abcf5ebad71a2f19dda865147b",
+  "data_file_sha256": "1475d26cbddfcaf874c5f00ad83d027b1de529e06be6bf0c330d89abe26752fd",
+  "reserved_test_arrays_materialized_for_outcome_evaluation": true,
+  "prior_structural_test_array_shape_access": true,
+  "first_p4p_reserved_test_outcome_evaluation": true,
+  "global_round": 8,
+  "checkpoint_selection_rule": "fixed_global_round_8_for_all_conditions",
+  "best_round_selection_used": false,
+  "post_outcome_retuning_used": false,
+  "model_training_run": false,
+  "p4p_federated_branch_rerun": false,
+  "formal_cross_method_statistics_performed": false,
+  "conditions_evaluated": 25,
+  "datasets_evaluated": [
+    "diagnostic",
+    "natural"
+  ],
+  "metric_rows": 50,
+  "per_class_rows": 400,
+  "confusion_rows": 3200,
+  "evaluation_batch_size": 4096,
+  "threads": 6,
+  "elapsed_seconds": 140.40744130000166,
+  "source_hashes": {
+    "task65_evaluator_sha256": "805b39b24ee9ca20fa2ea484472928fad97a5b560f26fdad1787e3bdee84559a",
+    "p4p_runner_sha256": "fa904d89f391eb41a2d5920e174abc89915a4040e6dee8e92d401e782c95a09f",
+    "federated_iot_v26_sha256": "4f66434a6ab8749baf3643d2c7f048047c8c3598e4848ddd9470ebf678f904af",
+    "neural_models_v24_sha256": "40d15f8ed7ed452a4d211fc4d0f434f6796d4bb354424de1ea593c2cb7ca58f9"
+  },
+  "output_sha256": {
+    "p4p_round8_reserved_test_metrics.csv": "17fb4035a622aa6c0250cd041b8dbdd0d8358f8b9e0ae8045b558d8f0160aa70",
+    "p4p_round8_reserved_test_per_class.csv": "bd591cce1ebadc374460d4ae51a637cbbe6a4f8efbab412b147f60cd3e26d297",
+    "p4p_round8_reserved_test_confusion_long.csv": "a507557cb898bd0449e3444849a22c6a6ea932ce257d38c48f3c37596c254343",
+    "P4P_TEST_ACCESS_STARTED_v4326.json": "0eadc02ecf2f8b29b7c91063b3a02785aa662e8efab67c5537d7408eb27672ae"
+  }
+}
