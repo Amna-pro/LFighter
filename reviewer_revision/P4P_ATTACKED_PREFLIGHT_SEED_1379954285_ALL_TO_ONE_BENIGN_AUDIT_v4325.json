@@ -1,0 +1,214 @@
+{
+  "protocol": "reviewer_v4325_p4p_attacked_preflight_audit",
+  "status": "PASS",
+  "condition": {
+    "attack_type": "all_to_one_benign",
+    "model_seed": 1379954285,
+    "num_clients": 20,
+    "malicious_clients": [
+      1,
+      7,
+      8,
+      10,
+      14,
+      15,
+      17,
+      18
+    ],
+    "monitoring_global_rounds": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "frozen_identity": {
+    "partition_hash_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+    "poison_index_hash_sha256": "9690f8d1e7b9aa56cbb99dc519bcad9274d23a84f49bd6bb052737a285b2855e",
+    "warmup_round4_checkpoint_sha256": "eb19aa119d7986c62856b5734255d98e15b29a40c2d9f20bf4152711ba8a85ca",
+    "p4p_config": {
+      "mad_k": 3.0,
+      "dbscan_eps": 0.5,
+      "dbscan_min_samples": 5,
+      "isolation_contamination": 0.1,
+      "isolation_n_estimators": 100,
+      "kmeans_clusters": 2,
+      "ensemble_vote_threshold": 2,
+      "suspicion_decay": 0.2,
+      "suspicion_threshold": 2.0,
+      "detector_random_state": 42,
+      "kmeans_n_init": 10
+    }
+  },
+  "attack_manifest_reuse_validation": {
+    "manifest_csv": {
+      "discrete_columns_exact": true,
+      "float_columns_atol": 5e-15,
+      "float_columns_rtol": 0.0
+    },
+    "poisoned_indices": {
+      "keys": [
+        "client_000_global_indices",
+        "client_000_local_positions",
+        "client_001_global_indices",
+        "client_001_local_positions",
+        "client_002_global_indices",
+        "client_002_local_positions",
+        "client_003_global_indices",
+        "client_003_local_positions",
+        "client_004_global_indices",
+        "client_004_local_positions",
+        "client_005_global_indices",
+        "client_005_local_positions",
+        "client_006_global_indices",
+        "client_006_local_positions",
+        "client_007_global_indices",
+        "client_007_local_positions",
+        "client_008_global_indices",
+        "client_008_local_positions",
+        "client_009_global_indices",
+        "client_009_local_positions",
+        "client_010_global_indices",
+        "client_010_local_positions",
+        "client_011_global_indices",
+        "client_011_local_positions",
+        "client_012_global_indices",
+        "client_012_local_positions",
+        "client_013_global_indices",
+        "client_013_local_positions",
+        "client_014_global_indices",
+        "client_014_local_positions",
+        "client_015_global_indices",
+        "client_015_local_positions",
+        "client_016_global_indices",
+        "client_016_local_positions",
+        "client_017_global_indices",
+        "client_017_local_positions",
+        "client_018_global_indices",
+        "client_018_local_positions",
+        "client_019_global_indices",
+        "client_019_local_positions"
+      ],
+      "exact_array_equality": true
+    },
+    "poisoned_labels": {
+      "keys": [
+        "client_000",
+        "client_001",
+        "client_002",
+        "client_003",
+        "client_004",
+        "client_005",
+        "client_006",
+        "client_007",
+        "client_008",
+        "client_009",
+        "client_010",
+        "client_011",
+        "client_012",
+        "client_013",
+        "client_014",
+        "client_015",
+        "client_016",
+        "client_017",
+        "client_018",
+        "client_019"
+      ],
+      "exact_array_equality": true
+    }
+  },
+  "runner_metadata": {
+    "test_sets_accessed": false,
+    "attack_specific_retuning": false,
+    "aggregation": "sample_count_weighted_fedavg_over_trusted_set",
+    "total_seconds": 119.00161360000129
+  },
+  "observed_preflight_results": {
+    "mean_validation_macro_f1": 0.21319200204966202,
+    "mean_malicious_recall": 0.0625,
+    "mean_benign_fpr": 0.0833333333333333,
+    "round_malicious_recall": [
+      0.125,
+      0.0,
+      0.0,
+      0.125
+    ],
+    "round_benign_fpr": [
+      0.1666666666666666,
+      0.0,
+      0.0833333333333333,
+      0.0833333333333333
+    ],
+    "round_validation_macro_f1": [
+      0.2208308682530632,
+      0.2231508877897809,
+      0.1958658865985289,
+      0.2129203655572751
+    ],
+    "round_source_to_target_rate": [
+      0.4265853170634127,
+      0.4895479095819164,
+      0.5898179635927185,
+      0.539507901580316
+    ],
+    "round_source_recall": [
+      0.5658131626325265,
+      0.4910982196439288,
+      0.4024804960992198,
+      0.4493898779755951
+    ]
+  },
+  "client_decision_rows": 80,
+  "output_files": {
+    "attack_manifest/malicious_client_poison_manifest.csv": {
+      "bytes": 1360,
+      "sha256": "94420173ef9956221688590ab17347f571f8592df85543abfb986a7c8042a1d0"
+    },
+    "attack_manifest/poisoned_indices.npz": {
+      "bytes": 736855,
+      "sha256": "99c61c657cfb19c32166d9cfcf5fc71fc6b2d18bb357daa07ea09b1582c2086d"
+    },
+    "attack_manifest/poisoned_labels.npz": {
+      "bytes": 5296,
+      "sha256": "0d5f8d9b3ca8d0d104f5765d26e18521fee2c6a88601a3bfb3e9fbfcc9cbc45e"
+    },
+    "checkpoints/reviewer_round_checkpoints/global_round_05_model.pt": {
+      "bytes": 6793699,
+      "sha256": "f2e0ed4eb88480549a5ffdaba9790d6d4baba7c1691447d547a4a7a21eda54fb"
+    },
+    "checkpoints/reviewer_round_checkpoints/global_round_06_model.pt": {
+      "bytes": 6793699,
+      "sha256": "d3bc513e935b1db4300c37adb7b862945e1ff25e28ffef3b86e6fbb6567fccf2"
+    },
+    "checkpoints/reviewer_round_checkpoints/global_round_07_model.pt": {
+      "bytes": 6793699,
+      "sha256": "1135734ab07d70927c7182c1f9a6b666f3e11279bc24ca6b4f15ff68bfd5729b"
+    },
+    "checkpoints/reviewer_round_checkpoints/global_round_08_model.pt": {
+      "bytes": 6793699,
+      "sha256": "6025b9405bcb650f4c5a2897cdcdc2be1f22e4f915418a0a1b99497e8dcb0416"
+    },
+    "REVIEWER_P4P_MATCHED_COMPLETE.json": {
+      "bytes": 1488,
+      "sha256": "089b001316e8f9711209d6f417ba9de489721b44575febd322291bc1c89528bf"
+    },
+    "tables/p4p_client_decisions.csv": {
+      "bytes": 12423,
+      "sha256": "9b926a6ad211ecd85dfeef83ff28d73ea977ddab16c8ef4aca2df88556cee156"
+    },
+    "tables/p4p_round_metrics.csv": {
+      "bytes": 2397,
+      "sha256": "94fd8c13b11e2324ac338042e8a364f392cc14696b0ca6cb81ddfd2b0d6b70a1"
+    },
+    "tables/validation_class_metrics_long.csv": {
+      "bytes": 2734,
+      "sha256": "42612a3a4da0f955e1d3e561f5314e79bd5df73035214300f75322b0dba873fc"
+    },
+    "tables/validation_confusion_matrix_long.csv": {
+      "bytes": 11441,
+      "sha256": "91aab47f32658eed867207c6fa78447ced3c9d22ed45a9c8a8ce4e236d8280d0"
+    }
+  },
+  "scientific_parameters_changed_after_outcome": false,
+  "outcome_retuning_performed": false
+}
