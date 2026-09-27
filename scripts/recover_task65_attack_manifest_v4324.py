@@ -302,11 +302,74 @@ def main() -> int:
         raise RuntimeError("Exact loader positions differ from constructor output")
     if not dict_arrays_equal(loaded_labels, l1):
         raise RuntimeError("Exact loader labels differ from constructor output")
+    loaded_manifest = loaded_manifest.reset_index(drop=True)
+    expected_manifest = m1.reset_index(drop=True)
+
+    if list(loaded_manifest.columns) != list(expected_manifest.columns):
+        raise RuntimeError(
+            "Exact loader manifest columns differ from reconstructed manifest: "
+            f"{list(loaded_manifest.columns)} != {list(expected_manifest.columns)}"
+        )
+
+    float_rate_columns = {
+        "client_poison_rate_over_eligible",
+        "client_poison_rate_over_all_rows",
+    }
+    exact_columns = [
+        c for c in expected_manifest.columns if c not in float_rate_columns
+    ]
     pd.testing.assert_frame_equal(
-        loaded_manifest.reset_index(drop=True),
-        m1.reset_index(drop=True),
+        loaded_manifest[exact_columns],
+        expected_manifest[exact_columns],
         check_exact=True,
+        check_dtype=False,
     )
+
+    for frame_name, frame in (
+        ("expected", expected_manifest),
+        ("loaded", loaded_manifest),
+    ):
+        eligible_den = frame["eligible_rows"].to_numpy(dtype=np.float64)
+        all_den = frame["client_rows"].to_numpy(dtype=np.float64)
+        poison_num = frame["poisoned_rows"].to_numpy(dtype=np.float64)
+        recomputed_eligible = np.divide(
+            poison_num,
+            eligible_den,
+            out=np.zeros_like(poison_num),
+            where=eligible_den != 0,
+        )
+        recomputed_all = np.divide(
+            poison_num,
+            all_den,
+            out=np.zeros_like(poison_num),
+            where=all_den != 0,
+        )
+        np.testing.assert_allclose(
+            frame["client_poison_rate_over_eligible"].to_numpy(dtype=np.float64),
+            recomputed_eligible,
+            rtol=0.0,
+            atol=5e-15,
+            equal_nan=True,
+            err_msg=f"{frame_name} eligible poison-rate column inconsistent with exact counts",
+        )
+        np.testing.assert_allclose(
+            frame["client_poison_rate_over_all_rows"].to_numpy(dtype=np.float64),
+            recomputed_all,
+            rtol=0.0,
+            atol=5e-15,
+            equal_nan=True,
+            err_msg=f"{frame_name} all-row poison-rate column inconsistent with exact counts",
+        )
+
+    for col in sorted(float_rate_columns):
+        np.testing.assert_allclose(
+            loaded_manifest[col].to_numpy(dtype=np.float64),
+            expected_manifest[col].to_numpy(dtype=np.float64),
+            rtol=0.0,
+            atol=5e-15,
+            equal_nan=True,
+            err_msg=f"CSV round-trip mismatch exceeds frozen tolerance for {col}",
+        )
 
     evidence = {
         "protocol": "reviewer_v4324_task65_attack_manifest_recovery",
@@ -330,6 +393,12 @@ def main() -> int:
         "malicious_poisoned_rows": malicious_poisoned,
         "independent_constructor_repeat_exact": True,
         "existing_exact_loader_validation_passed": True,
+        "manifest_discrete_columns_exact": True,
+        "manifest_float_rate_validation": {
+            "rtol": 0.0,
+            "atol": 5e-15,
+            "recomputed_from_integer_counts": True
+        },
         "historical_attack_manifest_binary_recovered": False,
         "test_arrays_materialized": False,
         "local_model_training_run": False,

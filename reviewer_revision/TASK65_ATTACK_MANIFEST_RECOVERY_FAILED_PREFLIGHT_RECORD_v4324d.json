@@ -1,0 +1,39 @@
+{
+  "protocol": "reviewer_v4324d_failed_manifest_preflight_preservation",
+  "condition": {
+    "attack_type": "all_to_one_benign",
+    "model_seed": 1379954285,
+    "attack_seed": 1379954285
+  },
+  "failure_stage": "post_write_existing_exact_loader_dataframe_validation",
+  "failure_cause": "csv_float_roundtrip_representation_in_derived_rate_columns",
+  "scientific_parameter_change": false,
+  "pass_evidence_existed_before_cleanup": false,
+  "model_or_checkpoint_files_present": false,
+  "local_model_training_run": false,
+  "p4p_attack_outcome_run": false,
+  "batr_attack_outcome_run": false,
+  "files": {
+    "attack_manifest/attack_summary.csv": {
+      "bytes": 466,
+      "sha256": "3a8b946c77c9376365b56734b683274b5624f4e4511839c9aed784b852240fe5"
+    },
+    "attack_manifest/malicious_client_poison_manifest.csv": {
+      "bytes": 1360,
+      "sha256": "94420173ef9956221688590ab17347f571f8592df85543abfb986a7c8042a1d0"
+    },
+    "attack_manifest/poisoned_indices.npz": {
+      "bytes": 736855,
+      "sha256": "99c61c657cfb19c32166d9cfcf5fc71fc6b2d18bb357daa07ea09b1582c2086d"
+    },
+    "attack_manifest/poisoned_labels.npz": {
+      "bytes": 5296,
+      "sha256": "0d5f8d9b3ca8d0d104f5765d26e18521fee2c6a88601a3bfb3e9fbfcc9cbc45e"
+    },
+    "exact_untargeted_plain_v320a3_metadata.json": {
+      "bytes": 1006,
+      "sha256": "c851fb293478b3d29f603c519d623ee3b2586da572d02ebefbfba6987ed9504e"
+    }
+  },
+  "status": "FAILED_PREFLIGHT_RECORDED_BEFORE_SAFE_CLEANUP"
+}
