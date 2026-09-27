@@ -1,0 +1,24 @@
+{
+  "protocol": "reviewer_v4327b_failed_postanalysis_audit_record",
+  "status": "RECORDED",
+  "failure_stage": "final_internal_boolean_audit_after_result_csv_write",
+  "failure_reason": "Raw false operation-state flags were incorrectly interpreted as failed validation predicates.",
+  "scientific_results_recomputed_during_recording": false,
+  "model_training_run": false,
+  "test_inference_run": false,
+  "retuning_run": false,
+  "existing_result_files": {
+    "MATCHED_PLAIN_BATR_P4P_SEED_VALUES_v4327.csv": {
+      "bytes": 17418,
+      "sha256": "1fff215f273c2b53a3a45450bd273dab9d92c5a0de0113957f14a71460fb2a96"
+    },
+    "MATCHED_PLAIN_BATR_P4P_ABSOLUTE_SUMMARY_v4327.csv": {
+      "bytes": 9071,
+      "sha256": "3261d88d1c71c01833654b8010ba20ae2f89378b7a5c6f551d15d2a611b73368"
+    },
+    "MATCHED_PLAIN_BATR_P4P_PAIRED_STATISTICS_v4327.csv": {
+      "bytes": 16042,
+      "sha256": "e3cc0f90e6457739fe167519d4504f17c20074634c5bf92bc1c139db1c598b8f"
+    }
+  }
+}
