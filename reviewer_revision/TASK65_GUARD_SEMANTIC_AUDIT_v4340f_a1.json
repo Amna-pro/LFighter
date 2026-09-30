@@ -1,0 +1,29 @@
+{
+  "protocol": "Task65 guard semantic audit v4340f-a1",
+  "status": "PASS",
+  "guard_log": "C:\\Users\\Amm\\Documents\\LFighter-reviewer-revision-20260924\\results\\reviewer_v4340f_guard_access_log.jsonl",
+  "guard_log_sha256": "67909a8b30adf3e3332fd58a754364312df4b0b66830aecea41839edcff3c61c",
+  "record_count": 16,
+  "guarded_load_event_count": 3,
+  "materialized_keys_observed": [
+    "X_train",
+    "X_val",
+    "y_train",
+    "y_val"
+  ],
+  "reserved_test_names": [
+    "X_test_diagnostic",
+    "X_test_natural",
+    "y_test_diagnostic",
+    "y_test_natural"
+  ],
+  "test_arrays_materialized": false,
+  "checks": {
+    "guard_log_sha256_exact": true,
+    "guarded_load_events_present": true,
+    "all_explicit_test_materialization_flags_false": true,
+    "reserved_test_keys_absent_from_materialized_keys": true,
+    "guarded_load_materialized_keys_train_val_only": true,
+    "reserved_names_are_verification_only": true
+  }
+}
