@@ -1,0 +1,23 @@
+{
+  "experiment_version": "4.34.1",
+  "correction_id": "v4341a",
+  "phase": "pre_outcome_runner_naming_and_evidence_identity_correction",
+  "predecessor_runner_freeze_commit": "2d52137c43360bf684e2114c02b42acc7effcafb",
+  "five_seed_calibration_freeze_commit": "097312d2062a8c6a6b3c8b5dcf7f343bc49f5fe2",
+  "design_sha256": "e7d103fc13ca78c02321de7f76951cb248b21200509eb7076bf8911273cee2f0",
+  "predecessor_runner_sha256": "0f4bd6fb32c00662a549349145caad13b72464b3f8d68124f2c93e9f14bb5590",
+  "corrected_runner_sha256": "a88c2719380185973bb243bd664eab65880a6e6e8fb1b8eb88d618d0eeaa9805",
+  "scientific_logic_changed": false,
+  "detector_or_threshold_changed": false,
+  "mitigation_logic_changed": false,
+  "changes": [
+    "remove accidental zero-byte untracked 0] file",
+    "rename reviewer runner checkpoint from v320b1_last_round_model.pt to v4341_last_round_model.pt",
+    "rename reviewer output metadata to reviewer_reconstruction_ablation_v4341_metadata.json",
+    "replace stale V3.20B.1 user-facing runner/error strings while retaining explicit historical provenance comment",
+    "update CLI description to reviewer V4.34.1"
+  ],
+  "expanded_outcomes_generated_before_correction": false,
+  "expanded_outcome_file_count_before_correction": 0,
+  "reserved_test_access": false
+}

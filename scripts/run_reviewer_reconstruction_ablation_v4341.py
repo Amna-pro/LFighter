@@ -2,7 +2,7 @@
 # Derived from frozen V3.20B.1 SHA256 5F3852FC13959301B31ADF47F57DF3B65456FB028A647978B355F976E5AEE951
 # No reconstruction-calibration bundle is used because neither ablation requires historical residuals.
 #!/usr/bin/env python3
-"""Exact-derived frozen V3.20B.1 untargeted defense runner."""
+"""Reviewer reconstruction mitigation ablation runner V4.34.1."""
 from __future__ import annotations
 
 import argparse
@@ -87,7 +87,7 @@ ATTACK_TYPES = (
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run V3.10 post-warmup plain FedAvg capture.")
+    parser = argparse.ArgumentParser(description="Run reviewer reconstruction mitigation ablation V4.34.1.")
     parser.add_argument("--mode", choices=["clean", "strong_attack"], required=True)
     parser.add_argument(
         "--replacement-policy",
@@ -616,7 +616,7 @@ def main() -> int:
         )
         if len(requested_clients) != 8:
             raise ValueError(
-                "V3.20B.1 is frozen to eight malicious clients"
+                "V4.34.1 reviewer ablation is frozen to eight malicious clients"
             )
         (
             malicious_clients,
@@ -794,7 +794,7 @@ def main() -> int:
             )
             if selected_reconstruction_policy != "center_plus_residual":
                 raise RuntimeError(
-                    "V3.20B.1 requires center_plus_residual"
+                    "V4.34.1 center_plus_residual arm requires reconstruction calibration"
                 )
             warmup_update_scale = float(
                 reconstruction_bundle["warmup_update_scale"]
@@ -836,7 +836,7 @@ def main() -> int:
     confusion_rows: List[Dict[str, object]] = []
     ema_memory: Dict[int, float] = {}
     start_round = 1
-    continuation_checkpoint = checkpoints_dir / "v320b1_last_round_model.pt"
+    continuation_checkpoint = checkpoints_dir / "v4341_last_round_model.pt"
 
     if args.resume:
         if not continuation_checkpoint.exists():
@@ -869,7 +869,7 @@ def main() -> int:
         print(f"Resuming {args.mode} continuation from monitoring round {start_round}")
 
     started = time.time()
-    print("Exact-Derived Frozen Untargeted Defense V3.20B.1")
+    print("Reviewer Reconstruction Ablation V4.34.1")
     print("Mode:", args.mode)
     print("Replacement policy:", args.replacement_policy)
     print("Attack type:", args.attack_type)
@@ -1487,7 +1487,7 @@ def main() -> int:
         ),
         "total_seconds": float(time.time() - started),
     }
-    with (output_dir / "frozen_untargeted_defense_v320b1_metadata.json").open("w", encoding="utf-8") as handle:
+    with (output_dir / "reviewer_reconstruction_ablation_v4341_metadata.json").open("w", encoding="utf-8") as handle:
         json.dump(metadata, handle, indent=2)
 
     print()
