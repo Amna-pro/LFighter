@@ -1,0 +1,38 @@
+{
+  "experiment_version": "4.34.1",
+  "phase": "four_arm_runner_implementation_freeze_before_outcomes",
+  "design_freeze_commit": "74ecea61b89ef1b3cbd8c6cfa3889cc9c4bd1a70",
+  "design_sha256": "e7d103fc13ca78c02321de7f76951cb248b21200509eb7076bf8911273cee2f0",
+  "runner_path": "scripts/run_reviewer_reconstruction_ablation_v4341.py",
+  "runner_sha256": "0f4bd6fb32c00662a549349145caad13b72464b3f8d68124f2c93e9f14bb5590",
+  "arms": [
+    "center_plus_residual",
+    "center_only",
+    "hard_rejection",
+    "down_weighting"
+  ],
+  "down_weighting": {
+    "gamma": 3.0,
+    "minimum_trust": 0.05,
+    "count_cap_used": false,
+    "historical_parameter_source_commit": "fd8410656e7810330cb3e3befa0bb4a8409efff8"
+  },
+  "resume_identity_checks": [
+    "mode",
+    "replacement_policy",
+    "ablation_arm",
+    "partition_hash",
+    "poison_index_hash",
+    "warmup_profile_hash",
+    "model_seed"
+  ],
+  "reconstruction_calibration_integrity_checks": [
+    "model_seed",
+    "partition_hash",
+    "common_warmup_checkpoint_sha256",
+    "test_sets_accessed_false",
+    "malicious_labels_used_false"
+  ],
+  "reserved_test_access": false,
+  "expanded_outcomes_generated_before_freeze": false
+}
