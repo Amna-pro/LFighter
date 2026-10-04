@@ -1,0 +1,106 @@
+{
+  "experiment_version": "4.34.1",
+  "phase": "reviewer_reconstruction_mitigation_ablation_expansion_design_freeze",
+  "status": "design_frozen_before_expanded_outcome_execution",
+  "parent_evidence_commit": "c68165346f9b537ea3cd81d300b59ec2e74b1d0f",
+  "primary_seeds": [
+    1379954285,
+    1886033230,
+    480705558,
+    1377035733,
+    1707771978
+  ],
+  "attacks": [
+    "all_to_one_benign",
+    "cyclic_shift",
+    "multiclass_partial_cycle",
+    "pairwise_swap",
+    "random_flip"
+  ],
+  "num_clients": 20,
+  "malicious_clients": [
+    1,
+    7,
+    8,
+    10,
+    14,
+    15,
+    17,
+    18
+  ],
+  "malicious_fraction": 0.4,
+  "poison_fraction": 1.0,
+  "warmup_rounds": 4,
+  "continuation_rounds": 4,
+  "primary_endpoint_global_round": 8,
+  "partition_hash_sha256": "5f14674b0c775f06c3400c5e1e3b9649b78c82d4257c2293411f5c6fe53bed48",
+  "detector": {
+    "candidate": "candidate_max_anchor_absolute",
+    "ema_decay": 0.65,
+    "ema_quantile": 0.99,
+    "instant_quantile": 0.95,
+    "policy_ratio": "max(ema/ema_threshold, instant/instant_threshold)",
+    "flag_rule": "policy_ratio > 1.0",
+    "probe_rows_per_class": 48,
+    "probe_seed": 3701,
+    "detector_algorithm_changed": false,
+    "detector_thresholds_changed": false
+  },
+  "safety_guard": {
+    "minimum_unflagged_clients": 8,
+    "applies_to_all_four_arms": true
+  },
+  "arms": {
+    "center_plus_residual": {
+      "flagged_action": "coordinate_median_of_unflagged_plus_frozen_client_historical_residual",
+      "aggregation": "all_20_clients_original_sample_counts",
+      "reconstruction_calibration_required": true
+    },
+    "center_only": {
+      "flagged_action": "coordinate_median_of_unflagged",
+      "aggregation": "all_20_clients_original_sample_counts",
+      "reconstruction_calibration_required": false
+    },
+    "hard_rejection": {
+      "flagged_action": "exclude_flagged_clients",
+      "aggregation": "retained_clients_original_sample_counts_renormalized",
+      "reconstruction_calibration_required": false
+    },
+    "down_weighting": {
+      "flagged_action": "no_replacement_or_rejection",
+      "trust_formula": "clip(exp(-3.0 * max(policy_ratio - 1.0, 0.0)), 0.05, 1.0)",
+      "aggregation": "all_20_clients_original_sample_count_times_trust_then_normalize",
+      "trust_gamma": 3.0,
+      "minimum_trust": 0.05,
+      "count_cap_used": false,
+      "historical_parameter_source_commit": "fd8410656e7810330cb3e3befa0bb4a8409efff8"
+    }
+  },
+  "controls": {
+    "same_model_and_local_training": true,
+    "same_attack_manifest_per_seed_attack": true,
+    "same_warmup_checkpoint_per_seed": true,
+    "same_probe_and_detector": true,
+    "same_thresholds_per_seed": true,
+    "attack_specific_retuning": false,
+    "scientific_outcome_gate_used": false
+  },
+  "data_boundary": {
+    "development_evaluation": "validation_only",
+    "reserved_test_arrays_materialized": false,
+    "reserved_tests_reopened": false
+  },
+  "label_usage": {
+    "malicious_labels_used_for_aggregation": false,
+    "malicious_labels_used_for_reporting_only": true,
+    "historical_gamma_minimum_trust_development_selection_used_malicious_labels": true
+  },
+  "recovered_center_plus_residual_evidence": {
+    "seed": 1379954285,
+    "replay_max_abs_state_difference": 0.0,
+    "replay_verified": true,
+    "test_sets_accessed": false,
+    "calibration_metadata_sha256": "46C8821E3660EF498CD6A1E1C31C06071B932E904482E7953C35424B8C724BAE",
+    "reconstruction_profile_sha256": "77C0C8F688733970F26F6A4DE9E514B28E75A046D22BC20A6BE28F1AC490B2C0"
+  }
+}
