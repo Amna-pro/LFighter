@@ -1,0 +1,58 @@
+{
+  "package": "BATR-FL reviewer paper integration v4.34.1b",
+  "purpose": "single source for newly added reviewer-result material used in manuscript revision",
+  "primary_endpoint": "global round 8 validation",
+  "conditions": 100,
+  "arms": [
+    "center_plus_residual",
+    "center_only",
+    "hard_rejection",
+    "down_weighting"
+  ],
+  "attacks": 5,
+  "primary_seeds": 5,
+  "reserved_test_arrays_used": false,
+  "claim_boundary": "descriptive mitigation trade-off; no statistically established pairwise superiority at alpha=0.05",
+  "files": {
+    "README_PAPER_INTEGRATION.md": {
+      "sha256": "d3452be766a1867c943b9780589a6237d03d9e4e4f6c3a441b741c8a97861d68",
+      "size_bytes": 2152
+    },
+    "RECONSTRUCTION_ABLATION_ANALYSIS_FREEZE_v4341b.json": {
+      "sha256": "78a1209b9802c157e54191a33e75f23742b4e1e7ffe9c6034cbd21c1158e1c1f",
+      "size_bytes": 2577
+    },
+    "RECONSTRUCTION_ABLATION_OUTCOME_FREEZE_v4341a.json": {
+      "sha256": "1dcd63833821a1f10b42c7cf5eacf80a349020cb07382e340b3649c06fca6842",
+      "size_bytes": 62558
+    },
+    "RECONSTRUCTION_ABLATION_PAIRED_SIGNFLIP_v4341a.csv": {
+      "sha256": "baeafbfcea3d586b03bbef1b829e07b3ab127d5976f0afed114f9738c7f464cd",
+      "size_bytes": 24243
+    },
+    "RECONSTRUCTION_ABLATION_ROUND8_HOLM_v4341a.csv": {
+      "sha256": "cfc22bef04b48b1de34782cd20dc8cacfdaf53d4c7d5a4ffd685df9c6edd28de",
+      "size_bytes": 12436
+    },
+    "RECONSTRUCTION_ABLATION_SEED_CLUSTER_STATS_v4341a.csv": {
+      "sha256": "38e149d0afaa0dc0f04e02d71347a733d2bae7751270f7bfa512fc84f43d9b35",
+      "size_bytes": 2274
+    },
+    "RECONSTRUCTION_ABLATION_SEED_VALUES_v4341a.csv": {
+      "sha256": "b3836b4a6ef0fe48650015cbabad123b7ac2e07b41ff6b0c74ad288cde25a557",
+      "size_bytes": 25406
+    },
+    "TABLE_PAPER_MONITORED_ROUNDS_ARM_SUMMARY.csv": {
+      "sha256": "16177d2873a31c287b5d9a005dd709122fd94629ad2b75c0db123a2e9bd30449",
+      "size_bytes": 1098
+    },
+    "TABLE_PAPER_ROUND8_ARM_SUMMARY.csv": {
+      "sha256": "c2f1316043edaeed16843b0a5982c5a86b5eb7a280872d16b057fa097d94e50b",
+      "size_bytes": 1033
+    },
+    "TABLE_PAPER_ROUND8_BY_ATTACK.csv": {
+      "sha256": "fd85e51b3fe2eb6b87d4f5e79b37ec11ae00fa018748e38275f115e86d682b5a",
+      "size_bytes": 4289
+    }
+  }
+}
