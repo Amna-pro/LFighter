@@ -11,7 +11,12 @@ Four-arm reconstruction-mitigation ablation: 4 arms x 5 attacks x 5 primary seed
 
 ## Main round-8 descriptive results
 
-| Arm | Macro-F1 | Balanced Accuracy | Source-to-Target Rate | Benign FPR | Malicious Recall |\n|---|---:|---:|---:|---:|---:|\n| center_only | 0.368357 | 0.375855 | 0.078168 | 0.066667 | 0.995000 |\n| center_plus_residual | 0.364377 | 0.371054 | 0.069236 | 0.026667 | 0.995000 |\n| down_weighting | 0.379718 | 0.383419 | 0.129772 | 0.050000 | 0.995000 |\n| hard_rejection | 0.371491 | 0.374773 | 0.132254 | 0.046667 | 0.995000 |
+| Arm | Macro-F1 | Balanced Accuracy | Source-to-Target Rate | Benign FPR | Malicious Recall |
+|---|---:|---:|---:|---:|---:|
+| center_only | 0.368357 | 0.375855 | 0.078168 | 0.066667 | 0.995000 |
+| center_plus_residual | 0.364377 | 0.371054 | 0.069236 | 0.026667 | 0.995000 |
+| down_weighting | 0.379718 | 0.383419 | 0.129772 | 0.050000 | 0.995000 |
+| hard_rejection | 0.371491 | 0.374773 | 0.132254 | 0.046667 | 0.995000 |
 
 ## Statistical conclusion
 Minimum attainable attack-specific two-sided exact sign-flip p-value: 0.0625. No raw pairwise comparison reached p < 0.05. No Holm-adjusted family reached significance. Seed-cluster analysis also found no significant pairwise superiority.

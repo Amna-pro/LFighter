@@ -15,8 +15,8 @@
   "claim_boundary": "descriptive mitigation trade-off; no statistically established pairwise superiority at alpha=0.05",
   "files": {
     "README_PAPER_INTEGRATION.md": {
-      "sha256": "d3452be766a1867c943b9780589a6237d03d9e4e4f6c3a441b741c8a97861d68",
-      "size_bytes": 2152
+      "sha256": "ffc0afdded916a5b010c3f304075fce4da91f07da13d6636782b50d7f55da758",
+      "size_bytes": 2121
     },
     "RECONSTRUCTION_ABLATION_ANALYSIS_FREEZE_v4341b.json": {
       "sha256": "78a1209b9802c157e54191a33e75f23742b4e1e7ffe9c6034cbd21c1158e1c1f",
@@ -54,5 +54,6 @@
       "sha256": "fd85e51b3fe2eb6b87d4f5e79b37ec11ae00fa018748e38275f115e86d682b5a",
       "size_bytes": 4289
     }
-  }
+  },
+  "format_correction": "README Markdown table line breaks corrected after initial package freeze; no scientific values or claim boundaries changed"
 }
