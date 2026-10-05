@@ -1,0 +1,16 @@
+comparison,metric,direction_favoring_center_plus,n_seed_clusters,mean_center_plus,mean_comparator,mean_favorability_contrast,positive_seed_count,exact_two_sided_seed_cluster_sign_flip_p,holm_p_15
+center_plus_residual_vs_center_only,round8_val_macro_f1,higher,5,0.3643770306212986,0.36835673403591296,-0.003979703414614388,1,0.5625,1.0
+center_plus_residual_vs_center_only,round8_val_balanced_accuracy,higher,5,0.3710537006179848,0.3758548026176866,-0.004801101999701818,1,0.5625,1.0
+center_plus_residual_vs_center_only,round8_source_to_target_rate,lower,5,0.06923584716943383,0.07816763352670528,0.00893178635727146,3,0.6875,1.0
+center_plus_residual_vs_center_only,round8_benign_fpr,lower,5,0.02666666666666666,0.06666666666666665,0.039999999999999994,4,0.125,1.0
+center_plus_residual_vs_center_only,round8_malicious_recall,higher,5,0.9949999999999999,0.9949999999999999,0.0,0,1.0,1.0
+center_plus_residual_vs_hard_rejection,round8_val_macro_f1,higher,5,0.3643770306212986,0.37149074003209986,-0.007113709410801372,2,0.625,1.0
+center_plus_residual_vs_hard_rejection,round8_val_balanced_accuracy,higher,5,0.3710537006179848,0.37477274875234146,-0.003719048134356695,3,0.875,1.0
+center_plus_residual_vs_hard_rejection,round8_source_to_target_rate,lower,5,0.06923584716943383,0.132254450890178,0.06301860372074417,5,0.0625,0.9375
+center_plus_residual_vs_hard_rejection,round8_benign_fpr,lower,5,0.02666666666666666,0.04666666666666667,0.02,3,0.25,1.0
+center_plus_residual_vs_hard_rejection,round8_malicious_recall,higher,5,0.9949999999999999,0.9949999999999999,0.0,0,1.0,1.0
+center_plus_residual_vs_down_weighting,round8_val_macro_f1,higher,5,0.3643770306212986,0.37971821996065463,-0.015341189339356076,0,0.0625,0.9375
+center_plus_residual_vs_down_weighting,round8_val_balanced_accuracy,higher,5,0.3710537006179848,0.38341869013615043,-0.012364989518165592,2,0.25,1.0
+center_plus_residual_vs_down_weighting,round8_source_to_target_rate,lower,5,0.06923584716943383,0.12977195439087813,0.06053610722144429,4,0.125,1.0
+center_plus_residual_vs_down_weighting,round8_benign_fpr,lower,5,0.02666666666666666,0.05,0.02333333333333333,4,0.125,1.0
+center_plus_residual_vs_down_weighting,round8_malicious_recall,higher,5,0.9949999999999999,0.9949999999999999,0.0,0,1.0,1.0

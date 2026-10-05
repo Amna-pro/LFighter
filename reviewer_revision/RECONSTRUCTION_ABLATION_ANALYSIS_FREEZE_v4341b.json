@@ -1,0 +1,51 @@
+{
+  "experiment_version": "4.34.1b",
+  "phase": "four_arm_reconstruction_ablation_statistical_closeout",
+  "parent_outcome_freeze_commit": "5bba3b31df9d4d9ba9c7f61045afab8ae16c58b3",
+  "outcome_freeze_sha256": "1dcd63833821a1f10b42c7cf5eacf80a349020cb07382e340b3649c06fca6842",
+  "seed_values_sha256": "b3836b4a6ef0fe48650015cbabad123b7ac2e07b41ff6b0c74ad288cde25a557",
+  "attack_specific_signflip_sha256": "baeafbfcea3d586b03bbef1b829e07b3ab127d5976f0afed114f9738c7f464cd",
+  "round8_holm_sha256": "cfc22bef04b48b1de34782cd20dc8cacfdaf53d4c7d5a4ffd685df9c6edd28de",
+  "seed_cluster_stats_sha256": "38e149d0afaa0dc0f04e02d71347a733d2bae7751270f7bfa512fc84f43d9b35",
+  "primary_endpoint": "global_round_8_validation",
+  "n_primary_seeds": 5,
+  "n_attacks": 5,
+  "n_arms": 4,
+  "round8_arm_means": {
+    "center_only": {
+      "round8_val_macro_f1": 0.36835673403591296,
+      "round8_val_balanced_accuracy": 0.3758548026176866,
+      "round8_source_to_target_rate": 0.07816763352670529,
+      "round8_benign_fpr": 0.06666666666666665,
+      "round8_malicious_recall": 0.995
+    },
+    "center_plus_residual": {
+      "round8_val_macro_f1": 0.36437703062129856,
+      "round8_val_balanced_accuracy": 0.3710537006179848,
+      "round8_source_to_target_rate": 0.06923584716943383,
+      "round8_benign_fpr": 0.026666666666666665,
+      "round8_malicious_recall": 0.995
+    },
+    "down_weighting": {
+      "round8_val_macro_f1": 0.37971821996065463,
+      "round8_val_balanced_accuracy": 0.3834186901361504,
+      "round8_source_to_target_rate": 0.12977195439087813,
+      "round8_benign_fpr": 0.04999999999999999,
+      "round8_malicious_recall": 0.995
+    },
+    "hard_rejection": {
+      "round8_val_macro_f1": 0.3714907400320999,
+      "round8_val_balanced_accuracy": 0.3747727487523415,
+      "round8_source_to_target_rate": 0.132254450890178,
+      "round8_benign_fpr": 0.04666666666666666,
+      "round8_malicious_recall": 0.995
+    }
+  },
+  "attack_specific_exact_signflip_minimum_attainable_two_sided_p": 0.0625,
+  "attack_specific_raw_p_lt_0_05": 0,
+  "round8_holm75_p_lt_0_05": 0,
+  "round8_efficacy30_holm_p_lt_0_05": 0,
+  "seed_cluster_holm15_p_lt_0_05": 0,
+  "claim_boundary": "No pairwise mitigation-arm superiority is established at alpha=0.05. Report the ablation as a descriptive trade-off: down-weighting has the highest mean round-8 validation macro-F1, while center-plus-residual has the lowest mean round-8 source-to-target rate and benign FPR.",
+  "reserved_test_arrays_used_for_ablation_analysis": false
+}
